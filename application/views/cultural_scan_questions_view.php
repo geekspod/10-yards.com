@@ -14,7 +14,7 @@
 
   <div class="row">
     <div class="col-md-12">
-    
+
         <?php
         if($this->session->flashdata('error')) {
             ?>
@@ -36,7 +36,7 @@
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
       <div class="box box-info">
-        
+
         <div class="box-body table-responsive">
             <h1 style="    color: #4172a5">Questions</h1>
           <table id="checkboxes" class="table table-bordered table-striped">
@@ -49,7 +49,7 @@
                     <th>Neutral</th>
                     <th>Agree</th>
                     <th>Strongly Agree</th> -->
-                    
+
                     <!-- <th>Add Score</th> -->
 			    </tr>
 			</thead>
@@ -70,11 +70,11 @@
                       </td>
                         <td>
                         <div class="d-flex justify-content-center my-4">
-                        <input id="value" name="checkbox[]" class="border-0" type="range" min="0" max="100" />
-                        <span class="font-weight-bold text-primary ml-2 mt-1 valueSpan"></span>
-                        </div> 
+                            <input type="range" name="checkbox[]" class="custom-range" id="value" min="0" max="100">
+                            <span class="font-weight-bold text-primary ml-2 mt-1 valueSpan"></span>
+                        </div>
                         </td>
-    
+
                         <!-- <input type='hidden' value='0' name='checkbox[]'> -->
 
                         <!-- <td><input type="checkbox" name="checkbox[]" value="1" data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
@@ -93,17 +93,17 @@ break;
             }
             	?>
                         </tr>
-            		
+
             </tbody>
           </table>
                         <button name="form2" type="submit" class="btn btn-primary sb-btn loginbtn" style="    width: 16%;
     margin-left: 430px">Submit</button>
 
                         <?php echo form_close(); ?>
-                      
-                        
-	                 
-	               
+
+
+
+
         </div>
       </div>
 </section>
@@ -160,7 +160,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
   <!-- 2 -->
   <script type="text/javascript">
@@ -173,7 +173,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
   <!-- 3 -->
   <script type="text/javascript">
@@ -186,7 +186,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
   <!-- 4 -->
   <script type="text/javascript">
@@ -199,7 +199,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
   <!-- 5 -->
   <script type="text/javascript">
@@ -212,7 +212,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
   <!-- 6 -->
   <script type="text/javascript">
@@ -225,7 +225,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
   <!-- 7 -->
   <script type="text/javascript">
@@ -238,7 +238,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
   <!-- 8 -->
   <script type="text/javascript">
@@ -251,7 +251,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -264,7 +264,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -277,7 +277,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -290,7 +290,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -303,7 +303,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -316,7 +316,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -329,7 +329,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -342,7 +342,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -355,7 +355,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -368,7 +368,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -381,7 +381,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -394,7 +394,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -407,7 +407,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 <script type="text/javascript">
@@ -420,8 +420,7 @@ $( document ).ready(function() {
 
     $valueSpan.html($value.val());
   });
-}); 
+});
   </script>
 
 
-  
