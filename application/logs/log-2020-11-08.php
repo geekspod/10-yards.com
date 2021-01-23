@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2020-11-08 12:12:48 --> 404 Page Not Found: Blog/index
+ERROR - 2020-11-08 12:12:48 --> 404 Page Not Found: Wp/index
+ERROR - 2020-11-08 12:12:50 --> 404 Page Not Found: New/index
+ERROR - 2020-11-08 12:12:51 --> 404 Page Not Found: Test/index
+ERROR - 2020-11-08 12:12:52 --> 404 Page Not Found: Main/index
+ERROR - 2020-11-08 12:12:52 --> 404 Page Not Found: Site/index
+ERROR - 2020-11-08 12:12:52 --> 404 Page Not Found: Backup/index
+ERROR - 2020-11-08 12:12:53 --> 404 Page Not Found: Demo/index
+ERROR - 2020-11-08 12:12:54 --> 404 Page Not Found: Tmp/index
+ERROR - 2020-11-08 12:12:54 --> 404 Page Not Found: Cms/index
+ERROR - 2020-11-08 12:12:55 --> 404 Page Not Found: Dev/index
+ERROR - 2020-11-08 12:12:55 --> 404 Page Not Found: Old_wp/index
+ERROR - 2020-11-08 12:12:56 --> 404 Page Not Found: Web/index
+ERROR - 2020-11-08 12:12:56 --> 404 Page Not Found: Old_site/index
+ERROR - 2020-11-08 12:12:57 --> 404 Page Not Found: Temp/index
+ERROR - 2020-11-08 12:12:57 --> 404 Page Not Found: 2018/index
+ERROR - 2020-11-08 12:12:58 --> 404 Page Not Found: 2019/index
+ERROR - 2020-11-08 12:12:58 --> 404 Page Not Found: Bk/index
+ERROR - 2020-11-08 12:12:59 --> 404 Page Not Found: Wp1/index
+ERROR - 2020-11-08 12:12:59 --> 404 Page Not Found: Wp2/index
+ERROR - 2020-11-08 12:12:59 --> 404 Page Not Found: V1/index
+ERROR - 2020-11-08 12:13:00 --> 404 Page Not Found: V2/index
+ERROR - 2020-11-08 12:13:00 --> 404 Page Not Found: Bak/index
+ERROR - 2020-11-08 12:13:01 --> 404 Page Not Found: Install/index
+ERROR - 2020-11-08 12:13:04 --> 404 Page Not Found: 2020/index
+ERROR - 2020-11-08 12:13:04 --> 404 Page Not Found: New_site/index
+ERROR - 2020-11-08 12:40:57 --> 404 Page Not Found: Th1s_1s_a_4o4html/index
+ERROR - 2020-11-08 12:40:58 --> 404 Page Not Found: Php/mail.php
+ERROR - 2020-11-08 23:59:15 --> 404 Page Not Found: Faviconico/index
