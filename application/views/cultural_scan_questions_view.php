@@ -9,8 +9,7 @@
 </section>
 
 
-<section class="content" style="width: 80%;
-    margin: 0 auto">
+<section class="content container">
 
   <div class="row">
     <div class="col-md-12">
@@ -96,16 +95,12 @@ break;
 
             </tbody>
           </table>
-                        <button name="form2" type="submit" class="btn btn-primary sb-btn loginbtn" style="    width: 16%;
-    margin-left: 430px">Submit</button>
-
-                        <?php echo form_close(); ?>
-
-
-
-
         </div>
-      </div>
+      <div class="row justify-content-center">
+            <button name="form2" type="submit" class="btn btn-primary sb-btn loginbtn">Submit</button>
+
+            <?php echo form_close(); ?>
+        </div>
 </section>
 
 
