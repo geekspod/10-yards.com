@@ -1373,7 +1373,7 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
       </div>
     </div>
       <div class="col-lg-4">
-          <div class="container" style="margin-top:20px;">
+          <div class="row" style="margin-top:20px;">
 
               <div class="someTimer" data-timer="<?php echo $remaining_test_time_slots['test_time_slot']*60;?>" style="width: 300px; height: 100px; "></div>
               <hr>
@@ -1385,14 +1385,19 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 
 
           <!--extra three minutes-->
-          <div class="container" style="margin-top:20px;">
+          <div class="row" style="margin-top:20px;">
 
               <div class="someTimer2" data-timer="180" style="width: 300px; height: 100px; "></div>
               <hr>
 
 
           </div>
-
+          <div class="row" style="margin-top:20px;">
+              <div class="col-sm-12">
+                <button  id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" class="btn btn-primary">Submit</button>
+                  <button  id="save" type="submit" name="save" value="Save" onclick="return save_for_later()" class="btn btn-primary">Save</button>
+              </div>
+          </div>
           <!--<button type="button" class="btn btn-primary"  id="Next"  name="Next" value="Next" onclick="return save_data()"  style="width:9%; margin-left:0px;-->
     <!--margin-top: 25px">Next</button>-->
 
@@ -1402,8 +1407,6 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
   </div>
     <div class="row">
         <div class="col-lg-12">
-        <button  id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" class="btn btn-primary sb-btn loginbtn">Submit</button>
-        <button  id="save" type="submit" name="save" value="Save For Later"  onclick="return save_for_later()" class="btn btn-primary sb-btn loginbtn">Save For Later</button>
     </form>
  <div id="myResponse">
 
