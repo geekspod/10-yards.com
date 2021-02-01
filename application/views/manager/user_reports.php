@@ -1469,7 +1469,7 @@ const chart = Highcharts.chart('container', {
         text: 'Work Personality Index'
     },
     subtitle: {
-        text: ''
+        text: 'Psychometric Assessment to measure Personality Traits'
     },
     accessibility: {
         announceNewData: {
