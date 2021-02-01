@@ -10,8 +10,6 @@
 
     
     .highcharts-figure, .highcharts-data-table table {
-    min-width: 800px; 
-    max-width: 800px;
     margin: 1em auto;
 }
 
@@ -154,87 +152,94 @@
 </table>
 <!--end-->
 <p id="myID" align="justify"></p>
-<figure class="highcharts-figure">
-    <div id="container"></div>
-   <!--<i> <h6 class="description">Description is:</h6></i>-->
-   <!--1-10-->
-   <i><p class="highcharts-description1" align="justify">Score indicates that the person is easy-going, non-competitive, do not have the urge to go ahead, and set easy goals.</p></i>
-    <i><p class="highcharts-description2" align="justify">Score indicates an ambitious and competitive person who set difficult goals, high standards and aspirations.</p></i>
-    <i> <p class="highcharts-description3" align="justify">Score suggests that, person avoid taking risks and they don't feel empowered and or trusted to take initiative.</p></i>
-   <i> <p class="highcharts-description4" align="justify">Score indicates that, a person with initiative capability is proactive. He/She can identify and take challenges.</p></i>
-    <i> <p class="highcharts-description5" align="justify">Score suggests that, a person finds hard to adapt dynamic environment. they hardly see the surroundings with multiple perspective.</p></i>
-    <i><p class="highcharts-description6" align="justify">Score suggests that, flexible person has the capacity to cope with a frequently changing work environment and can adapt to emerging situations.</p></i>
-    <i> <p class="highcharts-description7" align="justify">Score suggests that, a person look for reason to have positive energy and high spirit. In tough times, he/she struggles to maintain composure.</p></i>
-    <i><p class="highcharts-description8" align="justify">Score suggests that, energetic person has stamina and the tendency to maintain a high spirit. He/She performs well in a pressure situation and can remain positive in stressful state.</p></i>
-    
-    <i> <p class="highcharts-description9" align="justify">Score indicates that the person prefers to work alone and avoid leadership positions.</p></i>
-    <i><p class="highcharts-description10" align="justify">Score indicates that a person with leading attitude is willing to take charge of any situation. He/She can lead and inspire others.</p></i>
-    <!--11-20-->
-     <i><p class="highcharts-description10" align="justify">Score indicates that a person with leading attitude is willing to take charge of any situation. He/She can lead and inspire others.</p></i>
-    <i><p class="highcharts-description11" align="justify">Score shows inability to cope with different activities at once.</p></i>
-    <i> <p class="highcharts-description12" align="justify">Score indicates that the person has the potential to deal with several activities at a time.</p></i>
-   <i> <p class="highcharts-description13" align="justify">Score shows that the person is not interested in negotiating with and influencing people.</p></i>
-    <i> <p class="highcharts-description14" align="justify">Score suggests that a persuasive person feels comfortable in negotiating, selling, influencing and persuading.</p></i>
-    <i><p class="highcharts-description15" align="justify">Score suggests that the person is introvert and lacks confidence in social situations.</p></i>
-    <i> <p class="highcharts-description16" align="justify">Score indicates that the person is extremely confident and self-assured. He/She is at ease with people in all types of social situations.</p></i>
-    <i><p class="highcharts-description17" align="justify">Score indicates that the person easily gives up on difficult tasks and gets distracted easily.</p></i>
-    <i> <p class="highcharts-description18" align="justify">Score indicates that a person has a tendency to stick with tasks. They do not give up and overcome obstacles with persistence.</p></i>
-    <i><p class="highcharts-description19" align="justify">Score shows that the person is rarely bothered about minor details, dislikes complex assignments, and has a careless approach towards work.</p></i>
-    
-    <!--21-30-->
-     <i><p class="highcharts-description20" align="justify">Score indicates that the person is thorough and rigorous. He/She strives towards perfection and approach the work in a neat and organized manner.</p></i>
-    <i><p class="highcharts-description21" align="justify">Score shows that the individual ignores rules and instructions.</p></i>
-    <i> <p class="highcharts-description22" align="justify">Score suggests that, a person with high compliance adheres to rules and strictly follows work regulations whereas</p></i>
-   <i> <p class="highcharts-description23" align="justify">Score indicate that the person leaves things unfinished and struggles to meet deadlines.</p></i>
-    <i> <p class="highcharts-description24" align="justify">Score shows that the person is highly trustable, reliable, responsible and dependable.</p></i>
-    <i><p class="highcharts-description25" align="justify">Score shows that the person lacks long term vision and is not meticulous.</p></i>
-    <i> <p class="highcharts-description26" align="justify">Score indicates that the person has the requisite desire to plan his/her work and to follow it.</p></i>
-    <i><p class="highcharts-description27" align="justify">Score shows that the person likes to do work alone and appears as reserved, distant, and withdrawn.</p></i>
-    <i> <p class="highcharts-description28" align="justify">Score suggests that a person is cooperative, displays a good-natured attitude and encourages people to work together.</p></i>
-    <i><p class="highcharts-description29" align="justify">Score shows that the person is not indulged in the problems of others.</p></i>
-    
-    <!--31-40-->
-     <i><p class="highcharts-description30" align="justify">Score indicates that the person is sensitive and understanding of the needs and feelings of others. He/She is kind and have empathy.</p></i>
-    <i><p class="highcharts-description31" align="justify">Score shows that a person is detached, reserved, and quiet.</p></i>
-    <i> <p class="highcharts-description32" align="justify">Score indicates that, A extrovert person prefers to interact with others and establish personal connections.</p></i>
-   <i> <p class="highcharts-description33" align="justify">Score suggests that the person is autocratic and takes decisions without guidance and support.</p></i>
-    <i> <p class="highcharts-description34" align="justify">Score suggests that, a democratic person has preference for making decisions through consultation and collaboration.</p></i>
-    <i><p class="highcharts-description35" align="justify">Score shows that the person can easily get frustrated, angry, and upset.</p></i>
-    <i> <p class="highcharts-description36" align="justify">Score indicates that, a person shows a disciplined attitude who could maintain composure and keeps emotions in check.</p></i>
-    <i><p class="highcharts-description37" align="justify">Score shows that the individual gets tense under stress, take criticism personally and find it difficult to handle challenging tasks.</p></i>
-    <i> <p class="highcharts-description38" align="justify">Score indicates that a person has the capability to be resilient and patient towards taking criticism positively and to handle high stress situations calmly and effectively.</p></i>
-    <i><p class="highcharts-description39" align="justify">Score indicates that the person prefers avoiding risks.</p></i>
-    
-      <i> <p class="highcharts-description40" align="justify">Score indicates that, an innovative person focuses on unconventional ideas and is action-oriented.</p></i>
-    <i><p class="highcharts-description41" align="justify">Score indicates that the person makes quick and spontaneous decisions and dislikes analytical or complicated information.</p></i>
-    <i><p class="highcharts-description42" align="justify">Score suggests that, an analytical person has the tendency to carefully analyze information and use logic to address issues and problems.</p></i>
-    <!--1-->
-    <h6 class="heading">1.Energy And Drive Description</h6>
-    <p class="highcharts-description" align="justify"><i>
-    <?php echo $Energy_and_drive_data['description_test'];?></i>
-    </p>
-    <!--2-->
-      <h6 class="heading">2.Work Style Description</h6>
-    <p class="highcharts-description" align="justify"><i>
-    <?php echo $Work_style_data['description_test'];?></i>
-    </p>
-    <!--3-->
-     <h6 class="heading">3.Working With Others Description</h6>
-    <p class="highcharts-description" align="justify"><i>
-    <?php echo $Working_with_others_data['description_test'];?></i>
-    </p>
-    <!--4-->
-     <h6 class="heading">4.Dealing With Pressure And Stress Description</h6>
-    <p class="highcharts-description" align="justify"><i>
-    <?php echo $Dealing_with_pressure_and_stress_data['description_test'];?></i>
-    </p>
-    <!--5-->
-    <h6 class="heading">5.Problem Solving Style Data Description</h6>
-    <p class="highcharts-description" align="justify"><i>
-    <?php echo $Problem_solving_style_data['description_test'];?></i>
-    </p>
-</figure>
-
+<div class="container">
+	<div class="row row-padding">
+		<div class="col-md-8">
+			<figure class="highcharts-figure">
+				<div id="container"></div>
+			</figure>
+		</div>
+		<div class="col-md-4 justify-content-center align-self-center">
+					   <!--<i> <h6 class="description">Description is:</h6></i>-->
+			   <!--1-10-->
+			   <i><p class="highcharts-description1" align="justify">Score indicates that the person is easy-going, non-competitive, do not have the urge to go ahead, and set easy goals.</p></i>
+				<i><p class="highcharts-description2" align="justify">Score indicates an ambitious and competitive person who set difficult goals, high standards and aspirations.</p></i>
+				<i> <p class="highcharts-description3" align="justify">Score suggests that, person avoid taking risks and they don't feel empowered and or trusted to take initiative.</p></i>
+			   <i> <p class="highcharts-description4" align="justify">Score indicates that, a person with initiative capability is proactive. He/She can identify and take challenges.</p></i>
+				<i> <p class="highcharts-description5" align="justify">Score suggests that, a person finds hard to adapt dynamic environment. they hardly see the surroundings with multiple perspective.</p></i>
+				<i><p class="highcharts-description6" align="justify">Score suggests that, flexible person has the capacity to cope with a frequently changing work environment and can adapt to emerging situations.</p></i>
+				<i> <p class="highcharts-description7" align="justify">Score suggests that, a person look for reason to have positive energy and high spirit. In tough times, he/she struggles to maintain composure.</p></i>
+				<i><p class="highcharts-description8" align="justify">Score suggests that, energetic person has stamina and the tendency to maintain a high spirit. He/She performs well in a pressure situation and can remain positive in stressful state.</p></i>
+				
+				<i> <p class="highcharts-description9" align="justify">Score indicates that the person prefers to work alone and avoid leadership positions.</p></i>
+				<i><p class="highcharts-description10" align="justify">Score indicates that a person with leading attitude is willing to take charge of any situation. He/She can lead and inspire others.</p></i>
+				<!--11-20-->
+				 <i><p class="highcharts-description10" align="justify">Score indicates that a person with leading attitude is willing to take charge of any situation. He/She can lead and inspire others.</p></i>
+				<i><p class="highcharts-description11" align="justify">Score shows inability to cope with different activities at once.</p></i>
+				<i> <p class="highcharts-description12" align="justify">Score indicates that the person has the potential to deal with several activities at a time.</p></i>
+			   <i> <p class="highcharts-description13" align="justify">Score shows that the person is not interested in negotiating with and influencing people.</p></i>
+				<i> <p class="highcharts-description14" align="justify">Score suggests that a persuasive person feels comfortable in negotiating, selling, influencing and persuading.</p></i>
+				<i><p class="highcharts-description15" align="justify">Score suggests that the person is introvert and lacks confidence in social situations.</p></i>
+				<i> <p class="highcharts-description16" align="justify">Score indicates that the person is extremely confident and self-assured. He/She is at ease with people in all types of social situations.</p></i>
+				<i><p class="highcharts-description17" align="justify">Score indicates that the person easily gives up on difficult tasks and gets distracted easily.</p></i>
+				<i> <p class="highcharts-description18" align="justify">Score indicates that a person has a tendency to stick with tasks. They do not give up and overcome obstacles with persistence.</p></i>
+				<i><p class="highcharts-description19" align="justify">Score shows that the person is rarely bothered about minor details, dislikes complex assignments, and has a careless approach towards work.</p></i>
+				
+				<!--21-30-->
+				 <i><p class="highcharts-description20" align="justify">Score indicates that the person is thorough and rigorous. He/She strives towards perfection and approach the work in a neat and organized manner.</p></i>
+				<i><p class="highcharts-description21" align="justify">Score shows that the individual ignores rules and instructions.</p></i>
+				<i> <p class="highcharts-description22" align="justify">Score suggests that, a person with high compliance adheres to rules and strictly follows work regulations whereas</p></i>
+			   <i> <p class="highcharts-description23" align="justify">Score indicate that the person leaves things unfinished and struggles to meet deadlines.</p></i>
+				<i> <p class="highcharts-description24" align="justify">Score shows that the person is highly trustable, reliable, responsible and dependable.</p></i>
+				<i><p class="highcharts-description25" align="justify">Score shows that the person lacks long term vision and is not meticulous.</p></i>
+				<i> <p class="highcharts-description26" align="justify">Score indicates that the person has the requisite desire to plan his/her work and to follow it.</p></i>
+				<i><p class="highcharts-description27" align="justify">Score shows that the person likes to do work alone and appears as reserved, distant, and withdrawn.</p></i>
+				<i> <p class="highcharts-description28" align="justify">Score suggests that a person is cooperative, displays a good-natured attitude and encourages people to work together.</p></i>
+				<i><p class="highcharts-description29" align="justify">Score shows that the person is not indulged in the problems of others.</p></i>
+				
+				<!--31-40-->
+				 <i><p class="highcharts-description30" align="justify">Score indicates that the person is sensitive and understanding of the needs and feelings of others. He/She is kind and have empathy.</p></i>
+				<i><p class="highcharts-description31" align="justify">Score shows that a person is detached, reserved, and quiet.</p></i>
+				<i> <p class="highcharts-description32" align="justify">Score indicates that, A extrovert person prefers to interact with others and establish personal connections.</p></i>
+			   <i> <p class="highcharts-description33" align="justify">Score suggests that the person is autocratic and takes decisions without guidance and support.</p></i>
+				<i> <p class="highcharts-description34" align="justify">Score suggests that, a democratic person has preference for making decisions through consultation and collaboration.</p></i>
+				<i><p class="highcharts-description35" align="justify">Score shows that the person can easily get frustrated, angry, and upset.</p></i>
+				<i> <p class="highcharts-description36" align="justify">Score indicates that, a person shows a disciplined attitude who could maintain composure and keeps emotions in check.</p></i>
+				<i><p class="highcharts-description37" align="justify">Score shows that the individual gets tense under stress, take criticism personally and find it difficult to handle challenging tasks.</p></i>
+				<i> <p class="highcharts-description38" align="justify">Score indicates that a person has the capability to be resilient and patient towards taking criticism positively and to handle high stress situations calmly and effectively.</p></i>
+				<i><p class="highcharts-description39" align="justify">Score indicates that the person prefers avoiding risks.</p></i>
+				
+				  <i> <p class="highcharts-description40" align="justify">Score indicates that, an innovative person focuses on unconventional ideas and is action-oriented.</p></i>
+				<i><p class="highcharts-description41" align="justify">Score indicates that the person makes quick and spontaneous decisions and dislikes analytical or complicated information.</p></i>
+				<i><p class="highcharts-description42" align="justify">Score suggests that, an analytical person has the tendency to carefully analyze information and use logic to address issues and problems.</p></i>
+		<!--1-->
+				<h6 class="heading">1.Energy And Drive Description</h6>
+				<p class="highcharts-description" align="justify"><i>
+				<?php echo $Energy_and_drive_data['description_test'];?></i>
+				</p>
+				<!--2-->
+				  <h6 class="heading">2.Work Style Description</h6>
+				<p class="highcharts-description" align="justify"><i>
+				<?php echo $Work_style_data['description_test'];?></i>
+				</p>
+				<!--3-->
+				 <h6 class="heading">3.Working With Others Description</h6>
+				<p class="highcharts-description" align="justify"><i>
+				<?php echo $Working_with_others_data['description_test'];?></i>
+				</p>
+				<!--4-->
+				 <h6 class="heading">4.Dealing With Pressure And Stress Description</h6>
+				<p class="highcharts-description" align="justify"><i>
+				<?php echo $Dealing_with_pressure_and_stress_data['description_test'];?></i>
+				</p>
+				<!--5-->
+				<h6 class="heading">5.Problem Solving Style Data Description</h6>
+				<p class="highcharts-description" align="justify"><i>
+				<?php echo $Problem_solving_style_data['description_test'];?></i>
+				</p>
+		</div>
+	</div>
+</div>
 	<!--div-->
 <div class="bs-example">
    
@@ -1497,7 +1502,6 @@ const chart = Highcharts.chart('container', {
             point: {
                 events: {
                     click: function () {
-                       
                         var seriesName = this.name;
                        // alert(this.name);
                         
