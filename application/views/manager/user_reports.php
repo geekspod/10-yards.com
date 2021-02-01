@@ -130,7 +130,7 @@
 <table>
 <div class="d-flex flex-nowrap">
  <tr>
- <td><a href="https://10-yards.com/manager/login/user_reports" style="    background-color: #008000;
+ <td><a href="/10-yards.com/manager/login/user_reports" style="    background-color: #008000;
     border-color: #5867dd;
     color: white;
     border: 1px solid;
@@ -1351,7 +1351,7 @@
 
 var jsonData = $.ajax({ 
      
-        url: "https://10-yards.com/manager/login/get_demo_chart_data/", 
+        url: "/10-yards.com/manager/login/get_demo_chart_data/", 
           dataType: "json", 
            type:'GET',
            data:data,
@@ -1361,7 +1361,7 @@ var jsonData = $.ajax({
    
     success: function(data) {
         //alert(data);
-         var imgUrl = 'https://10-yards.com/uploads/pdf/user_reports.pdf' + data;
+         var imgUrl = '/10-yards.com/uploads/pdf/user_reports.pdf' + data;
     }
           
           });
