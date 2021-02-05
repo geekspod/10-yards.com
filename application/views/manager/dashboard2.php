@@ -172,13 +172,22 @@ License: You must have a valid license purchased only from themeforest(the above
 									<h4 class="kt-menu__section-text">Records</h4>
 									<i class="kt-menu__section-icon flaticon-more-v2"></i>
 								</li>
-								<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+							
+							<!--current test-->
+							
+<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="<?php echo base_url(); ?>/manager/login/test_view" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
 												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-													<rect id="bound" x="0" y="0" width="24" height="24" />
-													<rect id="Rectangle-7" fill="#000000" x="4" y="4" width="7" height="7" rx="1.5" />
+													<polygon id="Bound" points="0 0 24 0 24 24 0 24" />
 													<path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z" id="Combined-Shape" fill="#000000" opacity="0.3" />
 												</g>
-											</svg></span><span class="kt-menu__link-text">Current Test</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+											</svg></span><span class="kt-menu__link-text">Current Test</span></a></li>
+								<!--<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">-->
+								<!--				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
+								<!--					<rect id="bound" x="0" y="0" width="24" height="24" />-->
+								<!--					<rect id="Rectangle-7" fill="#000000" x="4" y="4" width="7" height="7" rx="1.5" />-->
+								<!--					<path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z" id="Combined-Shape" fill="#000000" opacity="0.3" />-->
+								<!--				</g>-->
+								<!--			</svg></span><span class="kt-menu__link-text">Current Test</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>-->
 									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
 										<ul class="kt-menu__subnav">
 											<li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">Current Test</span></span></li>
@@ -262,13 +271,21 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 										</ul>
 									</div>
 								</li>
-								<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+								
+								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="<?php echo base_url(); ?>/manager/login/employees" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
 												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-													<rect id="bound" x="0" y="0" width="24" height="24" />
-													<rect id="Rectangle-151" fill="#000000" opacity="0.3" x="4" y="4" width="8" height="16" />
+													<polygon id="Bound" points="0 0 24 0 24 24 0 24" />
 													<path d="M6,18 L9,18 C9.66666667,18.1143819 10,18.4477153 10,19 C10,19.5522847 9.66666667,19.8856181 9,20 L4,20 L4,15 C4,14.3333333 4.33333333,14 5,14 C5.66666667,14 6,14.3333333 6,15 L6,18 Z M18,18 L18,15 C18.1143819,14.3333333 18.4477153,14 19,14 C19.5522847,14 19.8856181,14.3333333 20,15 L20,20 L15,20 C14.3333333,20 14,19.6666667 14,19 C14,18.3333333 14.3333333,18 15,18 L18,18 Z M18,6 L15,6 C14.3333333,5.88561808 14,5.55228475 14,5 C14,4.44771525 14.3333333,4.11438192 15,4 L20,4 L20,9 C20,9.66666667 19.6666667,10 19,10 C18.3333333,10 18,9.66666667 18,9 L18,6 Z M6,6 L6,9 C5.88561808,9.66666667 5.55228475,10 5,10 C4.44771525,10 4.11438192,9.66666667 4,9 L4,4 L9,4 C9.66666667,4 10,4.33333333 10,5 C10,5.66666667 9.66666667,6 9,6 L6,6 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero" />
 												</g>
-											</svg></span><span class="kt-menu__link-text">Manage Users</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+											</svg></span><span class="kt-menu__link-text">Manage Users</span></a></li>
+											
+								<!--<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">-->
+								<!--				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
+								<!--					<rect id="bound" x="0" y="0" width="24" height="24" />-->
+								<!--					<rect id="Rectangle-151" fill="#000000" opacity="0.3" x="4" y="4" width="8" height="16" />-->
+								<!--					<path d="M6,18 L9,18 C9.66666667,18.1143819 10,18.4477153 10,19 C10,19.5522847 9.66666667,19.8856181 9,20 L4,20 L4,15 C4,14.3333333 4.33333333,14 5,14 C5.66666667,14 6,14.3333333 6,15 L6,18 Z M18,18 L18,15 C18.1143819,14.3333333 18.4477153,14 19,14 C19.5522847,14 19.8856181,14.3333333 20,15 L20,20 L15,20 C14.3333333,20 14,19.6666667 14,19 C14,18.3333333 14.3333333,18 15,18 L18,18 Z M18,6 L15,6 C14.3333333,5.88561808 14,5.55228475 14,5 C14,4.44771525 14.3333333,4.11438192 15,4 L20,4 L20,9 C20,9.66666667 19.6666667,10 19,10 C18.3333333,10 18,9.66666667 18,9 L18,6 Z M6,6 L6,9 C5.88561808,9.66666667 5.55228475,10 5,10 C4.44771525,10 4.11438192,9.66666667 4,9 L4,4 L9,4 C9.66666667,4 10,4.33333333 10,5 C10,5.66666667 9.66666667,6 9,6 L6,6 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero" />-->
+								<!--				</g>-->
+								<!--			</svg></span><span class="kt-menu__link-text">Manage Users</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>-->
 									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
 										<ul class="kt-menu__subnav">
 											<li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">Manage Users</span></span></li>
@@ -349,7 +366,7 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
 										<ul class="kt-menu__subnav">
 											<li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">Reports & Analysis</span></span></li>
-											 <li class="kt-menu__item " aria-haspopup="true"><a href="<?php echo base_url();?>manager/login/reports" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Reports</span></a></li>
+											 <li class="kt-menu__item " aria-haspopup="true"><a href="<?php echo base_url();?>/manager/login/reports" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Reports</span></a></li>
 											 <li class="kt-menu__item " aria-haspopup="true"><a href="<?php echo base_url();?>manager/login/share_reports" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Share-Reports</span></a></li>
 										<!--	<li class="kt-menu__item " aria-haspopup="true"><a href="demo1/layout/subheader/actions.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Actions Buttons</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="demo1/layout/subheader/tabbed.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Tabbed Nav</span></a></li>
@@ -1891,8 +1908,8 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--success kt-svg-icon--md">
 													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 														<polygon id="Shape" points="0 0 24 0 24 24 0 24" />
-														<path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-														<path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" id="Combined-Shape" fill="#000000" />
+														<!--<path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero" opacity="0.3" />-->
+														<!--<path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" id="Combined-Shape" fill="#000000" />-->
 													</g>
 												</svg>
 
@@ -1908,27 +1925,27 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 													</li>
 													<li class="kt-nav__separator"></li>
 													<li class="kt-nav__item">
-														<a href="#" class="kt-nav__link">
+														<a href="https://10-yards.com/manager/login/employees" class="kt-nav__link"" class="kt-nav__link">
 															<i class="kt-nav__link-icon flaticon2-drop"></i>
-															<span class="kt-nav__link-text">Order</span>
+															<span class="kt-nav__link-text">Current Employees</span>
 														</a>
 													</li>
 													<li class="kt-nav__item">
-														<a href="#" class="kt-nav__link">
+														<a href="https://10-yards.com/manager/login/profile" class="kt-nav__link">
 															<i class="kt-nav__link-icon flaticon2-calendar-8"></i>
-															<span class="kt-nav__link-text">Ticket</span>
+															<span class="kt-nav__link-text">Update/Edit Profile</span>
 														</a>
 													</li>
 													<li class="kt-nav__item">
-														<a href="#" class="kt-nav__link">
+														<a href="<?php echo base_url();?>/manager/login/reports" class="kt-nav__link">
 															<i class="kt-nav__link-icon flaticon2-link"></i>
-															<span class="kt-nav__link-text">Goal</span>
+															<span class="kt-nav__link-text">Reports & Analysis</span>
 														</a>
 													</li>
 													<li class="kt-nav__item">
-														<a href="#" class="kt-nav__link">
+														<a href="https://10-yards.com/manager/login/share_reports" class="kt-nav__link" class="kt-nav__link">
 															<i class="kt-nav__link-icon flaticon2-new-email"></i>
-															<span class="kt-nav__link-text">Support Case</span>
+															<span class="kt-nav__link-text">Share Reports</span>
 															<span class="kt-nav__link-badge">
 																<span class="kt-badge kt-badge--brand kt-badge--rounded">5</span>
 															</span>
@@ -1936,8 +1953,8 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 													</li>
 													<li class="kt-nav__separator"></li>
 													<li class="kt-nav__foot">
-														<a class="btn btn-label-brand btn-bold btn-sm" href="#">Upgrade plan</a>
-														<a class="btn btn-clean btn-bold btn-sm kt-hidden" href="#" data-toggle="kt-tooltip" data-placement="right" title="Click to learn more...">Learn more</a>
+														
+														
 													</li>
 												</ul>
 

@@ -22,14 +22,44 @@
 <div class="d-flex flex-nowrap">
  <tr><td> <div class="order-3 p-2"><?php echo $manager_dashboard_data['first_name'];echo $manager_dashboard_data['last_name'];?></div>
   </td>
-  <td> <div class="order-3 p-2"><?php echo $manager_dashboard_data['department'];?></div>
+  <td> <div class="order-3 p-2"><?php echo "Engineering";?></div>
   </td>
  <td> <div class="order-2 p-2"><?php echo $total;?></div></td>
  <td> <div class="order-1 p-2"><?php echo "Nayatel";?></div></td></tr>
 </div>
 
    </table>	
+
+<!--2nd table-->
 	
+<table>
+<div class="d-flex flex-nowrap">
+ <tr>
+     	
+ <td><a href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
+    border-color: #5867dd;
+    color: white;
+    border: 1px solid;
+    padding: 7px 12px">Organizational Values Assessment</a></td>
+
+
+
+ 
+
+    <td><a  href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
+    border-color: #5867dd;
+    color: white;
+    border: 1px solid;
+    padding: 7px 12px">Cultural Scan</a></td>
+
+
+
+
+</tr>
+</div>
+</table>
+
+<!--end-->
 <figure class="highcharts-figure">
     <div id="container"></div>
     <!-- <h6 align="justify" class="highcharts-description">-->
@@ -41,6 +71,62 @@
     
     <!--</p>-->
 </figure>
+
+
+<!--3nd table-->
+	
+<table>
+<div class="d-flex flex-nowrap">
+ <tr>
+     	
+ <td><a href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
+    border-color: #5867dd;
+    color: white;
+    border: 1px solid;
+    padding: 7px 12px">Organizational Level Score</a></td>
+
+
+<td><a href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
+    border-color: #5867dd;
+    color: white;
+    border: 1px solid;
+    padding: 7px 12px">Departmental Level Score</a></td>
+    
+    <td><a href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
+    border-color: #5867dd;
+    color: white;
+    border: 1px solid;
+    padding: 7px 12px">All Departments Score</a></td>
+    
+    <td><a href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
+    border-color: #5867dd;
+    color: white;
+    border: 1px solid;
+    padding: 7px 12px">Gender Level Score</a></td>
+    
+    
+    <td><a href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
+    border-color: #5867dd;
+    color: white;
+    border: 1px solid;
+    padding: 7px 12px">Positional Level Score</a></td>
+ 
+
+    <td><a  href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
+    border-color: #5867dd;
+    color: white;
+    border: 1px solid;
+    padding: 7px 12px">Age Level Score</a></td>
+
+
+
+
+</tr>
+</div>
+</table>
+
+<!--end-->
+
 
 <script>
 
@@ -121,7 +207,7 @@ Highcharts.chart('container', {
         text: ''
     },
     xAxis: {
-        categories: ['Nayatel Values Assessment','Honesty','Excellence','Service','Respect','Learning','Innovation','Simplicity'],
+        categories: ['','Honesty','Excellence','Service','Respect','Learning','Innovation','Simplicity'],
         title: {
             text: null
         }

@@ -43,12 +43,24 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/admin/css/style.css">
 
     <link rel="stylesheet" href="<?php echo base_url(); ?>public/admin/css/custom.css">
+ <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/flash.min.css">
+         <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/flash.css">
 
+
+          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+          <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/app.css">
 
 
 
 
 	<style>
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+ .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+ .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active
+ {
+    display:none;
+ }
 
 		.skin-blue .wrapper,
 

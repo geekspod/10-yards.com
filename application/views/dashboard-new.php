@@ -217,7 +217,15 @@ object-fit: cover;
 										<div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
 											<ul class="kt-menu__subnav">
 												<li class="kt-menu__item " aria-haspopup="true"><a href="login/cultural_scan_questions_view/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[0];?></span></a></li>
+							 <?php if(empty($nayatel_record))
+											{?>					
+												
 												<li class="kt-menu__item " aria-haspopup="true"><a  href="login/nayatel_value_statements/<?php echo $dashboard_data['email'] ?>"      onclick="return reply_click()" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[1];?></span></a></li>
+												
+							<?php } else {?>					
+													<li class="kt-menu__item " aria-haspopup="true"><a  href="login/dashboard"      onclick="return reply_click()" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[1];?></span></a></li>
+									
+									 <?php }?>
 												
 												<li class="kt-menu__item " aria-haspopup="true"><a  href="login/personal_values_assessment/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[2];?></span></a></li>
 												
@@ -246,10 +254,18 @@ object-fit: cover;
 												<!--		</ul>-->
 												<!--	</div>-->
 												<!--</li>-->
+									<?php if(empty($work_record))
+											{?>
 												<li class="kt-menu__item " aria-haspopup="true"><a href="login/work_personality_index_form/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[4];?></span></a></li>
 											</ul>
 										</div>
 									</li>
+									<?php } else {?>
+									<li class="kt-menu__item " aria-haspopup="true"><a href="login/dashboard" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[4];?></span></a></li>
+											</ul>
+										</div>
+									</li>
+									 <?php }?>
 									<li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Instructions</span><i class="kt-menu__hor-arrow la la-angle-down"></i><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
 										<div class="kt-menu__submenu  kt-menu__submenu--fixed kt-menu__submenu--left" style="width:1000px">
 											<div class="kt-menu__subnav">

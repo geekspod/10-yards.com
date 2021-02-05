@@ -185,6 +185,120 @@ public function profile(){
         
     }
 
+public function get_dashboard_charts_data(){
+    
+    $data['manager_dashboard_data']=$this->session->userdata();
+ //echo "<pre>";print_r($data['manager_dashboard_data']);exit;
+   
+   $total_employees = $this->Model_login->get_users_count(); 
+	//$this->Model_login->assigned_users(); 
+	
+// gender
+$male = $this->Model_login->count_male_from_employees(); 
+$female = $this->Model_login->count_female_from_employees(); 
+
+
+	$work_completed_test = $this->Model_login->work_completed_test(); 
+	$assigned_users = $work_completed_test;
+	$nayatel_completed_test = $this->Model_login->nayatel_completed_test(); 
+	// $this->Model_login->personal_completed_test(); 
+	$personal_completed_test = 0;
+	$cultural_completed_test = 0;
+	// $this->Model_login->incomplte_test();
+	$incomplte_test = $assigned_users -  $work_completed_test ;
+	// $this->Model_login->pending_test();
+	$pending_test = $total_employees -  $assigned_users;
+	$not_yet_attempted_work_personality=$total_employees-$work_completed_test;
+	
+	$incomplete_work_personality_test=$work_completed_test+$not_yet_attempted_work_personality;
+	$incomplete_work_personality_test=$total_employees-$incomplete_work_personality_test;
+	
+		$not_yet_attempted_nayatel_values=$total_employees-$nayatel_completed_test;
+			$incomplete_nayatel_values=$nayatel_completed_test+$not_yet_attempted_nayatel_values;
+			$incomplete_nayatel_values=	$total_employees-$incomplete_nayatel_values;
+			
+$not_yet_attempted_personal_values=$total_employees-$personal_completed_test;
+	$incomplete_personal_values=$personal_completed_test+$not_yet_attempted_personal_values;
+	$incomplete_personal_values=$total_employees-$incomplete_personal_values;
+	
+$not_yet_attempted_cultural_sacn_values=$total_employees-$cultural_completed_test;
+$incomplete_cultural_sacn_values=$cultural_completed_test+$not_yet_attempted_cultural_sacn_values;
+$incomplete_cultural_sacn_values=$total_employees-$incomplete_cultural_sacn_values;
+
+	//echo "<pre>";print_r($data);exit;
+	
+	
+$male = $this->Model_login->count_male_from_employees(); 
+$female = $this->Model_login->count_female_from_employees(); 
+$other_gender = $this->Model_login->count_other_from_employees();
+// end gender
+// department
+$marketing = $this->Model_login->count_marketing_department_from_employees();
+$finance = $this->Model_login->count_finance_department_from_employees();
+$hr_production = $this->Model_login->count_hr_production_from_employees();
+$supply_chain_management = $this->Model_login->count_supply_chain_management_from_employees();
+$software_engineering = $this->Model_login->count_software_engineering_from_employees();
+$computer_science = $this->Model_login->count_computer_science_from_employees();
+$management = $this->Model_login->count_management_from_employees();
+$engineering = $this->Model_login->count_engineering_from_employees();
+$other_department = $this->Model_login->count_other_department_from_employees();
+	
+	
+// 	age
+$first_age_comparison = $this->Model_login->count_first_age_comparison_from_employees();
+$second_age_comparison = $this->Model_login->count_second_age_comparison_from_employees();
+$third_age_comparison = $this->Model_login->count_third_age_comparison_from_employees();
+$fourth_age_comparison = $this->Model_login->count_fourth_age_comparison_from_employees();
+	
+	
+	$data=array(
+    'total_employees'=>$total_employees,
+     'work_completed_test'=>$work_completed_test,
+      'nayatel_completed_test'=>$nayatel_completed_test,
+       'personal_completed_test'=>$personal_completed_test,
+        
+          'cultural_completed_test'=>$cultural_completed_test,
+          'male'=>$male,
+          'female'=>$female,
+          'other_gender'=>$other_gender,
+          'marketing'=>$marketing,
+           'finance'=>$finance,
+          'hr_production'=>$hr_production,
+           'supply_chain_management'=>$supply_chain_management,
+          'software_engineering'=>$software_engineering,
+           'computer_science'=>$computer_science,
+          'management'=>$management,
+          'engineering'=>$engineering,
+          'other_department'=>$other_department,
+           'first_age_comparison'=>$first_age_comparison,
+          'second_age_comparison'=>$second_age_comparison,
+          'third_age_comparison'=>$third_age_comparison,
+          'fourth_age_comparison'=>$fourth_age_comparison,
+          
+          
+          'work_completed_test'=>$work_completed_test,
+          'nayatel_completed_test'=>$nayatel_completed_test,
+           'personal_completed_test'=>$personal_completed_test,
+          'cultural_completed_test'=>$cultural_completed_test,
+           'not_yet_attempted_work_personality'=>$not_yet_attempted_work_personality,
+          'incomplete_work_personality_test'=>$incomplete_work_personality_test,
+          'not_yet_attempted_nayatel_values'=>$not_yet_attempted_nayatel_values,
+          'incomplete_nayatel_values'=>$incomplete_nayatel_values,
+           'not_yet_attempted_personal_values'=>$not_yet_attempted_personal_values,
+          'incomplete_personal_values'=>$incomplete_personal_values,
+          'not_yet_attempted_cultural_sacn_values'=>$not_yet_attempted_cultural_sacn_values,
+          'incomplete_cultural_sacn_values'=>$incomplete_cultural_sacn_values,
+          
+          
+          
+    );
+   // echo "<pre>";print_r($data);exit;
+      echo   $encoded = json_encode($data, JSON_NUMERIC_CHECK);exit;
+   
+   
+    
+}
+
 public function dashboard(){
 
   $data['manager_dashboard_data']=$this->session->userdata();
@@ -196,8 +310,101 @@ public function dashboard(){
     redirect(base_url().'manager');
       exit;
   }
+// 	$total_employees = $this->Model_login->get_users_count(); 
+// 	$assigned_users = $this->Model_login->assigned_users(); 
+// 	$work_completed_test = $this->Model_login->work_completed_test(); 
+// 	$nayatel_completed_test = $this->Model_login->nayatel_completed_test(); 
+// 	$personal_completed_test = $this->Model_login->personal_completed_test(); 
+// 	$incomplte_test = $this->Model_login->incomplte_test();
+// 	$pending_test = $this->Model_login->pending_test();
+	
+	
+	
+	$total_employees = $this->Model_login->get_users_count(); 
+	//$this->Model_login->assigned_users(); 
+	
+// gender
+// $male = $this->Model_login->count_male_from_employees(); 
+// $female = $this->Model_login->count_female_from_employees(); 
+// $other_gender = $this->Model_login->count_other_from_employees();
+// // end gender
+// // department
+// $marketing = $this->Model_login->count_marketing_department_from_employees();
+// $finance = $this->Model_login->count_finance_department_from_employees();
+// $hr_production = $this->Model_login->count_hr_production_from_employees();
+// $supply_chain_management = $this->Model_login->count_supply_chain_management_from_employees();
+// $software_engineering = $this->Model_login->count_software_engineering_from_employees();
+// $computer_science = $this->Model_login->count_computer_science_from_employees();
+// $management = $this->Model_login->count_management_from_employees();
+// $engineering = $this->Model_login->count_engineering_from_employees();
+// $other_department = $this->Model_login->count_other_department_from_employees();
+// end department
+	//echo "<pre>";print_r($total_employees);exit;
+
+// age
+// $first_age_comparison = $this->Model_login->count_first_age_comparison_from_employees();
+// $second_age_comparison = $this->Model_login->count_second_age_comparison_from_employees();
+// $third_age_comparison = $this->Model_login->count_third_age_comparison_from_employees();
+// $fourth_age_comparison = $this->Model_login->count_fourth_age_comparison_from_employees();
+// // end age
+
+
+	$work_completed_test = $this->Model_login->work_completed_test(); 
+	$assigned_users = $work_completed_test;
+	$nayatel_completed_test = $this->Model_login->nayatel_completed_test(); 
+	// $this->Model_login->personal_completed_test(); 
+	$personal_completed_test = 0;
+	$cultural_completed_test = 0;
+	// $this->Model_login->incomplte_test();
+	$incomplte_test = $assigned_users -  $work_completed_test ;
+	// $this->Model_login->pending_test();
+	$pending_test = $total_employees -  $assigned_users;
+	$not_yet_attempted_work_personality=$total_employees-$work_completed_test;
+	
+	$incomplete_work_personality_test=$work_completed_test+$not_yet_attempted_work_personality;
+	$incomplete_work_personality_test=$total_employees-$incomplete_work_personality_test;
+	
+		$not_yet_attempted_nayatel_values=$total_employees-$nayatel_completed_test;
+			$incomplete_nayatel_values=$nayatel_completed_test+$not_yet_attempted_nayatel_values;
+			$incomplete_nayatel_values=	$total_employees-$incomplete_nayatel_values;
+			
+$not_yet_attempted_personal_values=$total_employees-$personal_completed_test;
+	$incomplete_personal_values=$personal_completed_test+$not_yet_attempted_personal_values;
+	$incomplete_personal_values=$total_employees-$incomplete_personal_values;
+	
+$not_yet_attempted_cultural_sacn_values=$total_employees-$cultural_completed_test;
+$incomplete_cultural_sacn_values=$cultural_completed_test+$not_yet_attempted_cultural_sacn_values;
+$incomplete_cultural_sacn_values=$total_employees-$incomplete_cultural_sacn_values;
+
+// 	echo "<pre>";print_r($not_yet_attempted_personal_values);exit;
+
+	
+	
+// Total Employees
+// 1.
+// completed work
+// not yet attempted work
+// incomplete work
+
+// 2.
+// completed culture 
+// not yet attempted culture
+// incomplete culture test
+
+// 3.
+// completed nayatel
+// not yet attempted nayatel
+// incomplete nayatel
+
+// 4.
+// completed personal
+// not yet attempted personal
+// incomplete personal	
+	
+//	echo "<pre>";print_r($total_employees);exit;
 	
   $this->load->view('manager/dashboard',$data);
+  $this->load->view('manager/dashboard_charts',$data);
   // $this->load->view('manager/manager_dashboard_header');
   // $this->load->view('manager/manager_main_content_dashboard');
 	// $this->load->view('manager/manager_dashboard_footer');
@@ -451,7 +658,14 @@ public function user_reports(){
         //   echo "<pre>";print_r($Dealing_with_pressure_and_stress);echo "<br>";
         //     echo "<pre>";print_r( $data['user_detail']);echo "<br>";exit;
      $data['user_detail']= $this->Model_login->get_relative_data($email);
-         //echo "<pre>";print_r( $data['user_detail']);echo "<br>";exit;
+     		$data['work_record'] = $this->Model_category->check_record_work_personality_index($email);
+     $data['personal_record'] = '';
+   //  $this->Model_category->check_record_personal_values_assessment($email);
+     		
+    $data['personality_assessment_record'] = '';
+    // $this->Model_category->check_record_personality_assessment_questions($email);
+     		
+         //echo "<pre>";print_r( $data['work_record']);echo "<br>";exit;
      $email_relative_to_reports=$email;
     // $_SESSION['$email_relative_to_reports'];
     //$this->session->set_userdata($email_relative_to_reports);
@@ -651,6 +865,7 @@ public function get_nayatel_organization_report(){
     
     
     );
+    // echo "<pre>";print_r($data);exit;
       echo   $encoded = json_encode($data, JSON_NUMERIC_CHECK);exit;
     // echo "<pre>";print_r($data);exit;
         $response = new StdClass;
@@ -700,8 +915,8 @@ public function reports(){
          $Simplicity=$nayatel_organization_report['Simplicity'];
          $data['Simplicity']=round($Simplicity, 1);
    
-    //echo "<pre>";print_r($Honesty);echo "<br>";exit;
-    //echo "<pre>";print_r( $data['Excellence']);echo "<br>";exit;
+//     echo "<pre>";print_r($Honesty);echo "<br>";
+//     echo "<pre>";print_r( $data['Excellence']);echo "<br>";
 //     echo "<pre>";print_r($Service);echo "<br>";
 //     echo "<pre>";print_r($Respect);echo "<br>";
 //     echo "<pre>";print_r($Learning);echo "<br>";

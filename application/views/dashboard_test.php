@@ -146,7 +146,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
 						<div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
 							<ul class="kt-menu__nav ">
-								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="<?php echo base_url(); ?>login/dashboard" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-protection"></i><span class="kt-menu__link-text">Dashboard</span></a></li>
+								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="javascript:void(0);" onclick="alertmessage()" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-protection"></i><span class="kt-menu__link-text">Dashboard</span></a></li>
 								<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon2-list-3"></i><span class="kt-menu__link-text">Update Profile</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--brand">E</span></span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
 									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
 										<ul class="kt-menu__subnav">
@@ -162,7 +162,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</ul>
 												</div>
 											</li>
-											<li class="kt-menu__item " aria-haspopup="true"><a  href="update_employee_profile/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Update</span></a></li>
+											<li class="kt-menu__item " aria-haspopup="true"><a  href="javascript:void(0);" onclick="alertmessage()"><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Update</span></a></li>
 											<!--<li class="kt-menu__item " aria-haspopup="true"><a  href="login/nayatel_value_statements/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[1];?></span></a></li>-->
 											<!--<li class="kt-menu__item " aria-haspopup="true"><a  href="login/personal_values_assessment/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[2];?></span></a></li>-->
            <!--                                 <li class="kt-menu__item " aria-haspopup="true"><a  href="login/personality_assessment_questions/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[3];?></span></a></li>-->
@@ -224,16 +224,16 @@ License: You must have a valid license purchased only from themeforest(the above
 						<div class="kt-header-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_header_menu_wrapper">
 							<div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-default ">
 								<ul class="kt-menu__nav ">
-									<li class="kt-menu__item  kt-menu__item--active " aria-haspopup="true"><a href="<?php echo base_url(); ?>login/dashboard" class="kt-menu__link "><span class="kt-menu__link-text">Dashboard</span></a></li>
+									<li class="kt-menu__item  kt-menu__item--active " aria-haspopup="true"><a href="javascript:void(0);" onclick="alertmessage()" class="kt-menu__link "><span class="kt-menu__link-text">Dashboard</span></a></li>
 									<li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Assessments</span><i class="kt-menu__hor-arrow la la-angle-down"></i><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
 										<div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
 											<ul class="kt-menu__subnav">
-												<li class="kt-menu__item " aria-haspopup="true"><a href="cultural_scan_questions_view/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[0];?></span></a></li>
-												<li class="kt-menu__item " aria-haspopup="true"><a  href="nayatel_value_statements/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[1];?></span></a></li>
+												<li class="kt-menu__item " aria-haspopup="true"><a href="javascript:void(0);" onclick="alertmessage()" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[0];?></span></a></li>
+												<li class="kt-menu__item " aria-haspopup="true"><a  href="javascript:void(0);" onclick="alertmessage()" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[1];?></span></a></li>
 
-												<li class="kt-menu__item " aria-haspopup="true"><a  href="personal_values_assessment/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[2];?></span></a></li>
+												<li class="kt-menu__item " aria-haspopup="true"><a  href="javascript:void(0);" onclick="alertmessage()" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[2];?></span></a></li>
 
-												<li class="kt-menu__item " aria-haspopup="true"><a  href="personality_assessment_questions/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[3];?></span></a></li>
+												<li class="kt-menu__item " aria-haspopup="true"><a  href="javascript:void(0);" onclick="alertmessage()" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[3];?></span></a></li>
 
 												<!--<li class="kt-menu__item  kt-menu__item--submenu" data-ktmenu-submenu-toggle="hover" aria-haspopup="true"><a href="login/personal_values_assessment/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[2];?></span><i class="kt-menu__hor-arrow la la-angle-right"></i><i class="kt-menu__ver-arrow la la-angle-right"></i></a>-->
 												<!--	<div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--right">-->
@@ -258,7 +258,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<!--		</ul>-->
 												<!--	</div>-->
 												<!--</li>-->
-												<li class="kt-menu__item " aria-haspopup="true"><a href="work_personality_index_form/<?php echo $dashboard_data['email'] ?>" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[4];?></span></a></li>
+												<li class="kt-menu__item " aria-haspopup="true"><a href="javascript:void(0);" onclick="alertmessage()" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"><?php echo $categories[4];?></span></a></li>
 											</ul>
 										</div>
 									</li>
@@ -269,8 +269,8 @@ License: You must have a valid license purchased only from themeforest(the above
 													<li class="kt-menu__item ">
 														<h3 class="kt-menu__heading kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"></span><i class="kt-menu__ver-arrow la la-angle-right"></i></h3>
 														<ul class="kt-menu__inner">
-															<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-map"></i><span class="kt-menu__link-text">FAQs</span></a></li>
-															<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-user"></i><span class="kt-menu__link-text">Instruction of Solving Reports</span></a></li>
+															<li class="kt-menu__item " aria-haspopup="true"><a href="javascript:void(0);" onclick="alertmessage()" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-map"></i><span class="kt-menu__link-text">FAQs</span></a></li>
+															<li class="kt-menu__item " aria-haspopup="true"><a href="javascript:void(0);" onclick="alertmessage()" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-user"></i><span class="kt-menu__link-text">Instruction of Solving Reports</span></a></li>
 													<!--		<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-clipboard"></i><span class="kt-menu__link-text">IPO Reports</span></a></li>-->
 													<!--		<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-graphic-1"></i><span class="kt-menu__link-text">Finance Margins</span></a></li>-->
 													<!--		<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-graphic-2"></i><span class="kt-menu__link-text">Revenue Reports</span></a></li>-->
@@ -353,24 +353,24 @@ License: You must have a valid license purchased only from themeforest(the above
 						<div class="kt-header__topbar">
 
 							<!--begin: Search -->
-							<div class="kt-header__topbar-item kt-header__topbar-item--search dropdown" id="kt_quick_search_toggle">
-								<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-									<span class="kt-header__topbar-icon"><i class="flaticon2-search-1"></i></span>
-								</div>
-								<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-lg">
-									<div class="kt-quick-search kt-quick-search--inline" id="kt_quick_search_inline">
-										<form method="get" class="kt-quick-search__form">
-											<div class="input-group">
-												<div class="input-group-prepend"><span class="input-group-text"><i class="flaticon2-search-1"></i></span></div>
-												<input type="text" class="form-control kt-quick-search__input" placeholder="Search...">
-												<div class="input-group-append"><span class="input-group-text"><i class="la la-close kt-quick-search__close"></i></span></div>
-											</div>
-										</form>
-										<div class="kt-quick-search__wrapper kt-scroll" data-scroll="true" data-height="300" data-mobile-height="200">
-										</div>
-									</div>
-								</div>
-							</div>
+							<!--<div class="kt-header__topbar-item kt-header__topbar-item--search dropdown" id="kt_quick_search_toggle">-->
+							<!--	<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">-->
+							<!--		<span class="kt-header__topbar-icon"><i class="flaticon2-search-1"></i></span>-->
+							<!--	</div>-->
+							<!--	<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-lg">-->
+							<!--		<div class="kt-quick-search kt-quick-search--inline" id="kt_quick_search_inline">-->
+							<!--			<form method="get" class="kt-quick-search__form">-->
+							<!--				<div class="input-group">-->
+							<!--					<div class="input-group-prepend"><span class="input-group-text"><i class="flaticon2-search-1"></i></span></div>-->
+							<!--					<input type="text" class="form-control kt-quick-search__input" placeholder="Search...">-->
+							<!--					<div class="input-group-append"><span class="input-group-text"><i class="la la-close kt-quick-search__close"></i></span></div>-->
+							<!--				</div>-->
+							<!--			</form>-->
+							<!--			<div class="kt-quick-search__wrapper kt-scroll" data-scroll="true" data-height="300" data-mobile-height="200">-->
+							<!--			</div>-->
+							<!--		</div>-->
+							<!--	</div>-->
+							<!--</div>-->
 
 							<!--end: Search -->
 
@@ -4376,7 +4376,12 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--begin::Page Scripts(used by this page) -->
 		<script src="<?php echo base_url(); ?>assets-data/js/demo6/pages/dashboard.js" type="text/javascript"></script>
+<script>
+    function alertmessage(){
 
+        alert('You are not allowed to skip the test.');
+    }
+</script>
 		<!--end::Page Scripts -->
 	</body>
 

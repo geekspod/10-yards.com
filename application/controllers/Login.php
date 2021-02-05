@@ -16,7 +16,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-
+		
 		// $id = $this->uri->segment(3);
  		// echo $id;exit;
 		//bootbox.alert("Hello world!");
@@ -28,13 +28,13 @@ class Login extends CI_Controller {
 		$this->load->view('view_header',$data);
 		$this->load->view('view_login',$data);
 		$this->load->view('view_footer',$data);
-
+		
 	}
+	
 
-
-
+	
 public function nayatel_value_statements_error(){
-
+    
 
 	$categories_id=2;
 	$data['setting'] = $this->Model_common->all_setting();
@@ -46,13 +46,13 @@ public function nayatel_value_statements_error(){
 	$name= $data['nayatel_value_statements'];
 if(($this->uri->segment(3)!=0)){
 	$data['dashboard_data']=$this->uri->segment(3);
-
+	
 }
 else{
 	$data['dashboard_data']=$this->session->userdata();
 }
 $data['categories'] = $this->Model_category->get_categories();
-
+			
 $data['dashboard_data']=$this->session->userdata();
 	//$data['dashboard_data']=$this->session->userdata();
 	//echo "<pre>";print_r($data['dashboard_data']);exit;
@@ -60,12 +60,12 @@ $data['dashboard_data']=$this->session->userdata();
 	$this->load->view('admin/employee_view_header',$data);
 
 //	$this->load->view('nayatel_value_statements',$data);
-
+		
 	$this->load->view('admin/employee_view_footer',$data);
-
-
+    
+    
 }
-
+	
 public function nayatel_value_statements(){
 
 	//echo "success";exit;
@@ -75,7 +75,7 @@ public function nayatel_value_statements(){
 	//$data['sliders'] = $this->Model_common->all_slider('login');
 
 	$data['count'] = $this->Model_category->count_active_records($categories_id);
-
+	
 		$data['time'] = $this->Model_category->test_time_slot($categories_id);
 		//	echo "<pre>";print_r($data['time']);exit;
 // $email=$email[0];
@@ -83,14 +83,14 @@ public function nayatel_value_statements(){
 //	$name= $data['nayatel_value_statements'];
 if(($this->uri->segment(3)!=0)){
 	$data['dashboard_data']=$this->uri->segment(3);
-
+	
 }
 else{
 	$data['dashboard_data']=$this->session->userdata();
 }
 
 $data['categories'] = $this->Model_category->get_categories();
-
+			
 $data['dashboard_data']=$this->session->userdata();
 $email=$data['dashboard_data'];
 $email=$email['email'];
@@ -100,34 +100,34 @@ $email=$email['email'];
 //$data['nayatel_save_for_later'] = $this->Model_category->nayatel_save_for_later($name);
 // end
 
-
+	
 		$value['get_all_nayatel_save_for_later'] = $this->Model_category->get_all_nayatel_save_for_later($email);
-
+	
 	$value['check_record_nayatel_save_for_later'] = $this->Model_category->check_record_nayatel_save_for_later($email);
 //	echo "<pre>";print_r($value['check_record_nayatel_save_for_later']);exit;
 	if(!empty($value['check_record_nayatel_save_for_later'])){
-
-
+	   
+	   
 	   	$value['remaining_test_time_slot'] = $this->Model_category->remaining_test_time_slot($email);
 	   //	echo "<pre>";print_r($value['remaining_test_time_slot']);exit;
 	   	$remaining_test_time_slot=	$value['remaining_test_time_slot'];
 	   	if(empty($remaining_test_time_slot)){
-
+	   	    
 	   	 $value['remaining_test_time_slots'] = $this->Model_category->test_time_slot($categories_id);
 	   	}
 	   	else{
-	   	   $value['remaining_test_time_slots'] = $this->Model_category->remaining_test_time_slot($email);
-
+	   	   $value['remaining_test_time_slots'] = $this->Model_category->remaining_test_time_slot($email); 
+	   	    
 	   	}
 	   	// echo "above";exit;
 	    $this->load->view('dashboard_test',$data);
 	$this->load->view('admin/employee_view_header',$data);
 
 	$this->load->view('nayatel_save_for_later',$value);
-
+		
 	$this->load->view('admin/employee_view_footer',$data);
-
-
+	    
+	    
 	}
 
 else{
@@ -143,16 +143,16 @@ else{
 	$this->load->view('admin/employee_view_header',$data);
 
 	$this->load->view('nayatel_value_statements',$data);
-
+		
 	$this->load->view('admin/employee_view_footer',$data);
 }
-
+		
 }
 
 public function save_for_later2(){
-
+    
    $questions_id = $this->input->post('questions_id[]');
-
+   
      	$test_time_slot = $this->input->post('time');
      	// echo "<pre>";print_r($_POST);echo "<br>";exit;
      	  $nayatel_save_for_later_time=$this->Model_category->nayatel_save_for_later_time($test_time_slot);
@@ -163,10 +163,10 @@ public function save_for_later2(){
    //$dimensions_name=$this->input->post(dimensions_name);
    echo "<pre>";print_r($checkbox);echo "<br>";
      echo "<pre>";print_r($dimensions_name);echo "<br>";exit;
-
+   
    if(($this->uri->segment(3)!=0)){
 	$data['dashboard_data']=$this->uri->segment(3);
-
+	
 }
 else{
 	$data['dashboard_data']=$this->session->userdata();
@@ -179,32 +179,32 @@ $data['setting'] = $this->Model_common->all_setting();
 
 	$error = '';
 	$success = '';
-
-
-
-
+	
+	 
+	 
+	     
 	     $email=$_POST['email'];
 	$checkbox[] = $this->input->post('checkbox[]');
 	$dimensions_name = $this->input->post('dimensions_name[]');
 	$date_created = date("Y-m-d H:i:s");
 	$form_data = array(
 				'checkbox'    => $_POST['checkbox'],
-
-
-
-
+				
+             
+			
+				
 			);
 		//	echo "<pre>";print_r($form_data);exit;
 			 $nayatel_values_assessment_id=$this->Model_category->save_for_later($form_data);
 		    exit;
-
-
+		 
+    
 }
 
 public function work_save_for_later(){
-
-   echo "<pre>";print_r($_POST);echo "<br>";exit;
-
+    
+  // echo "<pre>";print_r($_POST);echo "<br>";exit;
+     
      $test_time_slot = $this->input->post('time');
      $test_time_slot=$test_time_slot/60;
      $test_time_slot= round($test_time_slot);
@@ -214,17 +214,19 @@ public function work_save_for_later(){
 $work_save_for_later=$this->Model_category->work_save_for_later();
       redirect(base_url().'login/dashboard');
 		    exit;
-
-
+     
+    
 }
 
 public function save_for_later(){
     // echo "<pre>";print_r($_POST);echo "<br>";exit;
     	$questions_id = $this->input->post('questions_id[]');
-
+   
      	$test_time_slot = $this->input->post('time');
+     $test_time_slot=$test_time_slot/60;
+     $test_time_slot= round($test_time_slot);
      	// echo "<pre>";print_r($_POST);echo "<br>";exit;
-     	  $nayatel_save_for_later_time=$this->Model_category->work_personality_index_form($test_time_slot);
+     	  $nayatel_save_for_later_time=$this->Model_category->nayatel_save_for_later_time($test_time_slot);
      $nayatel_values_assessment_id=$this->Model_category->save_for_later();
       redirect(base_url().'login/dashboard');
 		    exit;
@@ -233,10 +235,10 @@ public function save_for_later(){
    //$dimensions_name=$this->input->post(dimensions_name);
    echo "<pre>";print_r($checkbox);echo "<br>";
      echo "<pre>";print_r($dimensions_name);echo "<br>";exit;
-
+   
    if(($this->uri->segment(3)!=0)){
 	$data['dashboard_data']=$this->uri->segment(3);
-
+	
 }
 else{
 	$data['dashboard_data']=$this->session->userdata();
@@ -249,41 +251,41 @@ $data['setting'] = $this->Model_common->all_setting();
 
 	$error = '';
 	$success = '';
-
-
-
-
+	
+	 
+	 
+	     
 	     $email=$_POST['email'];
 	$checkbox[] = $this->input->post('checkbox[]');
 	$dimensions_name = $this->input->post('dimensions_name[]');
 	$date_created = date("Y-m-d H:i:s");
 	$form_data = array(
 				'checkbox'    => $_POST['checkbox'],
-
-
-
-
+				
+             
+			
+				
 			);
 		//	echo "<pre>";print_r($form_data);exit;
 			 $nayatel_values_assessment_id=$this->Model_category->save_for_later($form_data);
 		    exit;
-
-
-
-
+			
+	     
+	 
+    
 }
 
 public function nayatel_value_statements_data(){
     	//echo "<pre>";print_r($_POST);exit;
   	$form_data = array(
 				'checkbox'    => $_POST['checkbox'],
-
-
+			
+				
 			);
    $questions_score_id=$this->Model_category->add_nayatel_value_statements_data($form_data);
   return  redirect(base_url().'login/dashboard');
 		    exit;
-
+		
 //echo "<pre>";print_r($_POST);exit;
 
 //   $checkbox[] = $this->input->post('checkbox');
@@ -292,7 +294,7 @@ public function nayatel_value_statements_data(){
 
 if(($this->uri->segment(3)!=0)){
 	$data['dashboard_data']=$this->uri->segment(3);
-
+	
 }
 else{
 	$data['dashboard_data']=$this->session->userdata();
@@ -312,98 +314,98 @@ else{
 	//echo "<pre>";print_r($email);exit;
         if(isset($_POST['checkbox'])) {
 
-
+		
 	//echo "hghhh";exit;
 		$this->form_validation->set_rules('checkbox[0]', 'Question 1', 'trim|required');
 		$this->form_validation->set_rules('checkbox[1]', 'Question 2', 'trim|required');
 		$this->form_validation->set_rules('checkbox[2]', 'Question 3', 'trim|required');
 		$this->form_validation->set_rules('checkbox[3]', 'Question 4', 'trim|required');
 		$this->form_validation->set_rules('checkbox[4]', 'Question 5', 'trim|required');
-
-
-
+		
+		
+		
 		$this->form_validation->set_rules('checkbox[5]', 'Question 6', 'trim|required');
 		$this->form_validation->set_rules('checkbox[6]', 'Question 7', 'trim|required');
 		$this->form_validation->set_rules('checkbox[7]', 'Question 8', 'trim|required');
 		$this->form_validation->set_rules('checkbox[8]', 'Question 9', 'trim|required');
 		$this->form_validation->set_rules('checkbox[9]', 'Question 10', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[10]', 'Question 11', 'trim|required');
 		$this->form_validation->set_rules('checkbox[11]', 'Question 12', 'trim|required');
 		$this->form_validation->set_rules('checkbox[12]', 'Question 13', 'trim|required');
 		$this->form_validation->set_rules('checkbox[13]', 'Question 14', 'trim|required');
 		$this->form_validation->set_rules('checkbox[14]', 'Question 15', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[15]', 'Question 16', 'trim|required');
 		$this->form_validation->set_rules('checkbox[16]', 'Question 17', 'trim|required');
 		$this->form_validation->set_rules('checkbox[17]', 'Question 18', 'trim|required');
 		$this->form_validation->set_rules('checkbox[18]', 'Question 19', 'trim|required');
 		$this->form_validation->set_rules('checkbox[19]', 'Question 20', 'trim|required');
+		
 
-
-
+		
 		$this->form_validation->set_rules('checkbox[20]', 'Question 21', 'trim|required');
 		$this->form_validation->set_rules('checkbox[21]', 'Question 22', 'trim|required');
 		$this->form_validation->set_rules('checkbox[22]', 'Question 23', 'trim|required');
 		$this->form_validation->set_rules('checkbox[23]', 'Question 24', 'trim|required');
 		$this->form_validation->set_rules('checkbox[24]', 'Question 25', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[25]', 'Question 26', 'trim|required');
 		$this->form_validation->set_rules('checkbox[26]', 'Question 27', 'trim|required');
 		$this->form_validation->set_rules('checkbox[27]', 'Question 28', 'trim|required');
 		$this->form_validation->set_rules('checkbox[28]', 'Question 29', 'trim|required');
 		$this->form_validation->set_rules('checkbox[29]', 'Question 30', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[30]', 'Question 31', 'trim|required');
 		$this->form_validation->set_rules('checkbox[31]', 'Question32', 'trim|required');
 		$this->form_validation->set_rules('checkbox[32]', 'Question 33', 'trim|required');
 		$this->form_validation->set_rules('checkbox[33]', 'Question 34', 'trim|required');
 		$this->form_validation->set_rules('checkbox[34]', 'Question 35', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[35]', 'Question 36', 'trim|required');
 		$this->form_validation->set_rules('checkbox[36]', 'Question 37', 'trim|required');
 		$this->form_validation->set_rules('checkbox[37]', 'Question 38', 'trim|required');
 		$this->form_validation->set_rules('checkbox[38]', 'Question 39', 'trim|required');
 		$this->form_validation->set_rules('checkbox[39]', 'Question 40', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[40]', 'Question 41', 'trim|required');
 		$this->form_validation->set_rules('checkbox[41]', 'Question 42', 'trim|required');
 		$this->form_validation->set_rules('checkbox[42]', 'Question 43', 'trim|required');
 		$this->form_validation->set_rules('checkbox[43]', 'Question 44', 'trim|required');
 		$this->form_validation->set_rules('checkbox[44]', 'Question 45', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[45]', 'Question 46', 'trim|required');
 		$this->form_validation->set_rules('checkbox[46]', 'Question 47', 'trim|required');
 		$this->form_validation->set_rules('checkbox[47]', 'Question 48', 'trim|required');
 		$this->form_validation->set_rules('checkbox[48]', 'Question 49', 'trim|required');
 		$this->form_validation->set_rules('checkbox[49]', 'Question 50', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[50]', 'Question 51', 'trim|required');
 		$this->form_validation->set_rules('checkbox[51]', 'Question 52', 'trim|required');
 		$this->form_validation->set_rules('checkbox[52]', 'Question 53', 'trim|required');
 		$this->form_validation->set_rules('checkbox[53]', 'Question 54', 'trim|required');
 		$this->form_validation->set_rules('checkbox[54]', 'Question 55', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[55]', 'Question 56', 'trim|required');
 		$this->form_validation->set_rules('checkbox[56]', 'Question 57', 'trim|required');
 		$this->form_validation->set_rules('checkbox[57]', 'Question 58', 'trim|required');
 		$this->form_validation->set_rules('checkbox[58]', 'Question 59', 'trim|required');
 		$this->form_validation->set_rules('checkbox[59]', 'Question 60', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[60]', 'Question61', 'trim|required');
 		$this->form_validation->set_rules('checkbox[61]', 'Question 62', 'trim|required');
 		$this->form_validation->set_rules('checkbox[62]', 'Question 63', 'trim|required');
 		$this->form_validation->set_rules('checkbox[63]', 'Question 64', 'trim|required');
 		$this->form_validation->set_rules('checkbox[64]', 'Question 65', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[65]', 'Question 66', 'trim|required');
 		$this->form_validation->set_rules('checkbox[66]', 'Question 67', 'trim|required');
 		$this->form_validation->set_rules('checkbox[67]', 'Question 68', 'trim|required');
 		$this->form_validation->set_rules('checkbox[68]', 'Question 69', 'trim|required');
 		$this->form_validation->set_rules('checkbox[69]', 'Question 70', 'trim|required');
-
-
-
+		
+		
+	
 	//	$email=$_POST['email'];
 		if($this->form_validation->run() == FALSE) {
 				$valid = 0;
@@ -416,69 +418,69 @@ else{
             else{
                 	//$valid = 1;
             }
-
-
-	if($valid == 1)
+		
+	
+	if($valid == 1) 
 		{
-
+			
 			$checkbox[] = $this->input->post('checkbox[]');
 	        //echo "<pre>";print_r($checkbox);exit;
-
+			
 			$form_data = array(
 				'checkbox'    => $_POST['checkbox'],
-
-
+			
+				
 			);
 			//echo "<pre>";print_r($form_data);exit;
 		    $questions_score_id=$this->Model_category->add_nayatel_value_statements_data($form_data);
 		    exit;
 		  // $this->load->view('dashboard-new');exit;
-		  //add_event_ajax();exit;
+		  //add_event_ajax();exit;	
 		  // echo "<pre>";print_r("Success added,redirecting to the main page.");exit;
 // 			$questions_score = $this->Model_category->get_last_inserted_record($questions_score_id);
-
+			
 // 			$test_score= $questions_score['score'];
 // 			$categories_id=$questions_score['categories_id'];
-
+	
 // 			 //echo "<pre>";print_r($test_score);echo "<br>";exit;
 // 			// echo "<pre>";print_r($categories_id);exit;
 // 			$data['description'] = $this->Model_category->get_relative_score($test_score,$categories_id);
 // 			//echo "<pre>";print_r($test_score);exit;
 // 			// $data['description']=$questions_score['name'];
 // 			 //echo "<pre>";print_r($data['description']);exit;
-
+	
 // 			if($test_score >=0 && $test_score <=30)
 // 			{
-
+	
 // 				$data['grade']='D';
 // 			}
 // 			else if($test_score >=31 && $test_score <=50)
 // 			{
-
+	
 // 				$data['grade']='C';
 // 			}
-
+	
 // 			else if($test_score >=51 && $test_score <=70)
 // 			{
-
+	
 // 				$data['grade']='B';
 // 			}
-
+	
 // 			else if($test_score >=71 && $test_score <=100)
 // 			{
-
+	
 // 				$data['grade']='A';
 // 			}
 			//echo "<pre>";print_r($data['grade']);exit;
-
+		
 			$success = 'Nayatel Value Statements are added successfully!';
 			$this->session->set_flashdata('success',$success);
 			$data['setting'] = $this->Model_common->all_setting();
 			$data['sliders'] = $this->Model_common->all_slider('login');
 			//$this->load->view('view_header',$data);
 			//$this->load->view('view_description',$data);
-
-
+			
+		
 				$data['categories'] = $this->Model_category->get_categories();
 				$data['nayatel_record'] = $this->Model_category->check_record_nayatel($email);
 				$data['work_record'] = $this->Model_category->check_record_work_personality_index($email);
@@ -488,37 +490,37 @@ else{
 	            redirect(base_url().'login/dashboard');
 
 				//$this->load->view('dashboard-new',$data);
-
+				
 // 			$data['categories'] = $this->Model_category->get_categories();
-
+		
 // 				$data['dashboard_data']=$this->session->userdata();
 // 				redirect(base_url().'login/personal_values_assessment',$data);
 				//$this->load->view('dashboard',$data);
-
-
+	
+			
 			//$this->load->view('view_footer',$data);
 		//	redirect(base_url().'login/personal_values_assessment',$data);
 			//echo "<pre>";print_r($data['grade']);exit;
-
-
-		}
+	
+		   
+		} 
 		else
 		{
 			//echo "2";exit;
 			$this->session->set_flashdata('error',$error);
 			redirect(base_url().'login/nayatel_value_statements_error');
 		}
-
-	} else {
-
+		
+	} else {    
+		
 	//	echo "3";exit;
-
+	
 		$this->load->view('admin/view_header',$data);
 		//	redirect(base_url().'login/dashboard');
 		$this->load->view('nayatel_value_statements',$data);
 		$this->load->view('admin/view_footer');
 	}
-
+	
 
 }
 // 4
@@ -534,15 +536,15 @@ public function personality_assessment_questions(){
 	$name= $data['personality_assessment_questions'];
 	if(($this->uri->segment(3)!=0)){
 		$data['dashboard_data']=$this->uri->segment(3);
-
+		
 	}
 	else{
 		$data['dashboard_data']=$this->session->userdata();
 	}
-
-
+	
+	
         $data['categories'] = $this->Model_category->get_categories();
-
+        
         $data['dashboard_data']=$this->session->userdata();
         $this->load->view('dashboard_test',$data);
 	$this->load->view('admin/employee_view_header',$data);
@@ -555,23 +557,23 @@ public function personality_assessment_questions_data(){
 
 	$error = '';
 	$success = '';
-
+	
 	if(isset($data['setting'])) {
-
+	
 		$valid = 1;
-
+	
 		$this->form_validation->set_rules('checkbox[]', 'Please select one value', 'trim|required');
-
-
+		
+		
 		$email=$_POST['email'];
-
-
-		if($valid == 1)
+		
+	
+		if($valid == 1) 
 		{
-
+			
 			$checkbox[] = $this->input->post('checkbox[]');
 	//echo "<pre>";print_r($checkbox);exit;
-
+			
 			$form_data = array(
 				'checkbox'    => $_POST['checkbox'],
 				'categories_id'    => '4',
@@ -580,37 +582,37 @@ public function personality_assessment_questions_data(){
 		   $questions_score_id= $this->Model_category->add_personality_assessment_questions_data($form_data,$email);
 		  // echo "<pre>";print_r($questions_score_id);exit;
 			$questions_score = $this->Model_category->get_last_inserted_record($questions_score_id);
-
+			
 			$test_score= $questions_score['score'];
 			$categories_id=$questions_score['categories_id'];
-
+	
 			 //echo "<pre>";print_r($test_score);echo "<br>";exit;
 			// echo "<pre>";print_r($categories_id);exit;
 			$data['description'] = $this->Model_category->get_relative_score($test_score,$categories_id);
 			//echo "<pre>";print_r($test_score);exit;
 			// $data['description']=$questions_score['name'];
 			 //echo "<pre>";print_r($data['description']);exit;
-
+	
 			if($test_score >=0 && $test_score <=30)
 			{
-
+	
 				$data['grade']='D';
 			}
 			else if($test_score >=31 && $test_score <=50)
 			{
-
+	
 				$data['grade']='C';
 			}
-
+	
 			else if($test_score >=51 && $test_score <=70)
 			{
-
+	
 				$data['grade']='B';
 			}
-
+	
 			else if($test_score >=71 && $test_score <=100)
 			{
-
+	
 				$data['grade']='A';
 			}
 			//echo "<pre>";print_r($data['grade']);exit;
@@ -620,7 +622,7 @@ public function personality_assessment_questions_data(){
 			$data['sliders'] = $this->Model_common->all_slider('login');
 			//$this->load->view('view_header',$data);
 			//$this->load->view('view_description',$data);
-
+				
 				$data['categories'] = $this->Model_category->get_categories();
 				$data['nayatel_record'] = $this->Model_category->check_record_nayatel($email);
 				$data['work_record'] = $this->Model_category->check_record_work_personality_index($email);
@@ -629,36 +631,36 @@ public function personality_assessment_questions_data(){
 
 
 					$this->load->view('dashboard-new',$data);
-
+					
 // 			$data['categories'] = $this->Model_category->get_categories();
-
+		
 // 				$data['dashboard_data']=$this->session->userdata();
 // 				redirect(base_url().'login/work_personality_index_form',$data);
 				//$this->load->view('dashboard',$data);
-
-
+	
+			
 			//$this->load->view('view_footer',$data);
 		//	redirect(base_url().'login/work_personality_index_form',$data);
 			//echo "<pre>";print_r($data['grade']);exit;
-
-
-		}
+	
+		   
+		} 
 		else
 		{
 			$this->session->set_flashdata('error',$error);
 			redirect(base_url().'login/personality_assessment_questions');
 		}
-
-	} else {
-
-
-
+		
+	} else {    
+		
+		
+	
 		$this->load->view('admin/view_header',$data);
 		$this->load->view('login/personality_assessment_questions',$data);
 		$this->load->view('admin/view_footer');
 	}
-
-
+	
+	
 }
 
 public function personal_values_assessment(){
@@ -672,28 +674,74 @@ public function personal_values_assessment(){
 	//echo "<pre>";print_r($data['cultural_scan_questions']);exit;
 	if(($this->uri->segment(3)!=0)){
 		$data['dashboard_data']=$this->uri->segment(3);
-
+		
 	}
 	else{
 		$data['dashboard_data']=$this->session->userdata();
 	}
 		$data['dashboard_data']=$this->session->userdata();
 
-	$name= $data['personal_values_assessment'];
+ $email=$data['dashboard_data'];
+    $email=$email['email'];
+    
+    
+   // echo "<pre>";print_r($value['get_all_personal_values_save_for_later']);exit;
+	$value['check_record_personal_values_save_for_later'] = $this->Model_category->check_record_personal_values_save_for_later($email);	    
+	 if(!empty($value['check_record_personal_values_save_for_later']))
+		  
+{
+	$value['get_all_personal_values_save_for_later'] = $this->Model_category->get_all_personal_values_save_for_later($email);
+	
+$value['remaining_test_time_slot'] = $this->Model_category->remaining_test_time_slot_personal_values($email);
+	   //	echo "<pre>";print_r($value['remaining_test_time_slot']);exit;	      
+	
+		  $remaining_test_time_slot=	$value['remaining_test_time_slot'];
+	   	if(empty($remaining_test_time_slot)){
+	   	    
+	   	 $value['remaining_test_time_slot'] = $this->Model_category->personal_test_time_slot($categories_id);
+	   	}
+	   	else{
+	   	   $value['remaining_test_time_slot'] = $this->Model_category->remaining_test_time_slot_personal_values($email); 
+	   	}
+		          	//echo "<pre>";print_r($value['remaining_test_time_slot']);exit;  
+			$value['count'] = $this->Model_category->count_active_records($categories_id);
+			$this->load->view('dashboard_test',$data);
+	$this->load->view('admin/employee_view_header',$data);
+	$this->load->view('personal_values_save_for_later',$value);
+	$this->load->view('admin/employee_view_footer',$data);
+		
+}		
+else{
+    
+    $data['time'] = $this->Model_category->personal_test_time_slot($categories_id);
+    
+    	$name= $data['personal_values_assessment'];
+			$data['count'] = $this->Model_category->count_active_records($categories_id);
+    	// $data['personal_values_save_for_later'] = $this->Model_category->add_personal_values_save_for_later_questions($name);
+	
+    
 
+//echo "<pre>";print_r($name);exit;
 
-                $data['categories'] = $this->Model_category->get_categories();
-
-                $data['dashboard_data']=$this->session->userdata();
-        $this->load->view('dashboard_test',$data);
+$data['categories'] = $this->Model_category->get_categories();
+$data['dashboard_data']=$this->session->userdata();
+$this->load->view('dashboard_test',$data);
 
 	$this->load->view('admin/employee_view_header',$data);
 	$this->load->view('personal_values_assessment',$data);
 	$this->load->view('admin/employee_view_footer',$data);
 }
+}
+
+public function personal_save_for_later(){
+    
+    echo "<pre>";print_r($_POST);exit;
+    
+}
+
 
 public function personal_values_assessment_questions_data(){
-
+echo "<pre>";print_r($_POST);exit;
 //$checkbox1=count($this->input->post(($checkbox)));
 
 // 		if(!empty($_POST['checkbox'])) {
@@ -716,24 +764,24 @@ if(isset($data['setting'])) {
 	$this->form_validation->set_rules('checkbox[]', 'Please select one value', 'trim|required');
 	$email=$_POST['email'];
 	//echo "<pre>";print_r($email);exit;
+	
+	
 
-
-
-	if($valid == 1)
+	if($valid == 1) 
 	{
-
+		
 		$checkbox[] = $this->input->post('checkbox[]');
 //echo "<pre>";print_r($checkbox);exit;
-
+		
 		$form_data = array(
 			'checkbox'    => $_POST['checkbox'],
-
+			
 		);
 		//echo "<pre>";print_r($form_data);exit;
 	   $questions_score_id= $this->Model_category->add_personal_values_assessment_questions_data($form_data,$email);
 	  // echo "<pre>";print_r($questions_score_id);exit;
 		$questions_score = $this->Model_category->get_last_inserted_record($questions_score_id);
-
+		
 		$test_score= $questions_score['score'];
 		$categories_id=$questions_score['categories_id'];
 
@@ -767,15 +815,15 @@ if(isset($data['setting'])) {
 			$data['grade']='A';
 		}
 		//echo "<pre>";print_r($data['grade']);exit;
-		$success = 'Personal Values Assessment are added successfully!';
+	//	$success = 'Personal Values Assessment are added successfully!';
 		$this->session->set_flashdata('success',$success);
 		$data['setting'] = $this->Model_common->all_setting();
 		$data['sliders'] = $this->Model_common->all_slider('login');
 		//$this->load->view('view_header',$data);
 		//$this->load->view('view_description',$data);
-
+			
 			//echo "<pre>";print_r($email);exit;
-
+			
 				$data['categories'] = $this->Model_category->get_categories();
 				$data['nayatel_record'] = $this->Model_category->check_record_nayatel($email);
 				$data['work_record'] = $this->Model_category->check_record_work_personality_index($email);
@@ -784,29 +832,29 @@ if(isset($data['setting'])) {
 
 
 					$this->load->view('dashboard-new',$data);
-
+		
 // 		$data['categories'] = $this->Model_category->get_categories();
-
+	
 // 			$data['dashboard_data']=$this->session->userdata();
 // 			redirect(base_url().'login/personality_assessment_questions',$data);
 			//$this->load->view('dashboard',$data);
 
-
+		
 		//$this->load->view('view_footer',$data);
 	//	redirect(base_url().'login/description',$data);
 		//echo "<pre>";print_r($data['grade']);exit;
 
-
-	}
+	   
+	} 
 	else
 	{
 		$this->session->set_flashdata('error',$error);
 		redirect(base_url().'login/personal_values_assessment');
 	}
-
-} else {
-
-
+	
+} else {    
+	
+	
 
 	$this->load->view('admin/view_header',$data);
 	$this->load->view('login/personal_values_assessment',$data);
@@ -832,14 +880,14 @@ public function cultural_scan_questions_view(){
 
         if(($this->uri->segment(3)!=0)){
             $data['dashboard_data']=$this->uri->segment(3);
-
+            
         }
         else{
             $data['dashboard_data']=$this->session->userdata();
         }
-
+        
         $data['categories'] = $this->Model_category->get_categories();
-
+        
         $data['dashboard_data']=$this->session->userdata();
         $this->load->view('dashboard_test',$data);
 
@@ -868,32 +916,32 @@ if(isset($data['setting'])) {
 	$valid = 1;
 
 	$this->form_validation->set_rules('checkbox[]', 'Please select one value', 'trim|required');
+	
+	
+	
+	
 
-
-
-
-
-	if($valid == 1)
+	if($valid == 1) 
 	{
-
+		
 		$checkbox[] = $this->input->post('checkbox[]');
-
+		
 		$form_data = array(
 			'checkbox'    => $_POST['checkbox'],
-
-
+			
+			
 		);
-
+		
 	   $questions_score_id= $this->Model_category->add_cultural_scan_questions($form_data,$email);
 
 		$questions_score = $this->Model_category->get_last_inserted_record($questions_score_id);
-
+		
 		$test_score= $questions_score['score'];
 		$categories_id=$questions_score['categories_id'];
 
-
+		
 		$data['description'] = $this->Model_category->get_relative_score($test_score,$categories_id);
-
+		
 
 		if($test_score >=0 && $test_score <=30)
 		{
@@ -917,17 +965,17 @@ if(isset($data['setting'])) {
 
 			$data['grade']='A';
 		}
-
+	
 		$success = 'Cultural Scan Values are added successfully!';
 		$this->session->set_flashdata('success',$success);
 		$data['setting'] = $this->Model_common->all_setting();
 		$data['sliders'] = $this->Model_common->all_slider('login');
-
+	
 		$data['categories'] = $this->Model_category->get_categories();
-
+	
 		//	$data['dashboard_data']=$this->session->userdata();
-
-
+			
+		
 				$data['categories'] = $this->Model_category->get_categories();
 				$data['nayatel_record'] = $this->Model_category->check_record_nayatel($email);
 				$data['work_record'] = $this->Model_category->check_record_work_personality_index($email);
@@ -936,23 +984,23 @@ if(isset($data['setting'])) {
 
 
 					$this->load->view('dashboard-new',$data);
-
+			
 		//	redirect(base_url().'login/nayatel_value_statements',$data);
 
+		
+		
 
-
-
-
-	}
+	   
+	} 
 	else
 	{
 		$this->session->set_flashdata('error',$error);
 		redirect(base_url().'login/cultural_scan_questions_view');
 	}
-
-} else {
-
-
+	
+} else {    
+	
+	
 
 	$this->load->view('admin/view_header',$data);
 	$this->load->view('login/cultural_scan_questions_view',$data);
@@ -968,80 +1016,80 @@ public function work_personality_index_form(){
 			$categories_id=5;
 			$data['setting'] = $this->Model_common->all_setting();
 			//$data['sliders'] = $this->Model_common->all_slider('login');
-
+		
 			if(($this->uri->segment(3)!=0)){
 				$data['dashboard_data']=$this->uri->segment(3);
-
+				
 			}
 			else{
 				$data['dashboard_data']=$this->session->userdata();
 			}
-
+			
 			$data['categories'] = $this->Model_category->get_categories();
-
+			
 		  $data['dashboard_data']=$this->session->userdata();
-
-
+		            
+	 
 	 $email=$data['dashboard_data'];
     $email=$email['email'];
     $value['get_all_work_personality_save_for_later'] = $this->Model_category->get_all_work_personality_save_for_later($email);
-	$value['check_record_work_personality_save_for_later'] = $this->Model_category->check_record_work_personality_save_for_later($email);
+	$value['check_record_work_personality_save_for_later'] = $this->Model_category->check_record_work_personality_save_for_later($email);	    
 		  if(!empty($value['check_record_work_personality_save_for_later']))
-
+		  
 {
-
+		      
 		$value['remaining_test_time_slot'] = $this->Model_category->remaining_test_time_slot_work_personality($email);
-	   //	echo "<pre>";print_r($value['remaining_test_time_slot']);exit;
-
+	   //	echo "<pre>";print_r($value['remaining_test_time_slot']);exit;	      
+	
 		  $remaining_test_time_slot=	$value['remaining_test_time_slot'];
 	   	if(empty($remaining_test_time_slot)){
-
+	   	    
 	   	 $value['remaining_test_time_slots'] = $this->Model_category->work_test_time_slot($categories_id);
 	   	}
 	   	else{
-	   	   $value['remaining_test_time_slots'] = $this->Model_category->remaining_test_time_slot_work_personality($email);
+	   	   $value['remaining_test_time_slots'] = $this->Model_category->remaining_test_time_slot_work_personality($email); 
 	   	}
-
+		            
 			$value['count'] = $this->Model_category->count_active_records($categories_id);
-
+		
 		 //echo "above";exit;
 	    $this->load->view('dashboard_test',$data);
 	$this->load->view('admin/employee_view_header',$data);
 
 	$this->load->view('work_personality_index_save_for_later',$value);
-
+		
 	$this->load->view('admin/employee_view_footer',$data);
 }
 	else{
 	      //echo "down";exit;
    $data['time'] = $this->Model_category->work_test_time_slot($categories_id);
-
+   
    	$data['get_all_work_personality_save_for_later'] = $this->Model_category->get_all_Work_personality_index($categories_id);
 			$data['count'] = $this->Model_category->count_active_records($categories_id);
-
+	
 		//	echo "<pre>";print_r($data['time']);exit;
-
-
-
+		
+   
+  
    //insert for save later
     	$name= $data['get_all_work_personality_save_for_later'];
     	 $data['work_personality_save_for_later'] = $this->Model_category->work_personality_save_for_later($name);
     //	echo "<pre>";print_r($data['nayatel_save_for_later']);exit;
-
+   
    //	echo "<pre>";print_r($data['time']);exit;
 	    	$this->load->view('dashboard_test',$data);
 			$this->load->view('admin/employee_view_header',$data);
 			$this->load->view('work_personality_index_view_form',$data);
 			$this->load->view('admin/employee_view_footer',$data);
-	}
-
+	}		
+	
 		}
 
 	public function work_personality_index_form_data(){
-	  // echo "<pre>";print_r($_POST);exit;
+	   //echo "<pre>";print_r($_POST);exit;
 	    if(($this->uri->segment(3)!=0)){
 	$data['dashboard_data']=$this->uri->segment(3);
-
+	
 }
 else{
 	$data['dashboard_data']=$this->session->userdata();
@@ -1053,12 +1101,12 @@ else{
 				$dimensions_name[] = $this->input->post('dimensions_name[]');
 				$sub_categories_names[] = $this->input->post('sub_categories_names[]');
 		//echo "<pre>";print_r($email);exit;
-
+		        
 		        $form_data = array(
 					'checkbox'    => $_POST['checkbox'],
 					'dimensions_name'    => $_POST['dimensions_name'],
 					'sub_categories_names'    => $_POST['sub_categories_names'],
-
+					
 				);
 				//echo "<pre>";print_r($form_data);exit;
 			   $questions_score_id= $this->Model_category->add_work_form($form_data,$email);
@@ -1087,135 +1135,135 @@ else{
 		$this->form_validation->set_rules('checkbox[2]', 'Question 3', 'trim|required');
 		$this->form_validation->set_rules('checkbox[3]', 'Question 4', 'trim|required');
 		$this->form_validation->set_rules('checkbox[4]', 'Question 5', 'trim|required');
-
-
-
+		
+		
+		
 		$this->form_validation->set_rules('checkbox[5]', 'Question 6', 'trim|required');
 		$this->form_validation->set_rules('checkbox[6]', 'Question 7', 'trim|required');
 		$this->form_validation->set_rules('checkbox[7]', 'Question 8', 'trim|required');
 		$this->form_validation->set_rules('checkbox[8]', 'Question 9', 'trim|required');
 		$this->form_validation->set_rules('checkbox[9]', 'Question 10', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[10]', 'Question 11', 'trim|required');
 		$this->form_validation->set_rules('checkbox[11]', 'Question 12', 'trim|required');
 		$this->form_validation->set_rules('checkbox[12]', 'Question 13', 'trim|required');
 		$this->form_validation->set_rules('checkbox[13]', 'Question 14', 'trim|required');
 		$this->form_validation->set_rules('checkbox[14]', 'Question 15', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[15]', 'Question 16', 'trim|required');
 		$this->form_validation->set_rules('checkbox[16]', 'Question 17', 'trim|required');
 		$this->form_validation->set_rules('checkbox[17]', 'Question 18', 'trim|required');
 		$this->form_validation->set_rules('checkbox[18]', 'Question 19', 'trim|required');
 		$this->form_validation->set_rules('checkbox[19]', 'Question 20', 'trim|required');
+		
 
-
-
+		
 		$this->form_validation->set_rules('checkbox[20]', 'Question 21', 'trim|required');
 		$this->form_validation->set_rules('checkbox[21]', 'Question 22', 'trim|required');
 		$this->form_validation->set_rules('checkbox[22]', 'Question 23', 'trim|required');
 		$this->form_validation->set_rules('checkbox[23]', 'Question 24', 'trim|required');
 		$this->form_validation->set_rules('checkbox[24]', 'Question 25', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[25]', 'Question 26', 'trim|required');
 		$this->form_validation->set_rules('checkbox[26]', 'Question 27', 'trim|required');
 		$this->form_validation->set_rules('checkbox[27]', 'Question 28', 'trim|required');
 		$this->form_validation->set_rules('checkbox[28]', 'Question 29', 'trim|required');
 		$this->form_validation->set_rules('checkbox[29]', 'Question 30', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[30]', 'Question 31', 'trim|required');
 		$this->form_validation->set_rules('checkbox[31]', 'Question32', 'trim|required');
 		$this->form_validation->set_rules('checkbox[32]', 'Question 33', 'trim|required');
 		$this->form_validation->set_rules('checkbox[33]', 'Question 34', 'trim|required');
 		$this->form_validation->set_rules('checkbox[34]', 'Question 35', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[35]', 'Question 36', 'trim|required');
 		$this->form_validation->set_rules('checkbox[36]', 'Question 37', 'trim|required');
 		$this->form_validation->set_rules('checkbox[37]', 'Question 38', 'trim|required');
 		$this->form_validation->set_rules('checkbox[38]', 'Question 39', 'trim|required');
 		$this->form_validation->set_rules('checkbox[39]', 'Question 40', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[40]', 'Question 41', 'trim|required');
 		$this->form_validation->set_rules('checkbox[41]', 'Question 42', 'trim|required');
 		$this->form_validation->set_rules('checkbox[42]', 'Question 43', 'trim|required');
 		$this->form_validation->set_rules('checkbox[43]', 'Question 44', 'trim|required');
 		$this->form_validation->set_rules('checkbox[44]', 'Question 45', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[45]', 'Question 46', 'trim|required');
 		$this->form_validation->set_rules('checkbox[46]', 'Question 47', 'trim|required');
 		$this->form_validation->set_rules('checkbox[47]', 'Question 48', 'trim|required');
 		$this->form_validation->set_rules('checkbox[48]', 'Question 49', 'trim|required');
 		$this->form_validation->set_rules('checkbox[49]', 'Question 50', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[50]', 'Question 51', 'trim|required');
 		$this->form_validation->set_rules('checkbox[51]', 'Question 52', 'trim|required');
 		$this->form_validation->set_rules('checkbox[52]', 'Question 53', 'trim|required');
 		$this->form_validation->set_rules('checkbox[53]', 'Question 54', 'trim|required');
 		$this->form_validation->set_rules('checkbox[54]', 'Question 55', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[55]', 'Question 56', 'trim|required');
 		$this->form_validation->set_rules('checkbox[56]', 'Question 57', 'trim|required');
 		$this->form_validation->set_rules('checkbox[57]', 'Question 58', 'trim|required');
 		$this->form_validation->set_rules('checkbox[58]', 'Question 59', 'trim|required');
 		$this->form_validation->set_rules('checkbox[59]', 'Question 60', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[60]', 'Question61', 'trim|required');
 		$this->form_validation->set_rules('checkbox[61]', 'Question 62', 'trim|required');
 		$this->form_validation->set_rules('checkbox[62]', 'Question 63', 'trim|required');
 		$this->form_validation->set_rules('checkbox[63]', 'Question 64', 'trim|required');
 		$this->form_validation->set_rules('checkbox[64]', 'Question 65', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[65]', 'Question 66', 'trim|required');
 		$this->form_validation->set_rules('checkbox[66]', 'Question 67', 'trim|required');
 		$this->form_validation->set_rules('checkbox[67]', 'Question 68', 'trim|required');
 		$this->form_validation->set_rules('checkbox[68]', 'Question 69', 'trim|required');
 		$this->form_validation->set_rules('checkbox[69]', 'Question 70', 'trim|required');
-
-
-
+		
+		
+		
 		$this->form_validation->set_rules('checkbox[70]', 'Question 71', 'trim|required');
 		$this->form_validation->set_rules('checkbox[71]', 'Question 72', 'trim|required');
 		$this->form_validation->set_rules('checkbox[72]', 'Question 73', 'trim|required');
 		$this->form_validation->set_rules('checkbox[73]', 'Question 74', 'trim|required');
 		$this->form_validation->set_rules('checkbox[74]', 'Question 75', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[75]', 'Question 76', 'trim|required');
 		$this->form_validation->set_rules('checkbox[76]', 'Question 77', 'trim|required');
 		$this->form_validation->set_rules('checkbox[77]', 'Question 78', 'trim|required');
 		$this->form_validation->set_rules('checkbox[78]', 'Question 79', 'trim|required');
 		$this->form_validation->set_rules('checkbox[79]', 'Question 80', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[80]', 'Question 81', 'trim|required');
 		$this->form_validation->set_rules('checkbox[81]', 'Question 82', 'trim|required');
 		$this->form_validation->set_rules('checkbox[82]', 'Question 83', 'trim|required');
 		$this->form_validation->set_rules('checkbox[83]', 'Question 84', 'trim|required');
 		$this->form_validation->set_rules('checkbox[84]', 'Question 85', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[85]', 'Question 86', 'trim|required');
 		$this->form_validation->set_rules('checkbox[86]', 'Question 87', 'trim|required');
 		$this->form_validation->set_rules('checkbox[87]', 'Question 88', 'trim|required');
 		$this->form_validation->set_rules('checkbox[88]', 'Question 89', 'trim|required');
 		$this->form_validation->set_rules('checkbox[89]', 'Question 90', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[90]', 'Question 91', 'trim|required');
 		$this->form_validation->set_rules('checkbox[91]', 'Question 92', 'trim|required');
 		$this->form_validation->set_rules('checkbox[92]', 'Question 93', 'trim|required');
 		$this->form_validation->set_rules('checkbox[93]', 'Question 94', 'trim|required');
 		$this->form_validation->set_rules('checkbox[94]', 'Question 95', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[95]', 'Question 96', 'trim|required');
 		$this->form_validation->set_rules('checkbox[96]', 'Question 97', 'trim|required');
 		$this->form_validation->set_rules('checkbox[97]', 'Question 98', 'trim|required');
 		$this->form_validation->set_rules('checkbox[98]', 'Question 99', 'trim|required');
 		$this->form_validation->set_rules('checkbox[99]', 'Question 100', 'trim|required');
-
+		
 		$this->form_validation->set_rules('checkbox[100]', 'Question 101', 'trim|required');
 		$this->form_validation->set_rules('checkbox[101]', 'Question 102', 'trim|required');
 		$this->form_validation->set_rules('checkbox[102]', 'Question 103', 'trim|required');
 		$this->form_validation->set_rules('checkbox[103]', 'Question 104', 'trim|required');
 		$this->form_validation->set_rules('checkbox[104]', 'Question 105', 'trim|required');
-
-
-
+		
+		
+		
 			$email=$_POST['email'];
 			if($this->form_validation->run() == FALSE) {
 				$valid = 0;
@@ -1228,28 +1276,28 @@ else{
             else{
                 	//$valid = 1;
             }
+			
+		    
 
-
-
-		    if($valid == 1)
+		    if($valid == 1) 
 		    {
-
+				
 				$checkbox[] = $this->input->post('checkbox[]');
 				$dimensions_name[] = $this->input->post('dimensions_name[]');
 				$sub_categories_names[] = $this->input->post('sub_categories_names[]');
 		//echo "<pre>";print_r($checkbox);exit;
-
+		        
 		        $form_data = array(
 					'checkbox'    => $_POST['checkbox'],
 					'dimensions_name'    => $_POST['dimensions_name'],
 					'sub_categories_names'    => $_POST['sub_categories_names'],
-
+					
 				);
 				//echo "<pre>";print_r($form_data);exit;
 			   $questions_score_id= $this->Model_category->add_work_form($form_data,$email);
 			   echo "<pre>";print_r($questions_score_id);exit;
 				$questions_score = $this->Model_category->get_last_inserted_record($questions_score_id);
-
+				
 				$test_score= $questions_score['score'];
 				$categories_id=$questions_score['categories_id'];
 
@@ -1289,8 +1337,8 @@ else{
 				$data['sliders'] = $this->Model_common->all_slider('login');
 				//$this->load->view('view_header',$data);
 				//$this->load->view('view_description',$data);
-
-
+				
+					
 				$data['categories'] = $this->Model_category->get_categories();
 				$data['nayatel_record'] = $this->Model_category->check_record_nayatel($email);
 				$data['work_record'] = $this->Model_category->check_record_work_personality_index($email);
@@ -1299,29 +1347,29 @@ else{
 
 
 					$this->load->view('dashboard-new',$data);
-
+				
 				// $data['categories'] = $this->Model_category->get_categories();
-
+			
 				// 	$data['dashboard_data']=$this->session->userdata();
-
+					
 				// 	$this->load->view('dashboard-new',$data);
 	//redirect(base_url().'dashboard');
-
+				
 				//$this->load->view('view_footer',$data);
 			//	redirect(base_url().'login/description',$data);
 				//echo "<pre>";print_r($data['grade']);exit;
 
-
-		    }
+		       
+		    } 
 		    else
 		    {
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'login/work_personality_index_form');
 		    }
-
-        } else {
-
-
+            
+        } else {    
+			
+			
 
             $this->load->view('admin/view_header',$data);
 			$this->load->view('login/work_personality_index_form',$data);
@@ -1338,18 +1386,18 @@ public function description($questions_score= ''){
 // {
 //   echo 'name: ' . $item['score'];
 // }
-
+		
 // 		if(is_array($questions_score) && count($questions_score) > 0){
 // 			if(isset($questions_score)) {
 // 				$score = $questions_score->score;
 // 				echo "<pre>";print_r($questions_score);exit;
 // 			}
 
-
+			
 // 		 } else {
 // 			echo "No result found";
 // 		 }
-
+	   
 
 		//echo "<pre>";print_r($questions_score);exit;
 		$last_record=30;
@@ -1369,12 +1417,12 @@ public function description($questions_score= ''){
 		// 	$data['score_value']='C';
 		// }
 		// if($score >=21 && $score <=40){
-
+		
 		// 	$data['score_value']='B';
 		// }
-
+		
 		// if($score >=41 && $score <=60){
-
+		
 		// 	$data['score_value']='A';
 		// }
 		//echo "<pre>";print_r($data['value']);exit;
@@ -1388,7 +1436,7 @@ public function description($questions_score= ''){
 }
 
 public function dashboard_success(){
-
+   
    $categories_id=2;
 	$data['setting'] = $this->Model_common->all_setting();
 	//$data['sliders'] = $this->Model_common->all_slider('login');
@@ -1399,13 +1447,13 @@ public function dashboard_success(){
 	$name= $data['nayatel_value_statements'];
 if(($this->uri->segment(3)!=0)){
 	$data['dashboard_data']=$this->uri->segment(3);
-
+	
 }
 else{
 	$data['dashboard_data']=$this->session->userdata();
 }
 $data['categories'] = $this->Model_category->get_categories();
-
+			
 $data['dashboard_data']=$this->session->userdata();
 	//$data['dashboard_data']=$this->session->userdata();
 	//echo "<pre>";print_r($data['dashboard_data']);exit;
@@ -1413,14 +1461,14 @@ $data['dashboard_data']=$this->session->userdata();
 	$this->load->view('admin/employee_view_header',$data);
 
 //	$this->load->view('nayatel_value_statements',$data);
-
+		
 	$this->load->view('admin/employee_view_footer',$data);
-
-
+    
+   
     // $data['categories'] = $this->Model_category->get_categories();
     // 	$data['dashboard_data']=$this->session->userdata();
     		//redirect(base_url().'login/dashboard');
-
+    
 }
 
 public function dashboard(){
@@ -1434,7 +1482,7 @@ public function dashboard(){
 				$data['nayatel_record'] = $this->Model_category->check_record_nayatel($email);
 				$data['work_record'] = $this->Model_category->check_record_work_personality_index($email);
 				//echo "<pre>";print_r($data['work_record']);exit;
-
+					
 // 	foreach($categories as $thing) {
 // 			print_r($thing) ;
 // 		 }exit;
@@ -1445,16 +1493,16 @@ public function dashboard(){
 // echo "<pre>";print_r($categories[4]);exit;
 
 // 		print_r($data);
-
+	
 // exit;
 	//echo "<pre>";print_r($data['dashboard_data']);exit;
 	//$name=$values['name'];
 	$this->load->view('dashboard-new',$data);
-
+		
 }
 
 public function data_collection(){
-
+		
 		$email=$this->input->post('email');
 
 		$role_id=$this->input->post('role_id');
@@ -1515,7 +1563,7 @@ public function data_collection(){
 		    //     $error .= '<br>';
 		    // }
 
-		    if($valid == 1)
+		    if($valid == 1) 
 		    {
 				// $next_id = $this->Model_category->get_auto_increment_id();
 				// foreach ($next_id as $row) {
@@ -1525,7 +1573,7 @@ public function data_collection(){
 		        // $final_name = 'category-banner-'.$ai_id.'.'.$ext;
 		        // move_uploaded_file( $path_tmp, './public/uploads/'.$final_name );
 
-		        $value_array = array(
+		        $value_array = array(   
 					'role'=>'3',
 					'name'=>$this->input->post("name"),
 					'gender' =>$this->input->post("gender"),
@@ -1536,8 +1584,8 @@ public function data_collection(){
 					'age'=>$this->input->post("age"),
 					'reporting' =>$this->input->post("reporting"),
 					'email' =>$this->input->post("email"),
-
-
+					
+					
 				);
 				//echo "<pre>";print_r($value_array);exit;
 				$insert_id =$this->Model_user->register('data_collection',$value_array);
@@ -1547,10 +1595,10 @@ public function data_collection(){
     	               );
             	$update_email    = array(
     	                    'email' => $this->input->post("email"),
-    	               );
-
+    	               );               
+    	       
 				$name=$name;
-				$value_array = array(
+				$value_array = array(   
 					'role'=>'3',
 					'name'=>$name,
 					'gender' =>$gender,
@@ -1561,8 +1609,8 @@ public function data_collection(){
 					'age'=>$age,
 					'reporting' =>$reporting,
 					'email' =>$email,
-
-
+					
+					
 				);
 				$this->session->set_userdata($value_array);
 				$data['dashboard_data']=$value_array;
@@ -1573,13 +1621,13 @@ public function data_collection(){
 				// echo "<pre>";print_r($email);
 				// echo "<pre>";print_r($location);exit;
 				//$data['categories'] = $this->Model_category->get_categories();
-
+			
 
 
 				// foreach($categories as $thing) {
 				// 	echo $thing;
 				//  }
-
+				
 					// echo "<pre>";print_r($categories[0]);
 					// echo "<pre>";print_r($categories[1]);
 					// echo "<pre>";print_r($categories[2]);
@@ -1587,36 +1635,36 @@ public function data_collection(){
 					// echo "<pre>";print_r($categories[4]);
 					// exit;
 
-
+				
 				//$categories=$categories->name;
-
+				
 				//$name=$categories['name'];
 				//echo "<pre>";print_r($categories[0]);exit;
 				//$categories=$categories->name;
 				//echo "<pre>";print_r($categories['name']);exit;
 
-
+				
 
 		        $success = 'Data is added successfully!';
 				$this->session->set_flashdata('success',$success);
 				redirect(base_url().'login/dashboard');
 				//$this->load->view('dashboard',$data);
-		    }
+		    } 
 		    else
 		    {
 				$error = 'Kindly enter all the details';
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'login');
 		    }
-
-        } else {
+            
+        } else {            
             $this->load->view('admin/view_header',$data);
 			$this->load->view('login/data_collection',$data);
 			$this->load->view('admin/view_footer');
         }
+		
 
-
-
+		
 //echo "<pre>";print_r($value_array);exit;
 		//$this->Login_content_model->replace('support_confirmation',$value_array);
 
@@ -1631,7 +1679,7 @@ $this->load->view('thankyou');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 
 		$this->load->model('Model_user');
-
+		
 		$data['get_user'] 	 = $this->Model_user->login_form_validate();
 		//echo "<pre>";print_r($data['get_user'] );exit;
 		if(!empty($data['get_user'] )){
@@ -1641,28 +1689,28 @@ $this->load->view('thankyou');
 
 			$value_array	 = $this->Model_user->check_data_collection($email);
 				// echo "<pre>";print_r($get_user);exit;
-
-
-
+			
+   
+			
 		if($value_array){
 
 				foreach($value_array as $row)
 				{
 					$role = $row['role']; // add each user id to the array
-					$name = $row['first_name'];
-					$gender = $row['gender'];
-					$department = $row['department'];
-				//	$tenure = $row['tenure'];
-					$job_title = $row['job_title'];
-					$location= $row['location'];
-					$age= $row['age'];
-					$reporting = $row['reporting'];
-					$email = $row['email'];
+					$name = $row['first_name']; 
+					$gender = $row['gender']; 
+					$department = $row['department']; 
+				//	$tenure = $row['tenure']; 
+					$job_title = $row['job_title']; 
+					$location= $row['location']; 
+					$age= $row['age']; 
+					$reporting = $row['reporting']; 
+					$email = $row['email']; 
 				}
-
-
-			$value_array = array(
-
+	
+	   
+			$value_array = array(   
+			
 				'role'=>$role,
 				'name'=>$name,
 				'gender' =>$gender,
@@ -1673,8 +1721,8 @@ $this->load->view('thankyou');
 				'age'=>$age,
 				'reporting' =>$reporting,
 				'email' =>$email,
-
-
+				
+				
 			);
 			$this->session->set_userdata($value_array);
 				$data['categories'] = $this->Model_category->get_categories();
@@ -1684,17 +1732,17 @@ $this->load->view('thankyou');
 					$data['dashboard_data']=$this->session->userdata();
 					//echo "<pre>";print_r($dashboard_data);exit;
 					//$name=$values['name'];
-
+					
 
 			//	$success = 'Login successfully!';
 			//	$this->session->set_flashdata('success',$success);
 				$value['setting'] = $this->Model_common->all_setting();
 				$value['sliders'] = $this->Model_common->all_slider('login');
-
-
+	
+	
 			//$this->load->view('view_header',$value);
 			$this->load->view('dashboard-new',$data);
-			//$this->load->view('view_footer',$value);
+			//$this->load->view('view_footer',$value);	
 			}
 			else{
 			   // echo "else";exit;
@@ -1710,18 +1758,18 @@ $this->load->view('thankyou');
 		}
 	}
 		else{
-
+			
 			$error = 'Kindly enter email and password!';
 			$this->session->set_flashdata('error',$error);
 				redirect(base_url().'login');
 		}
-
+		
 		//redirect(base_url().'admin/categories');
 //echo "<pre>";print_r($data['get_user'] );exit;
 
 //$this->load->view('view_header',$data);
 
-
+		
 		//$this->load->view('data_collection',$data);
 		//$this->load->view('view_footer',$data);
 
@@ -1729,7 +1777,7 @@ $this->load->view('thankyou');
 
 
 
-
+	
 // 	public function check_login()
 // 	{
 // 		$this->load->library('form_validation');
@@ -1751,7 +1799,7 @@ $this->load->view('thankyou');
 //             $password = $this->input->post('password',true);
 // 			$checkstatus = $this->Model_user->checkstatus($email);
 // 			//echo "<pre>";print_r($checkstatus);exit;
-
+			
 // 			if($checkstatus->num_rows() > 0)
 // 			{
 // 				$error = 'Your account is not active kindly active your account';
@@ -1765,7 +1813,7 @@ $this->load->view('thankyou');
 //             // Checking the email address
 //             $un = $this->Model_user->check_email($email);
 // //echo "<pre>";print_r($checkstatus);exit;
-//             if($un->num_rows() == 0)
+//             if($un->num_rows() == 0) 
 //             {
 //                 $error = 'Email address is wrong!';
 //                 $json  = array(
@@ -1774,15 +1822,15 @@ $this->load->view('thankyou');
 // 							  );
 // 				echo json_encode($json);
 
-//             } else
+//             } else 
 //             {
 
 //                 // When email found, checking the password
 //                 $pw = $this->Model_user->check_password($email,$password);
 
-//                 if($pw->num_rows() == 0)
+//                 if($pw->num_rows() == 0) 
 //                 {
-
+                    
 //                     $error = 'Password is wrong!';
 //                     $json  = array(
 // 							  		'success'	=> false,
@@ -1816,9 +1864,9 @@ $this->load->view('thankyou');
 // 							$role = 'chef';
 // 						}
 // 					}
-
-
-
+                    
+                    
+                    
 //                     $json  = array(
 // 							  		'success'	=> true,
 // 							  		'message'	=> 'You have successfully Logged In',
@@ -1828,9 +1876,9 @@ $this->load->view('thankyou');
 //                 }
 //             }
 // 		}
-// 	}
-
-
+// 	}	
+	
+	
 	function logout() {
 		//echo "ghhj";exit;
 		$this -> session -> unset_userdata('value_array');
@@ -1838,8 +1886,8 @@ $this->load->view('thankyou');
         $this->session->sess_destroy();
         redirect(base_url('login'));exit;
     }
-
-
+    
+    
 public function update_profile(){
     //echo "njjj";exit;
     $email =$_POST['email'];
@@ -1849,30 +1897,30 @@ public function update_profile(){
 
 	//	$data['setting'] = $this->Model_common->get_setting_data();
 
-
+	
 //echo "njjj";exit;
-
+		
 
 			        $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
 				    $this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
 					$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
-
+					
 					$this->form_validation->set_rules('mobile', 'Mobile', 'trim|required');
 					$this->form_validation->set_rules('job_title', 'Job Title	', 'trim|required');
-
+					
 					$this->form_validation->set_rules('password', 'password', 'trim|required');
 					$this->form_validation->set_rules('department', 'department', 'trim|required');
-
+					
 					$this->form_validation->set_rules('location', 'location', 'trim|required');
 					$this->form_validation->set_rules('age', 'age', 'trim|required');
-
+					
 					$this->form_validation->set_rules('gender', 'gender', 'trim|required');
 				// 	$this->form_validation->set_rules('tenure', 'tenure', 'trim|required');
 					$this->form_validation->set_rules('reporting', 'reporting', 'trim|required');
 					$this->form_validation->set_rules('cnic', 'Cnic', 'trim|required');
 					$this->form_validation->set_rules('landline', 'landline', 'required');
 
-
+				
 
 			if($this->form_validation->run() == FALSE) {
 				$valid = 0;
@@ -1880,29 +1928,29 @@ public function update_profile(){
             }
 	$valid = 1;
             if($valid == 1) {
-
-
+                
+              
     	$email     = array(
     	                    'email' => $_POST['email'],
-    	               );
-
+    	               );               
+    	
     //	echo "<pre>";print_r($email);exit;
-
+    	
     	//$update = $this->Model_user->updatestatus($data,$id) ;
-
+    	
     	        $salt = 'b7r4';
-
+				
 				$password =  hash('sha256', $salt . ( hash('sha256',$this->input->post('password'))));
 			//	$confirm_password=$password;
-
-
+				
+    	
 	            $form_data = array(
 					'first_name'     => $_POST['first_name'],
 					'last_name'     => $_POST['last_name'],
 					'mobile'     => $_POST['mobile'],
 					'job_title'     => $_POST['job_title'],
 					'email'     => $_POST['email'],
-
+				
 					'landline'     => $_POST['landline'],
 					'department'     => $_POST['department'],
 					'location'     => $_POST['location'],
@@ -1912,8 +1960,8 @@ public function update_profile(){
 					'gender'     => $_POST['gender'],
 				// 	'tenure'     => $_POST['tenure'],
 					'reporting'     => $_POST['reporting'],
-
-
+					
+					
 	            );
 	            //echo "<pre>";print_r($form_data);exit;
 	        	$this->Model_category->update_employee_profile($form_data,$email);
@@ -1926,10 +1974,10 @@ public function update_profile(){
                 $email=$this->input->post('email');
 				$data['nayatel_record'] = $this->Model_category->check_record_nayatel($email);
 				$data['work_record'] = $this->Model_category->check_record_work_personality_index($email);
-
+				
 				$value['setting'] = $this->Model_common->all_setting();
 				$value['sliders'] = $this->Model_common->all_slider('login');
-
+	
 	        	$this->session->set_flashdata('success',$success);
 	        	$this->load->view('dashboard-new',$data);
             }
@@ -1937,39 +1985,39 @@ public function update_profile(){
             	$this->session->set_flashdata('error',$error);
 	        	redirect(base_url().'login/update_employee_profile');
             }
-
+		
         $data['dashboard_data']=$this->session->userdata();
-        //$this->session->userdata('manager_value_array');
+        //$this->session->userdata('manager_value_array');	
 	//	$data['setting'] = $this->Model_common->get_setting_data();
        // $data['manager_dashboard_data']=$this->session->userdata();
 	//	$this->load->view('dashboard-new',$data);
 	}
-
-
+  
+    
     public function update_employee_profile($email){
-
-
+        
+    
     $email=$this->uri->segment(3);
     $data['employee_information'] = $this->Model_category->get_employee_record($email);
     //echo "<pre>";print_r($data['employee_information']);exit;
     $data['employee_information'];
-
+    
 	$data['setting'] = $this->Model_common->all_setting();
 	//$data['sliders'] = $this->Model_common->all_slider('login');
-
+	
 	//$data['count'] = $this->Model_category->count_active_records($categories_id);
 // $email=$email[0];
 // 	echo "<pre>";print_r($email);exit;
 	//$name= $data['nayatel_value_statements'];
 if(($this->uri->segment(3)!=0)){
 	$data['dashboard_data']=$this->uri->segment(3);
-
+	
 }
 else{
 	$data['dashboard_data']=$this->session->userdata();
 }
 $data['categories'] = $this->Model_category->get_categories();
-
+			
 $data['dashboard_data']=$this->session->userdata();
 	//$data['dashboard_data']=$this->session->userdata();
 	//echo "<pre>";print_r($data['dashboard_data']);exit;
@@ -1977,30 +2025,30 @@ $data['dashboard_data']=$this->session->userdata();
 	$this->load->view('admin/employee_view_header',$data);
 
 	$this->load->view('update_employee_information',$data);
-
+		
 	$this->load->view('admin/employee_view_footer',$data);
-
-
-
+    
+        
+        
     }
     public function active()
     {
 		$code = $this->input->get('code');
 		//$code = $this->uri->segment(3);
 	//	echo "<pre>";print_r($code);exit;
-
+     
         //$id   = $this->input->post('userid');
-
-
+    	
+    	
     	$data   = array(
     	                    'status' => 'enable',
     	               );
     	$id     = array(
     	                    'code' => $code
-    	               );
-
+    	               );               
+    	
     	$update = $this->Model_user->updatestatus($data,$id) ;
-
+    
     	if($update > 0)
     	{
     	    $success = 'Your Account is being active';
@@ -2012,7 +2060,7 @@ $data['dashboard_data']=$this->session->userdata();
     	    $this->session->set_flashdata('error',$error);
 	        redirect(site_url().'/login');
     	}
-
-
+    	
+    	
     }
 }

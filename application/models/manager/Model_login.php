@@ -82,6 +82,128 @@ public function update_profile($form_data,$email)
 
     }
     
+    public function count_fourth_age_comparison_from_employees(){
+        
+         $sql = "SELECT * FROM sign_up WHERE age>='46' AND age<='75' ";
+ $query = $this->db->query($sql);
+ return $query->num_rows();
+        
+    }
+    
+    
+    public function count_third_age_comparison_from_employees(){
+        
+        $sql = "SELECT * FROM sign_up WHERE age>='36' AND age<='45' ";
+ $query = $this->db->query($sql);
+ return $query->num_rows();
+    }
+    public function count_second_age_comparison_from_employees(){
+        
+$sql = "SELECT * FROM sign_up WHERE age>='26' AND age<='35' ";
+ $query = $this->db->query($sql);
+ return $query->num_rows();
+ 
+    }
+    public function count_first_age_comparison_from_employees(){
+       
+   $sql = "SELECT * FROM sign_up WHERE age>='15' AND age<='25' ";
+ $query = $this->db->query($sql);
+ return $query->num_rows();
+   }
+    
+    public function count_other_department_from_employees(){
+        
+        $department='OTHER';
+        $this->db->where('department',$department);
+    return  $result = $this->db->get('sign_up')->num_rows();
+    }
+    
+    public function count_engineering_from_employees(){
+        
+        $department='ENGINEERING';
+        $this->db->where('department',$department);
+    return  $result = $this->db->get('sign_up')->num_rows();
+    }
+    
+    public function count_management_from_employees(){
+        
+        $department='MANAGEMENT';
+        $this->db->where('department',$department);
+    return  $result = $this->db->get('sign_up')->num_rows();
+    }
+   
+    public function count_computer_science_from_employees(){
+        
+        $department='COMPUTER SCIENCE';
+        $this->db->where('department',$department);
+    return  $result = $this->db->get('sign_up')->num_rows();
+    }
+    
+    public function count_software_engineering_from_employees(){
+        
+        $department='SOFTWARE ENGINEERING';
+        $this->db->where('department',$department);
+    return  $result = $this->db->get('sign_up')->num_rows();
+    }
+    
+    public function count_supply_chain_management_from_employees(){
+        
+        $department='SUPPLY CHAIN MANAGEMENT';
+        $this->db->where('department',$department);
+    return  $result = $this->db->get('sign_up')->num_rows();
+    }
+   
+    public function count_hr_production_from_employees(){
+        
+        $department='HR PRODUCTION';
+        $this->db->where('department',$department);
+    return  $result = $this->db->get('sign_up')->num_rows();
+    }
+    
+    public function count_finance_department_from_employees(){
+        
+        $department='FINANCE';
+        $this->db->where('department',$department);
+    return  $result = $this->db->get('sign_up')->num_rows();
+    }
+    
+    public function count_marketing_department_from_employees(){
+        
+        $department='MARKETING';
+        $this->db->where('department',$department);
+    return  $result = $this->db->get('sign_up')->num_rows();
+    }
+    
+    public function count_male_from_employees(){
+        $gender='MALE';
+        $this->db->where('gender',$gender);
+    return  $result = $this->db->get('sign_up')->num_rows();
+        
+    }
+    public function count_female_from_employees(){
+        $gender='FEMALE';
+        $this->db->where('gender',$gender);
+    return  $result = $this->db->get('sign_up')->num_rows();
+        
+    }
+    
+    public function count_other_from_employees(){
+        
+        
+         $gender='OTHER';
+        $this->db->where('gender',$gender);
+    return  $result = $this->db->get('sign_up')->num_rows();
+    }
+    public function nayatel_completed_test(){
+        
+         return  $result = $this->db->get('nayatel_value_score')->num_rows();
+    }
+    
+    public function work_completed_test(){
+        
+        return  $result = $this->db->get('work_score')->num_rows();
+    }
+    
     public function get_users_count(){
         
         // $this->db->where('categories_id',$id);

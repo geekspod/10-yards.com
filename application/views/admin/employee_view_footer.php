@@ -24,7 +24,8 @@
 <script src="<?php echo base_url(); ?>public/admin/js/demo.js"></script>
 <script src="<?php echo base_url(); ?>public/admin/js/ckeditor/ckeditor.js"></script>
 
-
+<script src="<?php echo base_url(); ?>public/js/flash.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>public/js/flash.jquery.min.js" type="text/javascript"></script>
 <script>
 
 
