@@ -1,5 +1,5 @@
-<!DOCTYPE html> 
-  <head><meta charset="euc-kr"> 
+<!DOCTYPE html>
+  <head><meta charset="euc-kr">
   <title>Manager Dashboard</title>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
@@ -9,9 +9,9 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 <style>
-    
+
    .highcharts-figure, .highcharts-data-table table {
-    min-width: 320px; 
+    min-width: 320px;
     max-width: 660px;
     margin: 1em auto;
 }
@@ -47,40 +47,40 @@
 
 </style>
 
-</head> 
+</head>
 <body>
 <figure class="highcharts-figure">
     <div id="container" style="width: 45%; height: 300px;display: inline-block;"></div>
     <div id="container2" style="width: 45%; height: 300px;display: inline-block;"></div>
-    
+
      <div id="container3" style="width: 45%; height: 300px;display: inline-block;"></div>
     <div id="container4" style="width: 45%; height: 300px;display: inline-block;"></div>
-    
+
     <!--<div id="container"></div>-->
     <!--<p class="highcharts-description">-->
-       
+
     <!--</p>-->
 </figure>
 
 <script>
-var jsonData = $.ajax({ 
-      
-        url: "https://10-yards.com/manager/login/get_dashboard_charts_data/", 
-          dataType: "json", 
+var jsonData = $.ajax({
+
+        url: "<?php echo base_url(); ?>" + "/manager/login/get_dashboard_charts_data/",
+          dataType: "json",
            type:'GET',
            data:data,
-       async: false ,   
+       async: false ,
     cache: false,
-    
-   
+
+
     success: function(data) {
         //alert(data);
-         var imgUrl = 'https://10-yards.com/uploads/pdf/user_reports.jpg' + data;
+         var imgUrl = "<?php echo base_url(); ?>" + '/uploads/pdf/user_reports.jpg' + data;
     }
-          
+
           });
-          
-          
+
+
 var data = jsonData.responseJSON;
 //debugger;
 
@@ -221,8 +221,8 @@ credits: {
                     y: total_employees,
                     drilldown: "total_employees"
                 },
-                
-              
+
+
                 {
                     name: "Work Completed Test",
                     y: work_completed_test,
@@ -287,75 +287,75 @@ credits: {
         }
     ],
     drilldown: {
-       
+
         series: [{
         name: 'total_employees',
         data: [total_employees]
-        
+
     },
     {
         name: 'work_completed_test',
         data: [work_completed_test]
-        
+
     },{
         name: 'nayatel_completed_test',
         data: [nayatel_completed_test]
-        
+
     },{
         name: 'personal_completed_test',
         data: [personal_completed_test]
-        
+
     },{
         name: 'cultural_completed_test',
         data: [cultural_completed_test]
-        
+
     },
-    
-    
+
+
     {
         name: 'not_yet_attempted_work_personality',
         data: [not_yet_attempted_work_personality]
-        
+
     },
 
 
     {
         name: 'incomplete_work_personality_test',
         data: [incomplete_work_personality_test]
-        
+
     },{
         name: 'not_yet_attempted_nayatel_values',
         data: [not_yet_attempted_nayatel_values]
-        
+
     },{
         name: 'incomplete_nayatel_values',
         data: [incomplete_nayatel_values]
-        
+
     },{
         name: 'not_yet_attempted_personal_values',
         data: [not_yet_attempted_personal_values]
-        
+
     },{
         name: 'incomplete_personal_values',
         data: [incomplete_personal_values]
-        
+
     },
 
     {
         name: 'not_yet_attempted_cultural_sacn_values',
         data: [not_yet_attempted_cultural_sacn_values]
-        
+
     },{
         name: 'incomplete_cultural_sacn_values',
         data: [incomplete_cultural_sacn_values]
-        
+
     }
-    
+
     ]
-       
+
             }
-        
-    
+
+
 });
 // 2nd chart
 Highcharts.chart('container2', {
@@ -490,7 +490,7 @@ credits: {
             ['MANAGEMENT', management],
             ['ENGINEERING', engineering],
             ['OTHER', other_department],
-            
+
         ],
         dataLabels: {
             enabled: true,
@@ -572,44 +572,44 @@ credits: {
                     y: fourth_age_comparison,
                     drilldown: "fourth_age_comparison"
                 },
-              
-                
-               
+
+
+
             ]
         }
     ],
     drilldown: {
-       
+
         series: [{
         name: 'first_age_comparison',
         data: [first_age_comparison]
-        
+
     },
     {
         name: 'second_age_comparison',
         data: [second_age_comparison]
-        
+
     },
      {
         name: 'third_age_comparison',
         data: [third_age_comparison]
-        
+
     },{
         name: 'fourth_age_comparison',
         data: [fourth_age_comparison]
-        
+
     }]
-       
+
             }
-        
-    
+
+
 });
 //debugger;
 </script>
 
 
 
- 
-					 
-  </body> 
+
+
+  </body>
 </html>

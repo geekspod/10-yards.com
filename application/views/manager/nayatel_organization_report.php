@@ -1,5 +1,5 @@
-<!DOCTYPE html> 
-  <head><meta charset="euc-kr"> 
+<!DOCTYPE html>
+  <head><meta charset="euc-kr">
   <title>Nayatel Values Assessmnet Report</title>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -7,10 +7,10 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-</head> 
+</head>
 <body>
-					<table>
-        
+					<table class="container">
+
    <div class="d-flex flex-nowrap">
        <tr>
 <td> <h2> <div class="order-1 p-2">Full Name:</div></h2></td>
@@ -28,14 +28,14 @@
  <td> <div class="order-1 p-2"><?php echo "Nayatel";?></div></td></tr>
 </div>
 
-   </table>	
+   </table>
 
 <!--2nd table-->
-	
-<table>
+
+<table class="container">
 <div class="d-flex flex-nowrap">
  <tr>
-     	
+
  <td><a href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
     border-color: #5867dd;
     color: white;
@@ -44,7 +44,7 @@
 
 
 
- 
+
 
     <td><a  href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
     border-color: #5867dd;
@@ -66,63 +66,61 @@
     <!--    ? Person is easy-going, non-competitive, do not have urge to go ahead, and set easily reached goals. ? person prefer stable work, dislike to take initiatives/start new activities ? Values order, structure, predictability and has difficult to new and sudden situations. ? Has low level of energy and less effective in pressured situation ? Prefer to work alone and avoid leadership positions. ? Inability to cope with different activities at once. ? Not interested in marketing, negotiating and influencing people. ? Individual feel awkward and lack confidence in social situations.-->
     <!--</h6>-->
     <!--<?php echo "<br>";?>-->
-           
+
     <!--<p class="highcharts-description">-->
-    
+
     <!--</p>-->
 </figure>
 
 
 <!--3nd table-->
-	
-<table>
-<div class="d-flex flex-nowrap">
+
+<table class="container">
  <tr>
-     	
- <td><a href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
+
+ <td style="    background-color: #008000;
     border-color: #5867dd;
     color: white;
     border: 1px solid;
-    padding: 7px 12px">Organizational Level Score</a></td>
+    padding: 7px 12px"><a href="https://10-yards.com/manager/login/reports" style="color: white;">Organizational Level Score</a></td>
 
 
-<td><a href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
+<td style="    background-color: #008000;
     border-color: #5867dd;
     color: white;
     border: 1px solid;
-    padding: 7px 12px">Departmental Level Score</a></td>
-    
-    <td><a href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
-    border-color: #5867dd;
-    color: white;
-    border: 1px solid;
-    padding: 7px 12px">All Departments Score</a></td>
-    
-    <td><a href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
-    border-color: #5867dd;
-    color: white;
-    border: 1px solid;
-    padding: 7px 12px">Gender Level Score</a></td>
-    
-    
-    <td><a href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
-    border-color: #5867dd;
-    color: white;
-    border: 1px solid;
-    padding: 7px 12px">Positional Level Score</a></td>
- 
+    padding: 7px 12px"><a href="https://10-yards.com/manager/login/reports" style="color: white;">Departmental Level Score</a></td>
 
-    <td><a  href="https://10-yards.com/manager/login/reports" style="    background-color: #008000;
+    <td style="    background-color: #008000;
     border-color: #5867dd;
     color: white;
     border: 1px solid;
-    padding: 7px 12px">Age Level Score</a></td>
+    padding: 7px 12px"><a href="https://10-yards.com/manager/login/reports" style="color: white;">All Departments Score</a></td>
+
+    <td style="    background-color: #008000;
+    border-color: #5867dd;
+    color: white;
+    border: 1px solid;
+    padding: 7px 12px"><a href="https://10-yards.com/manager/login/reports" style="color: white;">Gender Level Score</a></td>
+
+
+    <td style="    background-color: #008000;
+    border-color: #5867dd;
+    color: white;
+    border: 1px solid;
+    padding: 7px 12px"><a href="https://10-yards.com/manager/login/reports" style="color: white;">Positional Level Score</a></td>
+
+
+    <td style="    background-color: #008000;
+    border-color: #5867dd;
+    color: white;
+    border: 1px solid;
+    padding: 7px 12px"><a  href="https://10-yards.com/manager/login/reports" style="color: white;">Age Level Score</a></td>
 
 
 
 
 </tr>
-</div>
 </table>
 
 <!--end-->
@@ -132,24 +130,24 @@
 
 
 
-var jsonData = $.ajax({ 
-      
-        url: "https://10-yards.com/manager/login/get_nayatel_organization_report/", 
-          dataType: "json", 
+var jsonData = $.ajax({
+
+        url: "<?php echo base_url(); ?>" + "/manager/login/get_nayatel_organization_report/",
+          dataType: "json",
            type:'GET',
            data:data,
-       async: false ,   
+       async: false ,
     cache: false,
-    
-   
+
+
     success: function(data) {
         //alert(data);
-         var imgUrl = 'https://10-yards.com/uploads/pdf/user_reports.jpg' + data;
+         var imgUrl = "<?php echo base_url(); ?>" + '/uploads/pdf/user_reports.jpg' + data;
     }
-          
+
           });
-          
-          
+
+
 var data = jsonData.responseJSON;
 //debugger;
 
@@ -184,7 +182,7 @@ Highcharts.chart('container', {
         width: null,
         height: null
     },
-   
+
     title: {
         text: 'Organization Values Assessment',
          align: 'top',
@@ -194,7 +192,7 @@ Highcharts.chart('container', {
     accessibility: {
         description: ''
     },
-    
+
     plotLines: [{
                 value: 0,
                 width: 1,
@@ -204,7 +202,10 @@ Highcharts.chart('container', {
             valueSuffix: '%'
         },
     subtitle: {
-        text: ''
+        text: 'Charts for OVA',
+        align: 'top',
+        y:-100,
+        x:360
     },
     xAxis: {
         categories: ['','Honesty','Excellence','Service','Respect','Learning','Innovation','Simplicity'],
@@ -233,7 +234,7 @@ Highcharts.chart('container', {
         }
     },
     colors:['#008080'],
-  
+
     legend: {
         layout: 'vertical',
         align: 'right',
@@ -242,7 +243,7 @@ Highcharts.chart('container', {
         itemWidth: 250,
         x: -300,
         y: -100,
-        floating: false,
+        floating: true,
         borderWidth: 1,
         backgroundColor:
             Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
@@ -254,39 +255,39 @@ Highcharts.chart('container', {
     series: [{
         name: 'Honesty',
         data: [Honesty]
-        
+
     },{
         name: 'Excellence',
         data: [Excellence]
-        
+
     },{
         name: 'Service',
         data: [Service]
-        
+
     },{
         name: 'Respect',
         data: [Respect]
-        
+
     },{
         name: 'Learning',
         data: [Learning]
-        
+
     },{
         name: 'Innovation',
         data: [Innovation]
-        
+
     },{
         name: 'Simplicity',
         data: [Simplicity]
-        
+
     }]
 });
 //debugger;
 </script>
 <style>
-    
+
     .highcharts-figure, .highcharts-data-table table {
-    min-width: 310px; 
+    min-width: 310px;
     max-width: 800px;
     margin: 1em auto;
 }
@@ -329,7 +330,7 @@ Highcharts.chart('container', {
 
 
 
- 
-					 
-  </body> 
+
+
+  </body>
 </html>
