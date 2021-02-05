@@ -13,8 +13,7 @@
 </section>
 
 
-<section class="content" style="width: 80%;
-    margin: 0 auto">
+<section class="content container">
 
     <div class="row">
         <div class="col-md-12">
@@ -54,34 +53,30 @@
                             <th>Agree</th>
                             <th>Strongly Agree</th> -->
 
-                            <!-- <th>Add Score</th> -->
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        $i = 0;
-                        if (!empty($cultural_scan_questions)){
-                        foreach ($cultural_scan_questions
-
-                        as $row) {
-                        $i++;
-                        ?>
-                        <tr>
-                            <td><?php echo $i; ?></td>
-                            <td><?php echo $row['name']; ?></td>
-                        </tr>
-                        <!-- <?php echo "value";
-                        echo $i; ?> -->
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                                <div class="d-flex justify-content-center my-4">
-                                    <input id="value" name="checkbox[]" class="border-0" type="range" min="0"
-                                           max="100"/>
-                                    <span class="font-weight-bold text-primary ml-2 mt-1 valueSpan"></span>
-                                </div>
-                            </td>
+                    <!-- <th>Add Score</th> -->
+			    </tr>
+			</thead>
+            <tbody>
+            	<?php
+                $i=0;
+                if (!empty($cultural_scan_questions)){
+            	foreach ($cultural_scan_questions as $row) {
+            		$i++;
+            		?>
+					<tr>
+	                    <td><?php echo $i; ?></td>
+	                    <td><?php echo $row['name']; ?></td>
+</tr>
+                        <!-- <?php echo "value";echo $i;?> -->
+                      <tr>
+                      <td>
+                      </td>
+                        <td>
+                        <div class="d-flex justify-content-center my-4">
+                            <input type="range" name="checkbox[]" class="custom-range" id="value" min="0" max="100">
+                            <span class="font-weight-bold text-primary ml-2 mt-1 valueSpan"></span>
+                        </div>
+                        </td>
 
                             <!-- <input type='hidden' value='0' name='checkbox[]'> -->
 
@@ -102,17 +97,14 @@
                             ?>
                         </tr>
 
-                        </tbody>
-                    </table>
-                    <button name="form2" type="submit" class="btn btn-primary sb-btn loginbtn" style="    width: 16%;
-    margin-left: 430px">Submit
-                    </button>
+            </tbody>
+          </table>
+        </div>
+      <div class="row justify-content-center">
+            <button name="form2" type="submit" class="btn btn-primary sb-btn loginbtn">Submit</button>
 
-                    <?php echo form_close(); ?>
-
-
-                </div>
-            </div>
+            <?php echo form_close(); ?>
+        </div>
 </section>
 
 
