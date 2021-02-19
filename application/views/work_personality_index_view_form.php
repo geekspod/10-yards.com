@@ -95,12 +95,12 @@
 			    <tr>
 			        <th>SL</th>
 			        <th>Statements</th>
-                    <th>Never</th>
-                    <th>Rarely</th>
+                    <th style="background-color: red;color: white;">Never</th>
+                    <th style="background-color: lightcoral;color: white;">Rarely</th>
                     <th>Sometimes</th>
-                    <th>Often</th>
-                    <th>Always</th>
-                    
+                    <th style="background-color: lightgreen;color: white;">Often</th>
+                    <th style="background-color: green;color: white;">Always</th>
+
                     <!-- <th>Add Score</th> -->
 			    </tr>
 			</thead>

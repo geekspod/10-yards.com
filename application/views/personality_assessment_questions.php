@@ -44,12 +44,12 @@
 			    <tr>
 			        <th>SL</th>
 			        <th>Items</th>
-                    <th>Strongly Dislike</th>
-                    <th>Somewhat Dislike</th>
+                    <th style="background-color: red;color: white;">Strongly Dislike</th>
+                    <th style="background-color: lightcoral;color: white;">Somewhat Dislike</th>
                     <th>Neither Like Nor Dislike</th>
-                    <th>Somewhat Like</th>
-                    <th>Strongly Like</th>
-                    
+                    <th style="background-color: lightgreen;color: white;">Somewhat Like</th>
+                    <th style="background-color: green;color: white;">Strongly Like</th>
+
                     <!-- <th>Add Score</th> -->
 			    </tr>
 			</thead>
