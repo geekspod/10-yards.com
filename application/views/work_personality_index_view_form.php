@@ -14,32 +14,37 @@
          <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/flash.css">
 
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/app.css">
+          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+          <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/app.css">
 
 
 </head>
 <body>
-<div style="position: fixed; right: 0; left: 0;z-index: 100;">
-    <h1 style="text-align: center;">Work Personality Index</h1>
-    <h1 style="text-align: center;">Remaining Time</h1>
-    <!--end-->
+    <?php
+$email=$this->uri->segment(3);
+if($email == '') {
+	redirect(base_url().'login');
+}
+
+?>
+    <div style="position: fixed; right: 0; left: 0;z-index: 100;">
+	<h1 style="text-align: center;">Work Personality Index</h1>
+<h1 style="text-align: center;">Remaining Time</h1>
+<!--end-->
 
 
-    <section class="content-header" style="display:none">
-        <div class="content-header-left">
-            <?php echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            echo "<br>"; ?>
-            <h1>Nayatel’s Value Statements</h1>
-        </div>
-        <!--<div class="content-header-right">-->
-        <!--	<a href="<?php echo base_url(); ?>admin/categories/personal_values_assessment_questions_data" class="btn btn-primary btn-sm">Add New</a>-->
-        <!--</div>-->
-    </section>
+
+
+
+<section class="content-header" style="display:none">
+	<div class="content-header-left">
+    <?php echo "<br>"; echo "<br>"; echo "<br>"; echo "<br>"; echo "<br>";?>
+		<h1>Nayatel’s Value Statements</h1>
+	</div>
+	<!--<div class="content-header-right">-->
+	<!--	<a href="<?php echo base_url(); ?>admin/categories/personal_values_assessment_questions_data" class="btn btn-primary btn-sm">Add New</a>-->
+	<!--</div>-->
+</section>
     <div>
         <div class="someTimer" data-timer="<?php echo $remaining_test_time_slots['test_time_slot']*60;?>" style="position: absolute;right: 0;width: 300px;height: 100px;left: 0;margin: auto;"></div>
         <div class="someTimer2" data-timer="180" style="position: absolute;right: 0;width: 300px;height: 100px;left: 0;margin: auto;"></div>
@@ -109,14 +114,13 @@
                         <td><input type="checkbox" id="checkbox1" class="checkbox" name="checkbox[]" value="1" <?php echo ($get_all_work_personality_save_for_later[0]['value']==1 ? 'checked' : '');?> data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
                         <td><input type="checkbox" id="checkbox1" class="checkbox" name="checkbox[]" value="2" <?php echo ($get_all_work_personality_save_for_later[0]['value']==2 ? 'checked' : '');?> data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
                         <td><input type="checkbox" id="checkbox1" class="checkbox" name="checkbox[]" value="3" <?php echo ($get_all_work_personality_save_for_later[0]['value']==3 ? 'checked' : '');?> data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
-                        <td><input type="checkbox" id="checkbox1" class="checkbox" name="checkbox[]" value="5" <?php echo ($get_all_work_personality_save_for_later[0]['value']==5 ? 'checked' : '');?>
-                                   data-bind="checked: $data.queuedValues, checkedValue: policyNumber"/></td>
-                    </tr>
-                <!--2nd row-->
+                        <td><input type="checkbox" id="checkbox1" class="checkbox" name="checkbox[]" value="5" <?php echo ($get_all_work_personality_save_for_later[0]['value']==5 ? 'checked' : '');?> data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
+                                            </tr>
+                                            <!--2nd row-->
 
 
-                <tr id="div1" class="div1" name="div1">
-                    <td><?php echo "2"; ?></td>
+                    <tr id="div1" class="div1" name="div1">
+<td><?php echo "2"; ?></td>
 <td class="q_name"><?php echo $get_all_work_personality_save_for_later[1]['name']; ?></td>
 <input type="hidden" value="<?php echo $get_all_work_personality_save_for_later[1]['dimensions_name']; ?>" id="dimensions_name[]" name="dimensions_name[]">
 <input type="hidden" class="q_name2" value="<?php echo $get_all_work_personality_save_for_later[1]['sub_categories_names']; ?>" id="sub_categories_names[]" name="sub_categories_names[]">
@@ -203,12 +207,12 @@
 <td><input type="checkbox" id="checkbox6" class="checkbox" name="checkbox[]" value="3" <?php echo ($get_all_work_personality_save_for_later[5]['value']==3 ? 'checked' : '');?>
  data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 <td><input type="checkbox" id="checkbox6" class="checkbox" name="checkbox[]" value="5" <?php echo ($get_all_work_personality_save_for_later[5]['value']==5 ? 'checked' : '');?>
-           data-bind="checked: $data.queuedValues, checkedValue: policyNumber"/></td>
-     </tr>
-                <!--7-->
+ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
+</tr>
+<!--7-->
 
-                <tr id="div1" class="div1" name="div1">
-                    <td><?php echo "7"; ?></td>
+<tr id="div1" class="div1" name="div1">
+<td><?php echo "7"; ?></td>
 <td class="q_name"><?php echo $get_all_work_personality_save_for_later[6]['name']; ?></td>
 <input type="hidden" value="<?php echo $get_all_work_personality_save_for_later[6]['dimensions_name']; ?>" id="dimensions_name[]" name="dimensions_name[]">
 <input type="hidden" value="<?php echo $get_all_work_personality_save_for_later[6]['sub_categories_names']; ?>" id="sub_categories_names[]" name="sub_categories_names[]">
@@ -2023,7 +2027,7 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 
             </tbody>
           </table>
-            <?php
+          <?php
           $i=70;
            if($i == '70'){
 
@@ -2042,15 +2046,15 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
         </div>
     </div>
     <div class="row">
-        <!--<button type="button" class="btn btn-primary"  id="Next"  name="Next" value="Next" onclick="return save_data()"  style="width:9%; margin-left:0px;-->
-        <!--margin-top: 25px">Next</button>-->
+    <!--<button type="button" class="btn btn-primary"  id="Next"  name="Next" value="Next" onclick="return save_data()"  style="width:9%; margin-left:0px;-->
+    <!--margin-top: 25px">Next</button>-->
         <div class="col-lg-12">
-            <!--                <input id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" style="width:16%; margin-left: 430px;-->
-            <!--margin-top: 25px" />-->
-</form>
-<div id="myResponse">
+    <!--                <input id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" style="width:16%; margin-left: 430px;-->
+    <!--margin-top: 25px" />-->
+    </form>
+ <div id="myResponse">
 
-</div>
+ </div>
 
 
 <?php
@@ -2058,33 +2062,38 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 ?>
 
 
-</div>
-</div>
+
+
+
+
+        </div>
+      </div>
 </section>
 
 <!--<a href="#Modal2" class="btn btn-info btn-lg">Open modal</a>-->
 <!-- Modal -->
 <div id="Modal2" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+  <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
-                <!--<h4 class="modal-title">Modal Header</h4>-->
-            </div>
-            <div class="modal-body">
-                <p>Extra three minutes are given, kindly complete the test in require time.</p>
-            </div>
-            <div class="modal-footer">
-                <a href="<?php echo base_url(); ?>login/nayatel_save_for_later_extra_time">
-                    <button type="button" value="OK" class="btn btn-success start" data-dismiss="modal">OK</button>
-                </a>
-            </div>
-        </div>
-
-    </div>
+<!-- Modal content-->
+<div class="modal-content">
+  <div class="modal-header">
+    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+    <!--<h4 class="modal-title">Modal Header</h4>-->
+  </div>
+  <div class="modal-body">
+    <p>Extra three minutes are given, kindly complete the test in require time.</p>
+  </div>
+  <div class="modal-footer">
+      <a href="<?php echo base_url();?>login/nayatel_save_for_later_extra_time">
+    <button type="button" value="OK" class="btn btn-success start" data-dismiss="modal">OK</button>
+    </a>
+  </div>
 </div>
+
+  </div>
+</div>
+
 
 
 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -2119,9 +2128,7 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum id metus ac nisl bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet sagittis. In tincidunt orci sit amet.</p>
                 </div>
                 <div class="modal-footer">
-                 <a href="<?php echo base_url();?>login/dashboard">
-                     <button type="button" class="btn btn-secondary">Save For Later</button>
-                 </a>
+                 <a href="<?php echo base_url();?>login/dashboard">   <button type="button" class="btn btn-secondary" >Save For Later</button></a>
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Proceed</button>
                 </div>
             </div>
@@ -2129,13 +2136,13 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
     </div>
 
 
-    <!--<div class="modal-footer">-->
-    <!--    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-    <!--    <button type="button" class="btn btn-primary">OK, Got it!</button>-->
-    <!--</div>-->
-</div>
-</div>
-</div>
+                <!--<div class="modal-footer">-->
+                <!--    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                <!--    <button type="button" class="btn btn-primary">OK, Got it!</button>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -2178,26 +2185,39 @@ $( document ).ready(function() {
 <script>
 $(document).ready(function() {
     document.getElementById("kt_aside").style.pointerEvents = "none";
-    $('#checkbox').DataTable({
+    $('#checkbox').DataTable( {
         stateSave: true
-    });
-});
+    } );
+} );
 </script>
 
 <script>
-    var time22 = [];
-    var info = [];
-    var arr = [];
-    var new_counter = [];
-    var checklength1 = [];
-    var checklength2 = [];
-    var checklength3 = [];
-    var checklength4 = [];
-    var checklength5 = [];
-    var checklength6 = [];
-    var checklength7 = [];
 
-    var checklength8 = [];
+                    $(".div1").show();
+                    $(".div2").hide();
+                    $(".div3").hide();
+                    $(".div4").hide();
+                    $(".div5").hide();
+                    $(".div6").hide();
+                    $(".div7").hide();
+                    $(".div8").hide();
+                    $(".div9").hide();
+                    $(".div10").hide();
+                     $(".div11").hide();
+
+var time22=[];
+ var info=[];
+    var arr=[];
+        var new_counter=[];
+  var checklength1=[];
+ var checklength2=[];
+ var checklength3=[];
+ var checklength4=[];
+ var checklength5=[];
+ var checklength6=[];
+ var checklength7=[];
+
+ var checklength8=[];
  var checklength9=[];
  var checklength10=[];
  var checklength11=[];
@@ -2254,111 +2274,114 @@ $(document).ready(function() {
         var checkbox35=[];
         var checkbox36=[];
 
-    var checkbox37=[];
+        var checkbox37=[];
         var checkbox38=[];
         var checkbox39=[];
 
-    var checkbox40=[];
+        var checkbox40=[];
 
 
          var checkbox51=[];
         var checkbox52=[];
         var checkbox53=[];
 
-    var checkbox54=[];
+        var checkbox54=[];
         var checkbox55=[];
         var checkbox56=[];
 
-    var checkbox57=[];
+        var checkbox57=[];
         var checkbox58=[];
         var checkbox59=[];
 
-    var checkbox60=[];
+        var checkbox60=[];
 
 
         var checkbox61=[];
         var checkbox62=[];
         var checkbox63=[];
 
-    var checkbox64 = [];
-    var checkbox65 = [];
-    var checkbox66 = [];
+        var checkbox64=[];
+        var checkbox65=[];
+        var checkbox66=[];
 
-    var checkbox67 = [];
-    var checkbox68 = [];
-    var checkbox69 = [];
+        var checkbox67=[];
+        var checkbox68=[];
+        var checkbox69=[];
 
-    var checkbox70 = [];
+        var checkbox70=[];
 
 
-    var checkbox71 = [];
-    var checkbox72 = [];
-    var checkbox73 = [];
 
-    var checkbox74 = [];
-    var checkbox75 = [];
-    var checkbox76 = [];
+         var checkbox71=[];
+        var checkbox72=[];
+        var checkbox73=[];
 
-    var checkbox77=[];
+        var checkbox74=[];
+        var checkbox75=[];
+        var checkbox76=[];
+
+        var checkbox77=[];
         var checkbox78=[];
         var checkbox79=[];
 
-    var checkbox80=[];
+        var checkbox80=[];
 
 
         var checkbox81=[];
         var checkbox82=[];
         var checkbox83=[];
 
-    var checkbox84=[];
+        var checkbox84=[];
         var checkbox85=[];
         var checkbox86=[];
 
-    var checkbox87=[];
+        var checkbox87=[];
         var checkbox88=[];
         var checkbox89=[];
 
-    var checkbox90=[];
+        var checkbox90=[];
 
 
-    var checkbox91=[];
+
+        var checkbox91=[];
         var checkbox92=[];
         var checkbox93=[];
 
-    var checkbox94=[];
+        var checkbox94=[];
         var checkbox95=[];
         var checkbox96=[];
 
-    var checkbox97=[];
+        var checkbox97=[];
         var checkbox98=[];
-    var checkbox99 = [];
+        var checkbox99=[];
 
-    var checkbox100 = [];
+        var checkbox100=[];
 
-    var checkbox101 = [];
-    var checkbox102 = [];
-    var checkbox103 = [];
+         var checkbox101=[];
+        var checkbox102=[];
+        var checkbox103=[];
 
-    var checkbox104 = [];
-    var checkbox105 = [];
+        var checkbox104=[];
+        var checkbox105=[];
 
 
-    $("#submit").hide();
 
-    var timeCircles = $(".someTimer").TimeCircles({
+          $("#submit").hide();
 
-        "time": {
-            "Days": {
-                "text": "Days",
-                "color": "#FFCC66",
-                "show": false
-            },
-            "Hours": {
-                "text": "Hours",
-                "color": "#99CCFF",
-                "show": false
-            },
-            "Minutes": {
+var timeCircles = $(".someTimer").TimeCircles({
+
+    "time": {
+        "Days": {
+            "text": "Days",
+            "color": "#FFCC66",
+            "show": false
+        },
+        "Hours": {
+            "text": "Hours",
+            "color": "#99CCFF",
+            "show": false
+        },
+        "Minutes": {
             "text": "Minutes",
             "color": "#BBFFBB",
             "show": true
@@ -2371,7 +2394,7 @@ $(document).ready(function() {
         }
     }
 
-    });
+  });
 
             // Fade in and fade out are examples of how chaining can be done with TimeCircles
             $(".fadeIn").click(function() {
@@ -2381,29 +2404,26 @@ $(document).ready(function() {
                 timeCircles.elements.last().fadeOut();
             });
 
-    // Start and stop are methods applied on the public TimeCircles instance
-    $(".startTimer").click(function () {
-        $(".someTimer").eq(1).TimeCircles().start();
-    });
-    $(".stopTimer").click(function () {
-        $(".someTimer").eq(1).TimeCircles().stop();
+            // Start and stop are methods applied on the public TimeCircles instance
+            $(".startTimer").click(function() {
+                $(".someTimer").eq(1).TimeCircles().start();
+            });
+            $(".stopTimer").click(function() {
+                $(".someTimer").eq(1).TimeCircles().stop();
 
-    });
+            });
 
 
-    $(".start").click(function () {
-        $(".someTimer").TimeCircles().start();
-    });
-    $(".stop").click(function () {
-        $(".someTimer").TimeCircles().stop();
-    });
 
-    setTimeout(function () {
-        window.location.href = "https://10-yards.com/login/dashboard"; //will redirect to your blog page (an ex: blog.html)
+$(".start").click(function(){ $(".someTimer").TimeCircles().start(); });
+$(".stop").click(function(){ $(".someTimer").TimeCircles().stop(); });
+
+setTimeout(function () {
+       window.location.href = "https://10-yards.com/login/dashboard"; //will redirect to your blog page (an ex: blog.html)
     }, 900000); //will call the function after 2 secs.
-    $(".someTimer2").TimeCircles().destroy();
+ $(".someTimer2").TimeCircles().destroy();
 
-    time = $(".someTimer").TimeCircles().getTime();
+time = $(".someTimer").TimeCircles().getTime();
 //alert(time);
 $('.someTimer').TimeCircles({ time: { Days: { show: false }, Hours: { show: false } }});
 
@@ -2412,24 +2432,25 @@ $('.someTimer').TimeCircles().addListener(function() {
 
 });
 
-    //alert(time22);
+//alert(time22);
 
-    if (time < 01) {
-        //$('#myModal2').modal('show');
-        // alert("vdgdg") ;
-        $(".someTimer").TimeCircles().destroy();
-        // window.location.replace("https://10-yards.com/login/dashboard");
+	if(time < 01)
+				{
+				     //$('#myModal2').modal('show');
+				   // alert("vdgdg") ;
+					 $(".someTimer").TimeCircles().destroy();
+					 // window.location.replace("https://10-yards.com/login/dashboard");
 
 
-    }
+				}
 </script>
 
 <script type="text/javascript">
-    var counter = [];
-    counter = 0;
-    var values = [];
-    var values1 = [];
-    var values3 = [];
+ var counter=[];
+ counter=0;
+ var values=[];
+var values1=[];
+var values3=[];
 var values2=[];
 var arr_length=[];
 var selected = [];
@@ -2463,19 +2484,19 @@ $( "#checkboxes tbody tr" ).on( "click", function() {
     var nYear = oDate.getFullYear();
 
 
-    var values20 = nHrs + ':' + nMin;
+var values20=nHrs + ':' + nMin;
 
 
-    var now = new Date(Date.now());
-    var formatted = now.getHours() + ":" + now.getMinutes();
+var now = new Date(Date.now());
+var formatted = now.getHours() + ":" + now.getMinutes();
 
 
-    //alert(formatted);//5:31 9:58
-    // alert(values20);
-    // alert(travelTime);//05:41 10:13
+      //alert(formatted);//5:31 9:58
+      // alert(values20);
+     // alert(travelTime);//05:41 10:13
     // rows which are clicked
 
-    //alert(current_time_value);
+ //alert(current_time_value);
 
 
 // var dt = new Date();
@@ -2483,9 +2504,10 @@ $( "#checkboxes tbody tr" ).on( "click", function() {
 // alert((time));
 
 
-    currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
 
-    // alert(currentRows);
+currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
+
+  // alert(currentRows);
 // var arr = [];
 // $('input.checkbox:checkbox:checked').each(function () {
 //     arr.push($(this).val());
@@ -2498,15 +2520,17 @@ $( "#checkboxes tbody tr" ).on( "click", function() {
 // });
 
 
-    var name = $(this).closest('tr').find('.q_name').text();
-    arr_length = name.length;
+
+
+var name = $(this).closest('tr').find('.q_name').text();
+arr_length=name.length;
 //var dimensions_name = $(this).closest('tr').find('input[type="hidden"]').val();
-    var sub_categories_names = $(this).closest('tr').find('input[name="sub_categories_names[]"]').val();
+var sub_categories_names = $(this).closest('tr').find('input[name="sub_categories_names[]"]').val();
 //var sub_categories_names = $(this).closest('tr').find('.q_name2').text();
 //alert(sub_categories_names);
-    //var questions_id = $(this).closest('tr').find('input[type="hidden"]').val();
+ //var questions_id = $(this).closest('tr').find('input[type="hidden"]').val();
 // alert(dimensions_name);
-    values.push(currentRows);
+ values.push(currentRows);
  arr=values;
  //alert(values);
 values1.push(name);
@@ -2529,19 +2553,20 @@ length=document.getElementById("checkboxes").querySelectorAll("input:checked").l
 //     alert(sub_categories);
 
 
-    var table = $('#checkboxes').DataTable();
-    info = table.page.info();
-    info = info.page + 1;
+var table = $ ('#checkboxes'). DataTable ();
+ info = table.page.info ();
+ info=info.page + 1;
 //alert(info);
 
 
-//alert_variable=  arr.length-1;
-    //alert(alert_variable);
-    if (info == 1) {
-        $("#submit").hide();
-        $("#save_for_later").show();
 
-        checkbox1 = jQuery("#checkbox1:checked").length;
+//alert_variable=  arr.length-1;
+ //alert(alert_variable);
+// if(info == 1){
+          $("#submit").hide();
+          $("#save_for_later").show();
+
+       checkbox1 = jQuery("#checkbox1:checked").length;
 checkbox2 = jQuery("#checkbox2:checked").length;
 checkbox3 = jQuery("#checkbox3:checked").length;
 checkbox4 = jQuery("#checkbox4:checked").length;
@@ -2552,389 +2577,461 @@ checkbox8 = jQuery("#checkbox8:checked").length;
 checkbox9 = jQuery("#checkbox9:checked").length;
 checkbox10 = jQuery("#checkbox10:checked").length;
 
-        checklength1=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+     checklength1=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
          //alert(checklength1);
 
-        if(checklength1 >= 10){
-
-            $(".div1").hide();
+    if(checklength1 > 9){
+        $(".div1").hide();
+                $(".div2").show();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").hide();
+                $(".div8").hide();
+                $(".div9").hide();
+                $(".div10").hide();
+				$(".div11").hide();
     }
 
-    }
+//  }
 
 //  page #2
 
 
+
 // page 2
 
-    if (info == 2) {
-        $("#submit").hide();
-        $("#save_for_later").show();
+//  if(info == 2){
+        //  $("#submit").hide();
+        //   $("#save_for_later").show();
 
 
-        checkbox11 = jQuery("#checkbox11:checked").length;
-        checkbox12 = jQuery("#checkbox12:checked").length;
-        checkbox13 = jQuery("#checkbox13:checked").length;
-        checkbox14 = jQuery("#checkbox14:checked").length;
-        checkbox15 = jQuery("#checkbox15:checked").length;
-        checkbox16 = jQuery("#checkbox16:checked").length;
-        checkbox17 = jQuery("#checkbox17:checked").length;
-        checkbox18 = jQuery("#checkbox18:checked").length;
-        checkbox19 = jQuery("#checkbox19:checked").length;
-        checkbox20 = jQuery("#checkbox20:checked").length;
+checkbox11 = jQuery("#checkbox11:checked").length;
+checkbox12 = jQuery("#checkbox12:checked").length;
+checkbox13 = jQuery("#checkbox13:checked").length;
+checkbox14 = jQuery("#checkbox14:checked").length;
+checkbox15 = jQuery("#checkbox15:checked").length;
+checkbox16 = jQuery("#checkbox16:checked").length;
+checkbox17 = jQuery("#checkbox17:checked").length;
+checkbox18 = jQuery("#checkbox18:checked").length;
+checkbox19 = jQuery("#checkbox19:checked").length;
+checkbox20 = jQuery("#checkbox20:checked").length;
 
 
-        checklength2 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-        //alert(checklength1);
+checklength2=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+         //alert(checklength1);
 
-        if (checklength2 >= 10) {
-            $(".div1").hide();
-            $(".div2").hide();
-        }
-
-
+    if(checklength1 > 19){
+         $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").show();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").hide();
+                $(".div8").hide();
+                $(".div9").hide();
+                $(".div10").hide();
+				$(".div11").hide();
     }
+
+
+//  }
+
+
 
 
 // page 3
 
-    if (info == 3) {
-        $("#submit").hide();
-        $("#save_for_later").show();
+//  if(info == 3){
+        //  $("#submit").hide();
+        //   $("#save_for_later").show();
 
-        checkbox21 = jQuery("#checkbox21:checked").length;
-        checkbox22 = jQuery("#checkbox22:checked").length;
-        checkbox23 = jQuery("#checkbox23:checked").length;
-        checkbox24 = jQuery("#checkbox24:checked").length;
-        checkbox25 = jQuery("#checkbox25:checked").length;
-        checkbox26 = jQuery("#checkbox26:checked").length;
-        checkbox27 = jQuery("#checkbox27:checked").length;
-        checkbox28 = jQuery("#checkbox28:checked").length;
-        checkbox29 = jQuery("#checkbox29:checked").length;
-        checkbox30 = jQuery("#checkbox30:checked").length;
+checkbox21 = jQuery("#checkbox21:checked").length;
+checkbox22 = jQuery("#checkbox22:checked").length;
+checkbox23 = jQuery("#checkbox23:checked").length;
+checkbox24 = jQuery("#checkbox24:checked").length;
+checkbox25 = jQuery("#checkbox25:checked").length;
+checkbox26 = jQuery("#checkbox26:checked").length;
+checkbox27 = jQuery("#checkbox27:checked").length;
+checkbox28 = jQuery("#checkbox28:checked").length;
+checkbox29 = jQuery("#checkbox29:checked").length;
+checkbox30 = jQuery("#checkbox30:checked").length;
 
-        checklength3 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-        //alert(checklength1);
+checklength3=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+         //alert(checklength1);
 
-        if (checklength3 >= 10) {
-            $(".div1").hide();
-            $(".div2").hide();
-            $(".div3").hide();
-        }
+    if(checklength1 > 29){
+        $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").show();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").hide();
+                $(".div8").hide();
+                $(".div9").hide();
+                $(".div10").hide();
+				$(".div11").hide();
     }
+// }
 
 
 // page 4
 
-    if (info == 4) {
-        $("#submit").hide();
-        $("#save_for_later").show();
+//  if(info == 4){
+        // $("#submit").hide();
+        //  $("#save_for_later").show();
 
-        checkbox31 = jQuery("#checkbox31:checked").length;
-        checkbox32 = jQuery("#checkbox32:checked").length;
-        checkbox33 = jQuery("#checkbox33:checked").length;
-        checkbox34 = jQuery("#checkbox34:checked").length;
-        checkbox35 = jQuery("#checkbox35:checked").length;
-        checkbox36 = jQuery("#checkbox36:checked").length;
-        checkbox37 = jQuery("#checkbox37:checked").length;
-        checkbox38 = jQuery("#checkbox38:checked").length;
-        checkbox39 = jQuery("#checkbox39:checked").length;
-        checkbox40 = jQuery("#checkbox40:checked").length;
+checkbox31 = jQuery("#checkbox31:checked").length;
+checkbox32 = jQuery("#checkbox32:checked").length;
+checkbox33 = jQuery("#checkbox33:checked").length;
+checkbox34 = jQuery("#checkbox34:checked").length;
+checkbox35 = jQuery("#checkbox35:checked").length;
+checkbox36 = jQuery("#checkbox36:checked").length;
+checkbox37 = jQuery("#checkbox37:checked").length;
+checkbox38 = jQuery("#checkbox38:checked").length;
+checkbox39 = jQuery("#checkbox39:checked").length;
+checkbox40 = jQuery("#checkbox40:checked").length;
 
-        checklength4 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-        //alert(checklength1);
+    checklength4=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+         //alert(checklength1);
 
-        if (checklength4 >= 10) {
-            $(".div1").hide();
-            $(".div2").hide();
-            $(".div3").hide();
-            $(".div4").hide();
-        }
+    if(checklength1 > 39){
+       $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").show();
+                $(".div6").hide();
+                $(".div7").hide();
+                $(".div8").hide();
+                $(".div9").hide();
+                $(".div10").hide();
+				$(".div11").hide();
     }
+//  }
+
+
+
 
 
 // page 5
 
-    if (info == 5) {
-        $("#submit").hide();
-        $("#save_for_later").show();
+//  if(info == 5){
+        //  $("#submit").hide();
+        //   $("#save_for_later").show();
 
-        checkbox41 = jQuery("#checkbox41:checked").length;
-        checkbox42 = jQuery("#checkbox42:checked").length;
-        checkbox43 = jQuery("#checkbox43:checked").length;
-        checkbox44 = jQuery("#checkbox44:checked").length;
-        checkbox45 = jQuery("#checkbox45:checked").length;
-        checkbox46 = jQuery("#checkbox46:checked").length;
-        checkbox47 = jQuery("#checkbox47:checked").length;
-        checkbox48 = jQuery("#checkbox48:checked").length;
-        checkbox49 = jQuery("#checkbox49:checked").length;
-        checkbox50 = jQuery("#checkbox50:checked").length;
+          checkbox41 = jQuery("#checkbox41:checked").length;
+checkbox42 = jQuery("#checkbox42:checked").length;
+checkbox43 = jQuery("#checkbox43:checked").length;
+checkbox44 = jQuery("#checkbox44:checked").length;
+checkbox45 = jQuery("#checkbox45:checked").length;
+checkbox46 = jQuery("#checkbox46:checked").length;
+checkbox47 = jQuery("#checkbox47:checked").length;
+checkbox48 = jQuery("#checkbox48:checked").length;
+checkbox49 = jQuery("#checkbox49:checked").length;
+checkbox50 = jQuery("#checkbox50:checked").length;
 
 
-        checklength5 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-        //alert(checklength1);
 
-        if (checklength5 >= 10) {
-            $(".div1").hide();
-            $(".div2").hide();
-            $(".div3").hide();
-            $(".div4").hide();
-            $(".div5").hide();
-        }
+  checklength5=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+         //alert(checklength1);
+
+    if(checklength1 > 49){
+        $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").show();
+                $(".div7").hide();
+                $(".div8").hide();
+                $(".div9").hide();
+                $(".div10").hide();
+				$(".div11").hide();
     }
+//  }
+
+
 
 
 // page 6
-    if (info == 6) {
-        $("#submit").hide();
-        $("#save_for_later").show();
+//  if(info == 6){
+        // $("#submit").hide();
+        //  $("#save_for_later").show();
 
-        //alert(checkbox46);
-        checkbox51 = jQuery("#checkbox51:checked").length;
-        checkbox52 = jQuery("#checkbox52:checked").length;
-        checkbox53 = jQuery("#checkbox53:checked").length;
-        checkbox54 = jQuery("#checkbox54:checked").length;
-        checkbox55 = jQuery("#checkbox55:checked").length;
-        checkbox56 = jQuery("#checkbox56:checked").length;
-        checkbox57 = jQuery("#checkbox57:checked").length;
-        checkbox58 = jQuery("#checkbox58:checked").length;
-        checkbox59 = jQuery("#checkbox59:checked").length;
-        checkbox60 = jQuery("#checkbox60:checked").length;
+      //alert(checkbox46);
+checkbox51 = jQuery("#checkbox51:checked").length;
+checkbox52 = jQuery("#checkbox52:checked").length;
+checkbox53 = jQuery("#checkbox53:checked").length;
+checkbox54 = jQuery("#checkbox54:checked").length;
+checkbox55 = jQuery("#checkbox55:checked").length;
+checkbox56 = jQuery("#checkbox56:checked").length;
+checkbox57 = jQuery("#checkbox57:checked").length;
+checkbox58 = jQuery("#checkbox58:checked").length;
+checkbox59 = jQuery("#checkbox59:checked").length;
+checkbox60 = jQuery("#checkbox60:checked").length;
 
 
-        checklength6 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-        //alert(checklength1);
+checklength6=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+         //alert(checklength1);
 
-        if (checklength6 >= 10) {
-            $(".div1").hide();
-            $(".div2").hide();
-            $(".div3").hide();
-            $(".div4").hide();
-            $(".div5").hide();
-            $(".div6").hide();
-        }
+    if(checklength1 > 59){
+        $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").show();
+                $(".div8").hide();
+                $(".div9").hide();
+                $(".div10").hide();
+				$(".div11").hide();
     }
+//  }
 
-    if (info == 7) {
-        $("#submit").hide();
-        $("#save_for_later").show();
-
-
-        checkbox61 = jQuery("#checkbox61:checked").length;
-        checkbox62 = jQuery("#checkbox62:checked").length;
-        checkbox63 = jQuery("#checkbox63:checked").length;
-        checkbox64 = jQuery("#checkbox64:checked").length;
-        checkbox65 = jQuery("#checkbox65:checked").length;
-        checkbox66 = jQuery("#checkbox66:checked").length;
-        checkbox67 = jQuery("#checkbox67:checked").length;
-        checkbox68 = jQuery("#checkbox68:checked").length;
-        checkbox69 = jQuery("#checkbox69:checked").length;
-        checkbox70 = jQuery("#checkbox70:checked").length;
+//   if(info == 7){
+        //  $("#submit").hide();
+        //  $("#save_for_later").show();
 
 
-        checklength7 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-        //alert(checklength1);
+checkbox61 = jQuery("#checkbox61:checked").length;
+checkbox62 = jQuery("#checkbox62:checked").length;
+checkbox63 = jQuery("#checkbox63:checked").length;
+checkbox64 = jQuery("#checkbox64:checked").length;
+checkbox65 = jQuery("#checkbox65:checked").length;
+checkbox66 = jQuery("#checkbox66:checked").length;
+checkbox67 = jQuery("#checkbox67:checked").length;
+checkbox68 = jQuery("#checkbox68:checked").length;
+checkbox69 = jQuery("#checkbox69:checked").length;
+checkbox70 = jQuery("#checkbox70:checked").length;
 
-        if (checklength7 >= 10) {
-            $(".div1").hide();
-            $(".div2").hide();
-         $(".div3").hide();
-         $(".div4").hide();
-         $(".div5").hide();
-         $(".div6").hide();
-            $(".div7").hide();
-        }
+
+
+
+checklength7=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+         //alert(checklength1);
+
+    if(checklength1 > 69){
+         $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").hide();
+                $(".div8").show();
+                $(".div9").hide();
+                $(".div10").hide();
+				$(".div11").hide();
     }
+// }
+
+
+
 
 
 //  page 8
 
-    if (info == 8) {
-        $("#submit").hide();
-        $("#save_for_later").show();
+// if(info == 8){
+        //  $("#submit").hide();
+        //  $("#save_for_later").show();
 
-        checkbox71 = jQuery("#checkbox71:checked").length;
-        checkbox72 = jQuery("#checkbox72:checked").length;
-        checkbox73 = jQuery("#checkbox73:checked").length;
-        checkbox74 = jQuery("#checkbox74:checked").length;
-        checkbox75 = jQuery("#checkbox75:checked").length;
-        checkbox76 = jQuery("#checkbox76:checked").length;
-        checkbox77 = jQuery("#checkbox77:checked").length;
-        checkbox78 = jQuery("#checkbox78:checked").length;
-        checkbox79 = jQuery("#checkbox79:checked").length;
-        checkbox80 = jQuery("#checkbox80:checked").length;
+checkbox71 = jQuery("#checkbox71:checked").length;
+checkbox72 = jQuery("#checkbox72:checked").length;
+checkbox73 = jQuery("#checkbox73:checked").length;
+checkbox74 = jQuery("#checkbox74:checked").length;
+checkbox75 = jQuery("#checkbox75:checked").length;
+checkbox76 = jQuery("#checkbox76:checked").length;
+checkbox77 = jQuery("#checkbox77:checked").length;
+checkbox78 = jQuery("#checkbox78:checked").length;
+checkbox79 = jQuery("#checkbox79:checked").length;
+checkbox80 = jQuery("#checkbox80:checked").length;
         //alert(alert_variable);
 
-        checklength8 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-        //alert(checklength1);
+        checklength8=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+         //alert(checklength1);
 
-        if (checklength8 >= 10) {
-            $(".div1").hide();
-            $(".div2").hide();
-            $(".div3").hide();
-            $(".div4").hide();
-            $(".div5").hide();
-            $(".div6").hide();
-            $(".div7").hide();
-            $(".div8").hide();
-        }
+    if(checklength1 > 79){
+        $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").hide();
+                $(".div8").hide();
+                $(".div9").show();
+                $(".div10").hide();
+				$(".div11").hide();
     }
+// }
 
 
 //  page 9
 //alert(info);
-    if (info == 9) {
-        $("#submit").hide();
-        $("#save_for_later").show();
+// if(info == 9){
+        //   $("#submit").hide();
+        //  $("#save_for_later").show();
 
 
 // alert(info);
 // alert(alert_variable);
 
-        checkbox81 = jQuery("#checkbox81:checked").length;
-        checkbox82 = jQuery("#checkbox82:checked").length;
-        checkbox83 = jQuery("#checkbox83:checked").length;
-        checkbox84 = jQuery("#checkbox84:checked").length;
-        checkbox85 = jQuery("#checkbox85:checked").length;
-        checkbox86 = jQuery("#checkbox86:checked").length;
-        checkbox87 = jQuery("#checkbox87:checked").length;
-        checkbox88 = jQuery("#checkbox88:checked").length;
-        checkbox89 = jQuery("#checkbox89:checked").length;
-        checkbox90 = jQuery("#checkbox90:checked").length;
+checkbox81 = jQuery("#checkbox81:checked").length;
+checkbox82 = jQuery("#checkbox82:checked").length;
+checkbox83 = jQuery("#checkbox83:checked").length;
+checkbox84 = jQuery("#checkbox84:checked").length;
+checkbox85 = jQuery("#checkbox85:checked").length;
+checkbox86 = jQuery("#checkbox86:checked").length;
+checkbox87 = jQuery("#checkbox87:checked").length;
+checkbox88 = jQuery("#checkbox88:checked").length;
+checkbox89 = jQuery("#checkbox89:checked").length;
+checkbox90 = jQuery("#checkbox90:checked").length;
 
 
-        checklength2 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-        //alert(checklength1);
+    checklength2=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+         //alert(checklength1);
 
-        if (checklength9 >= 10) {
-            $(".div1").hide();
-            $(".div2").hide();
-            $(".div3").hide();
-            $(".div4").hide();
-            $(".div5").hide();
-            $(".div6").hide();
-            $(".div7").hide();
-            $(".div8").hide();
-            $(".div9").hide();
-        }
+    if(checklength1 > 89){
+        $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").hide();
+                $(".div8").hide();
+                $(".div9").hide();
+                $(".div10").show();
+				$(".div11").hide();
     }
+//}
 //  page 10
 
-    if (info == 10) {
-        $("#submit").hide();
-        $("#save_for_later").show();
-        checkbox91 = jQuery("#checkbox91:checked").length;
-        checkbox92 = jQuery("#checkbox92:checked").length;
-        checkbox93 = jQuery("#checkbox93:checked").length;
-        checkbox94 = jQuery("#checkbox94:checked").length;
-        checkbox95 = jQuery("#checkbox95:checked").length;
-        checkbox96 = jQuery("#checkbox96:checked").length;
-        checkbox97 = jQuery("#checkbox97:checked").length;
-        checkbox98 = jQuery("#checkbox98:checked").length;
-        checkbox99 = jQuery("#checkbox99:checked").length;
-        checkbox100 = jQuery("#checkbox100:checked").length;
+// if(info == 10){
+        //   $("#submit").hide();
+        //  $("#save_for_later").show();
+checkbox91 = jQuery("#checkbox91:checked").length;
+checkbox92 = jQuery("#checkbox92:checked").length;
+checkbox93 = jQuery("#checkbox93:checked").length;
+checkbox94 = jQuery("#checkbox94:checked").length;
+checkbox95 = jQuery("#checkbox95:checked").length;
+checkbox96 = jQuery("#checkbox96:checked").length;
+checkbox97 = jQuery("#checkbox97:checked").length;
+checkbox98 = jQuery("#checkbox98:checked").length;
+checkbox99 = jQuery("#checkbox99:checked").length;
+checkbox100 = jQuery("#checkbox100:checked").length;
 
 //alert(checkbox91);
 
-        checklength10 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-        //alert(checklength1);
+checklength10=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+         //alert(checklength1);
 
-        if (checklength10 >= 10) {
-            $(".div1").hide();
-            $(".div2").hide();
-            $(".div3").hide();
-            $(".div4").hide();
-            $(".div5").hide();
-            $(".div6").hide();
-            $(".div7").hide();
-            $(".div8").hide();
-            $(".div9").hide();
-            $(".div10").hide();
-        }
-    }
-
-    if (info == 11) {
+    if(checklength1 > 99){
         $("#submit").show();
-        $("#save_for_later").hide();
-
-        checkbox101 = jQuery("#checkbox101:checked").length;
-        checkbox102 = jQuery("#checkbox102:checked").length;
-        checkbox103 = jQuery("#checkbox103:checked").length;
-        checkbox104 = jQuery("#checkbox104:checked").length;
-        checkbox105 = jQuery("#checkbox105:checked").length;
-
-
-        checklength11 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-        //alert(checklength1);
-
-        if(checklength11 >= 5){
-        $(".div1").hide();
-         $(".div2").hide();
-         $(".div3").hide();
-         $(".div4").hide();
-         $(".div5").hide();
-         $(".div6").hide();
-            $(".div7").hide();
-            $(".div8").hide();
-            $(".div9").hide();
-            $(".div10").hide();
-            //  $(".div11").hide();
-        }
+           $("#save_for_later").show();
+                    $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").hide();
+                $(".div8").hide();
+                $(".div9").hide();
+                $(".div10").hide();
+				$(".div11").show();
     }
+// }
+
+//  if(info == 11){
+        //  $("#submit").show();
+        //  $("#save_for_later").hide();
+
+checkbox101 = jQuery("#checkbox101:checked").length;
+checkbox102 = jQuery("#checkbox102:checked").length;
+checkbox103 = jQuery("#checkbox103:checked").length;
+checkbox104 = jQuery("#checkbox104:checked").length;
+checkbox105 = jQuery("#checkbox105:checked").length;
+
+
+checklength11=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+         //alert(checklength1);
+
+    if(checklength1 > 105){
+        $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").hide();
+                $(".div8").hide();
+                $(".div9").hide();
+                $(".div10").hide();
+				$(".div11").show();
+    }
+// }
 
 });
 
 
-    function submitForm() {
 
-        if (info == 11) {
+ function submitForm() {
 
-            var checkbox101 = jQuery("#checkbox101:checked").length;
+if(info == 11){
 
-            if (checkbox101 == 0) {
+       var checkbox101 = jQuery("#checkbox101:checked").length;
 
-                window.FlashMessage.error('Question # 101 is required.');
+if(checkbox101 == 0){
 
-            }
+    window.FlashMessage.error('Question # 101 is required.');
+
+}
  var checkbox102 = jQuery("#checkbox102:checked").length;
 
-            if(checkbox102 == 0){
+if(checkbox102 == 0){
 
-                window.FlashMessage.error('Question # 102 is required.');
+    window.FlashMessage.error('Question # 102 is required.');
 
-            }
+}
 
 var checkbox103 = jQuery("#checkbox103:checked").length;
 
-            if(checkbox103 == 0){
+if(checkbox103 == 0){
 
-                window.FlashMessage.error('Question # 103 is required.');
+    window.FlashMessage.error('Question # 103 is required.');
 
-            }
+}
 
 
 
 var checkbox104 = jQuery("#checkbox104:checked").length;
 
-            if(checkbox104 == 0){
+if(checkbox104 == 0){
 
-                window.FlashMessage.error('Question # 104 is required.');
+    window.FlashMessage.error('Question # 104 is required.');
 
-            }
+}
 
 
 
 var checkbox105 = jQuery("#checkbox105:checked").length;
 
-            if(checkbox105 == 0){
+if(checkbox105 == 0){
 
-                window.FlashMessage.error('Question # 105 is required.');
+    window.FlashMessage.error('Question # 105 is required.');
 
-            }
+}
  }
 
 
-        //alert(values);
+
+     //alert(values);
     //  alert(selected);
     // alert(values1);
     // alert(sub_categories);
@@ -2954,7 +3051,7 @@ $.ajax({
     url:'https://10-yards.com/login/work_personality_index_form_data',
    data: {"checkbox": values,"dimensions_name":selected,"sub_categories_names":sub_categories},
 
-    success: function(data){
+        success: function(data){
           //  window.location.href="<?php echo base_url();?>login/dashboard";
        // var len = data.length;
          var length=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
@@ -2973,16 +3070,17 @@ $.ajax({
        window.location.href="<?php echo base_url();?>login/dashboard";
 
 
-       } else {
+       }
+       else{
            // alert('else');
            //alert(counter);
-           //console.log(err);
-           //  $('#myResponse').html(data);
-           window.FlashMessage.error('All Questions Are Mandatory.');
-           // alert("All Questions Are Mandatory.");
+          //console.log(err);
+         //  $('#myResponse').html(data);
+          window.FlashMessage.error('All Questions Are Mandatory.');
+          // alert("All Questions Are Mandatory.");
        }
-        // $('#myResponse').html(data);
-        //window.location.href="<?php echo base_url();?>login/dashboard";
+      // $('#myResponse').html(data);
+          //window.location.href="<?php echo base_url();?>login/dashboard";
 
 //window.location.href = 'https://10-yards.com/login/dashboard';exit;
 
@@ -2991,19 +3089,20 @@ $.ajax({
 //$('#myResponse').html(data);
 //alert(counter);
 
-        if(counter >= 105){
+       if(counter >= 105){
           // alert('in');//first
            window.location.href="<?php echo base_url();?>login/dashboard";
-            // return true;
-            // break;
+      // return true;
+     // break;
 
-        } else {
-            //window.FlashMessage.error('all Questions Are Mandatory.');
+       }
+       else{
+           //window.FlashMessage.error('all Questions Are Mandatory.');
 //alert("all Questions Are Mandatory.");
-        }
+}
 //alert("all Questions Are Mandatory.");
-        return false;
-    }
+return false;
+}
      </script>
      <script type="text/javascript">
     $(window).on('load',function(){
@@ -3018,40 +3117,38 @@ var counter=[];
 time = $(".someTimer").TimeCircles().getTime();
 
 //alert(time);
-var values = [];
-var values1 = [];
-var values2 = [];
-var values3 = [];
+var values=[];
+var values1=[];
+var values2=[];
+var values3=[];
 
-$('#checkboxes').on('page.dt', function () {
+ $('#checkboxes').on( 'page.dt', function () {
 
 
-    table = $('#checkboxes').DataTable();
-    info = table.page.info();
-    info = info.page + 1;
+ table = $ ('#checkboxes'). DataTable ();
+ info = table.page.info ();
+ info=info.page + 1;
 // alert(counter);
 // alert(values.length);
-    //alert(checklength1);
-    new_counter = values.length;
-    if (info == 2 && new_counter > 19) {
-        //alert('page 2');
-        window.FlashMessage.success('success on page 1');
-        $(".div1").hide();
+ //alert(checklength1);
+ new_counter=values.length;
+if(info ==2 && new_counter > 19 ){
+    //alert('page 2');
+    window.FlashMessage.success('success on page 1');
+   $(".div1").hide();
 
-        //alert('if');
+    //alert('if');
 
 
-    }
-    if (info == 3 && new_counter > 39) {
-        window.FlashMessage.success('success on page 2');
-        $(".div1").hide();
-        $(".div2").hide();
-    }
-    if (info == 4 && new_counter > 49) {
-        window.FlashMessage.success('success on page 3');
-        $(".div1").hide();
-        $(".div2").hide();
-        $(".div3").hide();
+} if(info ==3 && new_counter > 39){
+    window.FlashMessage.success('success on page 2');
+    $(".div1").hide();
+   $(".div2").hide();
+} if(info == 4 && new_counter > 49){
+    window.FlashMessage.success('success on page 3');
+     $(".div1").hide();
+   $(".div2").hide();
+   $(".div3").hide();
 } if(info == 5 && new_counter > 59){
     window.FlashMessage.success('success on page 4');
      $(".div1").hide();
@@ -3097,69 +3194,74 @@ if(info == 9 && new_counter > 99){
    $(".div2").hide();
    $(".div3").hide();
    $(".div4").hide();
-        $(".div5").hide();
-        $(".div6").hide();
-    }
-    if (info == 11 && new_counter > 119) {
-        window.FlashMessage.success('success on page 6');
-        $(".div1").hide();
-        $(".div2").hide();
-        $(".div3").hide();
-        $(".div4").hide();
-        $(".div5").hide();
-        $(".div6").hide();
-    } else {
-        //alert('3rd');
+   $(".div5").hide();
+   $(".div6").hide();
+}if(info == 11 && new_counter > 119){
+    window.FlashMessage.success('success on page 6');
+   $(".div1").hide();
+   $(".div2").hide();
+   $(".div3").hide();
+   $(".div4").hide();
+   $(".div5").hide();
+   $(".div6").hide();
+}else{
+    //alert('3rd');
 
-        // alert('You are not allowed to skip the page.');
-        window.FlashMessage.error('You are not allowed to skip the test.');
-        e.preventDefault();
-        // $(".div1").hide();
-        //   $(".div2").hide();
-        //   $(".div3").hide();
-        //   $(".div4").hide();
-        //   $(".div5").hide();
-        //   $(".div6").hide();
-        //   $(".div7").hide();
-        //   $(".div1").hide();
+    // alert('You are not allowed to skip the page.');
+      window.FlashMessage.error('You are not allowed to skip the test.');
+       e.preventDefault();
+     // $(".div1").hide();
+    //   $(".div2").hide();
+    //   $(".div3").hide();
+    //   $(".div4").hide();
+    //   $(".div5").hide();
+    //   $(".div6").hide();
+    //   $(".div7").hide();
+    //   $(".div1").hide();
+
 
 
     }
     // page 3
 
 
+
+
 });
 
 
-$("#checkboxes tbody tr").on("click", function () {
+
+$( "#checkboxes tbody tr" ).on( "click", function() {
     counter++;
-    var currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
-    //alert(currentRows);
-    // timer
-    // first time
-    time1 = $(".someTimer").TimeCircles().getTime();
+        var currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
+        //alert(currentRows);
+        // timer
+        // first time
+        time1 = $(".someTimer").TimeCircles().getTime();
 
 //alert(time);
 //899.995
-    if (time22 < 01) {
-        $(".someTimer").TimeCircles().destroy();
+				if(time22 < 01)
+				{
+				     $(".someTimer").TimeCircles().destroy();
+
 
 
 // second time
-        var timeCircles = $(".someTimer2").TimeCircles({
+var timeCircles = $(".someTimer2").TimeCircles({
 
-            "time": {
-                "Days": {
-                    "text": "Days",
-                    "color": "#FFCC66",
-                    "show": false
-                },
-                "Hours": {
-                    "text": "Hours",
-                    "color": "#99CCFF",
-                    "show": false
-                },
-                "Minutes": {
+    "time": {
+        "Days": {
+            "text": "Days",
+            "color": "#FFCC66",
+            "show": false
+        },
+        "Hours": {
+            "text": "Hours",
+            "color": "#99CCFF",
+            "show": false
+        },
+        "Minutes": {
             "text": "Minutes",
             "color": "#BBFFBB",
             "show": true
@@ -3172,7 +3274,7 @@ $("#checkboxes tbody tr").on("click", function () {
         }
     }
 
-        });
+  });
   $(".someTimer2").eq(1).TimeCircles().start();
   $(".start").click(function(){ $(".someTimer2").TimeCircles().start(); });
 time2 = $(".someTimer2").TimeCircles().getTime();
@@ -3180,26 +3282,43 @@ time2 = $(".someTimer2").TimeCircles().getTime();
 //01
 if(time2 < 01)
 				{
-                    //	alert("vdgdg") ;
-                    $(".someTimer").TimeCircles().destroy();
-                    $(".someTimer2").TimeCircles().destroy();
-                    window.location.replace("https://10-yards.com/login/dashboard");
+			//	alert("vdgdg") ;
+				     $(".someTimer").TimeCircles().destroy();
+				      $(".someTimer2").TimeCircles().destroy();
+
+				      $.ajax({
+                type: 'POST',
+                url: 'https://10-yards.com/login/incomplete_scenario',
+                data: {
+                    "time": 0,
+
+                },
+                dataType: 'json',
+                success: function (data) {
+                   // alert('success');
+                   window.location.href = "<?php echo base_url();?>login/dashboard";
                 }
+            });
+
+				    window.location.replace("https://10-yards.com/login/dashboard");
+				    }
 
 
-    }
-    // end
+
+				}
+				// end
 
 
-    var name = $(this).closest('tr').find('.q_name').text();
+
+ var name = $(this).closest('tr').find('.q_name').text();
 
 //  var dimensions_name = $(this).closest('tr').find('input[type="hidden"]').val();
-    var dimensions_name = $(this).closest('tr').find('input[type="hidden"]').val();
-    var sub_categories_names = $(this).closest('tr').find('input[name="sub_categories_names[]"]').val();
+ var dimensions_name = $(this).closest('tr').find('input[type="hidden"]').val();
+ var sub_categories_names = $(this).closest('tr').find('input[name="sub_categories_names[]"]').val();
 
-    //alert(currentRows);
-    values.push(currentRows);
-    values1.push(name);
+ //alert(currentRows);
+values.push(currentRows);
+values1.push(name);
 values2.push(sub_categories_names);
 values3.push(dimensions_name);
 //  alert(values);//checkboxes
@@ -3230,81 +3349,60 @@ function save_for_later(){
     // time=time/60;
     // time= Math.ceil(time);
 //alert(time);
-    var length = [];
-    length = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-    //alert(length);
-    //alert(time);
+    var length=[];
+       length=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+      //alert(length);
+      //alert(time);
 
 
     $.ajax({
-        type: 'POST',
-        url: 'https://10-yards.com/login/work_save_for_later',
-        data: {
-            "checkbox": values,
-            "name": values1,
-            "sub_categories_names": values2,
-            "dimensions_name": values3,
-            "length": length,
-            "time": first_time
-        },
-        dataType: 'json',
+    type:'POST',
+    url:'https://10-yards.com/login/work_save_for_later',
+    data: {"checkbox": values,"name":values1,"sub_categories_names":values2,"dimensions_name":values3,"length":length,"time":first_time},
+     dataType: 'json',
 
 
-        success: function (data) {
-            window.location.href = "<?php echo base_url();?>login/dashboard";
+        success: function(data){
+             window.location.href="<?php echo base_url();?>login/dashboard";
 //      alert(counter);
 // alert('before');
         var length=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
         alert('success');
 
-            //alert(length);
+         //alert(length);
 }
 });
 // alert(counter);
 // alert('after');
 
-    if(counter >= 0){
+       if(counter >= 0){
           // alert('counter');
            window.location.href="<?php echo base_url();?>login/dashboard";
-        // return true;
-    }
-    return false;
+      // return true;
+                        }
+return false;
 }
 
 
 </script>
 
 <script>
-    $(document).ready(function () {
-        var someTimer = $('div.someTimer', window.parent.document);
-        someTimer.data('timer', 15);
-        someTimer.TimeCircles({
-            time: {
-                Days: {show: false},
-                Hours: {show: false},
-                Minutes: {color: '#4D8DC1'},
-                Seconds: {color: '#4D8DC1'}
-            }
-        })
-            .addListener(
-                function (unit, value, total) {
-                    if (total == 10) {
-                        someTimer.data('timer', 10);
-                        someTimer.TimeCircles({
-                            time: {
-                                Days: {show: false},
-                                Hours: {show: false},
-                                Minutes: {color: '#900'},
-                                Seconds: {color: '#900'}
-                            }
-                        })
-                    } else if (total == 5) {
-                        window.FlashMessage.error('Your session will expire in 5 seconds, you should save your work and / or reload the page.');
-                        //alert('Your session will expire in 5 seconds, you should save your work and / or reload the page.');
-                    }
-                }
-            );
-    });
+    $( document ).ready(function() {
+var someTimer = $('div.someTimer',window.parent.document);
+someTimer.data('timer',15);
+someTimer.TimeCircles({ time: { Days: { show:false }, Hours: { show:false }, Minutes: { color: '#4D8DC1' }, Seconds: { color: '#4D8DC1' } } })
+.addListener(
+    function(unit,value,total) {
+        if (total == 10) {
+            someTimer.data('timer',10);
+            someTimer.TimeCircles({ time: { Days: { show:false }, Hours: { show:false }, Minutes: { color: '#900' }, Seconds: { color: '#900' } } })
+        } else if (total == 5) {
+            window.FlashMessage.error('Your session will expire in 5 seconds, you should save your work and / or reload the page.');
+            //alert('Your session will expire in 5 seconds, you should save your work and / or reload the page.');
+        }
+    }
+);
+});
 </script>
 
 
