@@ -74,7 +74,7 @@
 								<div class="kt-portlet__body">
 
 									<!--begin: Datatable -->
-									<table class="table table-responsive table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
+									<table class="table table-responsive table-striped- table-bordered table-hover table-checkable w-100 d-block d-md-table" id="kt_table_1">
 										<thead>
 
 											<tr>
