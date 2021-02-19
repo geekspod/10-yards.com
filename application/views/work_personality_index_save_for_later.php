@@ -3087,6 +3087,7 @@
     <!--<script src="<?php echo base_url(); ?>public/js/app.js" type="text/javascript"></script>-->
 
     <script>
+        document.getElementById("kt_aside").style.pointerEvents = "none";
         var time22 = [];
         var info = [];
 

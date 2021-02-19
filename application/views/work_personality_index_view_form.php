@@ -2186,6 +2186,7 @@ $( document ).ready(function() {
 
 <script>
 $(document).ready(function() {
+    document.getElementById("kt_aside").style.pointerEvents = "none";
     $('#checkbox').DataTable( {
         stateSave: true
     } );

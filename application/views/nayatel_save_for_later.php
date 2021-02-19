@@ -1975,6 +1975,7 @@
     <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
     <script src="<?php echo base_url(); ?>public/js/TimeCircles.js" type="text/javascript"></script>
     <script>
+        document.getElementById("kt_aside").style.pointerEvents = "none";
         var time22 = [];
         var info = [];
         var alert_variable = [];

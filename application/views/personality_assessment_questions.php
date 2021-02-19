@@ -139,6 +139,7 @@ self.queuedValues=ko.observableArray([]);
 
 <script>
 $( document ).ready(function() {
+    document.getElementById("kt_aside").style.pointerEvents = "none";
     $('input[type="checkbox"]').on('change', function() {
       var checkedValue = $(this).prop('checked');
         // uncheck sibling checkboxes (checkboxes on the same row)
