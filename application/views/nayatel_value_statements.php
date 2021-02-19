@@ -15,22 +15,30 @@
 
 </head>
 <body>
-<div style="position: fixed; right: 0; left: 0;z-index: 100;">
+    <?php
+$email=$this->uri->segment(3);
+if($email == '') {
+	redirect(base_url().'login');
+}
+?>
+    <div style="position: fixed; right: 0; left: 0;z-index: 100;">
     <h1 style="text-align: center;">Organizational Values Assessment</h1>
     <h1 style="text-align: center;">Remaining Time</h1>
     <!--end-->
 
 
-    <section class="content-header" style="display:none">
-        <div class="content-header-left">
-            <?php echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            echo "<br>"; ?>
-            <h1>Nayatel’s Value Statements</h1>
-        </div>
-    </section>
+
+
+
+<section class="content-header" style="display:none">
+	<div class="content-header-left">
+    <?php echo "<br>"; echo "<br>"; echo "<br>"; echo "<br>"; echo "<br>";?>
+		<h1>Nayatel’s Value Statements</h1>
+	</div>
+	<!--<div class="content-header-right">-->
+	<!--	<a href="<?php echo base_url(); ?>admin/categories/personal_values_assessment_questions_data" class="btn btn-primary btn-sm">Add New</a>-->
+	<!--</div>-->
+</section>
     <div>
         <div class="someTimer" data-timer="<?php echo $remaining_test_time_slots['test_time_slot']*60;?>" style="position: absolute;right: 0;width: 300px;height: 100px;left: 0;margin: auto;"></div>
         <div class="someTimer2" data-timer="180" style="position: absolute;right: 0;width: 300px;height: 100px;left: 0;margin: auto;"></div>
@@ -1395,11 +1403,12 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
         <!--<button type="button" class="btn btn-primary"  id="Next"  name="Next" value="Next" onclick="return save_data()"  style="width:9%; margin-left:0px;-->
         <!--margin-top: 25px">Next</button>-->
         <div class="col-lg-12">
-            <!--                <input id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" style="width:16%; margin-left: 430px;-->
-            <!--margin-top: 25px" />-->
-            <div id="myResponse">
+    <!--                <input id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" style="width:16%; margin-left: 430px;-->
+    <!--margin-top: 25px" />-->
+    </form>
+ <div id="myResponse">
 
-            </div>
+ </div>
 
 
             <?php
@@ -1485,6 +1494,19 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
 <script src="<?php echo base_url(); ?>public/js/TimeCircles.js" type="text/javascript"></script>
 <script>
+
+                    $(".div1").show();
+                    $(".div2").hide();
+                    $(".div3").hide();
+                    $(".div4").hide();
+                    $(".div5").hide();
+                    $(".div6").hide();
+                    $(".div7").hide();
+                    $(".div8").hide();
+                    $(".div9").hide();
+                    $(".div10").hide();
+                     $(".div11").hide();
+
  var time22=[];
   var info=[];
   var new_counter=[];
@@ -1824,75 +1846,86 @@ var atLeastOneIsChecked = $('input[name="checkbox[]"]:checked').length == 10;
 //values3.push(questions_id);
 
 
-     if (info == 1) {
+//  if(info == 1){
 
-         $("#submit").hide();
-         $("#save_for_later").show();
+$("#submit").hide();
+$("#save_for_later").show();
 //   $(".div2").hide();
 //   $(".div3").hide();
 //     $(".div4").hide();
 //      $(".div5").hide();
 //       $(".div6").hide();
 //       $(".div7").hide();
-         checkbox1 = jQuery("#checkbox1:checked").length;
-         checkbox2 = jQuery("#checkbox2:checked").length;
-         checkbox3 = jQuery("#checkbox3:checked").length;
-         checkbox4 = jQuery("#checkbox4:checked").length;
-         checkbox5 = jQuery("#checkbox5:checked").length;
-         checkbox6 = jQuery("#checkbox6:checked").length;
-         checkbox7 = jQuery("#checkbox7:checked").length;
-         checkbox8 = jQuery("#checkbox8:checked").length;
-         checkbox9 = jQuery("#checkbox9:checked").length;
-         checkbox10 = jQuery("#checkbox10:checked").length;
+checkbox1 = jQuery("#checkbox1:checked").length;
+checkbox2 = jQuery("#checkbox2:checked").length;
+checkbox3 = jQuery("#checkbox3:checked").length;
+checkbox4 = jQuery("#checkbox4:checked").length;
+checkbox5 = jQuery("#checkbox5:checked").length;
+checkbox6 = jQuery("#checkbox6:checked").length;
+checkbox7 = jQuery("#checkbox7:checked").length;
+checkbox8 = jQuery("#checkbox8:checked").length;
+checkbox9 = jQuery("#checkbox9:checked").length;
+checkbox10 = jQuery("#checkbox10:checked").length;
  //alert(checkbox1);
 
          checklength1=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
 //alert(checklength1);
-         if (checklength1 >= 10) {
+if(checklength1 > 9){
 
-             $(".div1").hide();
-         }
+         $(".div1").hide();
+                $(".div2").show();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").hide();
+    }
 
-     }
+// }
 
 // page 2
 
-     if (info == 2) {
-         $("#submit").hide();
-         $("#save_for_later").show();
-         //   $(".div1").hide();
+// if(info == 2){
+        //  $("#submit").hide();
+        //   $("#save_for_later").show();
+    //   $(".div1").hide();
 
 //   $(".div3").hide();
 //     $(".div4").hide();
 //      $(".div5").hide();
 //       $(".div6").hide();
 //       $(".div7").hide();
-         checkbox11 = jQuery("#checkbox11:checked").length;
-         checkbox12 = jQuery("#checkbox12:checked").length;
-         checkbox13 = jQuery("#checkbox13:checked").length;
-         checkbox14 = jQuery("#checkbox14:checked").length;
-         checkbox15 = jQuery("#checkbox15:checked").length;
-         checkbox16 = jQuery("#checkbox16:checked").length;
-         checkbox17 = jQuery("#checkbox17:checked").length;
-         checkbox18 = jQuery("#checkbox18:checked").length;
-         checkbox19 = jQuery("#checkbox19:checked").length;
-         checkbox20 = jQuery("#checkbox20:checked").length;
+checkbox11 = jQuery("#checkbox11:checked").length;
+checkbox12 = jQuery("#checkbox12:checked").length;
+checkbox13 = jQuery("#checkbox13:checked").length;
+checkbox14 = jQuery("#checkbox14:checked").length;
+checkbox15 = jQuery("#checkbox15:checked").length;
+checkbox16 = jQuery("#checkbox16:checked").length;
+checkbox17 = jQuery("#checkbox17:checked").length;
+checkbox18 = jQuery("#checkbox18:checked").length;
+checkbox19 = jQuery("#checkbox19:checked").length;
+checkbox20 = jQuery("#checkbox20:checked").length;
 
-         // alert(checkbox1);
-         checklength2 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+   // alert(checkbox1);
+     checklength2=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
          //alert(checklength1);
 
-         if (checklength2 >= 10) {
-             $(".div1").hide();
-             $(".div2").hide();
-         }
+    if(checklength1 > 19){
+          $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").show();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").hide();
+    }
 
-     }
+// }
 
 // page 3
-     if (info == 3) {
-         $("#submit").hide();
-         $("#save_for_later").show();
+// if(info == 3){
+        //   $("#submit").hide();
+        //   $("#save_for_later").show();
 //       $(".div1").hide();
 
 //   $(".div2").hide();
@@ -1914,18 +1947,22 @@ var atLeastOneIsChecked = $('input[name="checkbox[]"]:checked').length == 10;
          checklength3 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
          //alert(checklength1);
 
-         if (checklength3 >= 10) {
-             $(".div1").hide();
-             $(".div2").hide();
-             $(".div3").hide();
-         }
+    if(checklength1 > 29){
+        $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").show();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").hide();
+    }
 
-     }
+// }
 
 // page 4
-     if (info == 4) {
-         $("#submit").hide();
-         $("#save_for_later").show();
+// if(info == 4){
+        // $("#submit").hide();
+        //  $("#save_for_later").show();
 //           $(".div1").hide();
 
 //   $(".div2").hide();
@@ -1947,19 +1984,22 @@ var atLeastOneIsChecked = $('input[name="checkbox[]"]:checked').length == 10;
          checklength4 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
          //alert(checklength1);
 
-         if (checklength4 >= 10) {
-             $(".div1").hide();
-             $(".div2").hide();
-             $(".div3").hide();
-             $(".div4").hide();
-         }
+    if(checklength1 > 39){
+        $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").show();
+                $(".div6").hide();
+                $(".div7").hide();
+    }
 
-     }
+// }
 // page 5
 
-     if (info == 5) {
-         $("#submit").hide();
-         $("#save_for_later").show();
+//  if(info == 5){
+        //  $("#submit").hide();
+        //   $("#save_for_later").show();
 //          $(".div1").hide();
 
 //   $(".div2").hide();
@@ -1981,19 +2021,22 @@ var atLeastOneIsChecked = $('input[name="checkbox[]"]:checked').length == 10;
          checklength5 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
          //alert(checklength1);
 
-         if (checklength5 >= 10) {
-             $(".div1").hide();
-             $(".div2").hide();
-             $(".div3").hide();
-             $(".div4").hide();
-             $(".div5").hide();
-         }
+    if(checklength1 > 49){
+       $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").show();
+                $(".div7").hide();
+       //  window.FlashMessage.success('Yours answers are saved successfully.');
+    }
 
-     }
+// }
 // page 6
-     if (info == 6) {
-         $("#submit").hide();
-         $("#save_for_later").show();
+//  if(info == 6){
+        // $("#submit").hide();
+        //  $("#save_for_later").show();
 //          $(".div1").hide();
 
 //   $(".div2").hide();
@@ -2016,20 +2059,23 @@ var atLeastOneIsChecked = $('input[name="checkbox[]"]:checked').length == 10;
          checklength6 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
          //alert(checklength1);
 
-         if (checklength6 >= 10) {
-             $(".div1").hide();
-             $(".div2").hide();
-             $(".div3").hide();
-             $(".div4").hide();
-             $(".div5").hide();
-             $(".div6").hide();
-         }
-
-
-     }
-     if (info == 7) {
+    if(checklength1 > 59){
          $("#submit").show();
-         $("#save_for_later").hide();
+         $("#save_for_later").show();
+        $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").show();
+    }
+
+
+// }
+// if(info == 7){
+        //  $("#submit").show();
+        //  $("#save_for_later").hide();
 //           $(".div1").hide();
 
 //   $(".div2").hide();
@@ -2053,20 +2099,21 @@ var atLeastOneIsChecked = $('input[name="checkbox[]"]:checked').length == 10;
          checklength7 = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
          //alert(checklength1);
 
-         if (checklength7 >= 10) {
-             $(".div1").hide();
-             $(".div2").hide();
-             $(".div3").hide();
-             $(".div4").hide();
-             $(".div5").hide();
-             $(".div6").hide();
-             //  $(".div7").hide();
-         }
+    if(checklength1 > 69){
+                $(".div1").hide();
+                $(".div2").hide();
+                $(".div3").hide();
+                $(".div4").hide();
+                $(".div5").hide();
+                $(".div6").hide();
+                $(".div7").show();
+    }
 
-     }
+// }
 
 
- });
+
+});
 
  function submitForm() {
 //      alert(arr);
@@ -2205,11 +2252,25 @@ time2 = $(".someTimer2").TimeCircles().getTime();
 //01
 if(time2 < 01)
 				{
-                    //	alert("vdgdg") ;
-                    $(".someTimer").TimeCircles().destroy();
-                    $(".someTimer2").TimeCircles().destroy();
-                    window.location.replace("https://10-yards.com/login/dashboard");
+			//	alert("vdgdg") ;
+				     $(".someTimer").TimeCircles().destroy();
+				      $(".someTimer2").TimeCircles().destroy();
+				   $.ajax({
+                type: 'POST',
+                url: 'https://10-yards.com/login/nayatel_incomplete_scenario',
+                data: {
+                    "time": 0,
+
+                },
+                dataType: 'json',
+                success: function (data) {
+                   // alert('success');
+                   window.location.href = "<?php echo base_url();?>login/dashboard";
                 }
+            });
+
+				    window.location.replace("https://10-yards.com/login/dashboard");
+				    }
 
 
     }
