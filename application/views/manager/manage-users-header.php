@@ -62,5 +62,6 @@
 		<link href="<?php echo base_url(); ?>assets-data/css/demo1/skins/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="<?php echo base_url(); ?>assets-data/css/demo1/skins/aside/dark.css" rel="stylesheet" type="text/css" />
 
+        <link href="<?php echo base_url(); ?>public/admin/css/custom.css" rel="stylesheet" type="text/css" />
 		<!--end::Layout Skins -->
 		<link rel="shortcut icon" href="<?php echo base_url(); ?>assets-data/media/logos/favicon.ico" />
