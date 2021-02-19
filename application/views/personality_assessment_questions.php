@@ -11,7 +11,7 @@
 <?php echo form_open_multipart(base_url().'login/personality_assessment_questions_data',array('class' => 'form-horizontal')); ?>
 <input type="hidden" class="email" name="email" value="<?php echo $dashboard_data['email'];?>"
 
-<section class="content">
+<section class="content container">
 
   <div class="row">
     <div class="col-md-12">
@@ -88,9 +88,6 @@ break;
             		
             </tbody>
           </table>
-                        <button name="form2" type="submit" class="btn btn-primary sb-btn loginbtn" style="    width: 16%;
-    margin-left: 430px;margin-top:20px">Submit</button>
-
                         <?php echo form_close(); ?>
                       
                         
@@ -106,6 +103,15 @@ break;
 	               
         </div>
       </div>
+    </div>
+      <div class="col-md-12">
+          <div class="row justify-content-center" style="margin-top:20px;">
+              <div>
+                  <div class="col-lg-12">
+                      <button name="form2" type="submit" class="btn btn-primary sb-btn btn-lg">Submit</button>
+                  </div>
+              </div>
+          </div>
 </section>
 
 
