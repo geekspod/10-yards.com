@@ -19,8 +19,11 @@ if($email == '') {
 	redirect(base_url().'login');
 }
 ?>
-<h1 style="text-align: center;">Organizational Values Assessment</h1>
 <!--end-->
+<div style="position: fixed; right: 0; left: 0;z-index: 100;">
+    <h1 style="text-align: center;">Organizational Values Assessment</h1>
+
+    <!--end-->
 
 
     <section class="content-header" style="display:none">
