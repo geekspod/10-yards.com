@@ -20,43 +20,31 @@
             
 </head>
 <body>
-	<h1 style="text-align: center;">Work Personality Index</h1>
+<div style="position: fixed; right: 0; left: 0;z-index: 100;">
+    <h1 style="text-align: center;">Work Personality Index</h1>
+    <h1 style="text-align: center;">Remaining Time</h1>
+    <!--end-->
 
-<div class="container" style="margin-top:20px;">
-<h1 style="text-align: center;">Remaining Time</h1>
-<div class="someTimer" data-timer="<?php echo $time['test_time_slot']*60;?>" style="width: 300px; height: 100px; "></div>
-<hr>
 
-<!--<button class="btn btn-success start">Start</button>-->
-<!--<button class="btn btn-danger stop">Stop</button>-->
-
+    <section class="content-header" style="display:none">
+        <div class="content-header-left">
+            <?php echo "<br>";
+            echo "<br>";
+            echo "<br>";
+            echo "<br>";
+            echo "<br>"; ?>
+            <h1>Nayatel’s Value Statements</h1>
+        </div>
+        <!--<div class="content-header-right">-->
+        <!--	<a href="<?php echo base_url(); ?>admin/categories/personal_values_assessment_questions_data" class="btn btn-primary btn-sm">Add New</a>-->
+        <!--</div>-->
+    </section>
+    <div>
+        <div class="someTimer" data-timer="<?php echo $remaining_test_time_slots['test_time_slot']*60;?>" style="position: absolute;right: 0;width: 300px;height: 100px;left: 0;margin: auto;"></div>
+        <div class="someTimer2" data-timer="180" style="position: absolute;right: 0;width: 300px;height: 100px;left: 0;margin: auto;"></div>
+    </div>
 </div>
-
-
-<!--extra three minutes-->
-<div class="container" style="margin-top:20px;">
-
-<div class="someTimer2" data-timer="180" style="width: 300px; height: 100px; "></div>
-<hr>
-
-
-</div>
-<!--end-->
-
-
-
-
- 
-<section class="content-header" style="display:none">
-	<div class="content-header-left">
-    <?php echo "<br>"; echo "<br>"; echo "<br>"; echo "<br>"; echo "<br>";?>
-		<h1>Nayatel’s Value Statements</h1>
-	</div>
-	<!--<div class="content-header-right">-->
-	<!--	<a href="<?php echo base_url(); ?>admin/categories/personal_values_assessment_questions_data" class="btn btn-primary btn-sm">Add New</a>-->
-	<!--</div>-->
-</section>
-<form id="myform" class="myform" method="post" name="myform">
+<form id="myform" class="myform" method="post" name="myform" style="padding-top: 200px">
 
 <div id="message"></div>
  <input type="hidden" class="email" name="email" value="<?php echo $dashboard_data['email'];?>"
@@ -2039,20 +2027,24 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 
                     
                     ?>
-                    <div id="submit">
-                    <button  id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" class="btn btn-primary sb-btn loginbtn" style="width:16%; margin-left: 430px;
-    margin-top: 25px">Submit</button>
+        </div>
+      </div>
     </div>
-    <!--<button type="button" class="btn btn-primary"  id="Next"  name="Next" value="Next" onclick="return save_data()"  style="width:9%; margin-left:0px;-->
-    <!--margin-top: 25px">Next</button>-->
-
-    
-   <div id="save_for_later" align="center">
-    <button  id="save" type="submit" name="save" value="Save For Later"  onclick="return save_for_later()" class="btn btn-primary sb-btn loginbtn" style="width:16%; margin-left:0px;
-    margin-top: 25px">Save For Later</button>
+  </div>
+    <div class="row justify-content-center" style="margin-top:20px;">
+        <div>
+            <div class="col-lg-12">
+                <button  id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" class="btn btn-primary">Submit</button>
+                <button  id="save" type="submit" name="save" value="Save" onclick="return save_for_later()" class="btn btn-primary">Save For Later</button>
+            </div>
+        </div>
     </div>
-    <!--                <input id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" style="width:16%; margin-left: 430px;-->
-    <!--margin-top: 25px" />-->
+    <div class="row">
+        <!--<button type="button" class="btn btn-primary"  id="Next"  name="Next" value="Next" onclick="return save_data()"  style="width:9%; margin-left:0px;-->
+        <!--margin-top: 25px">Next</button>-->
+        <div class="col-lg-12">
+            <!--                <input id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" style="width:16%; margin-left: 430px;-->
+            <!--margin-top: 25px" />-->
     </form>
  <div id="myResponse">
    
