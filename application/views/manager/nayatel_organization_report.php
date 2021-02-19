@@ -171,7 +171,7 @@ Learning = data.Learning;
 Innovation = data.Innovation;
 Simplicity = data.Simplicity;
 //debugger;
-Highcharts.chart('container', {
+var chart = Highcharts.chart('container', {
     chart: {
         type: 'column',
          spacingBottom: 5,
@@ -282,6 +282,10 @@ Highcharts.chart('container', {
 
     }]
 });
+$(document).ready(function(){
+	chart.reflow();
+	$(window).resize();
+})
 //debugger;
 </script>
 <style>
