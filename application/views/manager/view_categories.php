@@ -75,9 +75,9 @@
 								<div class="kt-portlet__body">
 
 									<!--begin: Datatable -->
-									<table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
+									<table class="table table-striped- table-bordered table-hover table-checkable table-responsive w-100 d-block d-md-table" id="kt_table_1">
 										<thead>
-											<tr>
+											<tr class="view_categories_table">
 												<th style="vertical-align: unset">Sr. </th>
 												<th style="vertical-align: unset">Test Title</th>
 												<th style="vertical-align: unset">Department</th>
@@ -87,9 +87,9 @@
 												<th style="vertical-align: unset">Number of users not yet attempted test</th>
 												<th style="vertical-align: unset">Average score of completed test</th>
 												<th style="vertical-align: unset">Percentage of qualified users (completed test)</th>
-													
-												
-												
+
+
+
 												<!--<th>Actions</th>-->
 											</tr>
 										</thead>
