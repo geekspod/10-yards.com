@@ -15,7 +15,7 @@
 
   <div class="row">
     <div class="col-md-12">
-    
+
         <?php
         if($this->session->flashdata('error')) {
             ?>
@@ -34,12 +34,12 @@
         ?>
 
       <div class="box box-info">
-        
+
         <div class="box-body table-responsive"style="width: 80%;
     margin: 0 auto">
             <h1 style="    color: #4172a5">Questions</h1>
-            
-          <table id="checkboxes" class="table table-bordered table-striped">
+
+            <table id="checkboxes" class="table table-bordered table-striped">
 			<thead>
 			    <tr>
 			        <th>SL</th>
@@ -65,8 +65,6 @@
 	                    <td><?php echo $row['name']; ?></td>
 
 
-
-	
                         <!-- <input type='hidden' value='0' name='checkbox[]'> -->
 
                         <td><input type="checkbox" name="checkbox[]" value="0" data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
@@ -74,9 +72,9 @@
                         <td><input type="checkbox" name="checkbox[]" value="2" data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
                         <td><input type="checkbox" name="checkbox[]" value="3" data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
                         <td><input type="checkbox" name="checkbox[]" value="5" data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
- 
 
-  <?php
+
+                        <?php
   $count_total_uploads=$count;
   if($i == $count_total_uploads){
 break;
@@ -85,13 +83,13 @@ break;
             }
             	?>
                         </tr>
-            		
+
             </tbody>
           </table>
                         <?php echo form_close(); ?>
-                      
-                        
-	                    <!-- <td>
+
+
+            <!-- <td>
 	                        <a href="<?php echo base_url(); ?>admin/categories/edit_Work_personality_index/<?php echo $row['questions_assessment_id']; ?>" class="btn btn-primary btn-xs">Edit</a>
 	                        <a href="<?php echo base_url(); ?>admin/categories/delete_Work_personality_index/<?php echo $row['questions_assessment_id']; ?>" class="btn btn-danger btn-xs" onClick="return confirm('Are you sure?');">Delete</a>
 
@@ -99,8 +97,8 @@ break;
                         <!-- <td>
                         <a href="<?php echo base_url(); ?>admin/categories/add_score/<?php echo $row['categories_id']; ?>" class="btn btn-primary btn-xs">Add score</a>
 </td> -->
-                       
-	               
+
+
         </div>
       </div>
     </div>

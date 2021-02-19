@@ -15,14 +15,14 @@
 
 <body>
 <div style="position: fixed; right: 0; left: 0;z-index: 100;">
-	<h1 style="text-align: center;">Work Personality Index</h1>
+    <h1 style="text-align: center;">Work Personality Index</h1>
 
-<!--end-->
+    <!--end-->
 
 
-	<section class="content-header" style="display:none">
-		<div class="content-header-left">
-			<?php echo "<br>";
+    <section class="content-header" style="display:none">
+        <div class="content-header-left">
+            <?php echo "<br>";
 			echo "<br>";
 			echo "<br>";
 			echo "<br>";
@@ -44,8 +44,6 @@
     <input type="hidden" class="email" name="email" value="<?php echo $dashboard_data['email']; ?>"
     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>"
            value="<?php echo $this->security->get_csrf_hash(); ?>">
-
-
     <section class="content container">
 
         <div class="row">
@@ -3503,7 +3501,7 @@
 // alert(values2);// sub_categories_names
 // alert(values3);//dimensions_name
 
-            var table = $('#checkboxes').DataTable();
+            var table = $('#checkboxes').DataTable({fixedHeader: true});
             info = table.page.info();
             info = info.page + 1;
 //alert(info);
@@ -4157,7 +4155,6 @@
 //899.995
             if (time22 < 01) {
                 $(".someTimer").TimeCircles().destroy();
-
 
 // second time
                 var timeCircles = $(".someTimer2").TimeCircles({
