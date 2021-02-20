@@ -22,8 +22,8 @@ if($email == '') {
 
 ?>
 
-    <div style="position: fixed; right: 0; left: 0;z-index: 100;">
-<h1 style="text-align: center;">Work Personality Index</h1>
+    <div style="position: fixed; right: 0; left: 0;z-index: 100;text-align:center">
+<h1 style="display: inline-block;background-color:white;border-radius:20px;box-shadow: 2px 2px 20px 0 rgb(0 0 0 / 75%);padding:10px">Work Personality Index</h1>
 
 <!--end-->
 
@@ -42,8 +42,8 @@ if($email == '') {
     <!--</div>-->
 </section>
         <div>
-            <div class="someTimer" data-timer="<?php echo $remaining_test_time_slots['test_time_slot']*60;?>" style="position: absolute;right: 0;width: 300px;height: 100px;left: 0;margin: auto;"></div>
-            <div class="someTimer2" data-timer="180" style="position: absolute;right: 0;width: 300px;height: 100px;left: 0;margin: auto;"></div>
+            <div class="someTimer" data-timer="<?php echo $remaining_test_time_slots['test_time_slot']*60;?>" style="position: absolute;right: 0;width: 300px;height: 100px;left: 0;margin: auto;background-color:white;border-radius:20px;box-shadow: 2px 2px 20px 0 rgb(0 0 0 / 75%);z-index:200"></div>
+            <div class="someTimer2" data-timer="180" style="position: absolute;right: 0;width: 300px;height: 100px;left: 0;margin: auto;background-color:white;border-radius:20px;box-shadow: 2px 2px 20px 0px rgb(0 0 0 / 75%);"></div>
         </div>
     </div>
 <form id="myform" class="myform" method="post" name="myform" style="padding-top: 200px">
