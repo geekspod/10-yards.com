@@ -4432,6 +4432,8 @@ new_counter=arr.length;
         $("#checkboxes tbody tr").on("click", function () {
 
             var currentRows2 = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
+            const clicked = $(this).closest('tr').find('input[type="checkbox"]:checked');
+            $(clicked.context).css('opacity', clicked.length ? 0.5 : 1)
             // alert(currentRows2);
             save_for_later_values.push(currentRows2);
             //alert(save_for_later_values);

@@ -2506,7 +2506,8 @@ var formatted = now.getHours() + ":" + now.getMinutes();
 
 
 currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
-
+    const clicked = $(this).closest('tr').find('input[type="checkbox"]:checked');
+    $(clicked.context).css('opacity', clicked.length ? 0.5 : 1)
   // alert(currentRows);
 // var arr = [];
 // $('input.checkbox:checkbox:checked').each(function () {
@@ -3234,6 +3235,8 @@ if(info == 9 && new_counter > 99){
 $( "#checkboxes tbody tr" ).on( "click", function() {
     counter++;
         var currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
+    const clicked = $(this).closest('tr').find('input[type="checkbox"]:checked');
+    $(clicked.context).css('opacity', clicked.length ? 0.5 : 1)
         //alert(currentRows);
         // timer
         // first time

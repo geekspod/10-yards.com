@@ -2374,6 +2374,8 @@ else if(length_value > 59 && length_value <=69){
         $("#checkboxes tbody tr").on("click", function () {
             counter++;
             currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
+            const clicked = $(this).closest('tr').find('input[type="checkbox"]:checked');
+            $(clicked.context).css('opacity', clicked.length ? 0.5 : 1)
             //alert(currentRows);
             arr.push(currentRows);
             arr_length = arr.length;
@@ -2794,6 +2796,8 @@ else if(length_value > 59 && length_value <=69){
 
         $("#checkboxes tbody tr").on("click", function () {
             var currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
+            const clicked = $(this).closest('tr').find('input[type="checkbox"]:checked');
+            $(clicked.context).css('opacity', clicked.length ? 0.5 : 1)
             //alert(currentRows);
             // timer
             // first time
