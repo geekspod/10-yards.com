@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'alefdb.cs8di2gzhe9o.us-east-2.rds.amazonaws.com',
-	'username' => '10yards',
-	'password' => 'JaEP0pBVKm8x',
+	'hostname' => 'localhost',
+	'username' => 'zeryard1_corp',
+	'password' => 'adadadad',
 	'database' => 'zeryard1_corporate',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
