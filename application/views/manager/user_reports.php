@@ -117,25 +117,6 @@
         max-width: none;
     }
 </style>
-<table class="container">
-    <div class="d-flex flex-nowrap">
-        <tr>
-            <td>
-                <h2>
-                    <div class="order-1 p-2"></div>
-                </h2>
-            </td>
-            <td>
-                <h2>
-                    <div class="order-3 p-2"></div>
-                </h2>
-            </td>
-            <td>
-                <h2>
-                    <div class="order-2 p-2"></div>
-                </h2>
-            </td>
-    </div>
 
 <div class="container">
     <div class="row align-items-center">
