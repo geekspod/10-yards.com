@@ -137,86 +137,40 @@
             </td>
     </div>
 
-    <div class="d-flex flex-nowrap">
-        <tr>
-            <td>
-                <div class="order-3 p-2"><?php echo $user_detail['first_name'];
-                    echo $user_detail['last_name']; ?></div>
-            </td>
-            <td>
-                <div class="order-3 p-2"><?php echo $user_detail['job_title']; ?> </div>
-            </td>
-            <td>
-                <div class="order-2 p-2"><?php echo $user_detail['department']; ?></div>
-            </td>
-        </tr>
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-sm-3">
+            <p><b>Name: </b></p>
+        </div>
+        <div class="col-sm-9">
+            <p><?php echo $user_detail['first_name'] . " " . $user_detail['last_name']; ?></p>
+        </div>
     </div>
-</table>
-
-<table class="container">
-    <div class="d-flex flex-nowrap">
-        <tr>
-            <?php if (!empty($work_record)) {
-                ?>
-                <td><a href="<?php echo base_url(); ?>" + "/manager/login/user_reports" style="    background-color: #008000;
-    border-color: #5867dd;
-    color: white;
-    border: 1px solid;
-    padding: 7px 12px">Work Personality Index</a></td>
-
-            <?php } else { ?>
-                <td><a href="<?php echo base_url(); ?>" + "/manager/login/user_reports" style="    background-color: red !important;
-    border-color: #5867dd;
-    color: white;
-    border: 1px solid;
-    padding: 7px 12px">Work Personality Index</a></td>
-
-            <?php } ?>
-
-            <?php if (empty($personal_record)) {
-                ?>
-
-                <td><a style="    background-color: red !important;
-    border-color: #5867dd;
-    color: white;
-    border: 1px solid;
-    padding: 7px 12px">Personal Values Assessment</a></td>
-            <?php } else { ?>
-                <td><a style="    background-color: #008000;
-    border-color: #5867dd;
-    color: white;
-    border: 1px solid;
-    padding: 7px 12px">Personal Values Assessment</a></td>
-
-            <?php } ?>
-
-            <?php if (empty($personality_assessment_record)) {
-                ?>
-
-                <td><a style="    background-color: red !important;
-    border-color: #5867dd;
-    color: white;
-    border: 1px solid;
-    padding: 7px 12px">Personality Assessment</a></td>
-
-
-            <?php } else { ?>
-                <td><a style="    background-color: #008000;
-    border-color: #5867dd;
-    color: white;
-    border: 1px solid;
-    padding: 7px 12px">Personality Assessment</a></td>
-            <?php } ?>
-        </tr>
+    <div class="row align-items-center">
+        <div class="col-sm-3">
+            <p><b>Job Title: </b></p>
+        </div>
+        <div class="col-sm-9">
+            <p><?php echo $user_detail['job_title']; ?></p>
+        </div>
     </div>
-</table>
+    <div class="row align-items-center">
+        <div class="col-sm-3">
+            <p><b>Department: </b></p>
+        </div>
+        <div class="col-sm-9">
+            <p><?php echo $user_detail['department']; ?></p>
+        </div>
+    </div>
+</div>
+
 
 <div class="mt-5"></div>
 
 <div class="container">
     <div class="row align-items-center">
         <div class="col-sm-3">
-            <p>Work Personality Index</p>
+            <p><b>Work Personality Index</b></p>
         </div>
         <div class="col-sm-9">
             <div class="progress" style="width:100%;">
@@ -226,7 +180,7 @@
     </div>
     <div class="row align-items-center">
         <div class="col-sm-3">
-            <p>Personal Values Assessment</p>
+            <p><b>Personal Values Assessment</b></p>
         </div>
         <div class="col-sm-9">
             <div class="progress" style="width:100%;">
@@ -236,7 +190,7 @@
     </div>
     <div class="row align-items-center">
         <div class="col-sm-3">
-            <p>Personality Assessment</p>
+            <p><b>Personality Assessment</b></p>
         </div>
         <div class="col-sm-9">
             <div class="progress" style="width:100%;">
