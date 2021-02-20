@@ -188,6 +188,15 @@ License: You must have a valid license purchased only from themeforest(the above
 												</g>
 											</svg></span><span class="kt-menu__link-text">Current Test</span></a></li>
 											
+											<!--add employees-->
+											
+											<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="<?php echo base_url(); ?>/manager/login/add_employees" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<polygon id="Bound" points="0 0 24 0 24 24 0 24" />
+													<path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z" id="Combined-Shape" fill="#000000" opacity="0.3" />
+												</g>
+											</svg></span><span class="kt-menu__link-text">Add Employees</span></a></li>
+											
 											
 								<!--<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">-->
 								<!--				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
@@ -1072,31 +1081,31 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 							<!--begin: Search -->
 
 							<!--begin: Search -->
-							<div class="kt-header__topbar-item kt-header__topbar-item--search dropdown" id="kt_quick_search_toggle">
-								<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-									<span class="kt-header__topbar-icon">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-												<rect id="bound" x="0" y="0" width="24" height="24" />
-												<path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" id="Path-2" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-												<path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" id="Path" fill="#000000" fill-rule="nonzero" />
-											</g>
-										</svg> </span>
-								</div>
-								<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-lg">
-									<div class="kt-quick-search kt-quick-search--inline" id="kt_quick_search_inline">
-										<form method="get" class="kt-quick-search__form">
-											<div class="input-group">
-												<div class="input-group-prepend"><span class="input-group-text"><i class="flaticon2-search-1"></i></span></div>
-												<input type="text" class="form-control kt-quick-search__input" placeholder="Search...">
-												<div class="input-group-append"><span class="input-group-text"><i class="la la-close kt-quick-search__close"></i></span></div>
-											</div>
-										</form>
-										<div class="kt-quick-search__wrapper kt-scroll" data-scroll="true" data-height="300" data-mobile-height="200">
-										</div>
-									</div>
-								</div>
-							</div>
+							<!--<div class="kt-header__topbar-item kt-header__topbar-item--search dropdown" id="kt_quick_search_toggle">-->
+							<!--	<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">-->
+							<!--		<span class="kt-header__topbar-icon">-->
+							<!--			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">-->
+							<!--				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
+							<!--					<rect id="bound" x="0" y="0" width="24" height="24" />-->
+							<!--					<path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" id="Path-2" fill="#000000" fill-rule="nonzero" opacity="0.3" />-->
+							<!--					<path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" id="Path" fill="#000000" fill-rule="nonzero" />-->
+							<!--				</g>-->
+							<!--			</svg> </span>-->
+							<!--	</div>-->
+							<!--	<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-lg">-->
+							<!--		<div class="kt-quick-search kt-quick-search--inline" id="kt_quick_search_inline">-->
+							<!--			<form method="get" class="kt-quick-search__form">-->
+							<!--				<div class="input-group">-->
+							<!--					<div class="input-group-prepend"><span class="input-group-text"><i class="flaticon2-search-1"></i></span></div>-->
+							<!--					<input type="text" class="form-control kt-quick-search__input" placeholder="Search...">-->
+							<!--					<div class="input-group-append"><span class="input-group-text"><i class="la la-close kt-quick-search__close"></i></span></div>-->
+							<!--				</div>-->
+							<!--			</form>-->
+							<!--			<div class="kt-quick-search__wrapper kt-scroll" data-scroll="true" data-height="300" data-mobile-height="200">-->
+							<!--			</div>-->
+							<!--		</div>-->
+							<!--	</div>-->
+							<!--</div>-->
 
 							<!--end: Search -->
 
@@ -1822,7 +1831,7 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 
 									<!--begin: Navigation -->
 									<div class="kt-notification">
-										<a href="#" class="kt-notification__item">
+										<a href="<?php echo base_url();?>/manager/login/dashboard" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-calendar-3 kt-font-success"></i>
 											</div>
@@ -1831,24 +1840,24 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
                                                 <?php echo $manager_dashboard_data['email'];?>
 												</div>
 												<div class="kt-notification__item-time">
-                                                <?php echo $manager_dashboard_data['organization'];?>
+                                                <?php echo $manager_dashboard_data['designation'];?>
 												</div>
 											</div>
 										</a>
-										<a href="#" class="kt-notification__item">
+										<a href="<?php echo base_url();?>/manager/login/dashboard" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-mail kt-font-warning"></i>
 											</div>
 											<div class="kt-notification__item-details">
 												<div class="kt-notification__item-title kt-font-bold">
-                                                <?php echo $manager_dashboard_data['title'];?>
+                                                <?php echo $manager_dashboard_data['designation'];?>
 												</div>
 												<div class="kt-notification__item-time">
 												<?php echo $manager_dashboard_data['status'];?>
 												</div>
 											</div>
 										</a>
-										<a href="#" class="kt-notification__item">
+										<a href="<?php echo base_url();?>/manager/login/dashboard" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-rocket-1 kt-font-danger"></i>
 											</div>
@@ -1857,11 +1866,11 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
                                                 <?php echo $manager_dashboard_data['landline'];?>
 												</div>
 												<div class="kt-notification__item-time">
-                                                <?php echo $manager_dashboard_data['number1'];?>
+                                                <?php echo $manager_dashboard_data['status'];?>
 												</div>
 											</div>
 										</a>
-										<a href="#" class="kt-notification__item">
+										<a href="<?php echo base_url();?>/manager/login/dashboard" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-hourglass kt-font-brand"></i>
 											</div>
@@ -1874,7 +1883,7 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 												</div>
 											</div>
 										</a>
-										<a href="#" class="kt-notification__item">
+										<a href="<?php echo base_url();?>/manager/login/dashboard" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-cardiogram kt-font-warning"></i>
 											</div>

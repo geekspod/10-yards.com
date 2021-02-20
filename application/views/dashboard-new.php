@@ -98,6 +98,11 @@ License: You must have a valid license purchased only from themeforest(the above
   overflow: hidden; 
 object-fit: cover;
 }
+            @media (max-width: 1024px) { 
+                #logo {
+            	    width: 30%;
+                } 
+            }
 		</style>
 	</head>
 
@@ -273,8 +278,8 @@ object-fit: cover;
 													<li class="kt-menu__item ">
 														<h3 class="kt-menu__heading kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text"></span><i class="kt-menu__ver-arrow la la-angle-right"></i></h3>
 														<ul class="kt-menu__inner">
-															<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-map"></i><span class="kt-menu__link-text">FAQs</span></a></li>
-															<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-user"></i><span class="kt-menu__link-text">Instruction of Solving Reports</span></a></li>
+															<li class="kt-menu__item " aria-haspopup="true"><a  class="kt-menu__link "><i class="kt-menu__link-icon flaticon-map"></i><span class="kt-menu__link-text">FAQs</span></a></li>
+															<li class="kt-menu__item " aria-haspopup="true"><a  class="kt-menu__link "><i class="kt-menu__link-icon flaticon-user"></i><span class="kt-menu__link-text">Instruction of Solving Reports</span></a></li>
 													<!--		<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-clipboard"></i><span class="kt-menu__link-text">IPO Reports</span></a></li>-->
 													<!--		<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-graphic-1"></i><span class="kt-menu__link-text">Finance Margins</span></a></li>-->
 													<!--		<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-graphic-2"></i><span class="kt-menu__link-text">Revenue Reports</span></a></li>-->
@@ -1051,21 +1056,21 @@ object-fit: cover;
 									<!--end: Head -->
 
 									<!--begin: Navigation -->
-									<div class="kt-notification">
-										<a href="#" class="kt-notification__item">
+									<div id="latestData" class="kt-notification">
+										<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-calendar-3 kt-font-success"></i>
 											</div>
 											<div class="kt-notification__item-details">
 												<div class="kt-notification__item-title kt-font-bold">
-												Welcome	<?php echo $dashboard_data['name'];?>
+												Welcome	<?php echo $dashboard_data['first_name'];?>
 												</div>
 												<div class="kt-notification__item-time">
 												Email:<?php echo $dashboard_data['email'];?>
 												</div>
 											</div>
 										</a>
-										<a href="#" class="kt-notification__item">
+										<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-mail kt-font-warning"></i>
 											</div>
@@ -1078,7 +1083,7 @@ object-fit: cover;
 												</div>
 											</div>
 										</a>
-										<a href="#" class="kt-notification__item">
+										<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-rocket-1 kt-font-danger"></i>
 											</div>
@@ -1089,7 +1094,7 @@ object-fit: cover;
 												</div>
 											</div>
 										</a>
-										<a href="#" class="kt-notification__item">
+										<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-hourglass kt-font-brand"></i>
 											</div>
@@ -1102,7 +1107,7 @@ object-fit: cover;
 												</div>
 											</div>
 										</a>
-										<a href="#" class="kt-notification__item">
+										<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-cardiogram kt-font-warning"></i>
 											</div>
@@ -1146,7 +1151,7 @@ object-fit: cover;
 							<div class="kt-container  kt-container--fluid ">
 							
 							<h3 class="kt-subheader-search__title" style="color:black; font-weight:700px;font-size:30px">
-									Welcome <?php echo $dashboard_data['name'];?>
+									Welcome <?php echo $dashboard_data['first_name'];?>
 									<span class="kt-subheader-search__desc"></span>
 								</h3>
 								<h3 class="kt-subheader-search__title">
@@ -1275,8 +1280,8 @@ object-fit: cover;
 										 <?php }?>  
 										    
 										    
-									<!--if-->
-										<?php if(!empty($nayatel_record))
+								
+										<?php if(($nayatel_resume_test == 'completed'))
 											{?>
 
 										
@@ -1312,7 +1317,43 @@ object-fit: cover;
 
 											<!--end::New Feedbacks-->
 										</div>
-										<?php } else {?>
+										
+								<?php } else if($nayatel_incomplete_scenario == 'incomplete') {?>		
+										
+											<div class="col-md-12 col-lg-6 col-xl-3">
+
+											<!--begin::New Feedbacks-->
+											<div class="kt-widget24">
+												<div class="kt-widget24__details">
+													<div class="kt-widget24__info">
+														<h4 class="kt-widget24__title">
+															Nayatel Values Assessment
+														</h4>
+														<span class="kt-widget24__desc">
+															
+														</span>
+													</div>
+													<span class="kt-widget24__stats kt-font-warning" style="color: #1dc9b7 !important">
+														Incomplete
+													</span>
+												</div>
+												<div class="progress progress--sm">
+													<div class="progress-bar kt-bg-warning" role="progressbar" style="width: <?php echo $count_nayatel_questions;echo "%";?>"
+ aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+												<div class="kt-widget24__action">
+													<span class="kt-widget24__change">
+														
+													</span>
+													<span class="kt-widget24__number">
+														
+													</span>
+												</div>
+											</div>
+
+											<!--end::New Feedbacks-->
+										</div>
+										<?php } else if($nayatel_resume_test == 'pending') {?>
 										<!--else-->
 										
 									
@@ -1333,7 +1374,9 @@ onclick="return reply_click()" class="kt-menu__link ">
 															
 														</span>
 													</div>
-													<span class="kt-widget24__stats kt-font-warning>
+													<span class="kt-widget24__stats kt-font-success" style="color:red !important">
+													    
+													
 														Pending
 													</span>
 												</div>
@@ -1345,7 +1388,91 @@ onclick="return reply_click()" class="kt-menu__link ">
 														
 													</span>
 													<span class="kt-widget24__number">
-														Pending
+														
+													</span>
+												</div>
+											</div>
+
+											<!--end::New Feedbacks-->
+										</div>
+										<?php } else if($nayatel_resume_test == 'resume') {?>
+
+
+                                        	<div class="col-md-12 col-lg-6 col-xl-3">
+
+											<!--begin::New Feedbacks-->
+											<div class="kt-widget24">
+												<div class="kt-widget24__details">
+													<div class="kt-widget24__info">
+														<h4 class="kt-widget24__title">
+														<a  href="login/nayatel_value_statements/<?php echo $dashboard_data['email'] ?>" 
+onclick="return reply_click()" class="kt-menu__link ">
+<i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+<span class="kt-menu__link-text"><?php echo $categories[1];?>
+</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--success"></span></span></a>
+														</h4>
+														<span class="kt-widget24__desc">
+															
+														</span>
+													</div>
+													<span class="kt-widget24__stats kt-font-success" style="color:DarkGreen !important">
+													    
+													
+														Resume Test
+													</span>
+												</div>
+												<div class="progress progress--sm">
+													<div class="progress-bar kt-bg-success" role="progressbar" style="width: <?php echo $count_nayatel_questions;echo "%";?>"
+ aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+												<div class="kt-widget24__action">
+													<span class="kt-widget24__change">
+														
+													</span>
+													<span class="kt-widget24__number">
+														
+													</span>
+												</div>
+											</div>
+
+											<!--end::New Feedbacks-->
+										</div>
+										<?php } else  {?>?>
+
+
+
+                                        	<div class="col-md-12 col-lg-6 col-xl-3">
+
+											<!--begin::New Feedbacks-->
+											<div class="kt-widget24">
+												<div class="kt-widget24__details">
+													<div class="kt-widget24__info">
+														<h4 class="kt-widget24__title">
+														<a  href="login/nayatel_value_statements/<?php echo $dashboard_data['email'] ?>" 
+onclick="return reply_click()" class="kt-menu__link ">
+<i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+<span class="kt-menu__link-text"><?php echo $categories[1];?>
+</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--success"></span></span></a>
+														</h4>
+														<span class="kt-widget24__desc">
+															
+														</span>
+													</div>
+													<span class="kt-widget24__stats kt-font-success" style="color:red !important">
+													    
+													
+														Incomplete
+													</span>
+												</div>
+												<div class="progress progress--sm">
+													<div class="progress-bar kt-bg-warning" role="progressbar" style="width: 0%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+												<div class="kt-widget24__action">
+													<span class="kt-widget24__change">
+														
+													</span>
+													<span class="kt-widget24__number">
+														
 													</span>
 												</div>
 											</div>
@@ -1353,6 +1480,7 @@ onclick="return reply_click()" class="kt-menu__link ">
 											<!--end::New Feedbacks-->
 										</div>
 										<?php }?>
+
 										<!--if-3-->
 										<?php if(!empty($personal_record))
 											{?>
@@ -1501,9 +1629,11 @@ onclick="return reply_click()" class="kt-menu__link ">
 										</div>
 										<?php }?>
 										<!--5-->
-										<?php if(!empty($work_record))
+										<?php 
+										if(!empty($work_resume_test))
+										if(($work_resume_test == 'completed'))
 											{?>
-										<div class="col-md-12 col-lg-6 col-xl-3">
+										<div  class="col-md-12 col-lg-6 col-xl-3">
 
 											<!--begin::New Users-->
 											<div class="kt-widget24">
@@ -1533,7 +1663,40 @@ onclick="return reply_click()" class="kt-menu__link ">
 												</div>
 											</div>
 
-<?php } else {?>
+
+<!--incomplete-->
+<?php } else if ($incomplete_scenario == 'incomplete') {?>
+										<div  class="col-md-12 col-lg-6 col-xl-3">
+
+											<!--begin::New Users-->
+											<div class="kt-widget24">
+												<div class="kt-widget24__details">
+													<div class="kt-widget24__info">
+														<h4 class="kt-widget24__title">
+															Work Personality Index
+														</h4>
+														<span class="kt-widget24__desc">
+															
+														</span>
+													</div>
+													<span class="kt-widget24__stats kt-font-success">
+														Incomplete
+													</span>
+												</div>
+												<div class="progress progress--sm">
+													<div class="progress-bar kt-bg-warning" role="progressbar" style="width: <?php echo $count_work_questions;echo "%";?>" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+												<div class="kt-widget24__action">
+													<span class="kt-widget24__change">
+														
+													</span>
+													<span class="kt-widget24__number">
+														
+													</span>
+												</div>
+											</div>
+
+<?php } else if ($work_resume_test == 'pending') {?>
                                         <!--else-->
                                         <div class="col-md-12 col-lg-6 col-xl-3">
 
@@ -1562,7 +1725,86 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 														
 													</span>
 													<span class="kt-widget24__number">
-														Completed
+														
+													</span>
+												</div>
+											</div>
+
+											<!--end::New Users-->
+										</div>
+									</div>
+								</div>
+							</div>
+                            <!--//3-->
+<?php } else if ($work_resume_test == 'resume') {?>
+                                        <!--else-->
+                                        <div class="col-md-12 col-lg-6 col-xl-3">
+
+											<!--begin::New Users-->
+											<div class="kt-widget24">
+												<div class="kt-widget24__details">
+													<div class="kt-widget24__info">
+														<h4 class="kt-widget24__title">
+														<a href="login/work_personality_index_form/<?php echo $dashboard_data['email'] ?>" 
+class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span>
+</i><span class="kt-menu__link-text"><?php echo $categories[4];?></span></a>
+														</h4>
+														<span class="kt-widget24__desc">
+															
+														</span>
+													</div>
+													<span class="kt-widget24__stats kt-font-success" style="color:DarkGreen !important">
+													Resume Test
+													</span>
+												</div>
+												<div class="progress progress--sm">
+													<div class="progress-bar kt-bg-success" role="progressbar" style="width: <?php echo $count_work_questions;echo "%";?>" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+												<div class="kt-widget24__action">
+													<span class="kt-widget24__change">
+														
+													</span>
+													<span class="kt-widget24__number">
+														
+													</span>
+												</div>
+											</div>
+
+											<!--end::New Users-->
+										</div>
+									</div>
+								</div>
+							</div>
+<?php } else {?>
+                                        <!--else-->
+                                        <div class="col-md-12 col-lg-6 col-xl-3">
+
+											<!--begin::New Users-->
+											<div class="kt-widget24">
+												<div class="kt-widget24__details">
+													<div class="kt-widget24__info">
+														<h4 class="kt-widget24__title">
+														<a href="login/work_personality_index_form/<?php echo $dashboard_data['email'] ?>" 
+class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span>
+</i><span class="kt-menu__link-text"><?php echo $categories[4];?></span></a>
+														</h4>
+														<span class="kt-widget24__desc">
+															
+														</span>
+													</div>
+													<span class="kt-widget24__stats kt-font-success" style="color:red !important">
+														incomplete
+													</span>
+												</div>
+												<div class="progress progress--sm">
+													<div class="progress-bar kt-bg-success" role="progressbar" style="width: 0%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+												<div class="kt-widget24__action">
+													<span class="kt-widget24__change">
+														
+													</span>
+													<span class="kt-widget24__number">
+														
 													</span>
 												</div>
 											</div>
@@ -3912,8 +4154,9 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="tab" href="#kt_quick_panel_tab_logs" role="tab">Audit Logs</a>
 					</li>
+					<!-- href="#kt_quick_panel_tab_settings" -->
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#kt_quick_panel_tab_settings" role="tab">Settings</a>
+						<a class="nav-link" data-toggle="tab"  role="tab">Settings</a>
 					</li>
 				</ul>
 			</div>
@@ -3921,7 +4164,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 				<div class="tab-content">
 					<div class="tab-pane fade show kt-scroll active" id="kt_quick_panel_tab_notifications" role="tabpanel">
 						<div class="kt-notification">
-							<a href="#" class="kt-notification__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-line-chart kt-font-success"></i>
 								</div>
@@ -3934,7 +4177,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-box-1 kt-font-brand"></i>
 								</div>
@@ -3947,7 +4190,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-chart2 kt-font-danger"></i>
 								</div>
@@ -3960,7 +4203,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-image-file kt-font-warning"></i>
 								</div>
@@ -3973,7 +4216,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-bar-chart kt-font-info"></i>
 								</div>
@@ -3986,7 +4229,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-pie-chart-2 kt-font-success"></i>
 								</div>
@@ -3999,7 +4242,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-favourite kt-font-danger"></i>
 								</div>
@@ -4012,7 +4255,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item kt-notification__item--read">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item kt-notification__item--read">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-safe kt-font-primary"></i>
 								</div>
@@ -4025,7 +4268,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-psd kt-font-success"></i>
 								</div>
@@ -4038,7 +4281,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon-download-1 kt-font-danger"></i>
 								</div>
@@ -4051,7 +4294,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon-security kt-font-warning"></i>
 								</div>
@@ -4064,7 +4307,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-pie-chart kt-font-warning"></i>
 								</div>
@@ -4081,7 +4324,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 					</div>
 					<div class="tab-pane fade kt-scroll" id="kt_quick_panel_tab_logs" role="tabpanel">
 						<div class="kt-notification-v2">
-							<a href="#" class="kt-notification-v2__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon-bell kt-font-brand"></i>
 								</div>
@@ -4094,7 +4337,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon2-box kt-font-danger"></i>
 								</div>
@@ -4107,7 +4350,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon-psd kt-font-brand"></i>
 								</div>
@@ -4120,7 +4363,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon2-supermarket kt-font-warning"></i>
 								</div>
@@ -4133,7 +4376,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon-paper-plane-1 kt-font-success"></i>
 								</div>
@@ -4146,7 +4389,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon2-information kt-font-danger"></i>
 								</div>
@@ -4159,7 +4402,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon2-mail-1 kt-font-brand"></i>
 								</div>
@@ -4172,7 +4415,7 @@ class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="<?php echo base_url();?>login/dashboard" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon2-hangouts-logo kt-font-warning"></i>
 								</div>
@@ -4816,6 +5059,11 @@ function reply_click() {
 //alert("Nayatel Value Statement");
 }
 </script>
+
+
+
+
+
 		<!--end::Page Scripts -->
 	</body>
 

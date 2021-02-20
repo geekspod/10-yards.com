@@ -446,7 +446,7 @@
 
 			          <a href="<?php echo base_url(); ?>admin/customer">
 
-			            <i class="fa fa-user"></i> <span>Users</span>
+			            <i class="fa fa-user"></i> <span>Add Manager</span>
 
 			          </a>
 

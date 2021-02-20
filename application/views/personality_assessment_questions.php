@@ -11,11 +11,11 @@
 <?php echo form_open_multipart(base_url().'login/personality_assessment_questions_data',array('class' => 'form-horizontal')); ?>
 <input type="hidden" class="email" name="email" value="<?php echo $dashboard_data['email'];?>"
 
-<section class="content container">
+<section class="content">
 
   <div class="row">
     <div class="col-md-12">
-
+    
         <?php
         if($this->session->flashdata('error')) {
             ?>
@@ -34,22 +34,22 @@
         ?>
 
       <div class="box box-info">
-
+        
         <div class="box-body table-responsive"style="width: 80%;
     margin: 0 auto">
             <h1 style="    color: #4172a5">Questions</h1>
-
-            <table id="checkboxes" class="table table-bordered table-striped">
+            
+          <table id="checkboxes" class="table table-bordered table-striped">
 			<thead>
 			    <tr>
 			        <th>SL</th>
 			        <th>Items</th>
-                    <th style="background-color: red;color: white;">Strongly Dislike</th>
-                    <th style="background-color: lightcoral;color: white;">Somewhat Dislike</th>
+                    <th>Strongly Dislike</th>
+                    <th>Somewhat Dislike</th>
                     <th>Neither Like Nor Dislike</th>
-                    <th style="background-color: lightgreen;color: white;">Somewhat Like</th>
-                    <th style="background-color: green;color: white;">Strongly Like</th>
-
+                    <th>Somewhat Like</th>
+                    <th>Strongly Like</th>
+                    
                     <!-- <th>Add Score</th> -->
 			    </tr>
 			</thead>
@@ -65,6 +65,8 @@
 	                    <td><?php echo $row['name']; ?></td>
 
 
+
+	
                         <!-- <input type='hidden' value='0' name='checkbox[]'> -->
 
                         <td><input type="checkbox" name="checkbox[]" value="0" data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
@@ -72,9 +74,9 @@
                         <td><input type="checkbox" name="checkbox[]" value="2" data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
                         <td><input type="checkbox" name="checkbox[]" value="3" data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
                         <td><input type="checkbox" name="checkbox[]" value="5" data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
+ 
 
-
-                        <?php
+  <?php
   $count_total_uploads=$count;
   if($i == $count_total_uploads){
 break;
@@ -83,13 +85,16 @@ break;
             }
             	?>
                         </tr>
-
+            		
             </tbody>
           </table>
+                        <button name="form2" type="submit" class="btn btn-primary sb-btn loginbtn" style="    width: 16%;
+    margin-left: 430px;margin-top:20px">Submit</button>
+
                         <?php echo form_close(); ?>
-
-
-            <!-- <td>
+                      
+                        
+	                    <!-- <td>
 	                        <a href="<?php echo base_url(); ?>admin/categories/edit_Work_personality_index/<?php echo $row['questions_assessment_id']; ?>" class="btn btn-primary btn-xs">Edit</a>
 	                        <a href="<?php echo base_url(); ?>admin/categories/delete_Work_personality_index/<?php echo $row['questions_assessment_id']; ?>" class="btn btn-danger btn-xs" onClick="return confirm('Are you sure?');">Delete</a>
 
@@ -97,19 +102,10 @@ break;
                         <!-- <td>
                         <a href="<?php echo base_url(); ?>admin/categories/add_score/<?php echo $row['categories_id']; ?>" class="btn btn-primary btn-xs">Add score</a>
 </td> -->
-
-
+                       
+	               
         </div>
       </div>
-    </div>
-      <div class="col-md-12">
-          <div class="row justify-content-center" style="margin-top:20px;">
-              <div>
-                  <div class="col-lg-12">
-                      <button name="form2" type="submit" class="btn btn-primary sb-btn btn-lg">Submit</button>
-                  </div>
-              </div>
-          </div>
 </section>
 
 
@@ -143,7 +139,6 @@ self.queuedValues=ko.observableArray([]);
 
 <script>
 $( document ).ready(function() {
-    document.getElementById("kt_aside").style.pointerEvents = "none";
     $('input[type="checkbox"]').on('change', function() {
       var checkedValue = $(this).prop('checked');
         // uncheck sibling checkboxes (checkboxes on the same row)

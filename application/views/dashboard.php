@@ -1033,7 +1033,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="kt-notification__item-details">
 												<div class="kt-notification__item-title kt-font-bold">
-											Welcome	<?php echo $dashboard_data['name'];?>
+											Welcome	<?php echo $dashboard_data['first_name'];?>
 												</div>
 												<div class="kt-notification__item-time">
 													Email:<?php echo $dashboard_data['email'];?>
@@ -1062,7 +1062,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 No of Years in Nayatel:<?php echo $dashboard_data['tenure'];?>
 												</div>
 												<div class="kt-notification__item-time">
-                                                Job Title:<?php echo $dashboard_data['job_title'];?>
+                                                Job Title:<?php echo $dashboard_data['designation'];?>
 												</div>
 											</div>
 										</a>

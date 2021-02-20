@@ -1048,20 +1048,20 @@ License: You must have a valid license purchased only from themeforest(the above
 
 									<!--begin: Navigation -->
 									<div class="kt-notification">
-										<a href="#" class="kt-notification__item">
+										<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-calendar-3 kt-font-success"></i>
 											</div>
 											<div class="kt-notification__item-details">
 												<div class="kt-notification__item-title kt-font-bold">
-												Welcome	<?php echo $dashboard_data['name'];?>
+												Welcome	<?php echo $dashboard_data['first_name'];?>
 												</div>
 												<div class="kt-notification__item-time">
 												Email:<?php echo $dashboard_data['email'];?>
 												</div>
 											</div>
 										</a>
-										<a href="#" class="kt-notification__item">
+										<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-mail kt-font-warning"></i>
 											</div>
@@ -1074,7 +1074,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												</div>
 											</div>
 										</a>
-										<a href="#" class="kt-notification__item">
+										<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-rocket-1 kt-font-danger"></i>
 											</div>
@@ -1087,7 +1087,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												</div>
 											</div>
 										</a>
-										<a href="#" class="kt-notification__item">
+										<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-hourglass kt-font-brand"></i>
 											</div>
@@ -1100,7 +1100,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												</div>
 											</div>
 										</a>
-										<a href="#" class="kt-notification__item">
+										<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 											<div class="kt-notification__item-icon">
 												<i class="flaticon2-cardiogram kt-font-warning"></i>
 											</div>
@@ -1114,7 +1114,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 										</a>
 										<div class="kt-notification__custom kt-space-between">
-											<a href="<?php echo base_url(); ?>login/logout" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
+											<a href="javascript:void(0);" onclick="alertmessage()" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
 											<!-- <a href="demo6/custom/user/login-v2.html" target="_blank" class="btn btn-clean btn-sm btn-bold">Upgrade Plan</a> -->
 										</div>
 									</div>
@@ -3478,8 +3478,9 @@ License: You must have a valid license purchased only from themeforest(the above
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="tab" href="#kt_quick_panel_tab_logs" role="tab">Audit Logs</a>
 					</li>
+					<!--// kt_quick_panel_tab_settings-->
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#kt_quick_panel_tab_settings" role="tab">Settings</a>
+						<a class="nav-link" data-toggle="tab" href="javascript:void(0);" onclick="alertmessage()" role="tab">Settings</a>
 					</li>
 				</ul>
 			</div>
@@ -3487,7 +3488,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				<div class="tab-content">
 					<div class="tab-pane fade show kt-scroll active" id="kt_quick_panel_tab_notifications" role="tabpanel">
 						<div class="kt-notification">
-							<a href="#" class="kt-notification__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-line-chart kt-font-success"></i>
 								</div>
@@ -3500,7 +3501,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-box-1 kt-font-brand"></i>
 								</div>
@@ -3513,7 +3514,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-chart2 kt-font-danger"></i>
 								</div>
@@ -3526,7 +3527,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-image-file kt-font-warning"></i>
 								</div>
@@ -3539,7 +3540,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-bar-chart kt-font-info"></i>
 								</div>
@@ -3552,7 +3553,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-pie-chart-2 kt-font-success"></i>
 								</div>
@@ -3565,7 +3566,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-favourite kt-font-danger"></i>
 								</div>
@@ -3578,7 +3579,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item kt-notification__item--read">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item kt-notification__item--read">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-safe kt-font-primary"></i>
 								</div>
@@ -3591,7 +3592,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-psd kt-font-success"></i>
 								</div>
@@ -3604,7 +3605,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon-download-1 kt-font-danger"></i>
 								</div>
@@ -3617,7 +3618,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon-security kt-font-warning"></i>
 								</div>
@@ -3630,7 +3631,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification__item">
 								<div class="kt-notification__item-icon">
 									<i class="flaticon2-pie-chart kt-font-warning"></i>
 								</div>
@@ -3647,7 +3648,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					</div>
 					<div class="tab-pane fade kt-scroll" id="kt_quick_panel_tab_logs" role="tabpanel">
 						<div class="kt-notification-v2">
-							<a href="#" class="kt-notification-v2__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon-bell kt-font-brand"></i>
 								</div>
@@ -3660,7 +3661,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon2-box kt-font-danger"></i>
 								</div>
@@ -3673,7 +3674,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon-psd kt-font-brand"></i>
 								</div>
@@ -3686,7 +3687,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon2-supermarket kt-font-warning"></i>
 								</div>
@@ -3699,7 +3700,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon-paper-plane-1 kt-font-success"></i>
 								</div>
@@ -3712,7 +3713,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon2-information kt-font-danger"></i>
 								</div>
@@ -3725,7 +3726,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon2-mail-1 kt-font-brand"></i>
 								</div>
@@ -3738,7 +3739,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 								</div>
 							</a>
-							<a href="#" class="kt-notification-v2__item">
+							<a href="javascript:void(0);" onclick="alertmessage()" class="kt-notification-v2__item">
 								<div class="kt-notification-v2__item-icon">
 									<i class="flaticon2-hangouts-logo kt-font-warning"></i>
 								</div>
@@ -4378,8 +4379,9 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="<?php echo base_url(); ?>assets-data/js/demo6/pages/dashboard.js" type="text/javascript"></script>
 <script>
     function alertmessage(){
+      window.FlashMessage.error('You are not allowed to skip the test.');
 
-        alert('You are not allowed to skip the test.');
+       // alert('You are not allowed to skip the test.');
     }
 </script>
 		<!--end::Page Scripts -->

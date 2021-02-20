@@ -8,7 +8,7 @@ if(!$this->session->userdata('id')) {
 		<h1>View Customers</h1>
 	</div>
 	<div class="content-header-right">
-		<a href="<?php echo base_url(); ?>admin/customer/add" class="btn btn-primary btn-sm">Add Customer</a>
+		<a href="<?php echo base_url(); ?>admin/customer/add" class="btn btn-primary btn-sm">Add Manager</a>
 	</div>
 </section>
 
@@ -21,7 +21,7 @@ if(!$this->session->userdata('id')) {
 						<thead>
 							<tr>
 								<th width="30">SL</th>
-								<th width="100">Name</th>
+								<th width="100">First Name</th>
 								<th width="100">Email</th>
 								<th width="100">Status</th>
 								<th width="80">Action</th>
@@ -36,12 +36,12 @@ if(!$this->session->userdata('id')) {
 								<tr>
 									<td><?php echo $i; ?></td>
 									
-									<td><?php echo $row['name']; ?></td>
+									<td><?php echo $row['first_name']; ?></td>
 									<td><?php echo $row['email']; ?></td>
 									<td><?php echo $row['status']; ?></td>
 									<td>										
-										<a href="<?php echo base_url(); ?>admin/customer/edit/<?php echo $row['customer_id']; ?>" class="btn btn-primary btn-xs">Edit</a>
-										<a href="#" class="btn btn-danger btn-xs" data-href="<?php echo base_url(); ?>admin/customer/delete/<?php echo $row['customer_id']; ?>" data-toggle="modal" data-target="#confirm-delete">Delete</a>  
+										<a href="<?php echo base_url(); ?>admin/customer/edit/<?php echo $row['id']; ?>" class="btn btn-primary btn-xs">Edit</a>
+										<a href="#" class="btn btn-danger btn-xs" data-href="<?php echo base_url(); ?>admin/customer/delete/<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete">Delete</a>  
 									</td>
 								</tr>
 								<?php

@@ -12,32 +12,46 @@
 
 
 
-
+            
 </head>
 <body>
-<div style="position: fixed; right: 0; left: 0;z-index: 100;">
-    <h1 style="text-align: center;">Organizational Values Assessment</h1>
-    <h1 style="text-align: center;">Remaining Time</h1>
-    <section class="content-header" style="display:none">
-        <div class="content-header-left">
-            <?php echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            echo "<br>";
-            echo "<br>"; ?>
-            <h1>Nayatel’s Value Statements</h1>
-        </div>
-        <!--<div class="content-header-right">-->
-        <!--	<a href="<?php echo base_url(); ?>admin/categories/personal_values_assessment_questions_data" class="btn btn-primary btn-sm">Add New</a>-->
-        <!--</div>-->
-    </section>
-    <div>
-        <div class="someTimer" data-timer="<?php echo $remaining_test_time_slots['test_time_slot']*60;?>" style="position: absolute;right: 0;width: 300px;height: 100px;left: 0;margin: auto;"></div>
-        <div class="someTimer2" data-timer="180" style="position: absolute;right: 0;width: 300px;height: 100px;left: 0;margin: auto;"></div>
-    </div>
+	<h1 style="text-align: center;">Organizational Values Assessment</h1>
+
+<div class="container" style="margin-top:20px;">
+<h1 style="text-align: center;">Remaining Time</h1>
+<div class="someTimer" data-timer="<?php echo $time['test_time_slot']*60;?>" style="width: 300px; height: 100px; "></div>
+<hr>
+
+<!--<button class="btn btn-success start">Start</button>-->
+<!--<button class="btn btn-danger stop">Stop</button>-->
+
 </div>
 
-<form id="myform" class="myform" method="post" name="myform" style="padding-top: 200px">
+
+<!--extra three minutes-->
+<div class="container" style="margin-top:20px;">
+
+<div class="someTimer2" data-timer="180" style="width: 300px; height: 100px; "></div>
+<hr>
+
+
+</div>
+<!--end-->
+
+
+
+
+ 
+<section class="content-header" style="display:none">
+	<div class="content-header-left">
+    <?php echo "<br>"; echo "<br>"; echo "<br>"; echo "<br>"; echo "<br>";?>
+		<h1>Nayatel’s Value Statements</h1>
+	</div>
+	<!--<div class="content-header-right">-->
+	<!--	<a href="<?php echo base_url(); ?>admin/categories/personal_values_assessment_questions_data" class="btn btn-primary btn-sm">Add New</a>-->
+	<!--</div>-->
+</section>
+<form id="myform" class="myform" method="post" name="myform">
 
 <div id="message"></div>
  <input type="hidden" class="email" name="email" value="<?php echo $dashboard_data['email'];?>"
@@ -48,7 +62,7 @@
 
   <div class="row">
     <div class="col-md-12">
-
+    
         <?php
         if($this->session->flashdata('error')) {
             ?>
@@ -67,7 +81,7 @@
         ?>
 
       <div class="box box-info">
-
+        
         <div class="box-body table-responsive" style="width: 80%;
     margin: 0 auto">
             <!--<h1 style="    color: #4172a5">Questions</h1>-->
@@ -76,19 +90,19 @@
 			    <tr>
 			        <th>SL</th>
 			        <th>Statements</th>
-                    <th style="background-color: red;color: white;">Never</th>
-                    <th style="background-color: lightcoral;color: white;">Rarely</th>
+                    <th>Never</th>
+                    <th>Rarely</th>
                     <th>Sometimes</th>
-                    <th style="background-color: lightgreen;color: white;">Often</th>
-                    <th style="background-color: green;color: white;">Always</th>
-
+                    <th>Often</th>
+                    <th>Always</th>
+                    
                     <!-- <th>Add Score</th> -->
 			    </tr>
 			</thead>
             <tbody>
             	<?php
                 $i=0;
-
+               
             	$i++;
             		?>
 					<tr>
@@ -100,14 +114,13 @@
                         <td><input type="checkbox" id="checkbox1" class="checkbox" name="checkbox[]" value="1" <?php echo ($personal_values_assessment[0]['value']==1 ? 'checked' : '');?> data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
                         <td><input type="checkbox" id="checkbox1" class="checkbox" name="checkbox[]" value="2" <?php echo ($personal_values_assessment[0]['value']==2 ? 'checked' : '');?> data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
                         <td><input type="checkbox" id="checkbox1" class="checkbox" name="checkbox[]" value="3" <?php echo ($personal_values_assessment[0]['value']==3 ? 'checked' : '');?> data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
-                        <td><input type="checkbox" id="checkbox1" class="checkbox" name="checkbox[]" value="5" <?php echo ($personal_values_assessment[0]['value']==5 ? 'checked' : '');?>
-                                   data-bind="checked: $data.queuedValues, checkedValue: policyNumber"/></td>
-                    </tr>
-                <!--2nd row-->
-
-
-                <tr>
-                    <td><?php echo "2"; ?></td>
+                        <td><input type="checkbox" id="checkbox1" class="checkbox" name="checkbox[]" value="5" <?php echo ($personal_values_assessment[0]['value']==5 ? 'checked' : '');?> data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
+                                            </tr>
+                                            <!--2nd row-->
+                                            
+                                            
+                                            <tr>
+<td><?php echo "2"; ?></td>
 <td class="q_name"><?php echo $personal_values_assessment[1]['name']; ?></td>
 <input type="hidden" value="<?php echo $personal_values_assessment[1]['dimensions_name']; ?>" id="dimensions_name[]" name="dimensions_name[]">
 <!--<input type="hidden" value="<?php echo $personal_values_assessment[1]['questions_id']; ?>" id="questions_id[]" name="questions_id[]">-->
@@ -122,7 +135,7 @@
 <td><input type="checkbox" id="checkbox2" class="checkbox" name="checkbox[]" value="5" <?php echo ($personal_values_assessment[1]['value']==5 ? 'checked' : '');?>
  data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 </tr>
-
+                                            
  <!--3-->
       <tr>
 <td><?php echo "3"; ?></td>
@@ -142,7 +155,7 @@
 </tr>
 
 <!--4-->
-
+      
       <tr>
 <td><?php echo "4"; ?></td>
 <td class="q_name"><?php echo $personal_values_assessment[3]['name']; ?></td>
@@ -194,12 +207,12 @@
 <td><input type="checkbox" id="checkbox6" class="checkbox" name="checkbox[]" value="3" <?php echo ($personal_values_assessment[5]['value']==3 ? 'checked' : '');?>
  data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 <td><input type="checkbox" id="checkbox6" class="checkbox" name="checkbox[]" value="5" <?php echo ($personal_values_assessment[5]['value']==5 ? 'checked' : '');?>
-           data-bind="checked: $data.queuedValues, checkedValue: policyNumber"/></td>
-     </tr>
-                <!--7-->
+ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
+</tr>  
+<!--7-->
 
-                <tr>
-                    <td><?php echo "7"; ?></td>
+<tr>
+<td><?php echo "7"; ?></td>
 <td class="q_name"><?php echo $personal_values_assessment[6]['name']; ?></td>
 <input type="hidden" value="<?php echo $personal_values_assessment[6]['dimensions_name']; ?>" id="dimensions_name[]" name="dimensions_name[]">
 <!--<input type="hidden" value="<?php echo $personal_values_assessment[6]['questions_id']; ?>" id="questions_id[]" name="questions_id[]">-->
@@ -2584,68 +2597,71 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 
             </tbody>
           </table>
-            <?php
+          <?php 
           $i=70;
            if($i == '70'){
 
-
+                    
                     ?>
-        </div>
-      </div>
+                    <div id="submit">
+                    <button  id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" class="btn btn-primary sb-btn loginbtn" style="width:16%; margin-left: 430px;
+    margin-top: 25px">Submit</button>
     </div>
-  </div>
-    <div class="row justify-content-center" style="margin-top:20px;">
-        <div>
-            <div class="col-lg-12">
-                <button  id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" class="btn btn-primary">Submit</button>
-                <button  id="save" type="submit" name="save" value="Save" onclick="return save_for_later()" class="btn btn-primary">Save For Later</button>
-            </div>
-        </div>
+    <!--<button type="button" class="btn btn-primary"  id="Next"  name="Next" value="Next" onclick="return save_data()"  style="width:9%; margin-left:0px;-->
+    <!--margin-top: 25px">Next</button>-->
+
+    
+   <div id="save_for_later" align="center">
+    <button  id="save" type="submit" name="save" value="Save For Later"  onclick="return save_for_later()" class="btn btn-primary sb-btn loginbtn" style="width:16%; margin-left:0px;
+    margin-top: 25px">Save For Later</button>
     </div>
-    <div class="row">
-        <div class="col-lg-12">
-</form>
-<div id="myResponse">
+    <!--                <input id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" style="width:16%; margin-left: 430px;-->
+    <!--margin-top: 25px" />-->
+    </form>
+ <div id="myResponse">
+   
+ </div>
 
-</div>
-
-
-<?php
+                        
+<?php 
 }
 ?>
+                  
 
 
-</div>
-</div>
+	                 
+                       
+	               
+        </div>
+      </div>
 </section>
 
 <!--<a href="#Modal2" class="btn btn-info btn-lg">Open modal</a>-->
 <!-- Modal -->
 <div id="Modal2" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+  <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
-                <!--<h4 class="modal-title">Modal Header</h4>-->
-            </div>
-            <div class="modal-body">
-                <p>Extra three minutes are given, kindly complete the test in require time.</p>
-            </div>
-            <div class="modal-footer">
-                <a href="<?php echo base_url(); ?>login/nayatel_save_for_later_extra_time">
-                    <button type="button" value="OK" class="btn btn-success start" data-dismiss="modal">OK</button>
-                </a>
-            </div>
-        </div>
+<!-- Modal content-->
+<div class="modal-content">
+  <div class="modal-header">
+    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+    <!--<h4 class="modal-title">Modal Header</h4>-->
+  </div>
+  <div class="modal-body">
+    <p>Extra three minutes are given, kindly complete the test in require time.</p>
+  </div>
+  <div class="modal-footer">
+      <a href="<?php echo base_url();?>login/nayatel_save_for_later_extra_time">  
+    <button type="button" value="OK" class="btn btn-success start" data-dismiss="modal">OK</button>
+    </a>
+  </div>
+</div>
 
-    </div>
+  </div>
 </div>
 
 
-<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -2665,7 +2681,7 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 
 <!-- Bootstrap Modal -->
 <div class="bs-example">
-
+   
     <div id="myModal" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -2698,105 +2714,105 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
    var checkbox1=[];
         var checkbox2=[];
         var checkbox3=[];
-
+        
         var checkbox4=[];
         var checkbox5=[];
         var checkbox6=[];
-
+        
         var checkbox7=[];
         var checkbox8=[];
         var checkbox9=[];
-
+        
         var checkbox10=[];
         var checkbox11=[];
         var checkbox12=[];
         var checkbox13=[];
-
+        
         var checkbox14=[];
         var checkbox15=[];
         var checkbox16=[];
-
+        
         var checkbox17=[];
         var checkbox18=[];
         var checkbox19=[];
-
+        
         var checkbox20=[];
 
 
         var checkbox21=[];
         var checkbox22=[];
         var checkbox23=[];
-
+        
         var checkbox24=[];
         var checkbox25=[];
         var checkbox26=[];
-
+        
         var checkbox27=[];
         var checkbox28=[];
         var checkbox29=[];
-
- var checkbox30=[];
+        
+        var checkbox30=[];
 
         var checkbox31=[];
         var checkbox32=[];
         var checkbox33=[];
-
- var checkbox34=[];
+        
+        var checkbox34=[];
         var checkbox35=[];
         var checkbox36=[];
-
- var checkbox37=[];
+        
+        var checkbox37=[];
         var checkbox38=[];
         var checkbox39=[];
-
- var checkbox40=[];
+        
+        var checkbox40=[];
 
 
          var checkbox51=[];
         var checkbox52=[];
         var checkbox53=[];
-
- var checkbox54=[];
+        
+        var checkbox54=[];
         var checkbox55=[];
         var checkbox56=[];
-
- var checkbox57=[];
+        
+        var checkbox57=[];
         var checkbox58=[];
         var checkbox59=[];
-
- var checkbox60=[];
+        
+        var checkbox60=[];
 
 
         var checkbox61=[];
         var checkbox62=[];
         var checkbox63=[];
-
- var checkbox64 = [];
- var checkbox65 = [];
- var checkbox66 = [];
-
- var checkbox67 = [];
- var checkbox68 = [];
- var checkbox69 = [];
-
- var checkbox70 = [];
-
-
- $("#submit").hide();
- var timeCircles = $(".someTimer").TimeCircles({
-
-     "time": {
-         "Days": {
-             "text": "Days",
-             "color": "#FFCC66",
-             "show": false
-         },
-         "Hours": {
-             "text": "Hours",
-             "color": "#99CCFF",
-             "show": false
-         },
-         "Minutes": {
+        
+        var checkbox64=[];
+        var checkbox65=[];
+        var checkbox66=[];
+        
+        var checkbox67=[];
+        var checkbox68=[];
+        var checkbox69=[];
+        
+        var checkbox70=[];
+ 
+  
+  $("#submit").hide(); 
+            var timeCircles = $(".someTimer").TimeCircles({ 
+                   
+    "time": {
+        "Days": {            
+            "text": "Days",
+            "color": "#FFCC66",
+            "show": false
+        },
+        "Hours": {
+            "text": "Hours",
+            "color": "#99CCFF",
+            "show": false
+        },
+        "Minutes": {
             "text": "Minutes",
             "color": "#BBFFBB",
             "show": true
@@ -2805,11 +2821,11 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
             "text": "Seconds",
             "color": "#FF9999",
             "show": true,
-
+            
         }
     }
-
- });
+    
+  });
 
             // Fade in and fade out are examples of how chaining can be done with TimeCircles
             // $(".fadeIn").click(function() {
@@ -2825,8 +2841,8 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
             // });
             // $(".stopTimer").click(function() {
             //     $(".someTimer").eq(1).TimeCircles().stop();
-
- // });
+                
+            // });
 
 // $(".start").click(function(){ $(".someTimer").TimeCircles().start(); });
 // $(".stop").click(function(){ $(".someTimer").TimeCircles().stop(); });
@@ -2842,27 +2858,28 @@ $('.someTimer').TimeCircles({ time: { Days: { show: false }, Hours: { show: fals
 
 $('.someTimer').TimeCircles().addListener(function() {
    time22 = $('.someTimer').TimeCircles().getTime()
-
+ 
 });
 
- //alert(time22);
- //899.995
- if (time < 01) {
-     //$('#myModal2').modal('show');
-     // alert("vdgdg") ;
-     $(".someTimer").TimeCircles().destroy();
-     // window.location.replace("https://10-yards.com/login/dashboard");
-
-
- }
+//alert(time22);
+//899.995
+				if(time < 01)
+				{
+				     //$('#myModal2').modal('show');
+				   // alert("vdgdg") ;
+					 $(".someTimer").TimeCircles().destroy();
+					 // window.location.replace("https://10-yards.com/login/dashboard");
+					 
+				
+				}
 </script>
-    <script>
-        function QueryViewModel() {
+<script>
+function QueryViewModel(){
 
-            var self = this;
-            self.queuedValues = ko.observableArray([]);
-        }
-    </script>
+var self = this;
+self.queuedValues=ko.observableArray([]);
+}
+</script>
 
 
 <script>
@@ -2879,17 +2896,17 @@ $( document ).ready(function() {
 </script>
 <script>
      function save_data() {
-
-         if (!$("#checkSurfaceEnvironment-1").is(":checked")) {
+     
+      if (!$("#checkSurfaceEnvironment-1").is(":checked")) {
     // do something if the checkbox is NOT checked
 }
 //alert(checkSurfaceEnvironment);
  }
-
+    
 </script>
 <script>
-
-    function submitForm2() {
+  
+ function submitForm2() {
 var atLeastOneIsChecked = $('input[name="checkbox[]"]:checked').length == 10;
 //alert(atLeastOneIsChecked);
 }
@@ -2898,550 +2915,552 @@ var atLeastOneIsChecked = $('input[name="checkbox[]"]:checked').length == 10;
 <script type="text/javascript">
  var counter=[];
  counter=0;
- var save_for_later_values = [];
- var checkboxes_length = [];
- var length_value = [];
+ var save_for_later_values=[];
+var checkboxes_length=[];
+var length_value=[];
 
- var arr = [];
- $('input.checkbox:checkbox:checked').each(function () {
-     arr.push($(this).val());
- });
- //alert(arr);
- // var length_value=[];
- length_value = arr.length;
+var arr = [];
+$('input.checkbox:checkbox:checked').each(function () {
+    arr.push($(this).val());
+});
+//alert(arr);
+// var length_value=[];
+ length_value=arr.length;  
  //alert(length_value);
-
- var selected = [];
- $('#checkboxes input[type="hidden"]').each(function () {
-     selected.push($(this).attr('value'));
- });
- //alert(selected);
- //questions_id
-
- var values = [];
- var values1 = [];
- var values2 = [];
- var values3 = [];
- var currentRows = [];
- var arr_length = [];
-
+  
+   var selected = [];
+$('#checkboxes input[type="hidden"]').each(function() {
+    selected.push($(this).attr('value'));
+});
+     //alert(selected);      
+     //questions_id
+        
+var values=[];
+var values1=[];
+var values2=[];
+var values3=[];
+ var currentRows=[];
+ var arr_length=[];
+ 
  var table = [];
 
- $("#checkboxes tbody tr").on("click", function () {
-     counter++;
-     currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
-     //alert(currentRows);
-     arr.push(currentRows);
-     arr_length = arr.length;
-
-     var form = document.myform;
-     var dataString = [];
-     dataString = $(form).serialize();
-
-     var name = $(this).closest('tr').find('.q_name').text();
-     var dimensions_name = $(this).closest('tr').find('input[type="hidden"]').val();
-     //var questions_id = $(this).closest('tr').find('input[type="hidden"]').val();
+$( "#checkboxes tbody tr" ).on( "click", function() {
+    counter++;
+ currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
+ //alert(currentRows);
+ arr.push(currentRows);
+ arr_length=arr.length; 
+ 
+    var form = document.myform;
+var dataString=[];
+dataString = $(form).serialize();
+    
+var name = $(this).closest('tr').find('.q_name').text();
+var dimensions_name = $(this).closest('tr').find('input[type="hidden"]').val();
+ //var questions_id = $(this).closest('tr').find('input[type="hidden"]').val();
 //alert(currentRows);
-     values.push(currentRows);
-     values1.push(name);
-     values2.push(dimensions_name);
+values.push(currentRows);
+values1.push(name);
+values2.push(dimensions_name);
 //values3.push(questions_id);
-     table = $('#checkboxes').DataTable();
-     info = table.page.info();
-     info = info.page + 1;
+ table = $ ('#checkboxes'). DataTable (); 
+ info = table.page.info (); 
+ info=info.page + 1;
 //alert(info);
+ 
+ if(info == 1){
+     
+$("#submit").hide();
+$("#save_for_later").show(); 
 
-     if (info == 1) {
-
-         $("#submit").hide();
-         $("#save_for_later").show();
-
-         checkbox1 = jQuery("#checkbox1:checked").length;
-         checkbox2 = jQuery("#checkbox2:checked").length;
-         checkbox3 = jQuery("#checkbox3:checked").length;
-         checkbox4 = jQuery("#checkbox4:checked").length;
-         checkbox5 = jQuery("#checkbox5:checked").length;
-         checkbox6 = jQuery("#checkbox6:checked").length;
-         checkbox7 = jQuery("#checkbox7:checked").length;
-         checkbox8 = jQuery("#checkbox8:checked").length;
-         checkbox9 = jQuery("#checkbox9:checked").length;
-         checkbox10 = jQuery("#checkbox10:checked").length;
-         //alert(checkbox1);
-     }
+checkbox1 = jQuery("#checkbox1:checked").length;
+checkbox2 = jQuery("#checkbox2:checked").length;
+checkbox3 = jQuery("#checkbox3:checked").length;
+checkbox4 = jQuery("#checkbox4:checked").length;
+checkbox5 = jQuery("#checkbox5:checked").length;
+checkbox6 = jQuery("#checkbox6:checked").length;
+checkbox7 = jQuery("#checkbox7:checked").length;
+checkbox8 = jQuery("#checkbox8:checked").length;
+checkbox9 = jQuery("#checkbox9:checked").length;
+checkbox10 = jQuery("#checkbox10:checked").length;
+ //alert(checkbox1);
+}
 
 // page 2
-     if (info == 2) {
-         $("#submit").hide();
-         $("#save_for_later").show();
+if(info == 2){
+         $("#submit").hide(); 
+          $("#save_for_later").show(); 
+          
+checkbox11 = jQuery("#checkbox11:checked").length;
+checkbox12 = jQuery("#checkbox12:checked").length;
+checkbox13 = jQuery("#checkbox13:checked").length;
+checkbox14 = jQuery("#checkbox14:checked").length;
+checkbox15 = jQuery("#checkbox15:checked").length;
+checkbox16 = jQuery("#checkbox16:checked").length;
+checkbox17 = jQuery("#checkbox17:checked").length;
+checkbox18 = jQuery("#checkbox18:checked").length;
+checkbox19 = jQuery("#checkbox19:checked").length;
+checkbox20 = jQuery("#checkbox20:checked").length;         
+     
+   // alert(checkbox1);
+     
+if(checkbox1 == 0){
+    
+    window.FlashMessage.error('Question # 1 is required.');
+    
+}
 
-         checkbox11 = jQuery("#checkbox11:checked").length;
-         checkbox12 = jQuery("#checkbox12:checked").length;
-         checkbox13 = jQuery("#checkbox13:checked").length;
-         checkbox14 = jQuery("#checkbox14:checked").length;
-         checkbox15 = jQuery("#checkbox15:checked").length;
-         checkbox16 = jQuery("#checkbox16:checked").length;
-         checkbox17 = jQuery("#checkbox17:checked").length;
-         checkbox18 = jQuery("#checkbox18:checked").length;
-         checkbox19 = jQuery("#checkbox19:checked").length;
-         checkbox20 = jQuery("#checkbox20:checked").length;
-
-         // alert(checkbox1);
-
-         if (checkbox1 == 0) {
-
-             window.FlashMessage.error('Question # 1 is required.');
-
-         }
-
-         if (checkbox2 == 0) {
-
-             window.FlashMessage.error('Question # 2 is required.');
-
-         }
+if(checkbox2 == 0){
+    
+    window.FlashMessage.error('Question # 2 is required.');
+    
+}
 if(checkbox3 == 0){
-
+    
     window.FlashMessage.error('Question # 3 is required.');
-
+    
 }
 if(checkbox4 == 0){
-
+    
     window.FlashMessage.error('Question # 4 is required.');
-
+    
 }
 if(checkbox5 == 0){
-
+    
     window.FlashMessage.error('Question # 5 is required.');
-
+    
 }
 if(checkbox6 == 0){
-
+    
     window.FlashMessage.error('Question # 6 is required.');
-
+    
 }
 if(checkbox7 == 0){
         window.FlashMessage.error('Question # 7 is required.');
 }
 if(checkbox8 == 0){
-
+    
     window.FlashMessage.error('Question # 8 is required.');
-
+    
 }
 if(checkbox9 == 0){
-
+    
     window.FlashMessage.error('Question # 9 is required.');
-
+    
 }
-         if (checkbox10 == 0) {
-
-             window.FlashMessage.error('Question # 10 is required.');
-         }
-     }
+if(checkbox10 == 0){
+    
+    window.FlashMessage.error('Question # 10 is required.');
+}
+}
 
 // page 3
-     if (info == 3) {
-         $("#submit").hide();
-         $("#save_for_later").show();
-
-         checkbox21 = jQuery("#checkbox21:checked").length;
-         checkbox22 = jQuery("#checkbox22:checked").length;
-         checkbox23 = jQuery("#checkbox23:checked").length;
-         checkbox24 = jQuery("#checkbox24:checked").length;
-         checkbox25 = jQuery("#checkbox25:checked").length;
-         checkbox26 = jQuery("#checkbox26:checked").length;
-         checkbox27 = jQuery("#checkbox27:checked").length;
-         checkbox28 = jQuery("#checkbox28:checked").length;
-         checkbox29 = jQuery("#checkbox29:checked").length;
-         checkbox30 = jQuery("#checkbox30:checked").length;
-         if (checkbox11 == 0) {
-
-             window.FlashMessage.error('Question # 11 is required.');
-
-         }
-         if (checkbox12 == 0) {
-
-             window.FlashMessage.error('Question # 12 is required.');
-
-         }
+if(info == 3){
+          $("#submit").hide();  
+           $("#save_for_later").show(); 
+      
+checkbox21 = jQuery("#checkbox21:checked").length;
+checkbox22 = jQuery("#checkbox22:checked").length;
+checkbox23 = jQuery("#checkbox23:checked").length;
+checkbox24 = jQuery("#checkbox24:checked").length;
+checkbox25 = jQuery("#checkbox25:checked").length;
+checkbox26 = jQuery("#checkbox26:checked").length;
+checkbox27 = jQuery("#checkbox27:checked").length;
+checkbox28 = jQuery("#checkbox28:checked").length;
+checkbox29 = jQuery("#checkbox29:checked").length;
+checkbox30 = jQuery("#checkbox30:checked").length;  
+if(checkbox11 == 0){
+    
+    window.FlashMessage.error('Question # 11 is required.');
+    
+}
+if(checkbox12 == 0){
+    
+    window.FlashMessage.error('Question # 12 is required.');
+    
+}
 if(checkbox13 == 0){
-
+    
     window.FlashMessage.error('Question # 13 is required.');
-
+    
 }
 if(checkbox14 == 0){
-
+    
     window.FlashMessage.error('Question # 14 is required.');
-
+    
 }
-
-         if(checkbox15 == 0){
-
-             window.FlashMessage.error('Question # 15 is required.');
-
-         }
+     
+if(checkbox15 == 0){
+    
+    window.FlashMessage.error('Question # 15 is required.');
+    
+}
 if(checkbox16 == 0){
-
+    
     window.FlashMessage.error('Question # 16 is required.');
-
+    
 }
 if(checkbox17 == 0){
-
+    
     window.FlashMessage.error('Question # 17 is required.');
-
+    
 }
 if(checkbox18 == 0){
-
+    
     window.FlashMessage.error('Question # 18 is required.');
-
+    
 }
-
-         if(checkbox19 == 0){
-
-             window.FlashMessage.error('Question # 19 is required.');
-
-         }
-
-         if (checkbox20 == 0) {
-
-             window.FlashMessage.error('Question # 20 is required.');
-
-         }
-     }
-
+   
+if(checkbox19 == 0){
+    
+    window.FlashMessage.error('Question # 19 is required.');
+    
+}
+    
+if(checkbox20 == 0){
+    
+    window.FlashMessage.error('Question # 20 is required.');
+    
+}
+}
+   
 // page 4
-     if (info == 4) {
-         $("#submit").hide();
-         $("#save_for_later").show();
-
-         checkbox31 = jQuery("#checkbox31:checked").length;
-         checkbox32 = jQuery("#checkbox32:checked").length;
-         checkbox33 = jQuery("#checkbox33:checked").length;
-         checkbox34 = jQuery("#checkbox34:checked").length;
-         checkbox35 = jQuery("#checkbox35:checked").length;
-         checkbox36 = jQuery("#checkbox36:checked").length;
-         checkbox37 = jQuery("#checkbox37:checked").length;
-         checkbox38 = jQuery("#checkbox38:checked").length;
-         checkbox39 = jQuery("#checkbox39:checked").length;
-         checkbox40 = jQuery("#checkbox40:checked").length;
-
-         if (checkbox21 == 0) {
-
-             window.FlashMessage.error('Question # 21 is required.');
-
-         }
-         if (checkbox22 == 0) {
-
-             window.FlashMessage.error('Question # 22 is required.');
-
-         }
-
-         if(checkbox23 == 0){
-
-             window.FlashMessage.error('Question # 23 is required.');
-
-         }
+if(info == 4){
+        $("#submit").hide();   
+         $("#save_for_later").show(); 
+         
+checkbox31 = jQuery("#checkbox31:checked").length;
+checkbox32 = jQuery("#checkbox32:checked").length;
+checkbox33 = jQuery("#checkbox33:checked").length;
+checkbox34 = jQuery("#checkbox34:checked").length;
+checkbox35 = jQuery("#checkbox35:checked").length;
+checkbox36 = jQuery("#checkbox36:checked").length;
+checkbox37 = jQuery("#checkbox37:checked").length;
+checkbox38 = jQuery("#checkbox38:checked").length;
+checkbox39 = jQuery("#checkbox39:checked").length;
+checkbox40 = jQuery("#checkbox40:checked").length;  
+      
+if(checkbox21 == 0){
+    
+    window.FlashMessage.error('Question # 21 is required.');
+    
+}
+  if(checkbox22 == 0){
+    
+    window.FlashMessage.error('Question # 22 is required.');
+    
+}
+ 
+if(checkbox23 == 0){
+    
+    window.FlashMessage.error('Question # 23 is required.');
+    
+}
 if(checkbox24 == 0){
-
+    
     window.FlashMessage.error('Question # 24 is required.');
-
+    
 }
  if(checkbox25 == 0){
-
-     window.FlashMessage.error('Question # 25 is required.');
-
- }
+    
+    window.FlashMessage.error('Question # 25 is required.');
+    
+}
 if(checkbox26 == 0){
-
+    
     window.FlashMessage.error('Question # 26 is required.');
-
+    
 }
 if(checkbox27 == 0){
-
+    
     window.FlashMessage.error('Question # 27 is required.');
-
+    
 }
 if(checkbox28 == 0){
-
+    
     window.FlashMessage.error('Question # 28 is required.');
-
+    
 }
 if(checkbox29 == 0){
-
+    
     window.FlashMessage.error('Question # 29 is required.');
-
+    
 }
-         if (checkbox30 == 0) {
-
-             window.FlashMessage.error('Question # 30 is required.');
-
-         }
-     }
+if(checkbox30 == 0){
+    
+    window.FlashMessage.error('Question # 30 is required.');
+    
+}
+}
 // page 5
 
-     if (info == 5) {
-         $("#submit").hide();
-         $("#save_for_later").show();
-
-         checkbox41 = jQuery("#checkbox41:checked").length;
-         checkbox42 = jQuery("#checkbox42:checked").length;
-         checkbox43 = jQuery("#checkbox43:checked").length;
-         checkbox44 = jQuery("#checkbox44:checked").length;
-         checkbox45 = jQuery("#checkbox45:checked").length;
-         checkbox46 = jQuery("#checkbox46:checked").length;
-         checkbox47 = jQuery("#checkbox47:checked").length;
-         checkbox48 = jQuery("#checkbox48:checked").length;
-         checkbox49 = jQuery("#checkbox49:checked").length;
-         checkbox50 = jQuery("#checkbox50:checked").length;
-
-         if (checkbox31 == 0) {
-
-             window.FlashMessage.error('Question # 31 is required.');
-
-         }
-         if (checkbox32 == 0) {
-
-             window.FlashMessage.error('Question # 32 is required.');
-
-         }
+ if(info == 5){
+         $("#submit").hide();  
+          $("#save_for_later").show(); 
+          
+          checkbox41 = jQuery("#checkbox41:checked").length;
+checkbox42 = jQuery("#checkbox42:checked").length;
+checkbox43 = jQuery("#checkbox43:checked").length;
+checkbox44 = jQuery("#checkbox44:checked").length;
+checkbox45 = jQuery("#checkbox45:checked").length;
+checkbox46 = jQuery("#checkbox46:checked").length;
+checkbox47 = jQuery("#checkbox47:checked").length;
+checkbox48 = jQuery("#checkbox48:checked").length;
+checkbox49 = jQuery("#checkbox49:checked").length;
+checkbox50 = jQuery("#checkbox50:checked").length;  
+          
+if(checkbox31 == 0){
+    
+    window.FlashMessage.error('Question # 31 is required.');
+    
+}
+if(checkbox32 == 0){
+    
+    window.FlashMessage.error('Question # 32 is required.');
+    
+}
 if(checkbox33 == 0){
-
+    
     window.FlashMessage.error('Question # 33 is required.');
-
+    
 }
 if(checkbox34 == 0){
-
+    
     window.FlashMessage.error('Question # 34 is required.');
-
+    
 }
 if(checkbox35 == 0){
-
+    
     window.FlashMessage.error('Question # 35 is required.');
-
+    
 }
 if(checkbox36 == 0){
-
+    
     window.FlashMessage.error('Question # 36 is required.');
-
+    
 }
 if(checkbox37 == 0){
-
+    
     window.FlashMessage.error('Question # 37 is required.');
-
+    
 }
 if(checkbox38 == 0){
-
+    
     window.FlashMessage.error('Question # 38 is required.');
-
+    
 }
 if(checkbox39 == 0){
-
+    
     window.FlashMessage.error('Question # 39 is required.');
-
+    
 }
-         if (checkbox40 == 0) {
-
-             window.FlashMessage.error('Question # 40 is required.');
-         }
-     }
+if(checkbox40 == 0){
+    
+    window.FlashMessage.error('Question # 40 is required.');
+}
+}
 // page 6
-     if (info == 6) {
-         $("#submit").hide();
-         $("#save_for_later").show();
+ if(info == 6){
+        $("#submit").hide();   
+         $("#save_for_later").show(); 
+         
+         
+checkbox51 = jQuery("#checkbox51:checked").length;
+checkbox52 = jQuery("#checkbox52:checked").length;
+checkbox53 = jQuery("#checkbox53:checked").length;
+checkbox54 = jQuery("#checkbox54:checked").length;
+checkbox55 = jQuery("#checkbox55:checked").length;
+checkbox56 = jQuery("#checkbox56:checked").length;
+checkbox57 = jQuery("#checkbox57:checked").length;
+checkbox58 = jQuery("#checkbox58:checked").length;
+checkbox59 = jQuery("#checkbox59:checked").length;
+checkbox60 = jQuery("#checkbox60:checked").length;  
 
-
-         checkbox51 = jQuery("#checkbox51:checked").length;
-         checkbox52 = jQuery("#checkbox52:checked").length;
-         checkbox53 = jQuery("#checkbox53:checked").length;
-         checkbox54 = jQuery("#checkbox54:checked").length;
-         checkbox55 = jQuery("#checkbox55:checked").length;
-         checkbox56 = jQuery("#checkbox56:checked").length;
-         checkbox57 = jQuery("#checkbox57:checked").length;
-         checkbox58 = jQuery("#checkbox58:checked").length;
-         checkbox59 = jQuery("#checkbox59:checked").length;
-         checkbox60 = jQuery("#checkbox60:checked").length;
-
-         if (checkbox41 == 0) {
-
-             window.FlashMessage.error('Question # 41 is required.');
-
-         }
-         if (checkbox42 == 0) {
-
-             window.FlashMessage.error('Question # 42 is required.');
-
-         }
+       if(checkbox41 == 0){
+    
+    window.FlashMessage.error('Question # 41 is required.');
+    
+}
+if(checkbox42 == 0){
+    
+    window.FlashMessage.error('Question # 42 is required.');
+    
+}
 if(checkbox43 == 0){
-
+    
     window.FlashMessage.error('Question # 43 is required.');
-
+    
 }
 if(checkbox44 == 0){
-
+    
     window.FlashMessage.error('Question # 44 is required.');
-
+    
 }
 if(checkbox45 == 0){
-
+    
     window.FlashMessage.error('Question # 45 is required.');
-
+    
 }
 if(checkbox46 == 0){
-
+    
     window.FlashMessage.error('Question # 46 is required.');
-
+    
 }
 if(checkbox47 == 0){
-
+    
     window.FlashMessage.error('Question # 47 is required.');
-
+    
 }
 if(checkbox48 == 0){
-
+    
     window.FlashMessage.error('Question # 48 is required.');
-
+    
 }
 if(checkbox49 == 0){
-
+    
     window.FlashMessage.error('Question # 49 is required.');
-
+    
 }
-         if (checkbox50 == 0) {
-
-             window.FlashMessage.error('Question # 50 is required.');
-
-         }
-     }
-     if (info == 7) {
-         $("#submit").show();
-         $("#save_for_later").hide();
-         checkbox61 = jQuery("#checkbox61:checked").length;
-         checkbox62 = jQuery("#checkbox62:checked").length;
-         checkbox63 = jQuery("#checkbox63:checked").length;
-         checkbox64 = jQuery("#checkbox64:checked").length;
-         checkbox65 = jQuery("#checkbox65:checked").length;
-         checkbox66 = jQuery("#checkbox66:checked").length;
-         checkbox67 = jQuery("#checkbox67:checked").length;
-         checkbox68 = jQuery("#checkbox68:checked").length;
-         checkbox69 = jQuery("#checkbox69:checked").length;
-         checkbox70 = jQuery("#checkbox70:checked").length;
-         if (checkbox51 == 0) {
-
-             window.FlashMessage.error('Question # 51 is required.');
-
-         }
-         if (checkbox52 == 0) {
-
-             window.FlashMessage.error('Question # 52 is required.');
-
-         }
+if(checkbox50 == 0){
+    
+    window.FlashMessage.error('Question # 50 is required.');
+    
+}
+}
+if(info == 7){
+         $("#submit").show();  
+         $("#save_for_later").hide(); 
+checkbox61 = jQuery("#checkbox61:checked").length;
+checkbox62 = jQuery("#checkbox62:checked").length;
+checkbox63 = jQuery("#checkbox63:checked").length;
+checkbox64 = jQuery("#checkbox64:checked").length;
+checkbox65 = jQuery("#checkbox65:checked").length;
+checkbox66 = jQuery("#checkbox66:checked").length;
+checkbox67 = jQuery("#checkbox67:checked").length;
+checkbox68 = jQuery("#checkbox68:checked").length;
+checkbox69 = jQuery("#checkbox69:checked").length;
+checkbox70 = jQuery("#checkbox70:checked").length; 
+if(checkbox51 == 0){
+    
+    window.FlashMessage.error('Question # 51 is required.');
+    
+}
+if(checkbox52 == 0){
+    
+    window.FlashMessage.error('Question # 52 is required.');
+    
+}
 if(checkbox53 == 0){
-
+    
     window.FlashMessage.error('Question # 53 is required.');
-
+    
 }
 if(checkbox54 == 0){
-
+    
     window.FlashMessage.error('Question # 54 is required.');
-
+    
 }
 if(checkbox55 == 0){
-
+    
     window.FlashMessage.error('Question # 55 is required.');
-
+    
 }
 if(checkbox56 == 0){
-
+    
     window.FlashMessage.error('Question # 56 is required.');
-
+    
 }
 if(checkbox57 == 0){
-
+    
     window.FlashMessage.error('Question # 57 is required.');
-
+    
 }
 if(checkbox58 == 0){
-
+    
     window.FlashMessage.error('Question # 58 is required.');
-
+    
 }
 if(checkbox59 == 0){
-
+    
     window.FlashMessage.error('Question # 59 is required.');
-
+    
 }
-         if (checkbox60 == 0) {
+if(checkbox60 == 0){
+    
+    window.FlashMessage.error('Question # 60 is required.');
+    
+}
+}
 
-             window.FlashMessage.error('Question # 60 is required.');
-
-         }
-     }
-
-
- });
+ 
+ 
+});
 
  function submitForm() {
 //      alert(arr);
 // alert(arr.length);
      // final_length=length_value+counter;
      //alert(arr_length);
-     // alert(arr);
-
+  // alert(arr);  
+     
 //var form = document.myform;
 //alert(arr);
 
 // page #7
 
 
-     if (info == 7) {
-         if (checkbox61 == 0) {
 
-             window.FlashMessage.error('Question # 61 is required.');
-
-         }
+ if(info == 7){
+if(checkbox61 == 0){
+    
+    window.FlashMessage.error('Question # 61 is required.');
+    
+}
 if(checkbox62 == 0){
-
+    
     window.FlashMessage.error('Question # 62 is required.');
-
+    
 }
 if(checkbox63 == 0){
-
+    
     window.FlashMessage.error('Question # 63 is required.');
-
+    
 }
 if(checkbox64 == 0){
-
+    
     window.FlashMessage.error('Question # 64 is required.');
-
+    
 }
 if(checkbox65 == 0){
-
+    
     window.FlashMessage.error('Question # 65 is required.');
-
+    
 }
 if(checkbox66 == 0){
-
+    
     window.FlashMessage.error('Question # 66 is required.');
-
+    
 }
 if(checkbox67 == 0){
-
+    
     window.FlashMessage.error('Question # 67 is required.');
-
+    
 }
 if(checkbox68 == 0){
-
+    
     window.FlashMessage.error('Question # 68 is required.');
-
+    
 }
 if(checkbox69 == 0){
-
+    
     window.FlashMessage.error('Question # 69 is required.');
-
+    
 }
 
 if(checkbox70 == 0){
-
+    
     window.FlashMessage.error('Question # 70 is required.');
-
+    
 }
 
  }
@@ -3454,53 +3473,55 @@ var dataString = dataString;
 $.ajax({
     type:'POST',
     url:'https://10-yards.com/login/personal_values_assessment_data',
-    data: {"checkbox": arr, "dimensions_name": selected},
-    dataType: 'json',
-
-    success: function (data) {
-        window.location.replace("https://10-yards.com/login/dashboard");
-        //  var len = data.length;
+   data: {"checkbox": arr,"dimensions_name":selected},
+     dataType: 'json',
+  
+        success: function(data){
+            window.location.replace("https://10-yards.com/login/dashboard");
+      //  var len = data.length;
         //showChecked();
-        var length = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-        //alert(length);
-        // alert(len);
-        arr_length = arr.length;
-        if (arr_length == 70) {
-            // alert(arr_length);
-            // Read values
-
-            //console.log(data);
-            window.location.href = "<?php echo base_url();?>login/dashboard";
-
-        } else {
-            //alert(len);
-            //  $('#myResponse').html(data);
-            window.FlashMessage.error('all Questions Are Mandatory.');
-            // alert("All Questions Are Mandatory.");
-        }
+        var length=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+         //alert(length);
+      // alert(len);
+      arr_length=arr.length; 
+       if(arr_length== 70){
+          // alert(arr_length);
+         // Read values
+         
+         //console.log(data);
+        window.location.href="<?php echo base_url();?>login/dashboard";
+ 
+       }
+       else{
+           //alert(len);
+         //  $('#myResponse').html(data);
+          window.FlashMessage.error('all Questions Are Mandatory.');
+          // alert("All Questions Are Mandatory.");
+       }
 
     }
 });
-     arr_length = arr.length;
-     if (arr_length >= 70) {
-
-         window.location.href = "<?php echo base_url();?>login/dashboard";
-
-         //alert('equal');
-
-         // return true;
-         // break;
-
-     } else {
+ arr_length=arr.length; 
+ if(arr_length >= 70){
+           
+     window.location.href="<?php echo base_url();?>login/dashboard";
+   
+           //alert('equal');
+           
+      // return true; 
+     // break;
+           
+       }
+       else{
          window.FlashMessage.error('All Questions Are Mandatory.');
 //alert("all Questions Are Mandatory.");
-     }
+}
 
-     return false;
- }
+return false;
+}
      </script>
-
-    <script type="text/javascript">
+ 
+<script type="text/javascript">
     $(window).on('load',function(){
         $('#myModal').modal('show');
     });
@@ -3518,32 +3539,34 @@ var values3=[];
 
 $( "#checkboxes tbody tr" ).on( "click", function() {
         var currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
-    //alert(currentRows);
-    // timer
-    // first time
-    // time1 = $(".someTimer").TimeCircles().getTime();
+        //alert(currentRows);
+        // timer
+        // first time
+        // time1 = $(".someTimer").TimeCircles().getTime();
 
 //alert(time22);
 //899.995
-    if (time22 < 01) {
-        $(".someTimer").TimeCircles().destroy();
-
+				if(time22 < 01)
+				{
+				     $(".someTimer").TimeCircles().destroy();
+				    
+				  
 
 // second time
-        var timeCircles = $(".someTimer2").TimeCircles({
-
-            "time": {
-                "Days": {
-                    "text": "Days",
-                    "color": "#FFCC66",
-                    "show": false
-                },
-                "Hours": {
-                    "text": "Hours",
-                    "color": "#99CCFF",
-                    "show": false
-                },
-                "Minutes": {
+var timeCircles = $(".someTimer2").TimeCircles({ 
+                   
+    "time": {
+        "Days": {            
+            "text": "Days",
+            "color": "#FFCC66",
+            "show": false
+        },
+        "Hours": {
+            "text": "Hours",
+            "color": "#99CCFF",
+            "show": false
+        },
+        "Minutes": {
             "text": "Minutes",
             "color": "#BBFFBB",
             "show": true
@@ -3552,11 +3575,11 @@ $( "#checkboxes tbody tr" ).on( "click", function() {
             "text": "Seconds",
             "color": "#FF9999",
             "show": true,
-
+            
         }
     }
-
-        });
+    
+  });
   $(".someTimer2").eq(1).TimeCircles().start();
   $(".start").click(function(){ $(".someTimer2").TimeCircles().start(); });
 time2 = $(".someTimer2").TimeCircles().getTime();
@@ -3564,27 +3587,29 @@ time2 = $(".someTimer2").TimeCircles().getTime();
 //01
 if(time2 < 01)
 				{
-                    //	alert("vdgdg") ;
-                    $(".someTimer").TimeCircles().destroy();
-                    $(".someTimer2").TimeCircles().destroy();
-                    window.location.replace("https://10-yards.com/login/dashboard");
-                }
+			//	alert("vdgdg") ;
+				     $(".someTimer").TimeCircles().destroy();
+				      $(".someTimer2").TimeCircles().destroy();
+				    window.location.replace("https://10-yards.com/login/dashboard");
+				    }
 
 
-    }
-    // end
 
-
-    var name = $(this).closest('tr').find('.q_name').text();
-
+				}
+				// end
+        
+    
+        
+ var name = $(this).closest('tr').find('.q_name').text();
+ 
 //  var dimensions_name = $(this).closest('tr').find('input[type="hidden"]').val();
-    var questions_id = $(this).closest('tr').find('input[type="hidden"]').val();
-    //alert(currentRows);
+ var questions_id = $(this).closest('tr').find('input[type="hidden"]').val();
+ //alert(currentRows);
 
 
 // values2.push(dimensions_name);
-    values3.push(questions_id);
-
+values3.push(questions_id);
+ 
 });
 
 function save_for_later(){
@@ -3594,7 +3619,7 @@ function save_for_later(){
     values1.push(name);
 values.push(currentRows);
 //alert(values);
-
+    
     //"dimensions_name":values2,
     // ajax
     // var time=[];
@@ -3604,63 +3629,63 @@ values.push(currentRows);
     // // alert(time);
     // time=time/60;
     // time= Math.ceil(time);
-
+    
     var first_time=[];
     var second_time=[];
     first_time = $(".someTimer").TimeCircles().getTime();
-    if (first_time <= 0) {
-        second_time = $(".someTimer2").TimeCircles().getTime();
-        first_time = second_time;
+    if(first_time <= 0){
+         second_time = $(".someTimer2").TimeCircles().getTime();
+        first_time=second_time;
     }
-
+    
 //alert(time);
-    var length = [];
-    length = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+    var length=[];
+       length=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
     //  alert(length);
-
-
+       
+       
     $.ajax({
-        type: 'POST',
-        url: 'https://10-yards.com/login/save_for_later',
-        data: {"checkbox": values, "name": values1, "dimensions_name": values3, "length": length, "time": first_time},
-        dataType: 'json',
-
-
-        success: function (data) {
-
-            var length = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
-            counter = counter - 1;
-            if (counter >= 0) {
-                window.location.href = "<?php echo base_url();?>login/dashboard";
-                //     var checkbox = data[0].values;
-                //   //  var dimensions_name = data[0].values1;
-                //      var name = data[0].values2;
-                //alert(checkbox);
-
-                //  $('#values').text(values);
-                //  $('#dimensions_name').text(values1);
-                //  $('#name').text(values2);
-            }
-            //alert(length);
+    type:'POST',
+    url:'https://10-yards.com/login/save_for_later',
+    data: {"checkbox": values,"name":values1,"dimensions_name":values3,"length":length,"time":first_time},
+     dataType: 'json',
+  
+      
+        success: function(data){
+     
+        var length=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
+          counter=counter-1;
+         if(counter >= 0){
+          window.location.href="<?php echo base_url();?>login/dashboard";  
+    //     var checkbox = data[0].values;
+    //   //  var dimensions_name = data[0].values1;
+    //      var name = data[0].values2;
+         //alert(checkbox);
+ 
+        //  $('#values').text(values);
+        //  $('#dimensions_name').text(values1);
+        //  $('#name').text(values2);
         }
-    });
+         //alert(length);
+}
+});
 
-    checkboxes_length = arr.length;
-    checkboxes_length = checkboxes_length + counter;
-    checkboxes_length = checkboxes_length - 1;
+ checkboxes_length=arr.length;
+ checkboxes_length=checkboxes_length+counter;
+ checkboxes_length=checkboxes_length-1;
 //alert(arr.length-1);
 //alert(checkboxes_length);
-    counter = counter - 1;
-    //alert(counter);
-    if (counter >= 0) {
-        // alert('below');
-        window.location.href = "<?php echo base_url();?>login/dashboard";
-        // return true;
-    }
+counter=counter-1;
+      //alert(counter);  
+       if(counter >= 0){
+          // alert('below');
+           window.location.href="<?php echo base_url();?>login/dashboard";
+      // return true; 
+                        }
 
-    return false;
+return false;
 }
-
+ 
 
 </script>
 

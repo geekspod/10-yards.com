@@ -110,7 +110,9 @@
 	});
 
 
-
+// "paging":   false,
+//         "ordering": false,
+//         "info":     false,
 
 $(document).ready(function() {
     $('#checkboxes').DataTable( {
@@ -118,6 +120,9 @@ $(document).ready(function() {
         stateSave: true,
         "searching": false,
           "ordering": false,
+          "paging":   false,
+        
+        "info":     false,
         buttons: [
             'colvis'
         ]
