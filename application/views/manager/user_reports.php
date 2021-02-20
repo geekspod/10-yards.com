@@ -108,7 +108,7 @@
 
 <style>
     .bs-example {
-        margin: 20px;
+        margin: 0px;
     }
 
     .modal .chart {
@@ -210,16 +210,52 @@
         </tr>
     </div>
 </table>
+
+<div class="mt-5"></div>
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-sm-3">
+            <p>Work Personality Index</p>
+        </div>
+        <div class="col-sm-9">
+            <div class="progress" style="width:100%;">
+                <div class="progress-bar" style="width:70%;">70%</div>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-sm-3">
+            <p>Personal Values Assessment</p>
+        </div>
+        <div class="col-sm-9">
+            <div class="progress" style="width:100%;">
+                <div class="progress-bar" style="width:40%;">40%</div>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-sm-3">
+            <p>Personality Assessment</p>
+        </div>
+        <div class="col-sm-9">
+            <div class="progress" style="width:100%;">
+                <div class="progress-bar" style="width:30%;">30%</div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--end-->
 <div class="mt-5"></div>
-<div class="container row">
-    <div class="col-md-9">
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
         <p id="myID" align="justify"></p>
         <figure class="highcharts-figure">
         </figure>
         <div id="container"></div>
     </div>
-    <div class="col-md-3 align-self-center">
+        <div class="col-md-3 align-self-center">
         <!--<i> <h6 class="description">Description is:</h6></i>-->
         <!--1-10-->
         <i><p class="highcharts-description1" align="justify">Score indicates that the person is easy-going,
@@ -318,6 +354,7 @@
         <i><p class="highcharts-description42" align="justify">Score suggests that, an analytical person has the tendency to
                 carefully analyze information and use logic to address issues and problems.</p></i>
         <!--1-->
+    </div>
     </div>
 </div>
 <div class="container">
