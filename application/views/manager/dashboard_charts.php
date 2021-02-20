@@ -9,7 +9,6 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 <style>
-
    .highcharts-figure, .highcharts-data-table table {
     min-width: 320px;
     max-width: 660px;
@@ -49,6 +48,18 @@
 
 </head>
 <body>
+   <table class="container">
+
+<a href="https://10-yards.com//manager/login/reports"
+    style="color: white;"><button style="    background-color: #008000;
+    border-color: #5867dd;
+    color: white;
+    border: 1px solid;
+    padding: 7px 12px">Organizational Value Assessments</button></a>
+
+
+</table>
+
 <figure class="highcharts-figure">
     <div id="container" style="width: 45%; height: 300px;display: inline-block;"></div>
     <div id="container2" style="width: 45%; height: 300px;display: inline-block;"></div>
@@ -177,10 +188,17 @@ incomplete_cultural_sacn_values=data.incomplete_cultural_sacn_values;
 //debugger;
 Highcharts.chart('container', {
     chart: {
-        type: 'pie'
+        type: 'pie',
+        style: {
+            fontFamily: "Poppins"
+        }
     },
     title: {
-        text: 'Dashboard Data'
+        text: 'Dashboard Data',
+        style: {
+            fontSize: 14,
+            fontWeight: 'bold'
+        }
     },
     subtitle: {
         text: ''
@@ -199,8 +217,30 @@ Highcharts.chart('container', {
         series: {
             dataLabels: {
                 enabled: true,
-                format: '{point.name}: {point.y:.1f}%'
+                format: '{point.name}: {point.y:.1f}%',
+                style: {
+                    fontSize: '10px',
+                    fontFamily: 'Poppins',
+                    fontWeight: 400,
+                    color: '#3C3E62'
+                }
             }
+        },
+        pie: {
+            colors: [
+                '#383D61',
+                '#3E4267',
+                '#45476D',
+                '#4B4C73',
+                '#52527A',
+                '#595881',
+                '#605E87',
+                '#67658E',
+                '#6F6B96',
+                '#77729D',
+                '#7F7AA5',
+                '#8882AE'
+            ]
         }
     },
 credits: {
@@ -213,13 +253,23 @@ credits: {
 
     series: [
         {
-            name: "Dahboard Data",
+            name: "Dashboard Data",
             colorByPoint: true,
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}: {point.y:.1f}%',
+                style: {
+                    fontSize: '10px',
+                    fontFamily: 'Poppins',
+                    fontWeight: 400,
+                    color: '#3C3E62',
+                }
+            },
             data: [
                 {
                     name: "Total Employees",
                     y: total_employees,
-                    drilldown: "total_employees"
+                    drilldown: "total_employees",
                 },
 
 
@@ -287,7 +337,13 @@ credits: {
         }
     ],
     drilldown: {
-
+        activeDataLabelStyle: {
+            textDecoration: 'none',
+            fontSize: '10px',
+            fontFamily: 'Poppins',
+            fontWeight: 400,
+            color: '#3C3E62'
+        },
         series: [{
         name: 'total_employees',
         data: [total_employees]
@@ -359,8 +415,17 @@ credits: {
 });
 // 2nd chart
 Highcharts.chart('container2', {
+    chart: {
+        style: {
+            fontFamily: "Poppins"
+        }
+    },
     title: {
-        text: 'Gender Wise'
+        text: 'Gender Wise',
+        style: {
+            fontSize: 14,
+            fontWeight: 'bold'
+        }
     },
     xAxis: {
         categories: ['Male', 'Female', 'Other']
@@ -392,35 +457,50 @@ Highcharts.chart('container2', {
                 enabled: true,
                 format: '{point.name}: {point.y:.1f}%'
             }
+        },
+        pie: {
+            colors: [
+                '#52527A',
+                '#595881',
+                '#605E87',
+                '#67658E',
+                '#6F6B96',
+                '#77729D',
+                '#7F7AA5',
+                '#8882AE'
+            ]
         }
     },
     tooltip: {
         pointFormat: '<b>{point.y:.1f} %</b>'
     },
-credits: {
-    enabled: false
-},
+    credits: {
+        enabled: false
+    },
     series: [{
         type: 'pie',
         name: '',
         data: [{
             name: 'Male',
-            y: male,
-            color: Highcharts.getOptions().colors[0] // Jane's color
+            y: male
         }, {
             name: 'Female',
-            y: female,
-            color: Highcharts.getOptions().colors[1] // John's color
+            y: female
         }, {
             name: 'other_gender',
-            y: other_gender,
-            color: Highcharts.getOptions().colors[2] // Joe's color
+            y: other_gender
         }],
         center: [100, 80],
         size: 100,
         showInLegend: false,
         dataLabels: {
-            enabled: false
+            enabled: true,
+            style: {
+                fontSize: '10px',
+                fontFamily: 'Poppins',
+                fontWeight: 400,
+                color: '#3C3E62'
+            }
         }
     }]
 });
@@ -428,10 +508,17 @@ credits: {
 // 3
 Highcharts.chart('container3', {
     chart: {
-        type: 'pie'
+        type: 'pie',
+        style: {
+            fontFamily: "Poppins"
+        }
     },
     title: {
-        text: 'Department Wise Data'
+        text: 'Department Wise Data',
+        style: {
+            fontSize: 14,
+            fontWeight: 'bold'
+        }
     },
     subtitle: {
         text: ''
@@ -442,7 +529,7 @@ Highcharts.chart('container3', {
             rotation: -45,
             style: {
                 fontSize: '13px',
-                fontFamily: 'Verdana, sans-serif'
+                fontFamily: 'Poppins'
             }
         }
     },
@@ -468,15 +555,42 @@ Highcharts.chart('container3', {
         series: {
             dataLabels: {
                 enabled: true,
-                format: '{point.name}: {point.y:.1f}%'
+                format: '{point.name}: {point.y:.1f}%',
+                style: {
+                    fontSize: '10px',
+                    fontFamily: 'Poppins',
+                    fontWeight: 400,
+                    color: '#3C3E62'
+                }
             }
+        },
+        pie: {
+            colors: [
+                '#1D2847',
+                '#222B4C',
+                '#282F51',
+                '#2D3356',
+                '#33385B',
+                '#383D61',
+                '#3E4267',
+                '#45476D',
+                '#4B4C73',
+                '#52527A',
+                '#595881',
+                '#605E87',
+                '#67658E',
+                '#6F6B96',
+                '#77729D',
+                '#7F7AA5',
+                '#8882AE'
+            ]
         }
     },
-credits: {
-    enabled: false
-},
+    credits: {
+        enabled: false
+    },
     tooltip: {
-        pointFormat: '<b>{point.y:.1f} %</b>'
+        pointFormat: '{point.y:.1f}%'
     },
     series: [{
         name: 'marketing',
@@ -494,14 +608,12 @@ credits: {
         ],
         dataLabels: {
             enabled: true,
-            rotation: -90,
-            color: '#FFFFFF',
-            align: 'right',
             format: '{point.y:.1f}', // one decimal
-            y: 10, // 10 pixels down from the top
             style: {
-                fontSize: '13px',
-                fontFamily: 'Verdana, sans-serif'
+                fontSize: '10px',
+                fontFamily: 'Poppins',
+                fontWeight: 400,
+                color: '#3C3E62'
             }
         }
     }]
@@ -513,10 +625,17 @@ credits: {
 
 Highcharts.chart('container4', {
     chart: {
-        type: 'pie'
+        type: 'pie',
+        style: {
+            fontFamily: "Poppins",
+        }
     },
     title: {
-        text: 'Age Wise Data'
+        text: 'Age Wise Data',
+        style: {
+            fontSize: 14,
+            fontWeight: 'bold'
+        }
     },
     subtitle: {
         text: ''
@@ -535,8 +654,28 @@ Highcharts.chart('container4', {
         series: {
             dataLabels: {
                 enabled: true,
-                format: '{point.name}: {point.y:.1f}%'
+                format: '{point.name}: {point.y:.1f}%',
+                style: {
+                    fontSize: '10px',
+                    fontFamily: 'Poppins',
+                }
             }
+        },
+        pie: {
+            colors: [
+                '#383D61',
+                '#3E4267',
+                '#45476D',
+                '#4B4C73',
+                '#52527A',
+                '#595881',
+                '#605E87',
+                '#67658E',
+                '#6F6B96',
+                '#77729D',
+                '#7F7AA5',
+                '#8882AE'
+            ]
         }
     },
 credits: {
@@ -551,6 +690,14 @@ credits: {
         {
             name: "Age Wise Data",
             colorByPoint: true,
+            dataLabels: {
+                style: {
+                    fontSize: '10px',
+                    fontFamily: 'Poppins',
+                    fontWeight: 400,
+                    color: '#3C3E62'
+                }
+            },
             data: [
                 {
                     name: "15-25",
@@ -579,7 +726,13 @@ credits: {
         }
     ],
     drilldown: {
-
+        activeDataLabelStyle: {
+            textDecoration: 'none',
+            fontSize: '10px',
+            fontFamily: 'Poppins',
+            fontWeight: 400,
+            color: '#3C3E62'
+        },
         series: [{
         name: 'first_age_comparison',
         data: [first_age_comparison]
