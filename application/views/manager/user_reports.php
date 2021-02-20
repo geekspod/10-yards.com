@@ -148,6 +148,12 @@
 
 <div class="mt-5"></div>
 
+<!--
+    How to dynamically show progress bars:
+        in <?php echo 70; ?> replace 70 with
+        the number from database or backend
+        which shows the completion percentage
+-->
 <div class="container">
     <div class="row align-items-center">
         <div class="col-sm-3">
@@ -155,7 +161,7 @@
         </div>
         <div class="col-sm-9">
             <div class="progress" style="width:100%;">
-                <div class="progress-bar" style="width:70%;">70%</div>
+                <div class="progress-bar" style="width:<?php echo 70; ?>%;"><?php echo 70; ?>%</div>
             </div>
         </div>
     </div>
@@ -165,7 +171,7 @@
         </div>
         <div class="col-sm-9">
             <div class="progress" style="width:100%;">
-                <div class="progress-bar" style="width:40%;">40%</div>
+                <div class="progress-bar" style="width:<?php echo 70; ?>%;"><?php echo 70; ?>%</div>
             </div>
         </div>
     </div>
@@ -175,7 +181,7 @@
         </div>
         <div class="col-sm-9">
             <div class="progress" style="width:100%;">
-                <div class="progress-bar" style="width:30%;">30%</div>
+                <div class="progress-bar" style="width:<?php echo 70; ?>%;"><?php echo 70; ?>%</div>
             </div>
         </div>
     </div>
