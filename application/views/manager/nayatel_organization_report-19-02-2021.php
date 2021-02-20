@@ -82,40 +82,40 @@
     border-color: #5867dd;
     color: white;
     border: 1px solid;
-    padding: 7px 12px"><a href="https://10-yards.com//manager/login/dashboard" style="color: white;">Organizational Level Score</a></td>
+    padding: 7px 12px"><a href="https://10-yards.com/manager/login/dashboard" style="color: white;">Organizational Level Score</a></td>
 
 
 <!--<td style="    background-color: #008000;-->
 <!--    border-color: #5867dd;-->
 <!--    color: white;-->
 <!--    border: 1px solid;-->
-<!--    padding: 7px 12px"><a href="https://10-yards.com//manager/login/dashboard" style="color: white;">Departmental Level Score</a></td>-->
+<!--    padding: 7px 12px"><a href="https://10-yards.com/manager/login/dashboard" style="color: white;">Departmental Level Score</a></td>-->
 
     <td style="    background-color: #008000;
     border-color: #5867dd;
     color: white;
     border: 1px solid;
-    padding: 7px 12px"><a href="https://10-yards.com//manager/login/dashboard" style="color: white;">All Departments Score</a></td>
+    padding: 7px 12px"><a href="https://10-yards.com/manager/login/dashboard" style="color: white;">All Departments Score</a></td>
 
     <td style="    background-color: #008000;
     border-color: #5867dd;
     color: white;
     border: 1px solid;
-    padding: 7px 12px"><a href="https://10-yards.com//manager/login/dashboard" style="color: white;">Gender Level Score</a></td>
+    padding: 7px 12px"><a href="https://10-yards.com/manager/login/dashboard" style="color: white;">Gender Level Score</a></td>
 
 
     <!--<td style="    background-color: #008000;-->
     <!--border-color: #5867dd;-->
     <!--color: white;-->
     <!--border: 1px solid;-->
-    <!--padding: 7px 12px"><a href="https://10-yards.com//manager/login/dashboard" style="color: white;">Positional Level Score</a></td>-->
+    <!--padding: 7px 12px"><a href="https://10-yards.com/manager/login/dashboard" style="color: white;">Positional Level Score</a></td>-->
 
 
     <td style="    background-color: #008000;
     border-color: #5867dd;
     color: white;
     border: 1px solid;
-    padding: 7px 12px"><a  href="https://10-yards.com//manager/login/dashboard" style="color: white;">Age Level Score</a></td>
+    padding: 7px 12px"><a  href="https://10-yards.com/manager/login/dashboard" style="color: white;">Age Level Score</a></td>
 
 
 
