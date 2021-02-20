@@ -75,7 +75,7 @@
 								<div class="kt-portlet__body">
 
 									<!--begin: Datatable -->
-									<table class="table table-striped- table-bordered table-hover table-checkable table-responsive w-100 d-block d-md-table" id="kt_table_1">
+									<table class="table table-striped- table-bordered table-hover table-checkable table-responsive w-100 d-block d-lg-table" id="kt_table_1">
 										<thead>
 											<tr class="view_categories_table">
 												<th style="vertical-align: unset">Sr. </th>
@@ -116,8 +116,8 @@
             	}
             	?>
 
-											
-											
+
+
 										</tbody>
 									</table>
 
