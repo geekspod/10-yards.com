@@ -37,12 +37,19 @@ public function update_profile(){
 			$this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
 				$this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
 					$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
-						$this->form_validation->set_rules('organization', 'organization', 'trim|required');
-							$this->form_validation->set_rules('title', 'title', 'trim|required');
-								$this->form_validation->set_rules('number1', 'number1', 'trim|required');
+							$this->form_validation->set_rules('job_title', 'Job Title', 'trim|required');
+							$this->form_validation->set_rules('landline', 'Landline', 'trim|required');
+							$this->form_validation->set_rules('mobile', 'Mobile', 'trim|required');
+							$this->form_validation->set_rules('department', 'Department', 'trim|required');
+							$this->form_validation->set_rules('location', 'Location', 'trim|required');
+							$this->form_validation->set_rules('age', 'Age', 'trim|required');
+							$this->form_validation->set_rules('gender', 'Gender', 'trim|required');
+							$this->form_validation->set_rules('reporting', 'Reporting', 'trim|required');
+							
+								
 									$this->form_validation->set_rules('cnic', 'Cnic', 'trim|required');
 										$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|max_length[15]');
-		$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[password]');
+		
 	
 				
 
@@ -67,26 +74,63 @@ public function update_profile(){
 				$password =  hash('sha256', $salt . ( hash('sha256',$this->input->post('password'))));
 				$confirm_password=$password;
 				
-    	
+    	 $date_modified = date("Y-m-d H:i:s");
 	            $form_data = array(
 					'first_name'     => $_POST['first_name'],
 					'last_name'     => $_POST['last_name'],
-						'middle_name'     => $_POST['middle_name'],
-					'organization'     => $_POST['organization'],
-						'email'     => $_POST['email'],
-					'title'     => $_POST['title'],
-						'landline'     => $_POST['landline'],
-					'number1'     => $_POST['number1'],
-						'number2'     => $_POST['number2'],
+						
 					'cnic'     => $_POST['cnic'],
-						'password'     => $password,
-					'confirm_password'     => $confirm_password,
+						'email'     => $_POST['email'],
+					'job_title'     => $_POST['job_title'],
+						'landline'     => $_POST['landline'],
+					'status'     => 'enable',
+						'role'     => 'manager',
+						'passport_number'     => '',
+						'dob'     => '',
+					'cnic'     => $_POST['cnic'],
+						'mobile'     => $_POST['mobile'],
+					'department'     => $_POST['department'],
+						
+					'location'     => $_POST['location'],
+					
+					'age'     => $_POST['age'],
+					'gender'     => $_POST['gender'],
+						
+					'reporting'     => $_POST['reporting'],
+					'date_modified'     => $date_modified,
 					
 	            );
-	            //echo "<pre>";print_r($form_data);exit;
-	        	$this->Model_login->update_profile($form_data,$email);
-	        	$success = 'Profile Information is updated successfully!';
-	        	$manager_value_array=$form_data;
+	           // echo "<pre>";print_r($form_data);exit;
+	           
+	           $this->Model_category->update_employee_profile($form_data,$email);
+	        	$success = 'Employee Profile Information is updated successfully!';
+	        	
+	        	$form_data2 = array(
+					'first_name'     => $_POST['first_name'],
+					'last_name'     => $_POST['last_name'],
+					'mobile'     => $_POST['mobile'],
+					'job_title'     => $_POST['job_title'],
+					 'email' => $_POST['email'],
+				
+					'landline'     => $_POST['landline'],
+					'department'     => $_POST['department'],
+					'location'     => $_POST['location'],
+					'cnic'     => $_POST['cnic'],
+					
+					'age'     => $_POST['age'],
+					'gender'     => $_POST['gender'],
+				// 	'tenure'     => $_POST['tenure'],
+					'reporting'     => $_POST['reporting'],
+					
+					
+	            );
+	        	$manager_value_array=$form_data2;
+	            $data['manager_dashboard_data']=$this->session->set_userdata($manager_value_array);
+
+	           
+	        //	$this->Model_login->update_profile($form_data,$email);
+	       // 	$success = 'Profile Information is updated successfully!';
+	        //	$manager_value_array=$form_data;
 	        	$this->session->set_userdata($manager_value_array);
 
 	        	$this->session->set_flashdata('success',$success);
@@ -110,9 +154,18 @@ public function profile(){
   $data['manager_dashboard_data']=$this->session->userdata();
   // echo "<pre>";print_r($data['manager_dashboard_data']);exit;
    
+  
+    $email= $data['manager_dashboard_data'];
+    $email=$email['email'];
+    
+    // echo "<pre>";print_r($email);exit;
+    $data['employee_information'] = $this->Model_category->get_employee_record($email);
+   // echo "<pre>";print_r($data['employee_information']);exit;
+   
+   
    $user_type=$this->session->userdata('role');
    if ($user_type != "manager" ){
-     redirect(base_url().'manager');
+     redirect(base_url().'login');
        exit;
    }
    $this->load->view('manager/manager_dashboard_header');
@@ -143,7 +196,7 @@ public function profile(){
             if(!$un) {
                 $error = 'Email address is wrong!';
                 $this->session->set_flashdata('error',$error);
-                redirect(base_url().'manager');
+                redirect(base_url().'login');
 
             } else {
 
@@ -154,7 +207,7 @@ public function profile(){
                     
                     $error = 'Password is wrong!';
                     $this->session->set_flashdata('error',$error);
-                    redirect(base_url().'manager');
+                    redirect(base_url().'login');
 
                 } else {
 
@@ -176,7 +229,7 @@ public function profile(){
                         
                     );
                     $this->session->set_userdata($manager_value_array);
-                    redirect(base_url().'manager/Login/dashboard');
+                    redirect(base_url().'manager/login/dashboard');
                 }
             }
         } else {
@@ -307,7 +360,7 @@ public function dashboard(){
 	
 	$user_type=$this->session->userdata('role');
   if ($user_type != "manager" ){
-    redirect(base_url().'manager');
+    redirect(base_url().'login');
       exit;
   }
 // 	$total_employees = $this->Model_login->get_users_count(); 
@@ -410,6 +463,254 @@ $incomplete_cultural_sacn_values=$total_employees-$incomplete_cultural_sacn_valu
 	// $this->load->view('manager/manager_dashboard_footer');
 
 }
+
+public function add_employees(){
+    
+   $data['manager_dashboard_data']=$this->session->userdata();
+     $email=$this->session->userdata('email');
+    
+    $data['users'] = $this->Model_login->get_users();
+     $data['count'] = $this->Model_login->get_users_count();
+    //echo "<pre>";print_r($data['count']);exit;
+  // left side bar and top bar
+  $data['manager_dashboard_data']=$this->session->userdata();
+  $this->load->view('manager/manager_dashboard_header');
+	$this->load->view('manager/manager_dashboard_footer');
+
+
+  $this->load->view('manager/dashboard2',$data);
+//   add employees
+$this->load->view('manager/add_employees');
+  // Charts
+  $this->load->view('manager/share_reports_header');
+ // $this->load->view('manager/share_reports',$data);
+  $this->load->view('manager/share_reports_footer'); 
+    
+}
+
+//active_employees
+public function active_employees(){
+         $data['code'] = $this->input->get('code');
+        
+   
+        
+        $this->load->view('view_update_password',$data);
+    }
+
+public function change_password_first(){
+         $code = $this->uri->segment(3);
+         	//echo "<pre>";print_r($code);exit;
+        $this->form_validation->set_rules('new_password', 'Password', 'required|min_length[6]');
+		$this->form_validation->set_rules('re_password', 'confirm Password', 'required|matches[new_password]');
+      
+           if($this->form_validation->run() == FALSE) {
+				$valid = 0;
+                $error = validation_errors();
+            }
+            else{
+                
+                $valid = 1;
+            }
+            
+            $salt = 'b7r4';
+				
+				$password =  hash('sha256', $salt . ( hash('sha256',$this->input->post('new_password'))));
+				$confirm_password =  hash('sha256', $salt . ( hash('sha256',$this->input->post('re_password'))));
+            
+            
+            if($valid == 1) {
+              	$data   = array(
+    	                    'status' => 'enable',
+    	                     'password' => $password,
+    	                     'confirm_password' => $confirm_password,
+    	               );
+    	$id     = array(
+    	                    'code' => $code
+    	               );               
+    	
+    	$update = $this->Model_login->updatestatus($data,$id) ;
+    //	echo "<pre>";print_r($update);exit;
+    }
+    if(!empty($update)){
+        $success = 'You have successfully update your password.';
+		$this->session->set_flashdata('success',$success);
+       redirect(site_url().'/login'); 
+        
+    }
+    }
+
+
+	public function add_employees_data()
+	{
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('first_name', 'First Name', 'required');
+		$this->form_validation->set_rules('last_name', 'Last Name', 'required');
+		$this->form_validation->set_rules('designation', 'designation', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		
+		if ($this->form_validation->run() == FALSE) {
+			$json  = array(
+			'success'	=> false,
+			'message'	=> validation_errors(),
+			);
+			echo json_encode($json);
+		} else {
+
+			$checkemail 	= $this->Model_login->check_email($this->input->post('email'));
+		//	echo "<pre>";print_r($checkemail);exit;
+			if (!empty($checkemail)) {
+				$json  = array(
+				'success'	=> false,
+				'message'	=> '<p>Email Already exists</p>',
+				);
+				$error = '<p>Email Already exists</p>';
+                $this->session->set_flashdata('error',$error);
+                //redirect(base_url().'/manager/login/dashboard');
+                
+				//redirect(base_url().'/manager/login/add_employees');
+				echo json_encode($json);
+			} else {
+				$code = rand(1000,9999);
+				$role_id = $this->input->post('role_id');
+				
+				$data = array(
+				'first_name'		=> $this->input->post('first_name'),
+				'last_name'		=> $this->input->post('last_name'),
+				'designation'		=> $this->input->post('designation'),
+				'email'			=> $this->input->post('email'),
+				'password'		=> md5($this->input->post('password')),
+				'status'		=> 'disable',
+				'role'		=> 'employee',
+				'code'			=> $code,
+				
+				);
+				$inserdata	= $this->Model_login->add_customer($data);
+				$customerid = $this->db->insert_id();
+				
+				if ($inserdata > 0) {
+					$this->load->library('email');
+					$config['wordwrap'] = TRUE;
+					$config['mailtype'] = 'html';
+
+					$this->email->initialize($config);
+					$this->email->from('uzair.hussain7@gmail.com', 'Nayatel-Employee-Confirmation-Email');
+					$this->email->to($this->input->post('email'));
+					$this->email->subject('Nayatel-Confirmation-Email | Confirmation Email');
+					$messages = '
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#fff" style="font-family:Open Sans,Arial,Helvetica,sans-serif;border-collapse:collapse!important;background:#fff!important;border-collapse:collapse;background:#fff">
+  <tbody>
+    <tr>
+      <td align="center" valign="top" bgcolor="#fff" style="background:#fff!important;background:#fff">
+        <img src="'.base_url().'public/uploads/logo.jpg">
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" bgcolor="#ededed">
+        <table width="700" class="m_-8985627821087644018mobilewrapper" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+          <tbody>
+            <tr>
+              <td align="center" valign="top">
+                <table width="600" class="m_-8985627821087644018mobilewrapper" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+                  <tbody>
+                    <tr>
+                      <td height="20" align="center" valign="top" style="height:20px!important;line-height:10px!important;font-size:20px!important;color:#ededed!important;height:10px;line-height:20px;font-size:20px;color:#ededed">.</td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="top">
+                        <table width="600" class="m_-8985627821087644018mobilewrapper" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+                          <tbody>
+                            <tr>
+                              <td align="center" valign="top">
+                                <table width="600" class="m_-8985627821087644018mobilewrapper" bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+                                  <tbody></tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="top">
+                        <table width="800" class="m_-8985627821087644018mobilewrapper" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+                          <tbody>
+                            <tr>
+                              <td align="center" valign="top" bgcolor="#ffffff" style="background:#ffffff">
+                                <table width="600" class="m_-8985627821087644018mobilewrapper" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+                                  <tbody>
+                                    <tr>
+                                      <td width="" align="center" valign="top">&nbsp;</td>
+                                      <td align="center" valign="top">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+
+                                      <td align="center" valign="top" style="font-size:24px;font-family:Open Sans,Arial,Helvetica,sans-serif;color:#1c2c3a;text-align:center" colspan="2">Verify Your account click on this and update the password for the first time.<a href="'.base_url().'/login/active_employees/?code='.$code.'">link</a></td>
+
+                                    </tr>
+';
+					$messages .='
+                                    <tr>
+                                      <td align="center" valign="top">&nbsp;</td>
+                                      <td  align="center" valign="top">&nbsp;</td>
+                                    </tr>
+
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center" valign="top" bgcolor="#ffffff" style="border-radius:0 0 2px 2px">
+                                <table width="600" class="m_-8985627821087644018mobilewrapper" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+
+
+';
+
+
+
+
+					$messages .= '
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table> ';
+					$this->email->message($messages);
+
+					$this->email->send();
+					//$this->response($message, 200);
+					$json  = array(
+					'success'	=> true,
+					'message'	=> 'You have successfully register.Plesae complete your profile as well as update the password for the first time.',
+					
+					);
+					echo json_encode($json);
+				} else {
+					$json  = array(
+					'success'	=> false,
+					'message'	=> 'Some thig went wroong',
+					);
+					echo json_encode($json);
+
+				}
+			}
+
+		}
+	}
+
 
 public function register(){
 
@@ -990,7 +1291,7 @@ if ($this->form_validation->run() == FALSE)
                 );
                 $error = validation_errors();
                 $this->session->set_flashdata('error',$error);
-                redirect(base_url().'manager');
+                redirect(base_url().'/manager/login/dashboard');
 				//echo json_encode($json);
 		}
 		else
@@ -1006,7 +1307,7 @@ if ($this->form_validation->run() == FALSE)
 //                 );
 //                 $error = 'Email Already exists';
 //                 $this->session->set_flashdata('error',$error);
-//                 redirect(base_url().'manager');
+//                 redirect(base_url().'login');
 // 			//	echo json_encode($json);
 // 			}else
 // 			{
@@ -1141,7 +1442,7 @@ $this->email->send();
                   );
                   $error = 'Somethig went wroong';
                 $this->session->set_flashdata('error',$error);
-                redirect(base_url().'manager');
+                redirect(base_url().'login');
 					echo json_encode($json);			  
 					
 				}	
@@ -1289,7 +1590,7 @@ public function save(){
                 );
                 $error = validation_errors();
                 $this->session->set_flashdata('error',$error);
-                redirect(base_url().'manager');
+                redirect(base_url().'login');
 				//echo json_encode($json);
 		}
 		else
@@ -1305,7 +1606,7 @@ public function save(){
                 );
                 $error = 'Email Already exists';
                 $this->session->set_flashdata('error',$error);
-                redirect(base_url().'manager');
+                redirect(base_url().'login');
 			//	echo json_encode($json);
 			}else
 			{
@@ -1448,7 +1749,7 @@ $messages .= '
                   );
                   $success = 'You have successfully register. kindly check your email to verify your account';
                 $this->session->set_flashdata('success',$success);
-                redirect(base_url().'manager');
+                redirect(base_url().'login');
 					echo json_encode($json);
 				}else
 				{
@@ -1458,7 +1759,7 @@ $messages .= '
                   );
                   $error = 'Somethig went wroong';
                 $this->session->set_flashdata('error',$error);
-                redirect(base_url().'manager');
+                redirect(base_url().'login');
 					echo json_encode($json);			  
 					
 				}	
@@ -1499,8 +1800,10 @@ public function active()
     }
     function logout() {
         $this -> session -> unset_userdata('manager_value_array');
+        $this -> session -> unset_userdata('manager_dashboard_data');
+        $this -> session -> unset_userdata('value_array');
 		$this -> session -> unset_userdata('email');
         $this->session->sess_destroy();
-        redirect(base_url().'manager');
+        redirect(base_url().'login');
     }
 }

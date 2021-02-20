@@ -31,7 +31,76 @@ class Login extends CI_Controller {
 		
 	}
 	
+public function incomplete_scenario(){
+    $test_name="Work Personality Index";
+    if(($this->uri->segment(3)!=0)){
+	$data['dashboard_data']=$this->uri->segment(3);
+	
+}
+else{
+	$data['dashboard_data']=$this->session->userdata();
+}
 
+$email=$data['dashboard_data'];
+$email=$email['email'];
+$date_created = date("Y-m-d H:i:s");
+$date_modified=$date_created;
+$test_time_slot=$_POST['time'];
+	
+	
+	$form_data = array(
+				'test_time_slot'    => $test_time_slot,
+				'date_modified'    => $date_modified,
+				'date_created'    => $date_created,
+				'email'    => $email,
+				'test_name'    => $test_name,
+			
+			);
+		//	echo "<pre>";print_r($form_data);exit;
+		   $questions_score_id= $this->Model_category->add_incomplete_scenario($form_data);
+	
+	
+	
+    	//echo "<pre>";print_r($questions_score_id);exit;
+    	redirect(base_url().'login/dashboard');
+		    exit;
+}
+
+
+public function nayatel_incomplete_scenario(){
+    $test_name="Nayatels Value Statements";
+    if(($this->uri->segment(3)!=0)){
+	$data['dashboard_data']=$this->uri->segment(3);
+	
+}
+else{
+	$data['dashboard_data']=$this->session->userdata();
+}
+
+$email=$data['dashboard_data'];
+$email=$email['email'];
+$date_created = date("Y-m-d H:i:s");
+$date_modified=$date_created;
+$test_time_slot=$_POST['time'];
+	
+	
+	$form_data = array(
+				'test_time_slot'    => $test_time_slot,
+				'date_modified'    => $date_modified,
+				'date_created'    => $date_created,
+				'email'    => $email,
+				'test_name'    => $test_name,
+			
+			);
+		//	echo "<pre>";print_r($form_data);exit;
+		   $questions_score_id= $this->Model_category->add_incomplete_scenario($form_data);
+	
+	
+	
+    	//echo "<pre>";print_r($questions_score_id);exit;
+    	redirect(base_url().'login/dashboard');
+		    exit;
+}
 	
 public function nayatel_value_statements_error(){
     
@@ -203,12 +272,29 @@ $data['setting'] = $this->Model_common->all_setting();
 
 public function work_save_for_later(){
     
+    $reponse = array(
+                'csrf_name' => $this->security->get_csrf_token_name(),
+                'csrf_token' => $this->security->get_csrf_hash()
+                );
+               /// echo "<pre>";print_r($reponse);echo "<br>";exit;
+	if(empty($reponse))
+	   {
+	       $error='Something gone wrong. Try Again.';
+			$this->session->set_flashdata('error',$error);
+			redirect(base_url().'login/dashboard');
+	   }
+    
+    
   // echo "<pre>";print_r($_POST);echo "<br>";exit;
      
      $test_time_slot = $this->input->post('time');
      $test_time_slot=$test_time_slot/60;
      $test_time_slot= round($test_time_slot);
-     	 //echo "<pre>";print_r($test_time_slot);echo "<br>";exit;
+    // echo "<pre>";print_r($test_time_slot);echo "<br>";echo "<br>";
+     if($test_time_slot == 1){
+         $test_time_slot=0;
+     }
+  //   echo "<pre>";print_r($test_time_slot);echo "<br>";exit;
     $work_personality_save_for_later_time=$this->Model_category->work_personality_save_for_later_time($test_time_slot);
     // now 18-01-2021-5:08 pm
 $work_save_for_later=$this->Model_category->work_save_for_later();
@@ -219,13 +305,31 @@ $work_save_for_later=$this->Model_category->work_save_for_later();
 }
 
 public function save_for_later(){
+    
+    $reponse = array(
+                'csrf_name' => $this->security->get_csrf_token_name(),
+                'csrf_token' => $this->security->get_csrf_hash()
+                );
+	if(empty($reponse))
+	   {
+	       $error='Something gone wrong. Try Again.';
+			$this->session->set_flashdata('error',$error);
+			redirect(base_url().'login/dashboard');
+	   }
+	   
     // echo "<pre>";print_r($_POST);echo "<br>";exit;
     	$questions_id = $this->input->post('questions_id[]');
    
      	$test_time_slot = $this->input->post('time');
      $test_time_slot=$test_time_slot/60;
      $test_time_slot= round($test_time_slot);
-     	// echo "<pre>";print_r($_POST);echo "<br>";exit;
+     
+     	// echo "<pre>";print_r($test_time_slot);echo "<br>";echo "<br>";
+     if($test_time_slot == 1){
+         $test_time_slot=0;
+     }
+  //   echo "<pre>";print_r($test_time_slot);echo "<br>";exit;
+  
      	  $nayatel_save_for_later_time=$this->Model_category->nayatel_save_for_later_time($test_time_slot);
      $nayatel_values_assessment_id=$this->Model_category->save_for_later();
       redirect(base_url().'login/dashboard');
@@ -276,6 +380,17 @@ $data['setting'] = $this->Model_common->all_setting();
 }
 
 public function nayatel_value_statements_data(){
+    
+    $reponse = array(
+                'csrf_name' => $this->security->get_csrf_token_name(),
+                'csrf_token' => $this->security->get_csrf_hash()
+                );
+	if(empty($reponse))
+	   {
+	       $error='Something gone wrong. Try Again.';
+			$this->session->set_flashdata('error',$error);
+			redirect(base_url().'login/dashboard');
+	   }
     	//echo "<pre>";print_r($_POST);exit;
   	$form_data = array(
 				'checkbox'    => $_POST['checkbox'],
@@ -486,7 +601,7 @@ else{
 				$data['work_record'] = $this->Model_category->check_record_work_personality_index($email);
 				//echo "<pre>";print_r($data['work_record']);exit;
 				$data['dashboard_data']=$this->session->userdata();
-				echo "vdhgdg";exit;
+			//	echo "vdhgdg";exit;
 	            redirect(base_url().'login/dashboard');
 
 				//$this->load->view('dashboard-new',$data);
@@ -1011,6 +1126,12 @@ if(isset($data['setting'])) {
 }
 
 public function work_personality_index_form(){
+$data['unique_form_name'] = "CSRFGuard_".mt_rand(0,mt_getrandmax());
+$data['token'] =$this->Model_category->csrfguard_generate_token($data['unique_form_name']);
+
+
+// 	echo "<pre>";print_r($data['unique_form_name']);echo "<br>";
+// 		echo "<pre>";print_r($data['token']);exit;	 
 
 	//echo "view";exit;
 			$categories_id=5;
@@ -1087,6 +1208,27 @@ public function work_personality_index_form(){
 
 	public function work_personality_index_form_data(){
 	   //echo "<pre>";print_r($_POST);exit;
+	   
+	   $csrf_name=$this->input->post("csrf_name");
+		$csrf_token= $this->input->post("csrf_token");
+		
+				$csrf_check =$this->Model_category->csrfguard_validate_token($csrf_name,$csrf_token);
+
+
+ $reponse = array(
+                'csrf_name' => $this->security->get_csrf_token_name(),
+                'csrf_token' => $this->security->get_csrf_hash()
+                );
+// echo "<pre>";print_r($csrf_name);echo "<br>";
+// echo "<pre>";print_r($csrf_token);echo "<br>";
+ //echo "<pre>";print_r($reponse);exit;
+	   if(empty($reponse))
+	   {
+	       $error='Something gone wrong. Try Again.';
+			$this->session->set_flashdata('error',$error);
+			redirect(base_url().'login/dashboard');
+	   }
+	   
 	    if(($this->uri->segment(3)!=0)){
 	$data['dashboard_data']=$this->uri->segment(3);
 	
@@ -1481,6 +1623,75 @@ public function dashboard(){
 				$data['categories'] = $this->Model_category->get_categories();
 				$data['nayatel_record'] = $this->Model_category->check_record_nayatel($email);
 				$data['work_record'] = $this->Model_category->check_record_work_personality_index($email);
+				
+				// resume the test
+// resume test
+$data['work_resume_test'] = $this->Model_category->work_resume_test($email);
+$data['incomplete_scenario'] = $this->Model_category->check_incomplete_scenario($email);
+
+// count questions
+$count_work_questions = $this->Model_category->count_work_questions($email);
+$count_work_questions=105-$count_work_questions;
+$count_work_questions=$count_work_questions/105;
+$count_work_questions=$count_work_questions*100;
+$data['count_work_questions']=round($count_work_questions);
+//echo "<pre>";print_r($data['count_work_questions']);exit;
+
+
+// count nayatel questions
+$count_nayatel_questions = $this->Model_category->count_nayatel_questions($email);
+$count_nayatel_questions=70-$count_nayatel_questions;
+$count_nayatel_questions=$count_nayatel_questions/70;
+$count_nayatel_questions=$count_nayatel_questions*100;
+$data['count_nayatel_questions']=round($count_nayatel_questions);
+
+
+//if function gives completed then check,otherwise check time
+	
+	if($data['work_resume_test'] == 'completed'){
+	    $data['work_resume_test']='completed';
+	    
+	}
+	else if($data['work_resume_test'] == 'pending'){
+	    $data['work_resume_test']='pending';
+	    
+	}
+	else if($data['work_resume_test'] == 'resume'){
+	    $data['work_resume_test']='resume';
+	    
+	}
+	else if ($data['incomplete_scenario'] == 'incomplete'){
+	    
+	    $data['incomplete_scenario']='incomplete';
+	}
+	else{
+	    
+	    $data['work_resume_test']='incomplete';
+	}
+	
+	
+	$data['nayatel_resume_test'] = $this->Model_category->nayatel_resume_test($email);
+	$data['nayatel_incomplete_scenario'] = $this->Model_category->check_nayatel_incomplete_scenario($email);
+		if($data['nayatel_resume_test'] == 'completed'){
+	    $data['nayatel_resume_test']='completed';
+	    
+	}
+		else if($data['nayatel_incomplete_scenario'] == 'incomplete'){
+	    $data['nayatel_incomplete_scenario']='incomplete';
+	    
+	}
+	else if($data['nayatel_resume_test'] == 'pending'){
+	    $data['nayatel_resume_test']='pending';
+	    
+	}
+	else if($data['nayatel_resume_test'] == 'resume'){
+	    $data['nayatel_resume_test']='resume';
+	    
+	}
+	else{
+	    
+	    $data['nayatel_resume_test']='incomplete';
+	}	
 				//echo "<pre>";print_r($data['work_record']);exit;
 					
 // 	foreach($categories as $thing) {
@@ -1682,13 +1893,30 @@ $this->load->view('thankyou');
 		
 		$data['get_user'] 	 = $this->Model_user->login_form_validate();
 		//echo "<pre>";print_r($data['get_user'] );exit;
+		if(empty($data['get_user']->mobile)){
+		    
+		    //	
+		    	$update_email=$data['get_user']->email;
+		    //	echo "<pre>";print_r($update_email);exit;
+		    $update_email=array(
+		        'update_email'=>$update_email,
+		        );
+		    	$this->session->set_userdata($update_email);
+		    	redirect(base_url().'login/update_employee_profile');
+		}
+		
+		if(!empty($data['get_user']->role )){
+		
+		
+		}
+		
 		if(!empty($data['get_user'] )){
 			$get_user 	 = $this->Model_user->login_form_validate();
 			$data['email']=$get_user->email;
 			$email=$data['email'];
 
 			$value_array	 = $this->Model_user->check_data_collection($email);
-				// echo "<pre>";print_r($get_user);exit;
+			//	 echo "<pre>";print_r($value_array);exit;
 			
    
 			
@@ -1697,11 +1925,17 @@ $this->load->view('thankyou');
 				foreach($value_array as $row)
 				{
 					$role = $row['role']; // add each user id to the array
-					$name = $row['first_name']; 
+					$first_name = $row['first_name'];
+					$last_name = $row['last_name']; 
+					$mobile = $row['mobile']; 
+					$job_title = $row['job_title']; 
+				
+					$status = $row['status']; 
+					$date_created = $row['date_created'];
 					$gender = $row['gender']; 
 					$department = $row['department']; 
-				//	$tenure = $row['tenure']; 
-					$job_title = $row['job_title']; 
+				    $landline = $row['landline'];
+					$designation = $row['designation']; 
 					$location= $row['location']; 
 					$age= $row['age']; 
 					$reporting = $row['reporting']; 
@@ -1712,11 +1946,18 @@ $this->load->view('thankyou');
 			$value_array = array(   
 			
 				'role'=>$role,
-				'name'=>$name,
+				'first_name'=>$first_name,
+				'last_name'=>$last_name,
+				'mobile'=>$mobile,
+				'job_title'=>$job_title,
+				'status'=>$status,
+				'landline'=>$landline,
+				'date_created'=>$date_created,
+				
 				'gender' =>$gender,
 				'department'=>$department,
-			//	'tenure'=>$tenure,
-				'job_title' =>$job_title,
+				'designation'=>$designation,
+				
 				'location'=>$location,
 				'age'=>$age,
 				'reporting' =>$reporting,
@@ -1728,20 +1969,104 @@ $this->load->view('thankyou');
 				$data['categories'] = $this->Model_category->get_categories();
 				$data['nayatel_record'] = $this->Model_category->check_record_nayatel($email);
 				$data['work_record'] = $this->Model_category->check_record_work_personality_index($email);
+				
 				//echo "<pre>";print_r($data['work_record']);exit;
 					$data['dashboard_data']=$this->session->userdata();
+					$data['manager_dashboard_data']=$this->session->userdata();
 					//echo "<pre>";print_r($dashboard_data);exit;
 					//$name=$values['name'];
 					
+	// resume the test
+// resume test
+$data['work_resume_test'] = $this->Model_category->work_resume_test($email);
+$data['incomplete_scenario'] = $this->Model_category->check_incomplete_scenario($email);
+$data['nayatel_incomplete_scenario'] = $this->Model_category->check_nayatel_incomplete_scenario($email);
+// count questions
+$count_work_questions = $this->Model_category->count_work_questions($email);
+$count_work_questions=105-$count_work_questions;
+$count_work_questions=$count_work_questions/105;
+$count_work_questions=$count_work_questions*100;
+$data['count_work_questions']=round($count_work_questions);
 
+
+// count nayatel questions
+$count_nayatel_questions = $this->Model_category->count_nayatel_questions($email);
+$count_nayatel_questions=70-$count_nayatel_questions;
+$count_nayatel_questions=$count_nayatel_questions/70;
+$count_nayatel_questions=$count_nayatel_questions*100;
+$data['count_nayatel_questions']=round($count_nayatel_questions);
+
+//if function gives completed then check,otherwise check time
+	//echo "<pre>";print_r($work_resume_test);exit;
+if ($data['incomplete_scenario'] == 'incomplete'){
+	    
+	    $data['incomplete_scenario']='incomplete';
+	}
+	else	if($data['work_resume_test'] == 'completed'){
+	    $data['work_resume_test']='completed';
+	    
+	}
+	else if($data['work_resume_test'] == 'pending'){
+	    $data['work_resume_test']='pending';
+	    
+	}
+	else if($data['work_resume_test'] == 'resume'){
+	    $data['work_resume_test']='resume';
+	    
+	}
+	else{
+	    
+	    $data['work_resume_test']='incomplete';
+	}
+	
+	
+	$nayatel_resume_test = $this->Model_category->nayatel_resume_test($email);
+		if($nayatel_resume_test == 'completed'){
+	    $data['nayatel_resume_test']='completed';
+	    
+	}
+	else if($nayatel_resume_test == 'pending'){
+	    $data['nayatel_resume_test']='pending';
+	    
+	}
+	else if($nayatel_resume_test == 'resume'){
+	    $data['nayatel_resume_test']='resume';
+	    
+	}
+	else{
+	    
+	    $data['nayatel_resume_test']='incomplete';
+	}
+	
+	//	echo "<pre>";print_r($nayatel_resume_test);exit;
+	
+//if work_resume_test == 0 then incomplete 
+// otherwise resume the test 
 			//	$success = 'Login successfully!';
 			//	$this->session->set_flashdata('success',$success);
 				$value['setting'] = $this->Model_common->all_setting();
 				$value['sliders'] = $this->Model_common->all_slider('login');
 	
+$role=$data['get_user']->role;
+                //echo "<pre>";print_r($role);exit;
+	if($role == 'employee'){
+	    $this->load->view('dashboard-new',$data);
+	//	redirect(base_url().'login/dashboard');
+		
+		}
+        else if ($role== 'manager'){
+redirect(base_url().'manager/login/dashboard');
+
+          // redirect('https://10-yards.com/manager/login/dashboard'); 
+        }
+        else{
+
+redirect(base_url().'login');
+        }
+	
 	
 			//$this->load->view('view_header',$value);
-			$this->load->view('dashboard-new',$data);
+		//	$this->load->view('dashboard-new',$data);
 			//$this->load->view('view_footer',$value);	
 			}
 			else{
@@ -1883,6 +2208,8 @@ $this->load->view('thankyou');
 		//echo "ghhj";exit;
 		$this -> session -> unset_userdata('value_array');
 		$this -> session -> unset_userdata('email');
+		$this -> session -> unset_userdata('update_email');
+		
         $this->session->sess_destroy();
         redirect(base_url('login'));exit;
     }
@@ -1926,7 +2253,11 @@ public function update_profile(){
 				$valid = 0;
                 $error = validation_errors();
             }
-	$valid = 1;
+            else{
+                
+              $valid = 1;  
+            }
+	
             if($valid == 1) {
                 
               
@@ -1949,13 +2280,13 @@ public function update_profile(){
 					'last_name'     => $_POST['last_name'],
 					'mobile'     => $_POST['mobile'],
 					'job_title'     => $_POST['job_title'],
-					'email'     => $_POST['email'],
+					
 				
 					'landline'     => $_POST['landline'],
 					'department'     => $_POST['department'],
 					'location'     => $_POST['location'],
 					'cnic'     => $_POST['cnic'],
-					'password'     => $password,
+					
 					'age'     => $_POST['age'],
 					'gender'     => $_POST['gender'],
 				// 	'tenure'     => $_POST['tenure'],
@@ -1963,10 +2294,30 @@ public function update_profile(){
 					
 					
 	            );
-	            //echo "<pre>";print_r($form_data);exit;
+	           // echo "<pre>";print_r($form_data);exit;
 	        	$this->Model_category->update_employee_profile($form_data,$email);
 	        	$success = 'Employee Profile Information is updated successfully!';
-	        	$value_array=$form_data;
+	        	
+	        	$form_data2 = array(
+					'first_name'     => $_POST['first_name'],
+					'last_name'     => $_POST['last_name'],
+					'mobile'     => $_POST['mobile'],
+					'job_title'     => $_POST['job_title'],
+					 'email' => $_POST['email'],
+				
+					'landline'     => $_POST['landline'],
+					'department'     => $_POST['department'],
+					'location'     => $_POST['location'],
+					'cnic'     => $_POST['cnic'],
+					
+					'age'     => $_POST['age'],
+					'gender'     => $_POST['gender'],
+				// 	'tenure'     => $_POST['tenure'],
+					'reporting'     => $_POST['reporting'],
+					
+					
+	            );
+	        	$value_array=$form_data2;
 	            $data['dashboard_data']=$this->session->set_userdata($value_array);
 
 
@@ -1979,11 +2330,11 @@ public function update_profile(){
 				$value['sliders'] = $this->Model_common->all_slider('login');
 	
 	        	$this->session->set_flashdata('success',$success);
-	        	$this->load->view('dashboard-new',$data);
+	        		redirect(base_url().'login/dashboard');
             }
             else {
             	$this->session->set_flashdata('error',$error);
-	        	redirect(base_url().'login/update_employee_profile');
+	        	redirect(base_url().'login');
             }
 		
         $data['dashboard_data']=$this->session->userdata();
@@ -1994,13 +2345,25 @@ public function update_profile(){
 	}
   
     
-    public function update_employee_profile($email){
-        
+    public function update_employee_profile(){
+       
+       
+       $email=$this->uri->segment(3);
+       if(!empty($email)){
+         $email=$email;  
+       }
+       else{
+           
+            $email=$this->session->userdata();
+            $email=$email['update_email'];
+       }
+       
+    //$email= $data['dashboard_data'];
     
-    $email=$this->uri->segment(3);
+     //echo "<pre>";print_r($email);exit;
     $data['employee_information'] = $this->Model_category->get_employee_record($email);
-    //echo "<pre>";print_r($data['employee_information']);exit;
-    $data['employee_information'];
+   // echo "<pre>";print_r($data['employee_information']);exit;
+   // $data['employee_information'];
     
 	$data['setting'] = $this->Model_common->all_setting();
 	//$data['sliders'] = $this->Model_common->all_slider('login');
@@ -2009,16 +2372,16 @@ public function update_profile(){
 // $email=$email[0];
 // 	echo "<pre>";print_r($email);exit;
 	//$name= $data['nayatel_value_statements'];
-if(($this->uri->segment(3)!=0)){
-	$data['dashboard_data']=$this->uri->segment(3);
+// if(($this->uri->segment(3)!=0)){
+// 	$data['dashboard_data']=$this->uri->segment(3);
 	
-}
-else{
-	$data['dashboard_data']=$this->session->userdata();
-}
+// }
+// else{
+// 	$data['dashboard_data']=$this->session->userdata();
+// }
 $data['categories'] = $this->Model_category->get_categories();
 			
-$data['dashboard_data']=$this->session->userdata();
+//$data['dashboard_data']=$this->session->userdata();
 	//$data['dashboard_data']=$this->session->userdata();
 	//echo "<pre>";print_r($data['dashboard_data']);exit;
    // $this->load->view('dashboard_test',$data);
@@ -2031,6 +2394,58 @@ $data['dashboard_data']=$this->session->userdata();
         
         
     }
+    
+    public function change_password_first(){
+         $code = $this->uri->segment(3);
+         	//echo "<pre>";print_r($code);exit;
+        $this->form_validation->set_rules('new_password', 'Password', 'required|min_length[6]');
+		$this->form_validation->set_rules('re_password', 'confirm Password', 'required|matches[new_password]');
+      
+           if($this->form_validation->run() == FALSE) {
+				$valid = 0;
+                $error = validation_errors();
+            }
+            else{
+                
+                $valid = 1;
+            }
+            
+            $salt = 'b7r4';
+				
+				$password =  hash('sha256', $salt . ( hash('sha256',$this->input->post('new_password'))));
+				$confirm_password =  hash('sha256', $salt . ( hash('sha256',$this->input->post('re_password'))));
+            
+            
+            if($valid == 1) {
+              	$data   = array(
+    	                    'status' => 'enable',
+    	                     'password' => $password,
+    	                     'confirm_password' => $confirm_password,
+    	               );
+    	$id     = array(
+    	                    'code' => $code
+    	               );               
+    	
+    	$update = $this->Model_user->updatestatus($data,$id) ;
+    //	echo "<pre>";print_r($update);exit;
+    }
+    if(!empty($update)){
+        $success = 'You have successfully update your password, kindly complete your profile by login!';
+		$this->session->set_flashdata('success',$success);
+       redirect(site_url().'/login'); 
+        
+    }
+    }
+    
+    
+    public function active_employees(){
+         $data['code'] = $this->input->get('code');
+        
+   
+        
+        $this->load->view('view_update_password',$data);
+    }
+    
     public function active()
     {
 		$code = $this->input->get('code');

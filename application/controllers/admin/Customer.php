@@ -21,6 +21,217 @@ class Customer extends CI_Controller
 		$this->load->view('admin/view_footer');
 	}
 
+
+	public function add_manager_data()
+	{
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('first_name', 'First Name', 'required');
+		$this->form_validation->set_rules('last_name', 'Last Name', 'required');
+		$this->form_validation->set_rules('designation', 'designation', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
+		$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[password]');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('landline', 'Landline', 'required');
+		$this->form_validation->set_rules('cnic', 'CNIC', 'required');
+		$this->form_validation->set_rules('mobile', 'Mobile', 'required');
+		$this->form_validation->set_rules('department', 'Department', 'required');
+		$this->form_validation->set_rules('location', 'Location', 'required');
+		$this->form_validation->set_rules('age', 'Age', 'required');
+		$this->form_validation->set_rules('gender', 'Gender', 'required');
+		$this->form_validation->set_rules('reporting', 'Reporting', 'required');
+	
+		
+		if ($this->form_validation->run() == FALSE) {
+			$json  = array(
+			'success'	=> false,
+			'message'	=> validation_errors(),
+			);
+			echo json_encode($json);
+		} else {
+
+			$checkemail 	= $this->Model_customer->check_email($this->input->post('email'));
+		//	echo "<pre>";print_r($checkemail);exit;
+			if (!empty($checkemail)) {
+				$json  = array(
+				'success'	=> false,
+				'message'	=> '<p>Email Already exists</p>',
+				);
+				$error = '<p>Email Already exists</p>';
+                $this->session->set_flashdata('error',$error);
+                //redirect(base_url().'/manager/login/dashboard');
+                
+				//redirect(base_url().'/manager/login/add_employees');
+				echo json_encode($json);
+			} else {
+				$code = rand(1000,9999);
+				$role_id = $this->input->post('role_id');
+				
+				 $salt = 'b7r4';
+				
+				$password =  hash('sha256', $salt . ( hash('sha256',$this->input->post('password'))));
+				$confirm_password=$password;
+				
+				
+				$data = array(
+				'first_name'		=> $this->input->post('first_name'),
+				'last_name'		=> $this->input->post('last_name'),
+				'designation'		=> $this->input->post('designation'),
+				
+				'job_title'		=> $this->input->post('designation'),
+				'landline'		=> $this->input->post('landline'),
+				'cnic'		=> $this->input->post('cnic'),
+				
+				
+				'mobile'		=> $this->input->post('mobile'),
+				'department'		=> $this->input->post('department'),
+				'location'		=> $this->input->post('location'),
+				
+				'age'		=> $this->input->post('age'),
+				'gender'		=> $this->input->post('gender'),
+				'reporting'		=> $this->input->post('reporting'),
+				
+				
+				'email'			=> $this->input->post('email'),
+				'password'		=> $password,
+				'confirm_password'		=> $confirm_password,
+				'status'		=> 'disable',
+				'role'		=> 'manager',
+				'code'			=> $code,
+				'dob'		=> '',
+				'passport_number'			=> '',
+				
+				
+				
+				
+				);
+				//		echo "<pre>";print_r($data);exit;
+				$inserdata	= $this->Model_customer->add_customer($data);
+				$customerid = $this->db->insert_id();
+				
+				if ($inserdata > 0) {
+					$this->load->library('email');
+					$config['wordwrap'] = TRUE;
+					$config['mailtype'] = 'html';
+
+					$this->email->initialize($config);
+					$this->email->from('uzair.hussain7@gmail.com', 'Nayatel-Manager-Confirmation-Email');
+					$this->email->to($this->input->post('email'));
+					$this->email->subject('Nayatel-Confirmation-Email | Confirmation Email');
+					$messages = '
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#fff" style="font-family:Open Sans,Arial,Helvetica,sans-serif;border-collapse:collapse!important;background:#fff!important;border-collapse:collapse;background:#fff">
+  <tbody>
+    <tr>
+      <td align="center" valign="top" bgcolor="#fff" style="background:#fff!important;background:#fff">
+        <img src="'.base_url().'public/uploads/logo.jpg">
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" bgcolor="#ededed">
+        <table width="700" class="m_-8985627821087644018mobilewrapper" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+          <tbody>
+            <tr>
+              <td align="center" valign="top">
+                <table width="600" class="m_-8985627821087644018mobilewrapper" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+                  <tbody>
+                    <tr>
+                      <td height="20" align="center" valign="top" style="height:20px!important;line-height:10px!important;font-size:20px!important;color:#ededed!important;height:10px;line-height:20px;font-size:20px;color:#ededed">.</td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="top">
+                        <table width="600" class="m_-8985627821087644018mobilewrapper" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+                          <tbody>
+                            <tr>
+                              <td align="center" valign="top">
+                                <table width="600" class="m_-8985627821087644018mobilewrapper" bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+                                  <tbody></tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="top">
+                        <table width="800" class="m_-8985627821087644018mobilewrapper" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+                          <tbody>
+                            <tr>
+                              <td align="center" valign="top" bgcolor="#ffffff" style="background:#ffffff">
+                                <table width="600" class="m_-8985627821087644018mobilewrapper" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+                                  <tbody>
+                                    <tr>
+                                      <td width="" align="center" valign="top">&nbsp;</td>
+                                      <td align="center" valign="top">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+
+                                      <td align="center" valign="top" style="font-size:24px;font-family:Open Sans,Arial,Helvetica,sans-serif;color:#1c2c3a;text-align:center" colspan="2">Verify Your account click on this and update the password for the first time.<a href="'.base_url().'/manager/login/active_employees/?code='.$code.'">link</a></td>
+
+                                    </tr>
+';
+					$messages .='
+                                    <tr>
+                                      <td align="center" valign="top">&nbsp;</td>
+                                      <td  align="center" valign="top">&nbsp;</td>
+                                    </tr>
+
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center" valign="top" bgcolor="#ffffff" style="border-radius:0 0 2px 2px">
+                                <table width="600" class="m_-8985627821087644018mobilewrapper" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse">
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+
+
+';
+
+
+
+
+					$messages .= '
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table> ';
+					$this->email->message($messages);
+
+					$this->email->send();
+					//$this->response($message, 200);
+					$json  = array(
+					'success'	=> true,
+					'message'	=> 'You have successfully register.Plesae complete your profile as well as update the password for the first time.',
+					
+					);
+					echo json_encode($json);
+				} else {
+					$json  = array(
+					'success'	=> false,
+					'message'	=> 'Some thig went wroong',
+					);
+					echo json_encode($json);
+
+				}
+			}
+
+		}
+	}
+
+
 	public function add()
 	{
 		//echo "hhhhf";exit;

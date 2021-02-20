@@ -12,6 +12,7 @@ class Login extends CI_Controller
 
     public function index()
     {
+       // echo "<pre>";print_r("gfdggdg");exit;
         $error = '';
 
         $data['setting'] = $this->Model_login->get_setting_data();

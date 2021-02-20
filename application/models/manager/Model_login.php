@@ -10,30 +10,56 @@ class Model_login extends CI_Model
         return $query->first_row('array');
     }
 
+function check_email($email) 
+	{
+        $where = array(
+			'email' => $email
+		);
+		$this->db->select('*');
+		$this->db->from('sign_up');
+		$this->db->where($where);
+		$query = $this->db->get();
+		return $query->result_array();
+    }
+
+ function add_customer($data)
+    {
+		$insert = $this->db->insert('sign_up',$data);
+		return $this->db->insert_id();
+	}
+	
+	
 public function update_profile($form_data,$email)
 	{
 		
         $update = $this->db->update('manager',$form_data,$email);
         return $update;
 	}
-
- function add_customer($data)
-    {
-        $insert = $this->db->insert('manager',$data);
-        return $this->db->insert_id();
-    }
-
-	function check_email($email) 
+public function updatestatus($data,$id)
 	{
-        $where = array(
-			'email' => $email
-		);
-		$this->db->select('*');
-		$this->db->from('manager');
-		$this->db->where($where);
-		$query = $this->db->get();
-		return $query->first_row('array');
-    }
+		
+        $update = $this->db->update('sign_up',$data,$id);
+        return $update;
+	}
+
+
+//  function add_customer($data)
+//     {
+//         $insert = $this->db->insert('manager',$data);
+//         return $this->db->insert_id();
+//     }
+
+// 	function check_email($email) 
+// 	{
+//         $where = array(
+// 			'email' => $email
+// 		);
+// 		$this->db->select('*');
+// 		$this->db->from('manager');
+// 		$this->db->where($where);
+// 		$query = $this->db->get();
+// 		return $query->first_row('array');
+//     }
 
     function check_password($email,$password)
     {
@@ -669,12 +695,12 @@ public function get_Energy_and_drive_data($Energy_and_drive){
     return $query->first_row('array');
 
 } 
-     public function updatestatus($data,$id)
-	{
+//      public function updatestatus($data,$id)
+// 	{
 		
-        $update = $this->db->update('manager',$data,$id);
-       // echo "<pre>";print_r($update);exit;
-        return $update;
-	}
+//         $update = $this->db->update('manager',$data,$id);
+//       // echo "<pre>";print_r($update);exit;
+//         return $update;
+// 	}
 
 }
