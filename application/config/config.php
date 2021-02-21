@@ -34,7 +34,7 @@ if($_SERVER['SERVER_NAME'] == "localhost"){
 //				$config['base_url']	= $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'];
 
 
-	$config['base_url']	= $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST']."/10-yards.com";
+	$config['base_url']	= $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST']."/ten-yards/ci";
 
 }else{
 ///////////////// development //////////////////////
