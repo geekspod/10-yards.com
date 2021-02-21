@@ -8,6 +8,7 @@ class Home extends CI_Controller {
         $this->load->model('Model_common');
         $this->load->model('Model_home');
         $this->load->model('Model_portfolio');
+		redirect('/login');
     }
 
 	public function index()
