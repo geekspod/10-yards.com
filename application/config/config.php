@@ -30,16 +30,17 @@ $uri_segments = explode('/', $uri_path);
 
 
 if($_SERVER['SERVER_NAME'] == "localhost"){
-	$config['base_url']	= "10-yards.com/";
+	$config['base_url']	= "http://10-yards.us-east-2.elasticbeanstalk.com/ci";
 //				$config['base_url']	= $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'];
 
 
-	$config['base_url']	= $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST']."/ten-yards/ci";
+	$config['base_url']	= $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'];
 
 }else{
 ///////////////// development //////////////////////
 	//$config['base_url']	= "http://twelve4twelve";
 	$config['base_url']	= $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'];
+	$config['base_url'] = 'http://10-yards.us-east-2.elasticbeanstalk.com/ci';
 }
 
 // date_default_timezone_set('America/New_York');
@@ -475,8 +476,8 @@ $config['global_xss_filtering'] = FALSE;
 */
 if (stripos($_SERVER["REQUEST_URI"],'/bitcoin/index') === FALSE) {
 	$config['csrf_protection'] 	= FALSE;
-}else{ 
-$config['csrf_protection'] 	= FALSE; 
+}else{
+$config['csrf_protection'] 	= FALSE;
 }
 $config['csrf_token_name'] = 'csrf_test_name';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
