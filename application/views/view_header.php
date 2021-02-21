@@ -160,7 +160,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 		?>
 	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>public/uploads/<?php echo $setting['favicon']; ?>" />
-		
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/admin/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/admin/css/font-awesome.min.css">
@@ -217,32 +217,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="nav-inner">
 			<div class="logo">
 				<!-- Navigation Logo Link -->
-				<a href="#home" class="scroll">
+				<a href="http://10-yards.us-east-2.elasticbeanstalk.com/" class="scroll">
 					<!-- Your Logo -->
 					<img src="<?php echo base_url(); ?>public/uploads/<?php echo $setting['logo']; ?>" class="site_logo" alt="North Logo"/>
 				</a>
 			</div>
-			<!-- Mobile Menu Button -->
-			<a class="mobile-nav-button colored"><i class="fa fa-bars"></i></a>
-			<!-- Navigation Menu -->
-			<div class="nav-menu clearfix semibold">
-				<ul class="nav uppercase oswald">
-					<li><a href="#home" class="scroll">home</a></li>
-					<li><a href="#about" class="scroll">about </a></li>
-					<li><a href="#portfolio" class="scroll">Solutions</a></li>
-					<li><a href="#team" class="scroll">Testimonials</a></li>
-					<li><a href="#address" class="scroll">Contact Us</a></li>
-					<li><a href="#news" class="scroll">News</a></li>
-					<?php  $admin="admin"; $employer="2";?>
-
-
-					
-					<!-- <li><a href="<?php echo base_url() ; ?>login" class="scroll">Admin Login</a></li> -->
-					<li><a href="<?php echo base_url() ; ?>login" class="scroll">Login</a></li>
-
-					<!--<li><a href="<?php echo base_url() ; ?>login<?php echo "management"; ?>" class="scroll">Management Login</a></li>-->
-					
-				</ul>
-			</div><!-- End Navigation Menu -->
 		</div><!-- End Navigation Inner -->
 	</nav><!-- End Navigation -->

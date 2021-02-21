@@ -139,7 +139,7 @@
             <div id="about" class="row">
                 <div class="col-lg-6" style="text-align: center">
                     <div class="text-container">
-                        <img src="https://10-yards.com/public/uploads/why-choose-1.jpg" />
+                        <img src="ci/public/uploads/why-choose-1.jpg" />
                         <h2>WHO WE ARE</h2>
                         <p>In 2004, NEEF started as a consulting platform, providing services to public and private sector enterprises. It delivered a significant number of successful projects and rapidly became a key vehicle for high-quality, large scale assignments. In 2010, the consulting team felt that their vision would be better served if the company was re-structured as a Foundation, to emphasize its commitment to public service. NEEF was thus registered in 2010 as a not for profit Foundation and since then it has been instrumental in shaping the capacity building landscape with private and public sector partners.</p>
                      
@@ -147,14 +147,14 @@
                 </div> <!-- end of col -->
                 <div class="col-lg-6" style="text-align: center">
                     <div class="text-container">
-                        <img src="https://10-yards.com/public/uploads/why-choose-7.jpg" />
+                        <img src="ci/public/uploads/why-choose-7.jpg" />
                         <h2>OUR VISION</h2>
                         <p>Shaping our future by enabling excellence, creating a sustainable entrepreneurial ecosystem, optimizing resource utilization, promoting harmony, leveraging knowledge management and implementing innovative solutions.</p>
             </div> <!-- end of row -->
         </div> <!-- end of container -->
         <div class="col-lg-6" style="text-align: center">
             <div class="text-container">
-                <img src="https://10-yards.com/public/uploads/why-choose-8.jpg" />
+                <img src="ci/public/uploads/why-choose-8.jpg" />
                 <h2>WHY US</h2>
                 <p>NEEF has served to clients including Federal Ministry of Information Technology, Department of Curriculum and Teacher’s Education(KP), Adam Smith International, McKenzie Pakistan, Printing Corporation of Pakistan, Elementary Education Department(KP), Pakistan Railways, Printing Corporation of Pakistan, MIMOS Berhad(Malaysia), Education Fund for Sindh, Punjab Education Foundation, PSEB, Sindh Education Foundation, Population Council, FBISE and Ignite Fund to name a few. Some of our major assignments to date are formation of National ICT R&D Fund, National ICT Outreach Program, Prime Minister NICT Scholarship Program(2007-2014), TOT and FTP programs for MoITT under national capacity building initiative(2006-2014), Elementary Education Evaluation and Benchmarking in KP, Benchmarking and rating of FBISE affiliated schools network, Media Evaluation for POP Council, Early Grade Assessment Systems for EFS, Elementary Education Evaluation Design and Delivery in Punjab, Training programs for PTCL, BD International, NUCES, SAFRON and Ministry of Commerce and in depth market surveys for PSEB and NICT R&D Fund.</p>
 
@@ -162,7 +162,7 @@
            </div> <!-- end of container -->
            <div class="col-lg-6" style="text-align: center">
             <div class="text-container">
-                <img src="https://10-yards.com/public/uploads/why-choose-8.jpg" />
+                <img src="ci/public/uploads/why-choose-8.jpg" />
                 <h2><a href="#about" style="text-decoration: none; cursor: pointer;">QHR IN NUMBERS</a></h2>
                 <p>Checking</p>
              </div> <!-- end of row -->
@@ -207,22 +207,22 @@
         <div class="container" style="max-width: 1300px">
             <div class="row">
          <div class="col-md-4">
-         <img src="https://10-yards.com/public/uploads/service-1.jpg" style="width: 100%; height: 300px;padding-bottom:20px"  />
+         <img src="ci/public/uploads/service-1.jpg" style="width: 100%; height: 300px;padding-bottom:20px"  />
          </div>
          <div class="col-md-4">
-            <img src="https://10-yards.com/public/uploads/service-2.jpg" style="width: 100%; height: 300px;padding-bottom:20px" />
+            <img src="ci/public/uploads/service-2.jpg" style="width: 100%; height: 300px;padding-bottom:20px" />
             </div>
             <div class="col-md-4">
-                <img src="https://10-yards.com/public/uploads/service-3.jpg" style="width: 100%; height: 300px;padding-bottom:20px" />
+                <img src="ci/public/uploads/service-3.jpg" style="width: 100%; height: 300px;padding-bottom:20px" />
                 </div>
                 <div class="col-md-4">
-                    <img src="https://10-yards.com/public/uploads/service-4.jpg" style="width: 100%; height: 300px;padding-bottom:20px" />
+                    <img src="ci/public/uploads/service-4.jpg" style="width: 100%; height: 300px;padding-bottom:20px" />
                     </div>
                     <div class="col-md-4">
-                        <img src="https://10-yards.com/public/uploads/service-4.jpg" style="width: 100%; height: 300px;padding-bottom:20px" />
+                        <img src="ci/public/uploads/service-4.jpg" style="width: 100%; height: 300px;padding-bottom:20px" />
                         </div>
                         <div class="col-md-4">
-                    <img src="https://10-yards.com/public/uploads/service-4.jpg" style="width: 100%; height: 300px;padding-bottom:20px" />
+                    <img src="ci/public/uploads/service-4.jpg" style="width: 100%; height: 300px;padding-bottom:20px" />
                 </div>
          </div>
         </div>
@@ -246,7 +246,7 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img class="card-image" src="https://10-yards.com/public/uploads/service-4.jpg" alt="alternative">
+                                        <img class="card-image" src="ci/public/uploads/service-4.jpg" alt="alternative">
                                         <div class="card-body">
                                             <div class="testimonial-text">The guys from Aria helped with getting my business off the ground and turning into a profitable company.</div>
                                             <div class="testimonial-author">Jude Thorn - Founder</div>
@@ -258,7 +258,7 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img class="card-image" src="https://10-yards.com/public/uploads/service-4.jpg" alt="alternative">
+                                        <img class="card-image" src="ci/public/uploads/service-4.jpg" alt="alternative">
                                         <div class="card-body">
                                             <div class="testimonial-text">I purchased the Growth Accelerator service pack a few years ago and I renewed the contract each year. </div>
                                             <div class="testimonial-author">Marsha Singer - Marketer</div>
@@ -270,7 +270,7 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img class="card-image" src="https://10-yards.com/public/uploads/service-4.jpg" alt="alternative">
+                                        <img class="card-image" src="ci/public/uploads/service-4.jpg" alt="alternative">
                                         <div class="card-body">
                                             <div class="testimonial-text">Aria's CEO personally attends client meetings and gives his feedback on business growth strategies.</div>
                                             <div class="testimonial-author">Roy Smith - Developer</div>
@@ -282,7 +282,7 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img class="card-image" src="https://10-yards.com/public/uploads/service-4.jpg" alt="alternative">
+                                        <img class="card-image" src="ci/public/uploads/service-4.jpg" alt="alternative">
                                         <div class="card-body">
                                             <div class="testimonial-text">At the beginning I thought the prices are a little high for what they offer but they over deliver each and every time.</div>
                                             <div class="testimonial-author">Ronald Spice - Owner</div>
@@ -294,7 +294,7 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img class="card-image" src="https://10-yards.com/public/uploads/service-4.jpg" alt="alternative">
+                                        <img class="card-image" src="ci/public/uploads/service-4.jpg" alt="alternative">
                                         <div class="card-body">
                                             <div class="testimonial-text">I recommend Aria to every business owner or growth leader that wants to take his company to the next level.</div>
                                             <div class="testimonial-author">Lindsay Rune - Manager</div>
@@ -306,7 +306,7 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img class="card-image" src="https://10-yards.com/public/uploads/service-4.jpg" alt="alternative">
+                                        <img class="card-image" src="ci/public/uploads/service-4.jpg" alt="alternative">
                                         <div class="card-body">
                                             <div class="testimonial-text">My goals for using Aria's services seemed high when I first set them but they've met them with no problems.</div>
                                             <div class="testimonial-author">Ann Black - Consultant</div>

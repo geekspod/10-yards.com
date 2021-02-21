@@ -1,20 +1,20 @@
-<!DOCTYPE html> 
-   <head> 
+<!DOCTYPE html>
+   <head>
   <title>User Value</title>
-  
-  
- 
-    <!--Load the AJAX API--> 
 
-    <!--Load the AJAX API--> 
+
+
+    <!--Load the AJAX API-->
+
+    <!--Load the AJAX API-->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-	
-	
+
+
 <figure class="highcharts-figure">
     <div id="container"></div>
      <h6 align="justify" class="highcharts-description">
@@ -26,29 +26,29 @@
        ? Low scores indicate that person easily give up difficult tasks, distract easily and prefer straightforward tasks. ? Person is rarely focus on minor details, dislikes detailed work, and appear as sloppy and careless. ? Individual ignore rules and instructions. ? Person leaves things unfinished and do not meet deadlines. ? Do not make and enjoy long-term plans.
     </h6>
     <?php echo "<br>";?>
-    
+
        <div id="container3"></div>
-       
+
          <h6 align="justify" class="highcharts-description">
        ? High scores indicate individual?s tendency to be cooperative with others, display a good-natured attitude, and encourage people to work together. ? Person is sensitive and understanding to the needs and feelings of others ? Person preferences for interacting with others and establishing personal connections with people ? Person has preference for making decisions through consultation, collaboration, and working with close supervision.
     </h6>
     <?php echo "<br>";?>
-    
+
          <div id="container4"></div>
-         
+
           <h6 align="justify" class="highcharts-description">
        ? High scores indicate the extent to which an individual maintains his/her composure, keep emotions in check, and control their anger. ? Individual?s tendency to be accepting of criticism and to deal calmly and effectively with high stress situations.
     </h6>
     <?php echo "<br>";?>
-    
+
            <div id="container5"></div>
              <h6 align="justify" class="highcharts-description">
        ? High scores indicate person?s degree of creativity and open-mindedness when addressing. ? Person tendency to carefully analyses information and use logic to address issues and problems
     </h6>
     <?php echo "<br>";?>
-           
+
     <p class="highcharts-description">
-    
+
     </p>
 </figure>
 
@@ -56,21 +56,21 @@
 
 
 
-var jsonData = $.ajax({ 
-      
-        url: "https://10-yards.com/manager/login/get_demo_chart_data/", 
-          dataType: "json", 
+var jsonData = $.ajax({
+
+        url: "login/get_demo_chart_data/",
+          dataType: "json",
            type:'GET',
            data:data,
-       async: false ,   
+       async: false ,
     cache: false,
     success: function(data) {
         //alert(data);
     }
-          
+
           });
-          
-          
+
+
 var data = jsonData.responseJSON;
 //debugger;
 
@@ -152,7 +152,7 @@ Highcharts.chart('container', {
     accessibility: {
         description: 'Image description: A column range chart compares the monthly temperature variations throughout 2017 in Vik I Sogn, Norway. The chart is interactive and displays the temperature range for each month when hovering over the data. The temperature is measured in degrees Celsius on the X-axis and the months are plotted on the Y-axis. The lowest temperature is recorded in March at minus 10.2 Celsius. The lowest range of temperatures is found in December ranging from a low of minus 9 to a high of 8.6 Celsius. The highest temperature is found in July at 26.2 Celsius. July also has the highest range of temperatures from 6 to 26.2 Celsius. The broadest range of temperatures is found in May ranging from a low of minus 0.6 to a high of 23.1 Celsius.'
     },
-    
+
     plotLines: [{
                 value: 0,
                 width: 1,
@@ -208,39 +208,39 @@ Highcharts.chart('container', {
     series: [{
         name: 'Energy and Drive',
         data: [Energy_and_drive]
-        
+
     },{
         name: 'Ambition',
         data: [Ambition]
-        
+
     },{
         name: 'Initiative',
         data: [Initiative]
-        
+
     },{
         name: 'Flexibility',
         data: [Flexibility]
-        
+
     },{
         name: 'Energy',
         data: [Energy]
-        
+
     },{
         name: 'Leadership',
         data: [Leadership]
-        
+
     },{
         name: 'Multi Tasking',
         data: [Multi_tasking]
-        
+
     },{
         name: 'Persuasion',
         data: [Persuasion]
-        
+
     },{
         name: 'Social Confidence',
         data: [Social_Confidence]
-        
+
     }]
 });
 //debugger;
@@ -309,27 +309,27 @@ Highcharts.chart('container2', {
     series: [{
         name: 'Work Style',
         data: [Work_style]
-        
+
     },{
         name: 'Persistence',
         data: [Persistence]
-        
+
     },{
         name: 'Attention To Detail',
         data: [Attention_to_detail]
-        
+
     },{
         name: 'Rule Following',
         data: [Rule_Following]
-        
+
     },{
         name: 'Dependability',
         data: [Dependability]
-        
+
     },{
         name: 'Planning',
         data: [Planning]
-        
+
     }]
 });
 //debugger;
@@ -397,23 +397,23 @@ Highcharts.chart('container3', {
     series: [{
         name: 'Working With Others',
         data: [Working_with_others]
-        
+
     },{
         name: 'Team Work',
         data: [Team_Work]
-        
+
     },{
         name: 'Concern For Others',
         data: [Concern_for_others]
-        
+
     },{
         name: 'Outgoing',
         data: [Outgoing]
-        
+
     },{
         name: 'Democratic',
         data: [Democratic]
-        
+
     }]
 });
 //debugger;
@@ -481,15 +481,15 @@ Highcharts.chart('container4', {
     series: [{
         name: 'Dealing with pressure and Stress',
         data: [Dealing_with_pressure_and_stress]
-        
+
     },{
         name: 'Self Control',
         data: [Self_control]
-        
+
     },{
         name: 'Stress Tolerance',
         data: [Stress_Tolerance]
-        
+
     }]
 });
 //debugger;
@@ -558,15 +558,15 @@ Highcharts.chart('container5', {
     series: [{
         name: 'Problem Solving Style',
         data: [Problem_solving_style]
-        
+
     },{
         name: 'Innovation',
         data: [Self_control]
-        
+
     },{
         name: 'Analytical Thinking',
         data: [Analytical_Thinking]
-        
+
     }]
 });
 //debugger;
@@ -574,9 +574,9 @@ Highcharts.chart('container5', {
 
 </script>
 <style>
-    
+
     .highcharts-figure, .highcharts-data-table table {
-    min-width: 310px; 
+    min-width: 310px;
     max-width: 800px;
     margin: 1em auto;
 }
@@ -633,76 +633,76 @@ Highcharts.chart('container5', {
 
 
 
- </head> 
+ </head>
 
 <body>
-   
-     <h1 style="text-align:center">User Value</h1> 
-  
+
+     <h1 style="text-align:center">User Value</h1>
+
  <div class="kt-portlet__body">
 
 									<!--begin: Datatable -->
 									<table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
 										<thead>
-								
+
             		<tr>
-					
+
 					<th style="vertical-align: unset">Sr.</th>
-					
-					
+
+
 					    <th style="vertical-align: unset">Test Name</th>
-					
+
 					 <th style="vertical-align: unset">Category Name</th>
 					    <th style="vertical-align: unset">Description</th>
-				
+
 					</tr>
-					
+
 							 <?php
             	$i=0;
             	foreach ($categories as $row) {
             		$i++;
             		?>
-					
+
 					<tr>
 					    <td><?php echo $i; ?></td>
 					    <td><?php echo $row['categories_id'];?></td>
                         	<td><?php echo $row['dimensions_id']; ?></td>
                             <td><?php echo $row['description_test'];?></td>
 
-					    
-					   
+
+
 					</tr>
-				
-									
-											
+
+
+
 										</thead>
-									
-                                       
-				
-	                    
-                       
-                        
-                        
-                        
-                       
+
+
+
+
+
+
+
+
+
 </tr>
 <?php
             	}
             	?>
 
-											
-											
-									
+
+
+
 									</table>
 
 									<!--end: Datatable -->
 								</div>
 
-    
+
 						<!-- begin:: Content -->
-					
-  <div id="myChart"></div> 
-  </body> 
+
+  <div id="myChart"></div>
+  </body>
 </html>
 
 

@@ -2210,7 +2210,7 @@ else if(length_value > 59 && length_value <=69){
         // $(".stop").click(function(){ $(".someTimer").TimeCircles().stop(); });
 
         setTimeout(function () {
-            window.location.href = "https://10-yards.com/login/dashboard"; //will redirect to your blog page (an ex: blog.html)
+            window.location.href = "http://10-yards.us-east-2.elasticbeanstalk.com/ci/login/dashboard"; //will redirect to your blog page (an ex: blog.html)
         }, 900000); //will call the function after 2 secs.
 
 
@@ -2229,7 +2229,7 @@ else if(length_value > 59 && length_value <=69){
             //$('#myModal2').modal('show');
             // alert("vdgdg") ;
             $(".someTimer").TimeCircles().destroy();
-            // window.location.replace("https://10-yards.com/login/dashboard");
+            // window.location.replace("ci/login/dashboard");
 
 
         }
@@ -2728,12 +2728,12 @@ else if(length_value > 59 && length_value <=69){
             // alert(length);
             $.ajax({
                 type: 'POST',
-                url: 'https://10-yards.com/login/nayatel_value_statements_data',
+                url: 'nayatel_value_statements_data',
                 data: {"checkbox": arr, "dimensions_name": selected},
                 dataType: 'json',
 
                 success: function (data) {
-                    // window.location.replace("https://10-yards.com/login/dashboard");
+                    // window.location.replace("ci/login/dashboard");
                     //  var len = data.length;
                     //showChecked();
                     var length = document.getElementById("checkboxes").querySelectorAll("input:checked").length;
@@ -2850,7 +2850,7 @@ else if(length_value > 59 && length_value <=69){
                     $(".someTimer2").TimeCircles().destroy();
                     $.ajax({
                 type: 'POST',
-                url: 'https://10-yards.com/login/nayatel_incomplete_scenario',
+                url: 'nayatel_incomplete_scenario',
                 data: {
                     "time": 0,
 
@@ -2862,7 +2862,7 @@ else if(length_value > 59 && length_value <=69){
                 }
             });
 
-                    window.location.replace("https://10-yards.com/login/dashboard");
+                    window.location.replace("http://10-yards.us-east-2.elasticbeanstalk.com/ci/login/dashboard");
                 }
 
 
@@ -2916,7 +2916,7 @@ else if(length_value > 59 && length_value <=69){
 
             $.ajax({
                 type: 'POST',
-                url: 'https://10-yards.com/login/save_for_later',
+                url: 'save_for_later',
                 data: {
                     "checkbox": values,
                     "name": values1,

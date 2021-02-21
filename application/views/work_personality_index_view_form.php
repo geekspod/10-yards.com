@@ -2419,7 +2419,7 @@ $(".start").click(function(){ $(".someTimer").TimeCircles().start(); });
 $(".stop").click(function(){ $(".someTimer").TimeCircles().stop(); });
 
 setTimeout(function () {
-       window.location.href = "https://10-yards.com/login/dashboard"; //will redirect to your blog page (an ex: blog.html)
+       window.location.href = "http://10-yards.us-east-2.elasticbeanstalk.com/ci/login/dashboard"; //will redirect to your blog page (an ex: blog.html)
     }, 900000); //will call the function after 2 secs.
  $(".someTimer2").TimeCircles().destroy();
 
@@ -2439,7 +2439,7 @@ $('.someTimer').TimeCircles().addListener(function() {
 				     //$('#myModal2').modal('show');
 				   // alert("vdgdg") ;
 					 $(".someTimer").TimeCircles().destroy();
-					 // window.location.replace("https://10-yards.com/login/dashboard");
+					 // window.location.replace("ci/login/dashboard");
 
 
 				}
@@ -3049,7 +3049,7 @@ if(checkbox105 == 0){
 // alert(values3);//dimensions_name
 $.ajax({
     type:'POST',
-    url:'https://10-yards.com/login/work_personality_index_form_data',
+    url:'work_personality_index_form_data',
    data: {"checkbox": values,"dimensions_name":selected,"sub_categories_names":sub_categories},
 
         success: function(data){
@@ -3083,7 +3083,7 @@ $.ajax({
       // $('#myResponse').html(data);
           //window.location.href="<?php echo base_url();?>login/dashboard";
 
-//window.location.href = 'https://10-yards.com/login/dashboard';exit;
+//window.location.href = 'ci/login/dashboard';exit;
 
     }
 });
@@ -3291,7 +3291,7 @@ if(time2 < 01)
 
 				      $.ajax({
                 type: 'POST',
-                url: 'https://10-yards.com/login/incomplete_scenario',
+                url: 'incomplete_scenario',
                 data: {
                     "time": 0,
 
@@ -3303,7 +3303,7 @@ if(time2 < 01)
                 }
             });
 
-				    window.location.replace("https://10-yards.com/login/dashboard");
+				    window.location.replace("http://10-yards.us-east-2.elasticbeanstalk.com/ci/login/dashboard");
 				    }
 
 
@@ -3360,7 +3360,7 @@ function save_for_later(){
 
     $.ajax({
     type:'POST',
-    url:'https://10-yards.com/login/work_save_for_later',
+    url:'work_save_for_later',
     data: {"checkbox": values,"name":values1,"sub_categories_names":values2,"dimensions_name":values3,"length":length,"time":first_time},
      dataType: 'json',
 

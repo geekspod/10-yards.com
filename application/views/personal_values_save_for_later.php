@@ -9,9 +9,9 @@
 
          <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/TimeCircles.css">
          <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/readme.css">
-        
 
-         
+
+
 </head>
 
 <body>
@@ -41,7 +41,7 @@
 
 
 
- 
+
 <section class="content-header" style="display:none">
 	<div class="content-header-left">
     <?php echo "<br>"; echo "<br>"; echo "<br>"; echo "<br>"; echo "<br>";?>
@@ -62,7 +62,7 @@
 
   <div class="row">
     <div class="col-md-12">
-    
+
         <?php
         if($this->session->flashdata('error')) {
             ?>
@@ -81,7 +81,7 @@
         ?>
 
       <div class="box box-info">
-        
+
         <div class="box-body table-responsive" style="width: 80%;
     margin: 0 auto">
             <!--<h1 style="    color: #4172a5">Questions</h1>-->
@@ -95,14 +95,14 @@
                     <th>Sometimes</th>
                     <th>Often</th>
                     <th>Always</th>
-                    
+
                     <!-- <th>Add Score</th> -->
 			    </tr>
 			</thead>
             <tbody>
             	<?php
                 $i=0;
-               
+
             	$i++;
             		?>
 					<tr>
@@ -116,8 +116,8 @@
                         <td><input type="checkbox" id="checkbox[0]" class="checkbox" name="checkbox[]" value="5" <?php echo ($get_all_personal_values_save_for_later[0]['value']==5 ? 'checked' : '');?> data-bind="checked: $data.queuedValues, checkedValue: policyNumber" required="required"/></td>
                                             </tr>
                                             <!--2nd row-->
-                                            
-                                            
+
+
                                             <tr>
 <td><?php echo "2"; ?></td>
 <td class="q_name"><?php echo $get_all_personal_values_save_for_later[1]['name']; ?></td>
@@ -133,7 +133,7 @@
 <td><input type="checkbox" id="checkbox[1]" class="checkbox" name="checkbox[]" value="5" <?php echo ($get_all_personal_values_save_for_later[1]['value']==5 ? 'checked' : '');?>
  data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 </tr>
-                                            
+
  <!--3-->
       <tr>
 <td><?php echo "3"; ?></td>
@@ -152,7 +152,7 @@
 </tr>
 
 <!--4-->
-      
+
       <tr>
 <td><?php echo "4"; ?></td>
 <td class="q_name"><?php echo $get_all_personal_values_save_for_later[3]['name']; ?></td>
@@ -202,7 +202,7 @@
  data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 <td><input type="checkbox" id="checkbox[5]" class="checkbox" name="checkbox[]" value="5" <?php echo ($get_all_personal_values_save_for_later[5]['value']==5 ? 'checked' : '');?>
  data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
-</tr>  
+</tr>
 <!--7-->
 
 <tr>
@@ -2523,39 +2523,39 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 
             </tbody>
           </table>
-          <?php 
+          <?php
           $i=70;
            if($i == '70'){
 
-                    
+
                     ?>
                     <button  id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" class="btn btn-primary sb-btn loginbtn" style="width:16%; margin-left: 430px;
     margin-top: 25px">Submit</button>
-    
+
     <!--<button type="button" class="btn btn-primary"  id="Next"  name="Next" value="Next" onclick="return save_data()"  style="width:9%; margin-left:0px;-->
     <!--margin-top: 25px">Next</button>-->
 
-    
-   
+
+
     <button  id="save" type="submit" name="save" value="Save For Later"  onclick="return save_for_later()" class="btn btn-primary sb-btn loginbtn" style="width:16%; margin-left:0px;
     margin-top: 25px">Save For Later</button>
     <!--                <input id="submit" type="submit" name="submit" value="Submit" onclick="return submitForm()" style="width:16%; margin-left: 430px;-->
     <!--margin-top: 25px" />-->
     </form>
  <div id="myResponse">
-   
+
  </div>
 
-                        
-<?php 
+
+<?php
 }
 ?>
-                  
 
 
-	                 
-                       
-	               
+
+
+
+
         </div>
       </div>
 </section>
@@ -2575,7 +2575,7 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
     <p>Extra three minutes are given, kindly complete the test in require time.</p>
   </div>
   <div class="modal-footer">
-      <a href="<?php echo base_url();?>login/nayatel_save_for_later_extra_time">  
+      <a href="<?php echo base_url();?>login/nayatel_save_for_later_extra_time">
     <button type="button" value="OK" class="btn btn-success start" data-dismiss="modal">OK</button>
     </a>
   </div>
@@ -2605,7 +2605,7 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 
 <!-- Bootstrap Modal -->
 <div class="bs-example">
-   
+
     <div id="myModal" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -2641,10 +2641,10 @@ data-bind="checked: $data.queuedValues, checkedValue: policyNumber" /></td>
 
 <script>
           var time22=[];
-var timeCircles = $(".someTimer").TimeCircles({ 
-                   
+var timeCircles = $(".someTimer").TimeCircles({
+
     "time": {
-        "Days": {            
+        "Days": {
             "text": "Days",
             "color": "#FFCC66",
             "show": false
@@ -2663,10 +2663,10 @@ var timeCircles = $(".someTimer").TimeCircles({
             "text": "Seconds",
             "color": "#FF9999",
             "show": true,
-            
+
         }
     }
-    
+
   });
 
             // Fade in and fade out are examples of how chaining can be done with TimeCircles
@@ -2683,16 +2683,16 @@ var timeCircles = $(".someTimer").TimeCircles({
             });
             $(".stopTimer").click(function() {
                 $(".someTimer").eq(1).TimeCircles().stop();
-                
+
             });
-            
-        
- 
+
+
+
 $(".start").click(function(){ $(".someTimer").TimeCircles().start(); });
 $(".stop").click(function(){ $(".someTimer").TimeCircles().stop(); });
 
 setTimeout(function () {
-       window.location.href = "https://10-yards.com/login/dashboard"; //will redirect to your blog page (an ex: blog.html)
+       window.location.href = "http://10-yards.us-east-2.elasticbeanstalk.com/ci/login/dashboard"; //will redirect to your blog page (an ex: blog.html)
     }, 900000); //will call the function after 2 secs.
  $(".someTimer2").TimeCircles().destroy();
 
@@ -2702,7 +2702,7 @@ $('.someTimer').TimeCircles({ time: { Days: { show: false }, Hours: { show: fals
 
 $('.someTimer').TimeCircles().addListener(function() {
    time22 = $('.someTimer').TimeCircles().getTime()
- 
+
 });
 
 //alert(time22);
@@ -2712,9 +2712,9 @@ $('.someTimer').TimeCircles().addListener(function() {
 				     //$('#myModal2').modal('show');
 				   // alert("vdgdg") ;
 					 $(".someTimer").TimeCircles().destroy();
-					 // window.location.replace("https://10-yards.com/login/dashboard");
-					 
-				
+					 // window.location.replace("ci/login/dashboard");
+
+
 				}
 </script>
 <script>
@@ -2740,16 +2740,16 @@ $( document ).ready(function() {
 </script>
 <script>
      function save_data() {
-     
+
       if (!$("#checkSurfaceEnvironment-1").is(":checked")) {
     // do something if the checkbox is NOT checked
 }
 //alert(checkSurfaceEnvironment);
  }
-    
+
 </script>
 <script>
-  
+
  function submitForm2() {
 var atLeastOneIsChecked = $('input[name="checkbox[]"]:checked').length == 10;
 //alert(atLeastOneIsChecked);
@@ -2779,10 +2779,10 @@ $('input.checkbox:checkbox:checked').each(function () {
 });
 //alert(arr.length);
 var length_value=[];
-length_value=arr.length;  
+length_value=arr.length;
  //alert(length_value);
-  
- 
+
+
 $('#checkboxes input[name="dimensions_name[]"]').each(function() {
     selected.push($(this).attr('value'));
 });
@@ -2797,7 +2797,7 @@ $('#checkboxes input[name="dimensions_name[]"]').each(function() {
     dimensions_name2.push($(this).attr('value'));
 });
 
- 
+
 $( "#checkboxes tbody tr" ).on( "click", function() {
  //alert(dimensions_name2.length);
 
@@ -2807,11 +2807,11 @@ $( "#checkboxes tbody tr" ).on( "click", function() {
 
 
 
-var table = $ ('#checkboxes'). DataTable (); 
- info = table.page.info (); 
+var table = $ ('#checkboxes'). DataTable ();
+ info = table.page.info ();
  info=info.page + 1;
 //alert(info);
- 
+
  current=$( "#checkbox[10]" ).prop( "checked", false );
 
 
@@ -2823,27 +2823,27 @@ var table = $ ('#checkboxes'). DataTable ();
     var nMnth = oDate.getMonth();
     var nYear = oDate.getFullYear();
 
-   
+
 var values20=nHrs + ':' + nMin;
-   
+
 
 var now = new Date(Date.now());
 var formatted = now.getHours() + ":" + now.getMinutes();
-      
-     
+
+
      //alert(formatted);//5:31 9:58//10:0
-      // alert(values20);   
+      // alert(values20);
       //alert(travelTime);//05:41 10:13
     // rows which are clicked
-   
+
  //alert(current_time_value);
- 
+
   //values= moment().format("H:S");
      var travelTime = moment().add(15, 'minutes').format('h:mm');
-     
+
      // alert(travelTime);//05:41 10:13//10:15
- 
- 
+
+
 
 // var dt = new Date();
 // var time = dt.getHours() + ":" + dt.getMinutes();
@@ -2851,7 +2851,7 @@ var formatted = now.getHours() + ":" + now.getMinutes();
 
 
 
-			
+
 
 
 
@@ -2864,7 +2864,7 @@ currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val()
 //     arr.push($(this).val());
 // });
 
-  
+
 //   var selected = [];
 // $('#checkboxes input[type="hidden"]').each(function() {
 //     selected.push($(this).attr('value'));
@@ -2872,10 +2872,10 @@ currentRows = $(this).closest('tr').find('input[type="checkbox"]:checked').val()
 
 
 
- 
 
 
-    
+
+
 var name = $(this).closest('tr').find('.q_name').text();
 //arr_length=name.length;
 //alert(arr_length);
@@ -2887,10 +2887,10 @@ var dimensions_name = $(this).closest('tr').find('input[type="hidden"]').val();
 
 values=arr;
 if(!(values.length==105)){
-    
-  values.push(currentRows);  
+
+  values.push(currentRows);
 }
- 
+
 // alert(values);
 values1.push(name);
 //alert(values1);
@@ -2911,276 +2911,276 @@ length=document.getElementById("checkboxes").querySelectorAll("input:checked").l
 // alert(values2);// sub_categories_names
 // alert(values3);//dimensions_name
 
- 
+
 });
 
- 
- 
+
+
  function submitForm() {
-     
+
      var length1 = $("#checkboxes input[id='checkbox[1]']:checked").length;
-   
+
     if(length1 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 1 is required.');
     }
-    
+
     var length2 = $("#checkboxes input[id='checkbox[2]']:checked").length;
-   
+
     if(length2 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 2 is required.');
     }
-    
-    
-    
+
+
+
     var length3 = $("#checkboxes input[id='checkbox[3]']:checked").length;
-    
+
     if(length3 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 10 is required.');
     }
-    
-    
+
+
     var length4 = $("#checkboxes input[id='checkbox[4]']:checked").length;
-   
+
     if(length4 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 4 is required.');
     }
-    
-    
+
+
     var length5 = $("#checkboxes input[id='checkbox[5]']:checked").length;
-    
+
     if(length5 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 5 is required.');
     }
-    
-    
+
+
     var length6 = $("#checkboxes input[id='checkbox[6]']:checked").length;
-   
+
     if(length6 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 6 is required.');
     }
-    
-    
+
+
     var length7 = $("#checkboxes input[id='checkbox[7]']:checked").length;
-   
+
     if(length7 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 7 is required.');
     }
-    
-    
+
+
     var length8 = $("#checkboxes input[id='checkbox[8]']:checked").length;
-    
+
     if(length8 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 8 is required.');
     }
-    
-    
+
+
     var length9 = $("#checkboxes input[id='checkbox[9]']:checked").length;
-    
+
     if(length9 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 9 is required.');
     }
-    
+
     var length10 = $("#checkboxes input[id='checkbox[10]']:checked").length;
-   
+
     if(length10 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 10 is required.');
     }
-    
-    
+
+
     // 11
-    
-    
+
+
     var length11 = $("#checkboxes input[id='checkbox[11]']:checked").length;
-   
+
     if(length11 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 11 is required.');
     }
-    
+
     var length12 = $("#checkboxes input[id='checkbox[12]']:checked").length;
-    
+
     if(length12 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 12 is required.');
     }
-    
-    
-    
+
+
+
     var length13 = $("#checkboxes input[id='checkbox[13]']:checked").length;
-    
+
     if(length13 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 13 is required.');
     }
-    
-    
+
+
     var length14 = $("#checkboxes input[id='checkbox[14]']:checked").length;
-    
+
     if(length14 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 14 is required.');
     }
-    
-    
+
+
     var length15 = $("#checkboxes input[id='checkbox[15]']:checked").length;
-    
+
     if(length15 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 15 is required.');
     }
-    
-    
+
+
     var length16 = $("#checkboxes input[id='checkbox[16]']:checked").length;
-   
+
     if(length16 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 16 is required.');
     }
-    
-    
+
+
     var length17 = $("#checkboxes input[id='checkbox[17]']:checked").length;
-   
+
     if(length17 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 17 is required.');
     }
-    
-    
+
+
     var length18 = $("#checkboxes input[id='checkbox[18]']:checked").length;
-    
+
     if(length18 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 18 is required.');
     }
-    
-    
+
+
     var length19 = $("#checkboxes input[id='checkbox[19]']:checked").length;
-    
+
     if(length19 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 19 is required.');
     }
-    
+
     var length20 = $("#checkboxes input[id='checkbox[20]']:checked").length;
-    
+
     if(length20 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 20 is required.');
     }
-    
+
     // 21
     var length21 = $("#checkboxes input[id='checkbox[21]']:checked").length;
-   
+
     if(length21 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 21 is required.');
     }
-    
+
     var length22 = $("#checkboxes input[id='checkbox[22]']:checked").length;
-    
+
     if(length22 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 22 is required.');
     }
-    
-    
-    
+
+
+
     var length23 = $("#checkboxes input[id='checkbox[23]']:checked").length;
-    
+
     if(length23 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 23 is required.');
     }
-    
-    
+
+
     var length24 = $("#checkboxes input[id='checkbox[24]']:checked").length;
-    
+
     if(length24 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 24 is required.');
     }
-    
-    
+
+
     var length25 = $("#checkboxes input[id='checkbox[25]']:checked").length;
-    
+
     if(length25 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 25 is required.');
     }
-    
-    
+
+
     var length26 = $("#checkboxes input[id='checkbox[26]']:checked").length;
-   
+
     if(length26 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 26 is required.');
     }
-    
-    
+
+
     var length27 = $("#checkboxes input[id='checkbox[27]']:checked").length;
-   
+
     if(length27 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 27 is required.');
     }
-    
-    
+
+
     var length28 = $("#checkboxes input[id='checkbox[28]']:checked").length;
-    
+
     if(length28 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 28 is required.');
     }
-    
-    
+
+
     var length29 = $("#checkboxes input[id='checkbox[29]']:checked").length;
-    
+
     if(length29 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 29 is required.');
     }
-    
+
     var length30 = $("#checkboxes input[id='checkbox[30]']:checked").length;
-    
+
     if(length30 > 0){
        console.log('success');
     } else{
@@ -3190,87 +3190,87 @@ length=document.getElementById("checkboxes").querySelectorAll("input:checked").l
 // 31
 
 var length31 = $("#checkboxes input[id='checkbox[31]']:checked").length;
-   
+
     if(length31 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 31 is required.');
     }
-    
+
     var length32 = $("#checkboxes input[id='checkbox[32]']:checked").length;
-    
+
     if(length32 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 32 is required.');
     }
-    
-    
-    
+
+
+
     var length33 = $("#checkboxes input[id='checkbox[33]']:checked").length;
-    
+
     if(length33 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 33 is required.');
     }
-    
-    
+
+
     var length34 = $("#checkboxes input[id='checkbox[34]']:checked").length;
-    
+
     if(length34 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 34 is required.');
     }
-    
-    
+
+
     var length35 = $("#checkboxes input[id='checkbox[35]']:checked").length;
-    
+
     if(length35 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 35 is required.');
     }
-    
-    
+
+
     var length36 = $("#checkboxes input[id='checkbox[36]']:checked").length;
-   
+
     if(length36 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 36 is required.');
     }
-    
-    
+
+
     var length37 = $("#checkboxes input[id='checkbox[37]']:checked").length;
-   
+
     if(length37 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 37 is required.');
     }
-    
-    
+
+
     var length38 = $("#checkboxes input[id='checkbox[38]']:checked").length;
-    
+
     if(length38 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 38 is required.');
     }
-    
-    
+
+
     var length39 = $("#checkboxes input[id='checkbox[39]']:checked").length;
-    
+
     if(length39 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 39 is required.');
     }
-    
+
     var length40 = $("#checkboxes input[id='checkbox[40]']:checked").length;
-    
+
     if(length40 > 0){
        console.log('success');
     } else{
@@ -3280,95 +3280,95 @@ var length31 = $("#checkboxes input[id='checkbox[31]']:checked").length;
 //   41
 
 var length41 = $("#checkboxes input[id='checkbox[41]']:checked").length;
-   
+
     if(length41 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 41 is required.');
     }
-    
+
     var length42 = $("#checkboxes input[id='checkbox[42]']:checked").length;
-    
+
     if(length42 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 42 is required.');
     }
-    
-    
-    
+
+
+
     var length43 = $("#checkboxes input[id='checkbox[43]']:checked").length;
-    
+
     if(length43 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 43 is required.');
     }
-    
-    
+
+
     var length44 = $("#checkboxes input[id='checkbox[44]']:checked").length;
-    
+
     if(length44 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 44 is required.');
     }
-    
-    
+
+
     var length45 = $("#checkboxes input[id='checkbox[45]']:checked").length;
-    
+
     if(length45 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 45 is required.');
     }
-    
-    
+
+
     var length46 = $("#checkboxes input[id='checkbox[46]']:checked").length;
-   
+
     if(length46 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 46 is required.');
     }
-    
-    
+
+
     var length47 = $("#checkboxes input[id='checkbox[47]']:checked").length;
-   
+
     if(length47 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 47 is required.');
     }
-    
-    
+
+
     var length48 = $("#checkboxes input[id='checkbox[48]']:checked").length;
-    
+
     if(length48 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 48 is required.');
     }
-    
-    
+
+
     var length49 = $("#checkboxes input[id='checkbox[49]']:checked").length;
-    
+
     if(length49 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 49 is required.');
     }
-    
+
     var length50 = $("#checkboxes input[id='checkbox[50]']:checked").length;
-    
+
     if(length50 > 0){
        console.log('success');
     } else{
         window.FlashMessage.error('Question # 50 is required.');
     }
-    
+
     // 51
-    
+
    //debugger;
      var time=[];
     var time2=[];
@@ -3377,7 +3377,7 @@ var length41 = $("#checkboxes input[id='checkbox[41]']:checked").length;
          time2 = $(".someTimer2").TimeCircles().getTime();
         time=time2;
     }
-    
+
      //alert(time);
      //alert(values3);//dimensions_name
          //alert(values5);//sub_categories_names
@@ -3386,12 +3386,12 @@ var length41 = $("#checkboxes input[id='checkbox[41]']:checked").length;
     //  alert(values);//name
     //  values5.length;
     //   alert(values5);//name
-    
+
     //  values3.length;
     //   alert(values3);//name
-   
+
      final_length=length_value+counter;
-    
+
 // var form = document.myform;
 
 // var dataString = $(form).serialize();
@@ -3404,13 +3404,13 @@ var length41 = $("#checkboxes input[id='checkbox[41]']:checked").length;
 // alert(values3);//dimensions_name
 $.ajax({
     type:'POST',
-    url:'https://10-yards.com/login/personal_values_assessment_questions_data',
+    url:'personal_values_assessment_questions_data',
    data: {"checkbox": values,"dimensions_name":selected,"time":time},
-    
+
         success: function(data){
             //alert('success');
-            
-          
+
+
        // var len = data.length;
         // var length=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
 
@@ -3427,8 +3427,8 @@ $.ajax({
          //alert('Are you sure to submit?');
        // console.log(data);
         //window.location.href="<?php echo base_url();?>login/dashboard";
-        
- 
+
+
        }
        else{
            // alert('else');
@@ -3439,25 +3439,25 @@ $.ajax({
          window.FlashMessage.error('All Questions Are Mandatory.');
         //   alert("All Questions Are Mandatory.");
        }
-      // $('#myResponse').html(data); 
+      // $('#myResponse').html(data);
           //window.location.href="<?php echo base_url();?>login/dashboard";
 
-//window.location.href = 'https://10-yards.com/login/dashboard';exit;
+//window.location.href = 'ci/login/dashboard';exit;
 
     }
 });
 //$('#myResponse').html(data);
  //alert(final_length);
-        
+
        if(final_length >= 105){
-           
+
      window.location.href="<?php echo base_url();?>login/dashboard";
-   
+
            //alert('equal');
-           
-      // return true; 
+
+      // return true;
      // break;
-           
+
        }
        else{
            //window.FlashMessage.error('all Questions Are Mandatory.');
@@ -3490,7 +3490,7 @@ var dimensions_name3=[];
 
 
 $( "#checkboxes tbody tr" ).on( "click", function() {
-  
+
         var currentRows2 = $(this).closest('tr').find('input[type="checkbox"]:checked').val();
    // alert(currentRows2);
     save_for_later_values.push(currentRows2);
@@ -3504,14 +3504,14 @@ $( "#checkboxes tbody tr" ).on( "click", function() {
 				if(time22 < 01)
 				{
 				     $(".someTimer").TimeCircles().destroy();
-				    
-				  
+
+
 
 // second time
-var timeCircles = $(".someTimer2").TimeCircles({ 
-                   
+var timeCircles = $(".someTimer2").TimeCircles({
+
     "time": {
-        "Days": {            
+        "Days": {
             "text": "Days",
             "color": "#FFCC66",
             "show": false
@@ -3530,10 +3530,10 @@ var timeCircles = $(".someTimer2").TimeCircles({
             "text": "Seconds",
             "color": "#FF9999",
             "show": true,
-            
+
         }
     }
-    
+
   });
   $(".someTimer2").eq(1).TimeCircles().start();
   $(".start").click(function(){ $(".someTimer2").TimeCircles().start(); });
@@ -3545,28 +3545,28 @@ if(time2 < 01)
 			//	alert("vdgdg") ;
 				     $(".someTimer").TimeCircles().destroy();
 				      $(".someTimer2").TimeCircles().destroy();
-				    window.location.replace("https://10-yards.com/login/dashboard");
+				    window.location.replace("http://10-yards.us-east-2.elasticbeanstalk.com/ci/login/dashboard");
 				    }
 
 
 
 				}
 				// end
-        
-    
-        
+
+
+
  var name = $(this).closest('tr').find('.q_name').text();
- 
+
 //  var dimensions_name = $(this).closest('tr').find('input[type="hidden"]').val();
  var dimensions_name = $(this).closest('tr').find('input[type="hidden"]').val();
  //var sub_categories_names = $(this).closest('tr').find('input[name="sub_categories_names[]"]').val();
 
- 
+
 
 questions_name.push(name);
 //values2.push(sub_categories_names);
 dimensions_name3.push(dimensions_name);
- 
+
 });
 
 
@@ -3574,13 +3574,13 @@ dimensions_name3.push(dimensions_name);
 //alert(save_for_later_values.length);
 
  //alert(save_for_later_values);
-  
+
 function save_for_later(){
   // alert(questions_name);
    // save_for_later_values=arr;
     // alert(currentRows2);
     // alert(dimensions_name3);
-     
+
     // alert(save_for_later_values);
       counter++;
   // alert(values.length);
@@ -3608,15 +3608,15 @@ function save_for_later(){
        length=document.getElementById("checkboxes").querySelectorAll("input:checked").length;
       //alert(length);
       //alert(time);
-       
-       
+
+
     $.ajax({
     type:'POST',
-    url:'https://10-yards.com/login/work_save_for_later',
+    url:'work_save_for_later',
     data: {"checkbox": save_for_later_values,"name":questions_name,"dimensions_name":dimensions_name3,"length":length,"time":time},
      dataType: 'json',
-  
-      
+
+
         success: function(data){
 //      alert(counter);
 // alert('before');
@@ -3624,12 +3624,12 @@ function save_for_later(){
         alert('success');
         counter=counter-1;
          if(counter >= 0){
-          window.location.href="<?php echo base_url();?>login/dashboard";  
+          window.location.href="<?php echo base_url();?>login/dashboard";
     //     var checkbox = data[0].values;
     //   //  var dimensions_name = data[0].values1;
     //      var name = data[0].values2;
          //alert(checkbox);
- 
+
         //  $('#values').text(values);
         //  $('#dimensions_name').text(values1);
         //  $('#name').text(values2);
@@ -3648,15 +3648,15 @@ function save_for_later(){
 //alert(arr.length-1);
 //alert(checkboxes_length);
 counter=counter-1;
-      //alert(counter);  
+      //alert(counter);
        if(counter >= 0){
           // alert('below');
            window.location.href="<?php echo base_url();?>login/dashboard";
-      // return true; 
+      // return true;
                         }
 return false;
 }
- 
+
 
 </script>
 

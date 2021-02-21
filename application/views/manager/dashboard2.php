@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- 
+<!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 4 & Angular 8
 Author: KeenThemes
 Website: http://www.keenthemes.com/
@@ -172,26 +172,26 @@ License: You must have a valid license purchased only from themeforest(the above
 									<h4 class="kt-menu__section-text">Records</h4>
 									<i class="kt-menu__section-icon flaticon-more-v2"></i>
 								</li>
-							
+
 							<!--current test-->
-							
+
 <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="<?php echo base_url(); ?>/manager/login/test_view" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
 												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 													<polygon id="Bound" points="0 0 24 0 24 24 0 24" />
 													<path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z" id="Combined-Shape" fill="#000000" opacity="0.3" />
 												</g>
 											</svg></span><span class="kt-menu__link-text">Current Test</span></a></li>
-											
-											
+
+
 												<!--add employees-->
-											
+
 											<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="<?php echo base_url(); ?>/manager/login/add_employees" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
 												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 													<polygon id="Bound" points="0 0 24 0 24 24 0 24" />
 													<path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z" id="Combined-Shape" fill="#000000" opacity="0.3" />
 												</g>
 											</svg></span><span class="kt-menu__link-text">Add Employees</span></a></li>
-										
+
 								<!--<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">-->
 								<!--				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
 								<!--					<rect id="bound" x="0" y="0" width="24" height="24" />-->
@@ -202,8 +202,8 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
 										<ul class="kt-menu__subnav">
 											<li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">Current Test</span></span></li>
-<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" 
-data-ktmenu-submenu-toggle="hover"><a href="<?php echo base_url();?>" 
+<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+data-ktmenu-submenu-toggle="hover"><a href="<?php echo base_url();?>"
 class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__link-bullet--line">
 <span></span></i><span class="kt-menu__link-text">Test</span>
 <i class="kt-menu__ver-arrow la la-angle-right"></i></a>
@@ -282,14 +282,14 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 										</ul>
 									</div>
 								</li>
-								
+
 								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="<?php echo base_url(); ?>/manager/login/employees" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
 												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 													<polygon id="Bound" points="0 0 24 0 24 24 0 24" />
 													<path d="M6,18 L9,18 C9.66666667,18.1143819 10,18.4477153 10,19 C10,19.5522847 9.66666667,19.8856181 9,20 L4,20 L4,15 C4,14.3333333 4.33333333,14 5,14 C5.66666667,14 6,14.3333333 6,15 L6,18 Z M18,18 L18,15 C18.1143819,14.3333333 18.4477153,14 19,14 C19.5522847,14 19.8856181,14.3333333 20,15 L20,20 L15,20 C14.3333333,20 14,19.6666667 14,19 C14,18.3333333 14.3333333,18 15,18 L18,18 Z M18,6 L15,6 C14.3333333,5.88561808 14,5.55228475 14,5 C14,4.44771525 14.3333333,4.11438192 15,4 L20,4 L20,9 C20,9.66666667 19.6666667,10 19,10 C18.3333333,10 18,9.66666667 18,9 L18,6 Z M6,6 L6,9 C5.88561808,9.66666667 5.55228475,10 5,10 C4.44771525,10 4.11438192,9.66666667 4,9 L4,4 L9,4 C9.66666667,4 10,4.33333333 10,5 C10,5.66666667 9.66666667,6 9,6 L6,6 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero" />
 												</g>
 											</svg></span><span class="kt-menu__link-text">Manage Users</span></a></li>
-											
+
 								<!--<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">-->
 								<!--				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
 								<!--					<rect id="bound" x="0" y="0" width="24" height="24" />-->
@@ -839,7 +839,7 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 							<div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-default ">
 								<ul class="kt-menu__nav ">
 									<li class="kt-menu__item  kt-menu__item--open kt-menu__item--here kt-menu__item--submenu kt-menu__item--rel kt-menu__item--open kt-menu__item--here kt-menu__item--active" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Pages</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-									
+
 										<div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
 											<ul class="kt-menu__subnav">
 												<li class="kt-menu__item  kt-menu__item--active " aria-haspopup="true"><a href="<?php echo base_url(); ?>/manager/login/dashboard" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -1097,7 +1097,7 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 									</span> -->
 
 									<!--
-                Use dot badge instead of animated pulse effect: 
+                Use dot badge instead of animated pulse effect:
                 <span class="kt-badge kt-badge--dot kt-badge--notify kt-badge--sm kt-badge--brand"></span>
             -->
 								<!-- </div>
@@ -1936,13 +1936,13 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 													</li>
 													<li class="kt-nav__separator"></li>
 													<li class="kt-nav__item">
-														<a href="https://10-yards.com/manager/login/employees" class="kt-nav__link"" class="kt-nav__link">
+														<a href="ci/manager/login/employees" class="kt-nav__link"" class="kt-nav__link">
 															<i class="kt-nav__link-icon flaticon2-drop"></i>
 															<span class="kt-nav__link-text">Current Employees</span>
 														</a>
 													</li>
 													<li class="kt-nav__item">
-														<a href="https://10-yards.com/manager/login/profile" class="kt-nav__link">
+														<a href="ci/manager/login/profile" class="kt-nav__link">
 															<i class="kt-nav__link-icon flaticon2-calendar-8"></i>
 															<span class="kt-nav__link-text">Update/Edit Profile</span>
 														</a>
@@ -1954,7 +1954,7 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 														</a>
 													</li>
 													<li class="kt-nav__item">
-														<a href="https://10-yards.com/manager/login/share_reports" class="kt-nav__link" class="kt-nav__link">
+														<a href="ci/manager/login/share_reports" class="kt-nav__link" class="kt-nav__link">
 															<i class="kt-nav__link-icon flaticon2-new-email"></i>
 															<span class="kt-nav__link-text">Share Reports</span>
 															<span class="kt-nav__link-badge">
@@ -1964,8 +1964,8 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 													</li>
 													<li class="kt-nav__separator"></li>
 													<li class="kt-nav__foot">
-														
-														
+
+
 													</li>
 												</ul>
 
@@ -1977,7 +1977,7 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 							</div>
 						</div>
 
-					
+
 
 		<!-- end:: Page -->
 
@@ -2786,7 +2786,7 @@ class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__li
 		<!--ENd:: Chat-->
 
 		<!-- begin::Global Config(global config for global JS sciprts) -->
-	
+
 	</body>
 
 	<!-- end::Body -->

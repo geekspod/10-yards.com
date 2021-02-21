@@ -50,7 +50,7 @@
 <body>
    <table class="container">
 
-<a href="https://10-yards.com/manager/login/reports"
+<a href="/ci/manager/login/reports"
     style="color: white;"><button style="    background-color: #008000;
     border-color: #5867dd;
     color: white;
